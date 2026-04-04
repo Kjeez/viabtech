@@ -5,7 +5,7 @@
     "slug": "printer-sales",
     "icon": "ShoppingCart",
     "shortDescription": "Expert guidance to help you choose the right printer for your business needs and budget.",
-    "description": "Our sales consultants work closely with you to understand your printing requirements and recommend the best solutions. From home offices to enterprise environments, we match you with the perfect printer from brands like Canon, Epson, Lenovo, and Dell.",
+    "description": "Our sales consultants work closely with you to understand your printing requirements and recommend the best solutions. From home offices to enterprise environments, we match you with the perfect printer from brands like Canon, Epson, Lenovo, Dell, HP, and more.",
     "features": [
       "Free needs assessment and consultation",
       "Competitive pricing on all brands",
@@ -16,8 +16,56 @@
     ]
   },
   {
+    "id": "managed-print",
+    "title": "Managed Print Services & Leasing",
+    "slug": "managed-print",
+    "icon": "Monitor",
+    "shortDescription": "Comprehensive print management, rental, and leasing solutions to reduce costs and optimize your fleet.",
+    "description": "Our Managed Print Services (MPS) provide end-to-end management of your printing infrastructure. We monitor, maintain, and optimize your entire print fleet, reducing costs by up to 30%. We also offer flexible leasing plans — enjoy the latest technology without the upfront investment, with maintenance and support included.",
+    "features": [
+      "Complete fleet assessment & optimization",
+      "Flexible short-term and long-term leasing",
+      "Automated supply replenishment",
+      "Usage tracking and cost reporting",
+      "24/7 remote monitoring",
+      "Tax-efficient leasing plans"
+    ]
+  },
+  {
+    "id": "amc",
+    "title": "Annual Maintenance Contract (AMC)",
+    "slug": "annual-maintenance-contract",
+    "icon": "CalendarCheck",
+    "shortDescription": "Protect your investment with comprehensive annual maintenance contracts for all your printers.",
+    "description": "Our Annual Maintenance Contracts (AMC) provide peace of mind with scheduled maintenance, priority support, and cost-predictable printer management. We offer customized AMC plans for single machines or entire fleets, covering all major brands including Canon, Epson, HP, Lenovo, and Dell.",
+    "features": [
+      "Scheduled preventive maintenance visits",
+      "Priority response for breakdowns",
+      "Genuine parts included in contract",
+      "Discounted consumables pricing",
+      "Dedicated account manager",
+      "Fleet-wide coverage options"
+    ]
+  },
+  {
+    "id": "warranty-registration",
+    "title": "Register for Warranty",
+    "slug": "warranty-registration",
+    "icon": "ShieldCheck",
+    "shortDescription": "Register your products for official manufacturer warranty and extended protection plans.",
+    "description": "As an authorized dealer for Canon, Epson, HP, Lenovo, Dell, DJI, and Godox, we help you register your products for official manufacturer warranty. We also offer extended warranty plans for additional peace of mind and protection beyond the standard coverage period.",
+    "features": [
+      "Free manufacturer warranty registration",
+      "Extended warranty options available",
+      "Genuine parts guarantee",
+      "Authorized service center repairs",
+      "Hassle-free claims processing",
+      "Warranty status tracking"
+    ]
+  },
+  {
     "id": "printer-repair",
-    "title": "Printer Repair & Maintenance",
+    "title": "Repair & Maintenance",
     "slug": "printer-repair",
     "icon": "Wrench",
     "shortDescription": "Fast, reliable repair service for all major printer brands with genuine parts.",
@@ -26,41 +74,9 @@
       "Expert diagnosis of all printer issues",
       "Genuine parts replacement",
       "Quick turnaround times",
-      "On-site service available",
+      "On-site service available across Tanzania",
       "Preventive maintenance programs",
-      "Annual maintenance contracts"
-    ]
-  },
-  {
-    "id": "managed-print",
-    "title": "Managed Print Services",
-    "slug": "managed-print",
-    "icon": "Monitor",
-    "shortDescription": "Comprehensive print management to reduce costs and optimize your print infrastructure.",
-    "description": "Our Managed Print Services (MPS) provide end-to-end management of your printing infrastructure. We monitor, maintain, and optimize your entire print fleet, reducing costs by up to 30% while improving productivity and sustainability.",
-    "features": [
-      "Complete fleet assessment & optimization",
-      "Automated supply replenishment",
-      "Usage tracking and reporting",
-      "Cost reduction strategies",
-      "Environmental sustainability programs",
-      "24/7 remote monitoring"
-    ]
-  },
-  {
-    "id": "printer-rental",
-    "title": "Printer Rental & Leasing",
-    "slug": "printer-rental",
-    "icon": "Clock",
-    "shortDescription": "Flexible rental and leasing options for short-term projects or long-term operations.",
-    "description": "Whether you need printers for a one-day event or a multi-year office setup, our flexible rental and leasing programs have you covered. Enjoy the latest technology without the upfront investment, with maintenance and support included.",
-    "features": [
-      "Short-term event rentals",
-      "Long-term business leasing",
-      "Includes maintenance & support",
-      "Upgrade options available",
-      "Tax-efficient leasing plans",
-      "Delivery, setup & collection"
+      "All major brands supported"
     ]
   },
   {
@@ -69,14 +85,30 @@
     "slug": "consumables",
     "icon": "Package",
     "shortDescription": "Genuine ink, toner, and paper supplies from authorized sources at competitive prices.",
-    "description": "Keep your printers running at peak performance with our range of genuine consumables. As authorized dealers for Canon and Epson, we guarantee authentic ink cartridges, toner, and specialty papers at competitive prices.",
+    "description": "Keep your printers running at peak performance with our range of genuine consumables. As authorized dealers for Canon, Epson, and HP, we guarantee authentic ink cartridges, toner, and specialty papers at competitive prices with fast delivery across Tanzania.",
     "features": [
-      "Genuine Canon & Epson consumables",
+      "Genuine Canon, Epson & HP consumables",
       "Competitive bulk pricing",
       "Wide range of specialty papers",
       "Fast delivery across Tanzania",
       "Auto-replenishment programs",
       "Recycling programs available"
+    ]
+  },
+  {
+    "id": "spares",
+    "title": "Spare Parts & Components",
+    "slug": "spares",
+    "icon": "Cog",
+    "shortDescription": "Genuine and compatible spare parts for all major printer brands and models.",
+    "description": "We stock a comprehensive range of genuine spare parts and components for all major printer brands. From fusers, rollers, and print heads to paper feed assemblies and maintenance kits, we ensure your printers stay operational with the right parts, fast.",
+    "features": [
+      "Genuine OEM spare parts",
+      "Compatible parts for cost savings",
+      "Fuser units, rollers & belts",
+      "Print heads & ink systems",
+      "Paper feed & pickup assemblies",
+      "Same-day dispatch for in-stock items"
     ]
   },
   {

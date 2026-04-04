@@ -1,22 +1,5 @@
 [
   {
-    "id": "canon",
-    "name": "Canon",
-    "slug": "canon",
-    "tagline": "Authorized Canon Dealer in Tanzania",
-    "description": "Canon is a global leader in imaging technology, offering a comprehensive range of printers, copiers, and multifunction devices for home and office use. As an authorized Canon dealer, Viabtech provides genuine Canon products with full warranty and after-sales support across Tanzania.",
-    "logo": "/brands/canon-logo.svg",
-    "heroColor": "#CC0000",
-    "categories": ["Laser Printer", "Inkjet Printer", "Large Format", "Scanner", "Copier"],
-    "highlights": [
-      "Authorized Dealer & Service Partner",
-      "Full Product Warranty",
-      "Genuine Canon Consumables",
-      "Enterprise & Home Solutions"
-    ],
-    "authorized": true
-  },
-  {
     "id": "epson",
     "name": "Epson",
     "slug": "epson",
@@ -34,37 +17,105 @@
     "authorized": true
   },
   {
+    "id": "canon",
+    "name": "Canon",
+    "slug": "canon",
+    "tagline": "Authorized Canon Dealer in Tanzania",
+    "description": "Canon is a global leader in imaging technology, offering a comprehensive range of printers, copiers, and multifunction devices for home and office use. As an authorized Canon dealer, Viabtech provides genuine Canon products with full warranty and after-sales support across Tanzania.",
+    "logo": "/brands/canon-logo.svg",
+    "heroColor": "#CC0000",
+    "categories": ["Laser Printer", "Inkjet Printer", "Large Format", "Scanner", "Copier"],
+    "highlights": [
+      "Authorized Dealer & Service Partner",
+      "Full Product Warranty",
+      "Genuine Canon Consumables",
+      "Enterprise & Home Solutions"
+    ],
+    "authorized": true
+  },
+  {
     "id": "lenovo",
     "name": "Lenovo",
     "slug": "lenovo",
-    "tagline": "Lenovo Printing Solutions",
-    "description": "Lenovo offers a robust lineup of enterprise-grade laser printers and multifunction devices built for modern workplaces. Viabtech stocks the full range of Lenovo printing products with competitive pricing and technical support.",
+    "tagline": "Authorized Lenovo Partner in Tanzania",
+    "description": "Lenovo offers a robust lineup of enterprise-grade laser printers and multifunction devices built for modern workplaces. As an authorized Lenovo partner, Viabtech stocks the full range of Lenovo printing products with competitive pricing and technical support.",
     "logo": "/brands/lenovo-logo.svg",
     "heroColor": "#E2231A",
     "categories": ["Laser Printer", "Multifunction"],
     "highlights": [
+      "Authorized Partner",
       "Enterprise-Grade Hardware",
       "Cloud-Connected Printing",
-      "High-Volume Capability",
       "Advanced Security Features"
     ],
-    "authorized": false
+    "authorized": true
   },
   {
     "id": "dell",
     "name": "Dell",
     "slug": "dell",
-    "tagline": "Dell Printing Solutions",
-    "description": "Dell printers deliver reliable performance and low total cost of ownership for businesses of all sizes. Viabtech provides Dell printing solutions with expert setup, configuration, and ongoing support.",
+    "tagline": "Authorized Dell Partner in Tanzania",
+    "description": "Dell printers deliver reliable performance and low total cost of ownership for businesses of all sizes. As an authorized Dell partner, Viabtech provides Dell printing solutions with expert setup, configuration, and ongoing support.",
     "logo": "/brands/dell-logo.svg",
     "heroColor": "#007DB8",
     "categories": ["Laser Printer", "Multifunction"],
     "highlights": [
+      "Authorized Partner",
       "Business-Ready Performance",
       "Low Running Costs",
-      "Robust Security",
       "Easy Management Tools"
     ],
-    "authorized": false
+    "authorized": true
+  },
+  {
+    "id": "hp",
+    "name": "HP",
+    "slug": "hp",
+    "tagline": "Authorized HP Partner in Tanzania",
+    "description": "HP is one of the world's largest and most trusted printer manufacturers, offering versatile inkjet and laser printers for every need. As an authorized HP partner, Viabtech delivers genuine HP products, consumables, and professional support across Tanzania.",
+    "logo": "/brands/hp-logo.svg",
+    "heroColor": "#0096D6",
+    "categories": ["Laser Printer", "Inkjet Printer", "Large Format", "Scanner", "Multifunction"],
+    "highlights": [
+      "Authorized Partner",
+      "HP Instant Ink Compatible",
+      "Enterprise LaserJet Solutions",
+      "Genuine HP Supplies"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "dji",
+    "name": "DJI",
+    "slug": "dji",
+    "tagline": "Authorized DJI Partner in Tanzania",
+    "description": "DJI is the global leader in drone technology and aerial imaging solutions. As an authorized DJI partner, Viabtech provides the latest DJI drones, gimbals, and accessories for commercial, industrial, and creative applications across East Africa.",
+    "logo": "/brands/dji-logo.svg",
+    "heroColor": "#1A1A1A",
+    "categories": ["Drones", "Gimbals", "Action Cameras", "Accessories"],
+    "highlights": [
+      "Authorized Partner",
+      "Commercial & Enterprise Drones",
+      "Aerial Imaging Solutions",
+      "Training & Support"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "godox",
+    "name": "Godox",
+    "slug": "godox",
+    "tagline": "Authorized Godox Partner in Tanzania",
+    "description": "Godox is a world-renowned manufacturer of professional lighting equipment for photographers and videographers. As an authorized Godox partner, Viabtech offers the complete range of Godox studio lights, flashes, and lighting accessories in Tanzania.",
+    "logo": "/brands/godox-logo.svg",
+    "heroColor": "#FF6600",
+    "categories": ["Studio Lights", "Speedlites", "LED Panels", "Lighting Accessories"],
+    "highlights": [
+      "Authorized Partner",
+      "Professional Studio Lighting",
+      "Portable Flash Systems",
+      "Full Warranty & Support"
+    ],
+    "authorized": true
   }
 ]

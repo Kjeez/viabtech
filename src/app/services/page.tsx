@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, ArrowRight, CheckCircle } from 'lucide-react';
+import { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, ArrowRight, CheckCircle, CalendarCheck, ShieldCheck, Cog } from 'lucide-react';
 import servicesData from '@/data/services.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = { title: 'Services', description: 'Professional printer services in Tanzania.' };
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi };
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, CalendarCheck, ShieldCheck, Cog };
 
 export default function ServicesPage() {
   return (

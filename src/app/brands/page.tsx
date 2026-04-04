@@ -4,7 +4,7 @@ import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Brands', description: 'Explore our authorized brand partnerships with Canon, Epson, Lenovo, and Dell.' };
+export const metadata: Metadata = { title: 'Brands', description: 'Explore our authorized brand partnerships with Epson, Canon, Lenovo, Dell, HP, DJI, and Godox.' };
 
 export default function BrandsPage() {
   return (
