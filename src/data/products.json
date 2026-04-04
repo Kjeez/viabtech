@@ -1,0 +1,338 @@
+[
+  {
+    "id": "canon-imageclass-mf269dw",
+    "name": "Canon imageCLASS MF269dw II",
+    "brand": "Canon",
+    "category": "Laser Printer",
+    "type": "Multifunction",
+    "price": 850000,
+    "currency": "TZS",
+    "image": "/products/canon-mf269dw.jpg",
+    "description": "Compact all-in-one monochrome laser printer with wireless connectivity, duplex printing, and mobile-ready features for small offices.",
+    "features": [
+      "Print, Copy, Scan, Fax",
+      "Up to 30 ppm",
+      "Wireless & USB Connectivity",
+      "Auto Duplex Printing",
+      "250-sheet Paper Capacity",
+      "Mobile Print Ready"
+    ],
+    "specs": {
+      "printSpeed": "30 ppm",
+      "resolution": "600 x 600 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "Wi-Fi, USB 2.0, Ethernet",
+      "weight": "12.5 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imageclass-lbp236dw",
+    "name": "Canon imageCLASS LBP236dw",
+    "brand": "Canon",
+    "category": "Laser Printer",
+    "type": "Single Function",
+    "price": 520000,
+    "currency": "TZS",
+    "image": "/products/canon-lbp236dw.jpg",
+    "description": "High-performance wireless monochrome laser printer with fast output and energy efficiency, ideal for busy work environments.",
+    "features": [
+      "Up to 40 ppm",
+      "Wireless Connectivity",
+      "Auto Duplex Printing",
+      "350-sheet Paper Capacity",
+      "Eco-Friendly Sleep Mode",
+      "Mobile Print Ready"
+    ],
+    "specs": {
+      "printSpeed": "40 ppm",
+      "resolution": "1200 x 1200 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "Wi-Fi, USB 2.0, Ethernet",
+      "weight": "8.4 kg"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-pixma-g3430",
+    "name": "Canon PIXMA G3430",
+    "brand": "Canon",
+    "category": "Inkjet Printer",
+    "type": "Ink Tank",
+    "price": 480000,
+    "currency": "TZS",
+    "image": "/products/canon-g3430.jpg",
+    "description": "Refillable ink tank wireless all-in-one printer offering extremely low running costs with high-volume printing capability.",
+    "features": [
+      "Print, Copy, Scan",
+      "Refillable Ink Tank",
+      "Wireless Connectivity",
+      "High Yield - 6000 pages black",
+      "Borderless Photo Printing",
+      "Compact Design"
+    ],
+    "specs": {
+      "printSpeed": "11 ipm (black)",
+      "resolution": "4800 x 1200 dpi",
+      "paperSize": "A4, Letter, 4x6",
+      "connectivity": "Wi-Fi, USB 2.0",
+      "weight": "6.4 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imageprograf-tc-20",
+    "name": "Canon imagePROGRAF TC-20",
+    "brand": "Canon",
+    "category": "Large Format",
+    "type": "Plotter",
+    "price": 3200000,
+    "currency": "TZS",
+    "image": "/products/canon-tc20.jpg",
+    "description": "24-inch large format printer for architects, engineers and designers. Produces high-quality CAD drawings, posters and presentations.",
+    "features": [
+      "24-inch Wide Format",
+      "4-Color Pigment Ink",
+      "Roll & Cut Sheet Feed",
+      "Auto Sheet Feeder",
+      "Wi-Fi & USB",
+      "Poster & CAD Printing"
+    ],
+    "specs": {
+      "printSpeed": "25 sec (A1)",
+      "resolution": "2400 x 1200 dpi",
+      "paperSize": "Up to 24 inches",
+      "connectivity": "Wi-Fi, USB 2.0, Ethernet",
+      "weight": "24 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "epson-ecotank-l3250",
+    "name": "Epson EcoTank L3250",
+    "brand": "Epson",
+    "category": "Inkjet Printer",
+    "type": "Ink Tank",
+    "price": 450000,
+    "currency": "TZS",
+    "image": "/products/epson-l3250.jpg",
+    "description": "Ultra-low-cost wireless all-in-one with integrated ink tank system. Print thousands of pages at a fraction of the cost.",
+    "features": [
+      "Print, Copy, Scan",
+      "Integrated Ink Tank",
+      "Wi-Fi & Wi-Fi Direct",
+      "4500 pages black / 7500 color",
+      "Borderless Printing",
+      "Epson Smart Panel App"
+    ],
+    "specs": {
+      "printSpeed": "10.5 ipm (black)",
+      "resolution": "5760 x 1440 dpi",
+      "paperSize": "A4, Letter, 4x6",
+      "connectivity": "Wi-Fi, USB 2.0",
+      "weight": "4.5 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "epson-ecotank-l5290",
+    "name": "Epson EcoTank L5290",
+    "brand": "Epson",
+    "category": "Inkjet Printer",
+    "type": "Ink Tank",
+    "price": 680000,
+    "currency": "TZS",
+    "image": "/products/epson-l5290.jpg",
+    "description": "All-in-one ink tank printer with fax, ADF, and Ethernet for small office productivity at ultra-low running costs.",
+    "features": [
+      "Print, Copy, Scan, Fax",
+      "30-page ADF",
+      "Ethernet & Wi-Fi",
+      "Integrated Ink Tank",
+      "High-Yield Ink Bottles",
+      "Epson iPrint"
+    ],
+    "specs": {
+      "printSpeed": "14.5 ipm (black)",
+      "resolution": "5760 x 1440 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "Wi-Fi, USB, Ethernet",
+      "weight": "6.7 kg"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "epson-wf-c5890",
+    "name": "Epson WorkForce Pro WF-C5890",
+    "brand": "Epson",
+    "category": "Inkjet Printer",
+    "type": "Business Inkjet",
+    "price": 1450000,
+    "currency": "TZS",
+    "image": "/products/epson-wfc5890.jpg",
+    "description": "Enterprise-level color multifunction printer with replaceable ink pack for high-volume office environments.",
+    "features": [
+      "Print, Copy, Scan, Fax",
+      "Replaceable Ink Pack",
+      "Up to 25 ppm color",
+      "Dual Paper Trays",
+      "4.3\" Touchscreen",
+      "Enterprise Security"
+    ],
+    "specs": {
+      "printSpeed": "25 ppm (color)",
+      "resolution": "4800 x 1200 dpi",
+      "paperSize": "A4, A3, Legal",
+      "connectivity": "Wi-Fi, USB, Ethernet, NFC",
+      "weight": "18.5 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "epson-surecolor-t3170",
+    "name": "Epson SureColor T3170",
+    "brand": "Epson",
+    "category": "Large Format",
+    "type": "Plotter",
+    "price": 2800000,
+    "currency": "TZS",
+    "image": "/products/epson-t3170.jpg",
+    "description": "24-inch wireless wide-format desktop printer for engineering and architectural applications with precision color output.",
+    "features": [
+      "24-inch Wide Format",
+      "UltraChrome XD2 Ink",
+      "Wireless Printing",
+      "Integrated Scanner Option",
+      "Roll & Cut Sheet",
+      "PrecisionCore Technology"
+    ],
+    "specs": {
+      "printSpeed": "34 sec (A1)",
+      "resolution": "2400 x 1200 dpi",
+      "paperSize": "Up to 24 inches",
+      "connectivity": "Wi-Fi, USB 3.0, Ethernet",
+      "weight": "20.8 kg"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "lenovo-mc3326adwe",
+    "name": "Lenovo MC3326adwe",
+    "brand": "Lenovo",
+    "category": "Laser Printer",
+    "type": "Multifunction",
+    "price": 620000,
+    "currency": "TZS",
+    "image": "/products/lenovo-mc3326.jpg",
+    "description": "Compact monochrome multifunction laser printer with cloud connectivity and a library of productivity apps.",
+    "features": [
+      "Print, Copy, Scan",
+      "Up to 40 ppm",
+      "Cloud & Mobile Managed",
+      "2.8\" Color Touchscreen",
+      "Auto Duplex",
+      "250 + 1 Sheet Input"
+    ],
+    "specs": {
+      "printSpeed": "40 ppm",
+      "resolution": "600 x 600 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "Wi-Fi, USB 2.0, Ethernet",
+      "weight": "11.4 kg"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "lenovo-cs735de",
+    "name": "Lenovo CS735de",
+    "brand": "Lenovo",
+    "category": "Laser Printer",
+    "type": "Color Laser",
+    "price": 2100000,
+    "currency": "TZS",
+    "image": "/products/lenovo-cs735de.jpg",
+    "description": "High-performance A4 color laser printer with enterprise-grade security, high-yield cartridges, and robust durability.",
+    "features": [
+      "Up to 50 ppm Color",
+      "Enterprise Security",
+      "High-Yield Toner",
+      "7\" Color Touchscreen",
+      "650 + 100 Sheet Input",
+      "Gigabit Ethernet"
+    ],
+    "specs": {
+      "printSpeed": "50 ppm (color)",
+      "resolution": "1200 x 1200 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "USB 2.0, Gigabit Ethernet",
+      "weight": "32.8 kg"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "dell-b2360dn",
+    "name": "Dell Smart Printer S2830dn",
+    "brand": "Dell",
+    "category": "Laser Printer",
+    "type": "Single Function",
+    "price": 580000,
+    "currency": "TZS",
+    "image": "/products/dell-s2830dn.jpg",
+    "description": "Reliable monochrome laser printer with fast print speeds, robust security and low total cost of ownership for workgroups.",
+    "features": [
+      "Up to 40 ppm",
+      "Auto Duplex",
+      "550 + 50 Sheet Input",
+      "Gigabit Ethernet",
+      "Mobile Print",
+      "Eco-Conscious Design"
+    ],
+    "specs": {
+      "printSpeed": "40 ppm",
+      "resolution": "1200 x 1200 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "USB 2.0, Gigabit Ethernet",
+      "weight": "12.2 kg"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "dell-c1760nw",
+    "name": "Dell Color Multifunction C1765nfw",
+    "brand": "Dell",
+    "category": "Laser Printer",
+    "type": "Multifunction",
+    "price": 780000,
+    "currency": "TZS",
+    "image": "/products/dell-c1765nfw.jpg",
+    "description": "Versatile color laser multifunction printer with wireless networking, ideal for home offices and small businesses.",
+    "features": [
+      "Print, Copy, Scan, Fax",
+      "Wireless Connectivity",
+      "Up to 15 ppm Color",
+      "Auto Document Feeder",
+      "150-sheet Input Tray",
+      "Mobile Print Ready"
+    ],
+    "specs": {
+      "printSpeed": "15 ppm (color)",
+      "resolution": "600 x 600 dpi",
+      "paperSize": "A4, Letter, Legal",
+      "connectivity": "Wi-Fi, USB 2.0, Ethernet",
+      "weight": "16.2 kg"
+    },
+    "inStock": true,
+    "featured": false
+  }
+]

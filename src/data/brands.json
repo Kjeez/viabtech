@@ -1,0 +1,70 @@
+[
+  {
+    "id": "canon",
+    "name": "Canon",
+    "slug": "canon",
+    "tagline": "Authorized Canon Dealer in Tanzania",
+    "description": "Canon is a global leader in imaging technology, offering a comprehensive range of printers, copiers, and multifunction devices for home and office use. As an authorized Canon dealer, Viabtech provides genuine Canon products with full warranty and after-sales support across Tanzania.",
+    "logo": "/brands/canon-logo.svg",
+    "heroColor": "#CC0000",
+    "categories": ["Laser Printer", "Inkjet Printer", "Large Format", "Scanner", "Copier"],
+    "highlights": [
+      "Authorized Dealer & Service Partner",
+      "Full Product Warranty",
+      "Genuine Canon Consumables",
+      "Enterprise & Home Solutions"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "epson",
+    "name": "Epson",
+    "slug": "epson",
+    "tagline": "Authorized Epson Dealer in Tanzania",
+    "description": "Epson leads the way in inkjet technology with its revolutionary EcoTank and WorkForce series. Viabtech is an authorized Epson dealer providing sales, support, and service for the full range of Epson printing solutions in Tanzania.",
+    "logo": "/brands/epson-logo.svg",
+    "heroColor": "#003399",
+    "categories": ["Inkjet Printer", "Large Format", "Label Printer", "Scanner", "Projector"],
+    "highlights": [
+      "Authorized Dealer & Service Partner",
+      "EcoTank Specialist",
+      "Wide Format Solutions",
+      "Professional Photo Printing"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "lenovo",
+    "name": "Lenovo",
+    "slug": "lenovo",
+    "tagline": "Lenovo Printing Solutions",
+    "description": "Lenovo offers a robust lineup of enterprise-grade laser printers and multifunction devices built for modern workplaces. Viabtech stocks the full range of Lenovo printing products with competitive pricing and technical support.",
+    "logo": "/brands/lenovo-logo.svg",
+    "heroColor": "#E2231A",
+    "categories": ["Laser Printer", "Multifunction"],
+    "highlights": [
+      "Enterprise-Grade Hardware",
+      "Cloud-Connected Printing",
+      "High-Volume Capability",
+      "Advanced Security Features"
+    ],
+    "authorized": false
+  },
+  {
+    "id": "dell",
+    "name": "Dell",
+    "slug": "dell",
+    "tagline": "Dell Printing Solutions",
+    "description": "Dell printers deliver reliable performance and low total cost of ownership for businesses of all sizes. Viabtech provides Dell printing solutions with expert setup, configuration, and ongoing support.",
+    "logo": "/brands/dell-logo.svg",
+    "heroColor": "#007DB8",
+    "categories": ["Laser Printer", "Multifunction"],
+    "highlights": [
+      "Business-Ready Performance",
+      "Low Running Costs",
+      "Robust Security",
+      "Easy Management Tools"
+    ],
+    "authorized": false
+  }
+]

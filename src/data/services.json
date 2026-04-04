@@ -1,0 +1,98 @@
+[
+  {
+    "id": "printer-sales",
+    "title": "Printer Sales & Consulting",
+    "slug": "printer-sales",
+    "icon": "ShoppingCart",
+    "shortDescription": "Expert guidance to help you choose the right printer for your business needs and budget.",
+    "description": "Our sales consultants work closely with you to understand your printing requirements and recommend the best solutions. From home offices to enterprise environments, we match you with the perfect printer from brands like Canon, Epson, Lenovo, and Dell.",
+    "features": [
+      "Free needs assessment and consultation",
+      "Competitive pricing on all brands",
+      "Bulk order discounts for enterprises",
+      "Trade-in programs for old equipment",
+      "Financing and leasing options",
+      "Delivery and installation included"
+    ]
+  },
+  {
+    "id": "printer-repair",
+    "title": "Printer Repair & Maintenance",
+    "slug": "printer-repair",
+    "icon": "Wrench",
+    "shortDescription": "Fast, reliable repair service for all major printer brands with genuine parts.",
+    "description": "Our certified technicians provide expert diagnosis and repair for all major printer brands. We use only genuine parts and offer quick turnaround times to minimize your downtime. From routine maintenance to complex repairs, we've got you covered.",
+    "features": [
+      "Expert diagnosis of all printer issues",
+      "Genuine parts replacement",
+      "Quick turnaround times",
+      "On-site service available",
+      "Preventive maintenance programs",
+      "Annual maintenance contracts"
+    ]
+  },
+  {
+    "id": "managed-print",
+    "title": "Managed Print Services",
+    "slug": "managed-print",
+    "icon": "Monitor",
+    "shortDescription": "Comprehensive print management to reduce costs and optimize your print infrastructure.",
+    "description": "Our Managed Print Services (MPS) provide end-to-end management of your printing infrastructure. We monitor, maintain, and optimize your entire print fleet, reducing costs by up to 30% while improving productivity and sustainability.",
+    "features": [
+      "Complete fleet assessment & optimization",
+      "Automated supply replenishment",
+      "Usage tracking and reporting",
+      "Cost reduction strategies",
+      "Environmental sustainability programs",
+      "24/7 remote monitoring"
+    ]
+  },
+  {
+    "id": "printer-rental",
+    "title": "Printer Rental & Leasing",
+    "slug": "printer-rental",
+    "icon": "Clock",
+    "shortDescription": "Flexible rental and leasing options for short-term projects or long-term operations.",
+    "description": "Whether you need printers for a one-day event or a multi-year office setup, our flexible rental and leasing programs have you covered. Enjoy the latest technology without the upfront investment, with maintenance and support included.",
+    "features": [
+      "Short-term event rentals",
+      "Long-term business leasing",
+      "Includes maintenance & support",
+      "Upgrade options available",
+      "Tax-efficient leasing plans",
+      "Delivery, setup & collection"
+    ]
+  },
+  {
+    "id": "consumables",
+    "title": "Consumables & Supplies",
+    "slug": "consumables",
+    "icon": "Package",
+    "shortDescription": "Genuine ink, toner, and paper supplies from authorized sources at competitive prices.",
+    "description": "Keep your printers running at peak performance with our range of genuine consumables. As authorized dealers for Canon and Epson, we guarantee authentic ink cartridges, toner, and specialty papers at competitive prices.",
+    "features": [
+      "Genuine Canon & Epson consumables",
+      "Competitive bulk pricing",
+      "Wide range of specialty papers",
+      "Fast delivery across Tanzania",
+      "Auto-replenishment programs",
+      "Recycling programs available"
+    ]
+  },
+  {
+    "id": "it-support",
+    "title": "IT & Network Setup",
+    "slug": "it-support",
+    "icon": "Wifi",
+    "shortDescription": "Professional installation and network integration for your printing infrastructure.",
+    "description": "Our IT specialists ensure your printers are properly installed, configured, and integrated into your network. We handle everything from basic USB setups to complex enterprise network printer deployments with security configurations.",
+    "features": [
+      "Network printer configuration",
+      "Wi-Fi and cloud print setup",
+      "Security configuration",
+      "Driver installation & updates",
+      "Multi-user environment setup",
+      "Remote printing solutions"
+    ]
+  }
+]
