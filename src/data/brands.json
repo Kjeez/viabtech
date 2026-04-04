@@ -117,5 +117,73 @@
       "Full Warranty & Support"
     ],
     "authorized": true
+  },
+  {
+    "id": "unomat",
+    "name": "Unomat",
+    "slug": "unomat",
+    "tagline": "Authorized Unomat Partner in Tanzania",
+    "description": "Unomat is a trusted name in photography and imaging accessories, offering a wide range of camera bags, tripods, memory card readers, and photo accessories. As an authorized Unomat partner, Viabtech provides the full range of Unomat products with genuine warranty and support.",
+    "logo": "/brands/unomat-logo.svg",
+    "heroColor": "#2E3A87",
+    "categories": ["Camera Bags", "Tripods", "Memory Card Readers", "Photo Accessories"],
+    "highlights": [
+      "Authorized Partner",
+      "Photography Accessories",
+      "Quality Camera Bags & Tripods",
+      "Full Warranty & Support"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "apc",
+    "name": "APC",
+    "slug": "apc",
+    "tagline": "Authorized APC Partner in Tanzania",
+    "description": "APC by Schneider Electric is the global leader in power protection and management solutions. As an authorized APC partner, Viabtech supplies UPS systems, surge protectors, and power management solutions to keep your critical equipment safe and running across Tanzania.",
+    "logo": "/brands/apc-logo.svg",
+    "heroColor": "#FF0000",
+    "categories": ["UPS Systems", "Surge Protectors", "Power Distribution", "Battery Backup"],
+    "highlights": [
+      "Authorized Partner",
+      "Uninterruptible Power Supply (UPS)",
+      "Surge Protection Solutions",
+      "Enterprise Power Management"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "sandisk",
+    "name": "SanDisk",
+    "slug": "sandisk",
+    "tagline": "Authorized SanDisk Partner in Tanzania",
+    "description": "SanDisk, a Western Digital brand, is the world's leading manufacturer of flash memory storage solutions. As an authorized SanDisk partner, Viabtech offers the complete range of SanDisk memory cards, USB flash drives, and portable SSDs for professionals and consumers.",
+    "logo": "/brands/sandisk-logo.svg",
+    "heroColor": "#ED1C24",
+    "categories": ["Memory Cards", "USB Flash Drives", "Portable SSDs", "microSD Cards"],
+    "highlights": [
+      "Authorized Partner",
+      "Professional Memory Cards",
+      "High-Speed Flash Storage",
+      "Genuine Products Guaranteed"
+    ],
+    "authorized": true
+  },
+  {
+    "id": "lexar",
+    "name": "Lexar",
+    "slug": "lexar",
+    "tagline": "Authorized Lexar Partner in Tanzania",
+    "description": "Lexar is a globally recognized brand specializing in high-performance memory cards and flash storage solutions for photographers, videographers, and professionals. As an authorized Lexar partner, Viabtech delivers genuine Lexar products with full warranty support.",
+    "logo": "/brands/lexar-logo.svg",
+    "heroColor": "#0066CC",
+    "categories": ["Memory Cards", "Card Readers", "USB Flash Drives", "Portable SSDs"],
+    "highlights": [
+      "Authorized Partner",
+      "Professional-Grade Memory Cards",
+      "High-Speed Card Readers",
+      "Full Warranty & Support"
+    ],
+    "authorized": true
   }
 ]
