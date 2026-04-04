@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  /* ── Vibrant corporate blue ── */
-  --color-primary: #009fe3;
-  --color-primary-dark: #0081b8;
-  --color-primary-light: #33b5ea;
-  --color-accent: #00c9a7;
-  --color-accent-dark: #00a88b;
+  /* ── Viabtech brand teal ── */
+  --color-primary: #1499AC;
+  --color-primary-dark: #0f7d8e;
+  --color-primary-light: #3db3c3;
+  --color-accent: #0fbcb3;
+  --color-accent-dark: #0d9e97;
 
   /* Surfaces — clean whites */
   --color-surface: #ffffff;

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  ArrowRight, ShieldCheck, Truck, Headphones, Award, Printer,
+  ArrowRight, ShieldCheck, Truck, Headphones, Award,
   Wrench, Package, ChevronRight, Star, Phone, MessageSquare,
   CheckCircle, Monitor,
 } from 'lucide-react';
@@ -114,16 +114,37 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Visual */}
-            <div className="relative flex items-center justify-center">
-              <div className="absolute w-[320px] h-[320px] rounded-full border-[30px] border-primary/[0.06]" />
-              <div className="absolute w-[220px] h-[220px] rounded-full bg-primary/[0.04]" />
-              <div className="relative w-36 h-36 rounded-3xl bg-white shadow-lg shadow-primary/10 flex items-center justify-center">
-                <Printer size={64} className="text-primary" />
+            <div className="relative order-1 lg:order-2">
+              {/* Decorative blue accent shape */}
+              <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
+                <Image
+                  src="/images/about.jpg"
+                  alt="Viabtech office and printing solutions"
+                  width={600}
+                  height={450}
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+              {/* Stats floating over bottom */}
+              <div className="absolute -bottom-6 right-4 left-4 grid grid-cols-3 gap-3">
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">10+</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Years</div>
+                </div>
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">11</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Brands</div>
+                </div>
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">2K+</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Clients</div>
+                </div>
               </div>
             </div>
 
             {/* Content */}
-            <div>
+            <div className="order-2 lg:order-1">
               <div className="section-badge">About Us</div>
               <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary mb-6">
                 Who We Are
@@ -135,9 +156,9 @@ export default function HomePage() {
                 high-quality products with exceptional customer service.
               </p>
               <p className="text-text-secondary leading-relaxed mb-8">
-                We are an authorized partner for major printer brands such as Canon, Epson,
-                Lenovo, and Dell, and we offer comprehensive solutions including printer sales,
-                repair, and maintenance services.
+                We are an authorized partner for major brands including Canon, Epson, HP,
+                Lenovo, Dell, DJI, Godox, Unomat, APC, SanDisk, and Lexar — offering
+                comprehensive solutions from printer sales to repair and maintenance services.
               </p>
               <Link
                 href="/about"
