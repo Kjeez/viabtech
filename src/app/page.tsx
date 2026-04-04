@@ -80,13 +80,13 @@ export default function HomePage() {
                 href={cat.href}
                 className="group category-card"
               >
-                <div className="category-card-image">
+                <div className="category-card-image relative">
                   <Image
                     src={cat.image}
                     alt={cat.name}
-                    width={400}
-                    height={320}
-                    className="object-contain w-auto h-full max-h-[240px] group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="category-card-label">
