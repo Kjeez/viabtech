@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShieldCheck, ArrowRight, Printer, Star } from 'lucide-react';
 import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
@@ -26,7 +27,9 @@ export default function BrandsPage() {
                 <div className={`grid lg:grid-cols-2 gap-10 items-center`}>
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-md" style={{ background: brand.heroColor }}>{brand.name.charAt(0)}</div>
+                      <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-md bg-white p-3 border border-border">
+                        <Image src={brand.logo} alt={brand.name} width={64} height={64} className="w-full h-full object-contain" />
+                      </div>
                       <div>
                         <h2 className="text-2xl sm:text-3xl font-bold font-[var(--font-heading)] text-text-primary">{brand.name}</h2>
                         {brand.authorized && <div className="flex items-center gap-1.5 text-primary text-sm mt-0.5"><ShieldCheck size={14} />{brand.tagline}</div>}

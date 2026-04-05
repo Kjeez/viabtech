@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Target, Eye, Users, ShieldCheck, Globe, ArrowRight, Heart, Zap, Building } from 'lucide-react';
 import type { Metadata } from 'next';
 import VideoShowcase from '@/components/VideoShowcase';
@@ -41,6 +42,60 @@ export default function AboutPage() {
             <p className="text-lg text-text-secondary leading-relaxed">
               Viabtech is Tanzania&apos;s premier authorized dealer for Canon and Epson, providing comprehensive printing solutions including sales, service, managed print, and IT support across East Africa.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ WHO WE ARE ═══════ */}
+      <section className="py-20 bg-gradient-to-br from-[#f8fbff] to-[#e8f4fd]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Visual */}
+            <div className="relative order-1 lg:order-2">
+              <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
+                <Image
+                  src="/images/about-us.jpg"
+                  alt="Viab Tech office at Uhuru Heights, Bibi Titi Mohamed Street, Dar es Salaam"
+                  width={600}
+                  height={450}
+                  className="object-cover w-full h-auto"
+                />
+              </div>
+              <div className="absolute -bottom-6 right-4 left-4 grid grid-cols-3 gap-3">
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">10+</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Years</div>
+                </div>
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">11</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Brands</div>
+                </div>
+                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
+                  <div className="text-xl font-bold text-primary">2K+</div>
+                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Clients</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="order-2 lg:order-1">
+              <div className="section-badge">About Us</div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary mb-6">
+                Who We Are
+              </h2>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                Viabtech is a leading printing solutions provider specializing in printer
+                supplies, IT hardware, and managed print services. Founded in 2015, we have
+                built our reputation as trusted printer suppliers in Tanzania by delivering
+                high-quality products with exceptional customer service.
+              </p>
+              <p className="text-text-secondary leading-relaxed mb-8">
+                We are an authorized partner for major brands including Canon, Epson, HP,
+                Lenovo, Dell, DJI, Godox, Unomat, APC, SanDisk, and Lexar — offering
+                comprehensive solutions from printer sales to repair and maintenance services.
+              </p>
+            </div>
           </div>
         </div>
       </section>

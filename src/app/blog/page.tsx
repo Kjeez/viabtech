@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PressSection from '@/components/PressSection';
 import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
 import blogData from '@/data/blog.json';
 import type { Metadata } from 'next';
@@ -59,6 +60,9 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      {/* ═══════ IN THE PRESS ═══════ */}
+      <PressSection />
     </>
   );
 }
