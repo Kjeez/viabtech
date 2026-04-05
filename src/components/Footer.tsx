@@ -79,17 +79,20 @@ export default function Footer() {
                 Expert sales, service, and support across East Africa.
               </p>
               <div className="space-y-3 text-sm">
-                <a href="tel:+255123456789" className="flex items-center gap-2.5 text-text-secondary hover:text-primary transition-colors">
-                  <Phone size={15} className="text-primary" />
-                  +255 123 456 789
+                <a href="tel:+255745700500" className="flex items-center gap-2.5 text-text-secondary hover:text-primary transition-colors">
+                  <Phone size={15} className="text-primary shrink-0" />
+                  +255 745 700 500 / +255 746 000 786
                 </a>
                 <a href="mailto:info@viabtech.co.tz" className="flex items-center gap-2.5 text-text-secondary hover:text-primary transition-colors">
-                  <Mail size={15} className="text-primary" />
+                  <Mail size={15} className="text-primary shrink-0" />
                   info@viabtech.co.tz
                 </a>
                 <div className="flex items-start gap-2.5 text-text-secondary">
-                  <MapPin size={15} className="text-primary mt-0.5 shrink-0" />
-                  <span>Posta / Kisutu Street, Dar es Salaam, Tanzania</span>
+                  <MapPin size={15} className="text-primary mt-1 shrink-0" />
+                  <div className="flex flex-col space-y-2">
+                    <div><strong className="text-text-primary">Epson Showroom:</strong> Uhuru Heights, Bibi Titi Mohamed Rd</div>
+                    <div><strong className="text-text-primary">Canon Showroom:</strong> Next to Peacock Hotel, Bibi Titi Mohamed Rd</div>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3 mt-6">

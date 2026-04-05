@@ -130,11 +130,11 @@ export default function Header() {
           {/* Phone + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:+255123456789"
+              href="tel:+255745700500"
               className="hidden md:flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-primary transition-colors"
             >
               <Phone size={16} className="text-primary" />
-              +255 123 456 789
+              +255 745 700 500
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -248,11 +248,11 @@ export default function Header() {
         {/* Bottom CTA */}
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-gray-100 bg-white">
           <a
-            href="tel:+255123456789"
+            href="tel:+255745700500"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
           >
             <Phone size={16} />
-            +255 123 456 789
+            +255 745 700 500
           </a>
         </div>
       </div>
