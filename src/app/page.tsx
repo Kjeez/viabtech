@@ -210,7 +210,8 @@ export default function HomePage() {
                   alt={brand.name}
                   width={120}
                   height={50}
-                  className="object-contain max-h-[50px] w-auto"
+                  style={{ width: 'auto', height: 'auto' }}
+                  className="object-contain max-h-[50px]"
                 />
               </Link>
             ))}
@@ -240,7 +241,8 @@ export default function HomePage() {
                       alt={`${brand.name} logo`}
                       width={140}
                       height={56}
-                      className="object-contain max-h-[56px] w-auto group-hover:scale-110 transition-transform duration-500"
+                      style={{ width: 'auto', height: 'auto' }}
+                      className="object-contain max-h-[56px] group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
 
