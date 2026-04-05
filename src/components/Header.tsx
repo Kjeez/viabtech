@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 
 const navigation = [
@@ -26,12 +27,39 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  // Close drawer on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setMobileDropdown(null);
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
+
+  const toggleMobileDropdown = (name: string) => {
+    setMobileDropdown((prev) => (prev === name ? null : name));
+  };
 
   return (
     <header
@@ -67,7 +95,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={`flex items-center gap-1 px-4 py-2.5 text-sm font-medium transition-colors rounded-lg ${
-                    item.name === 'Home'
+                    isActive(item.href)
                       ? 'text-primary'
                       : 'text-text-primary hover:text-primary'
                   }`}
@@ -119,37 +147,109 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ─── Mobile Drawer (Right Side Slide-In) ─── */}
+      {/* Backdrop overlay */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isOpen ? 'max-h-[500px] border-t border-border' : 'max-h-0'
+        className={`lg:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        style={{ top: 0 }}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Drawer panel */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 z-50 h-full w-[280px] sm:w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="bg-white px-4 py-4 space-y-1">
-          {navigation.map((item) => (
-            <div key={item.name}>
-              <Link
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 text-sm font-medium text-text-primary hover:text-primary hover:bg-surface-light rounded-lg transition-colors"
-              >
-                {item.name}
-              </Link>
-              {item.children?.map((child) => (
-                <Link
-                  key={child.name}
-                  href={child.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block pl-8 pr-4 py-2.5 text-sm text-text-muted hover:text-primary hover:bg-surface-light rounded-lg transition-colors"
-                >
-                  {child.name}
-                </Link>
-              ))}
-            </div>
-          ))}
+        {/* Drawer header — brand teal bar */}
+        <div className="bg-primary px-5 py-4 flex items-center justify-between">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
+            <Image
+              src="/images/logo1.png"
+              alt="Viabtech"
+              width={140}
+              height={40}
+              className="h-9 w-auto object-contain brightness-0 invert"
+            />
+          </Link>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+            aria-label="Close menu"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Navigation links */}
+        <nav className="overflow-y-auto h-[calc(100%-140px)]">
+          {navigation.map((item) => {
+            const active = isActive(item.href);
+            const hasChildren = !!item.children;
+            const isExpanded = mobileDropdown === item.name;
+
+            return (
+              <div key={item.name} className="border-b border-gray-100">
+                {hasChildren ? (
+                  <>
+                    {/* Parent with dropdown */}
+                    <button
+                      onClick={() => toggleMobileDropdown(item.name)}
+                      className={`w-full flex items-center justify-between px-5 py-3.5 text-[15px] font-medium transition-colors ${
+                        active || isExpanded
+                          ? 'bg-primary text-white'
+                          : 'text-text-primary hover:bg-surface-light'
+                      }`}
+                    >
+                      {item.name}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {/* Sub-links */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        isExpanded ? 'max-h-[300px]' : 'max-h-0'
+                      }`}
+                    >
+                      {item.children!.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block pl-8 pr-5 py-3 text-sm text-text-secondary hover:text-primary hover:bg-surface-light transition-colors border-l-2 border-primary/20"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-5 py-3.5 text-[15px] font-medium transition-colors ${
+                      active
+                        ? 'bg-primary text-white'
+                        : 'text-text-primary hover:bg-surface-light'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        {/* Bottom CTA */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-gray-100 bg-white">
           <a
             href="tel:+255123456789"
-            className="flex items-center gap-2 mx-4 mt-3 px-4 py-3 text-sm font-semibold text-primary"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
           >
             <Phone size={16} />
             +255 123 456 789
