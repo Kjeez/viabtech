@@ -371,12 +371,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════ IN THE PRESS ═══════ */}
-      <PressSection />
-
-      {/* ═══════ EVENT GALLERY ═══════ */}
-      <EventGallery />
-
       {/* ═══════ WHY VIABTECH ═══════ */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
