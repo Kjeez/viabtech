@@ -175,42 +175,118 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ BRANDS ═══════ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-[#f8fbff] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="mb-4">
-            <div className="section-badge">Our Brands</div>
+          <div className="text-center mb-14">
+            <div className="section-badge mx-auto">
+              <ShieldCheck size={12} /> Authorized Partners
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-              Browse by Brand
+              World-Class <span className="text-primary">Brands</span> We Represent
             </h2>
+            <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
+              Tanzania&apos;s most trusted distributor for 11 leading technology brands — all backed by
+              genuine warranty, expert support, and authorized service.
+            </p>
           </div>
-          <p className="text-text-secondary mb-10 max-w-2xl">
-            Experience quality and reliability with our curated selection of world-class
-            brands from trusted printer suppliers in Tanzania:
-          </p>
+        </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        {/* ── Infinite scrolling logo marquee ── */}
+        <div className="relative mb-16">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8fbff] to-transparent z-10 pointer-events-none" />
+
+          <div className="flex animate-scroll-x gap-12 py-6">
+            {/* Double the items for seamless loop */}
+            {[...brandsData, ...brandsData].map((brand, i) => (
+              <Link
+                key={`marquee-${brand.id}-${i}`}
+                href={`/brands#${brand.slug}`}
+                className="flex-shrink-0 w-[140px] h-[70px] flex items-center justify-center grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-500"
+              >
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={120}
+                  height={50}
+                  className="object-contain max-h-[50px] w-auto"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Featured brand cards grid ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {brandsData.map((brand) => (
               <Link
                 key={brand.id}
                 href={`/brands#${brand.slug}`}
-                className="group kepler-card flex flex-col items-center justify-center py-10 px-6"
+                className="group relative bg-white rounded-2xl border border-border/60 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-400 overflow-hidden"
               >
+                {/* Colored top accent line */}
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-4 group-hover:scale-110 transition-transform shadow-md"
+                  className="h-1 w-full"
                   style={{ background: brand.heroColor }}
-                >
-                  {brand.name.charAt(0)}
+                />
+
+                <div className="p-6 sm:p-7 flex flex-col items-center text-center">
+                  {/* Logo */}
+                  <div className="relative w-full h-14 mb-5 flex items-center justify-center">
+                    <Image
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      width={140}
+                      height={56}
+                      className="object-contain max-h-[56px] w-auto group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Brand name */}
+                  <h3 className="text-base font-bold text-text-primary group-hover:text-primary transition-colors mb-1.5">
+                    {brand.name}
+                  </h3>
+
+                  {/* Category tags */}
+                  <div className="flex flex-wrap justify-center gap-1 mb-3">
+                    {brand.categories.slice(0, 2).map((cat: string) => (
+                      <span key={cat} className="text-[10px] bg-gray-100 text-text-muted px-2 py-0.5 rounded-full">
+                        {cat}
+                      </span>
+                    ))}
+                    {brand.categories.length > 2 && (
+                      <span className="text-[10px] bg-gray-100 text-text-muted px-2 py-0.5 rounded-full">
+                        +{brand.categories.length - 2}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Authorized badge */}
+                  {brand.authorized && (
+                    <div className="flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary/[0.06] px-3 py-1 rounded-full">
+                      <ShieldCheck size={11} /> Authorized
+                    </div>
+                  )}
                 </div>
-                <span className="font-semibold text-text-primary group-hover:text-primary transition-colors text-center">
-                  {brand.name}
-                </span>
-                {brand.authorized && (
-                  <span className="flex items-center gap-1 text-xs text-primary mt-1.5">
-                    <ShieldCheck size={12} /> Authorized
-                  </span>
-                )}
+
+                {/* Hover arrow */}
+                <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ArrowRight size={13} className="text-primary" />
+                </div>
               </Link>
             ))}
+          </div>
+
+          {/* View all brands CTA */}
+          <div className="text-center mt-10">
+            <Link
+              href="/brands"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+            >
+              Explore All Brands <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

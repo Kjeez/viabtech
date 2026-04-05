@@ -43,6 +43,14 @@
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', system-ui, sans-serif;
+
+  /* Animations */
+  --animate-scroll-x: scroll-x 30s linear infinite;
+}
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ─ Base ─ */
