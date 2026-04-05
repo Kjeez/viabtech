@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { Target, Eye, Users, ShieldCheck, Globe, ArrowRight, Heart, Zap, Building } from 'lucide-react';
 import type { Metadata } from 'next';
+import VideoShowcase from '@/components/VideoShowcase';
+import PressSection from '@/components/PressSection';
+import EventGallery from '@/components/EventGallery';
 
 export const metadata: Metadata = { title: 'About Us', description: 'Learn about Viabtech – Tanzania\'s authorized Canon and Epson dealer.' };
 
@@ -9,7 +12,7 @@ const timeline = [
   { year: '2017', title: 'Canon Partnership', desc: 'Became an authorized Canon dealer and service partner.' },
   { year: '2019', title: 'Epson Authorization', desc: 'Added Epson to our authorized dealer portfolio.' },
   { year: '2021', title: 'Expansion', desc: 'Expanded with managed print services and IT support.' },
-  { year: '2023', title: 'Service Center', desc: 'Opened our dedicated authorized service and repair center.' },
+  { year: '2023', title: 'EA\'s 1st Epson Service Centre', desc: 'Launched East Africa\'s first Epson Experience & Service Centre — featured in The Citizen, Mwananchi, and Daily News.' },
   { year: '2025', title: 'Regional Growth', desc: 'Serving clients across East Africa with 1,500+ active customers.' },
 ];
 
@@ -103,6 +106,15 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* ═══════ VIDEO SHOWCASE ═══════ */}
+      <VideoShowcase />
+
+      {/* ═══════ IN THE PRESS ═══════ */}
+      <PressSection />
+
+      {/* ═══════ EVENT GALLERY ═══════ */}
+      <EventGallery />
 
       <section className="cta-section py-16">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center z-10">

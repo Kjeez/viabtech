@@ -8,6 +8,9 @@ import {
 import brandsData from '@/data/brands.json';
 import servicesData from '@/data/services.json';
 import HeroCarousel from '@/components/HeroCarousel';
+import VideoShowcase from '@/components/VideoShowcase';
+import PressSection from '@/components/PressSection';
+import EventGallery from '@/components/EventGallery';
 
 const categories = [
   {
@@ -171,6 +174,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ VIDEO SHOWCASE ═══════ */}
+      <VideoShowcase />
+
       {/* ═══════ BRANDS ═══════ */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -292,6 +298,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ IN THE PRESS ═══════ */}
+      <PressSection />
+
+      {/* ═══════ EVENT GALLERY ═══════ */}
+      <EventGallery />
+
       {/* ═══════ WHY VIABTECH ═══════ */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -323,6 +335,15 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═══════ VIDEO SHOWCASE — Epson Service Centre ═══════ */}
+      <VideoShowcase />
+
+      {/* ═══════ EVENT GALLERY ═══════ */}
+      <EventGallery />
+
+      {/* ═══════ PRESS COVERAGE ═══════ */}
+      <PressSection />
 
       {/* ═══════ CTA — Light gradient ═══════ */}
       <section className="cta-section py-20">
