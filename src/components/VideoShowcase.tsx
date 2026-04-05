@@ -80,7 +80,7 @@ export default function VideoShowcase() {
             <video
               ref={videoRef}
               className="w-full aspect-video object-cover"
-              poster="/images/gallery/2.jpeg"
+              poster="/images/video-poster.jpg"
               muted={isMuted}
               playsInline
               preload="metadata"

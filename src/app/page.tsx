@@ -122,8 +122,8 @@ export default function HomePage() {
               <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
                 <Image
-                  src="/images/about.jpg"
-                  alt="Viabtech office and printing solutions"
+                  src="/images/about-us.jpg"
+                  alt="Viab Tech office at Uhuru Heights, Bibi Titi Mohamed Street, Dar es Salaam"
                   width={600}
                   height={450}
                   className="object-cover w-full h-auto"
@@ -173,9 +173,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ═══════ VIDEO SHOWCASE ═══════ */}
-      <VideoShowcase />
 
       {/* ═══════ BRANDS ═══════ */}
       <section className="py-20 bg-white">
