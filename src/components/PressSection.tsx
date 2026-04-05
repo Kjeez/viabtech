@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Newspaper, ChevronLeft, ChevronRight, ExternalLink, Quote } from 'lucide-react';
+import Image from 'next/image';
+import { Newspaper, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const pressItems = [
   {
@@ -14,10 +15,22 @@ const pressItems = [
     highlight:
       'Officials from Epson and the managing director for Viab Tech Ltd, Shaikh Abdul Baqi, cut a ribbon to launch Epson\'s state-of-the-art service centre.',
     color: '#1a7a3d',
-    imagePath: '/images/press/citizen.jpg',
+    imagePath: '/images/press/1.png',
   },
   {
     id: 2,
+    newspaper: 'The Guardian',
+    date: 'July 2023',
+    headline: 'Epson opens EA\'s first experience, service centre in Tanzania',
+    excerpt:
+      'Epson, a leading global leader in printing and projectors, has launched East Africa\'s first Experience and additional Service Center in Dar es Salaam, Tanzania. The new center is a significant milestone for Epson.',
+    highlight:
+      'Epson\'s new Experience and Service Center in Dar es Salaam is a game-changer in the African printing industry.',
+    color: '#0055a5',
+    imagePath: '/images/press/2.png',
+  },
+  {
+    id: 3,
     newspaper: 'Mwananchi',
     date: 'July 2023',
     headline: 'Watanzania kunufaika ajira kituo kipya cha Epson',
@@ -26,10 +39,10 @@ const pressItems = [
     highlight:
       '"Kituo hiki kimeundwa ili kuwapatia wateja duka moja la huduma kwa mahitaji yao yote ya uchapishaji."',
     color: '#c41e3a',
-    imagePath: '/images/press/mwananchi.jpg',
+    imagePath: '/images/press/6.png',
   },
   {
-    id: 3,
+    id: 4,
     newspaper: 'Daily News',
     date: 'July 2023',
     headline: 'Why office equipment matters in reducing carbon emission',
@@ -38,7 +51,7 @@ const pressItems = [
     highlight:
       'The opening of the first experience and service centre is a significant milestone for Epson in Africa.',
     color: '#1a1a6e',
-    imagePath: '/images/press/dailynews.jpg',
+    imagePath: '/images/press/5.png',
   },
 ];
 
@@ -81,10 +94,9 @@ export default function PressSection() {
           </p>
         </div>
 
-        {/* Press cards — all three visible on desktop, carousel on mobile */}
-        {/* Desktop: Three cards */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-6">
-          {pressItems.map((item, idx) => (
+        {/* Desktop: cards with newspaper images */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-8">
+          {pressItems.map((item) => (
             <div
               key={item.id}
               className="press-card group kepler-card p-0 overflow-hidden"
@@ -97,34 +109,48 @@ export default function PressSection() {
                 style={{ background: item.color }}
               />
 
-              <div className="p-7">
-                {/* Newspaper + Date */}
-                <div className="flex items-center justify-between mb-4">
-                  <span
-                    className="text-sm font-bold tracking-wide"
-                    style={{ color: item.color }}
-                  >
-                    {item.newspaper}
-                  </span>
-                  <span className="text-xs text-text-muted">{item.date}</span>
+              <div className="grid sm:grid-cols-[200px_1fr] gap-0">
+                {/* Newspaper image */}
+                <div className="relative h-48 sm:h-full bg-gray-50">
+                  <Image
+                    src={item.imagePath}
+                    alt={`${item.newspaper} newspaper coverage`}
+                    fill
+                    className="object-cover sm:object-contain p-2"
+                    sizes="200px"
+                  />
                 </div>
 
-                {/* Headline */}
-                <h3 className="text-lg font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                  &ldquo;{item.headline}&rdquo;
-                </h3>
+                {/* Content */}
+                <div className="p-6">
+                  {/* Newspaper + Date */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span
+                      className="text-sm font-bold tracking-wide"
+                      style={{ color: item.color }}
+                    >
+                      {item.newspaper}
+                    </span>
+                    <span className="text-xs text-text-muted">{item.date}</span>
+                  </div>
 
-                {/* Excerpt */}
-                <p className="text-sm text-text-secondary leading-relaxed mb-4 line-clamp-3">
-                  {item.excerpt}
-                </p>
+                  {/* Headline */}
+                  <h3 className="text-base font-bold text-text-primary mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                    &ldquo;{item.headline}&rdquo;
+                  </h3>
 
-                {/* Quote highlight */}
-                <div className="bg-gradient-to-r from-primary/5 to-transparent rounded-lg p-4 border-l-3 border-primary/30">
-                  <Quote size={14} className="text-primary mb-1 opacity-60" />
-                  <p className="text-xs text-text-secondary italic leading-relaxed">
-                    {item.highlight}
+                  {/* Excerpt */}
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3 line-clamp-3">
+                    {item.excerpt}
                   </p>
+
+                  {/* Quote highlight */}
+                  <div className="bg-gradient-to-r from-primary/5 to-transparent rounded-lg p-3 border-l-3 border-primary/30">
+                    <Quote size={12} className="text-primary mb-1 opacity-60" />
+                    <p className="text-xs text-text-secondary italic leading-relaxed line-clamp-2">
+                      {item.highlight}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,6 +168,17 @@ export default function PressSection() {
               className="h-1.5 w-full transition-colors duration-500"
               style={{ background: current.color }}
             />
+
+            {/* Newspaper image */}
+            <div className="relative h-48 bg-gray-50">
+              <Image
+                src={current.imagePath}
+                alt={`${current.newspaper} newspaper coverage`}
+                fill
+                className="object-contain p-2"
+                sizes="100vw"
+              />
+            </div>
 
             <div className="p-7">
               <div className="flex items-center justify-between mb-4">

@@ -6,44 +6,39 @@ import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: '/images/gallery/ribbon-cutting.jpg',
-    alt: 'Ribbon cutting ceremony at the Epson Experience & Service Centre launch',
-    caption: 'Grand Inauguration — Ribbon Cutting Ceremony',
+    src: '/images/gallery/1.jpeg',
+    alt: 'Epson Experience Centre showroom with printers and products on display',
+    caption: 'State-of-the-Art Showroom Interior',
   },
   {
-    src: '/images/gallery/event-1.jpg',
-    alt: 'Cake cutting ceremony celebrating Epson 50th anniversary',
-    caption: 'Celebrating 50 Years of Epson Brand',
-  },
-  {
-    src: '/images/gallery/event-2.jpg',
-    alt: 'Team photo at Epson Experience Centre with displays',
-    caption: 'Viab Tech Team at the Experience Centre',
-  },
-  {
-    src: '/images/gallery/event-3.jpg',
-    alt: 'VIP guests and leadership at launch event',
-    caption: 'VIP Guests & Leadership',
-  },
-  {
-    src: '/images/gallery/store-1.jpg',
+    src: '/images/gallery/2.jpeg',
     alt: 'Epson Experience & Service Centre exterior with signage',
     caption: 'Epson Experience & Service Centre — Exterior',
   },
   {
-    src: '/images/gallery/store-2.jpg',
-    alt: 'Showroom interior with Epson product displays',
-    caption: 'State-of-the-Art Showroom Interior',
+    src: '/images/gallery/3.jpeg',
+    alt: 'Showroom interior with Epson 50 Years celebration display and product lineup',
+    caption: 'Celebrating 50 Years of Epson Brand',
   },
   {
-    src: '/images/gallery/store-3.jpg',
-    alt: 'Epson 50 years celebration balloon display',
-    caption: 'Celebrating 50 Years of Innovation',
+    src: '/images/gallery/4.jpeg',
+    alt: 'Viab Tech and Epson celebrating 50 years banner with product displays',
+    caption: '50 Years of Epson — 100 Million EcoTank Sold',
   },
   {
-    src: '/images/gallery/store-4.jpg',
-    alt: 'Product lineup display inside the service centre',
-    caption: 'Complete Product Lineup on Display',
+    src: '/images/gallery/5.jpeg',
+    alt: 'Cake cutting ceremony with Epson and Viab Tech team celebrating the launch',
+    caption: 'Grand Inauguration — Cake Cutting Ceremony',
+  },
+  {
+    src: '/images/gallery/6.jpeg',
+    alt: 'VIP guests and leadership at the Epson service centre launch',
+    caption: 'VIP Guests & Leadership',
+  },
+  {
+    src: '/images/gallery/WhatsApp Image 2026-04-04 at 5.53.02 PM.jpeg',
+    alt: 'Celebration cake for Epson 50 Years Brand and 100 Million milestone',
+    caption: 'Epson 50 Years — Celebration Cake',
   },
 ];
 

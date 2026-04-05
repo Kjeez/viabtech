@@ -80,13 +80,13 @@ export default function VideoShowcase() {
             <video
               ref={videoRef}
               className="w-full aspect-video object-cover"
-              poster="/images/video-poster.jpg"
+              poster="/images/gallery/2.jpeg"
               muted={isMuted}
               playsInline
               preload="metadata"
               onEnded={handleVideoEnd}
             >
-              <source src="/videos/epson-launch.mp4" type="video/mp4" />
+              <source src="/videos/launch.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
