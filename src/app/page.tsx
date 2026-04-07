@@ -469,38 +469,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â• VIDEO SHOWCASE â€” Epson Service Centre â•â•â•â•â•â•â• */}
+      {/* â• â• â• â• â• â• â•  VIDEO SHOWCASE â€” Epson Service Centre â• â• â• â• â• â• â•  */}
       <VideoShowcase />
 
-      {/* â•â•â•â•â•â•â• EVENT GALLERY â•â•â•â•â•â•â• */}
+      {/* â• â• â• â• â• â• â•  EVENT GALLERY â• â• â• â• â• â• â•  */}
       <EventGallery />
 
-      {/* â•â•â•â•â•â•â• PRESS COVERAGE â•â•â•â•â•â•â• */}
+      {/* â• â• â• â• â• â• â•  PRESS COVERAGE â• â• â• â• â• â• â•  */}
       <PressSection />
 
-      {/* â•â•â•â•â•â•â• CTA â€” Light gradient â•â•â•â•â•â•â• */}
-      <section className="cta-section py-20">
+      {/* â• â• â• â• â• â• â•  CTA â€” Deep Blue Variant â• â• â• â• â• â• â•  */}
+      <section className="relative py-24 bg-gradient-to-br from-[#003399] to-[#001738] overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
+        
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center z-10">
-          <div className="section-badge mx-auto">Get Started</div>
-          <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary mb-4">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white/10 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-6 border border-white/20 backdrop-blur-sm shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-2 animate-pulse" />
+            Get Started
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold font-[var(--font-heading)] text-white mb-5 drop-shadow-md">
             Ready to Upgrade Your Printing?
           </h2>
-          <p className="text-text-secondary text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
             Contact us today for a free consultation. Our experts will help you find
-            the perfect printing solution for your business.
+            the perfect commercial printing and projection solutions for your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 transition-all"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#001738] font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105 transition-all"
             >
-              Get a Free Quote <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              Get a Free Quote <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-[#0057B8]" />
             </Link>
             <a
-              href="tel:+255123456789"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border-2 border-text-primary text-text-primary font-semibold hover:bg-text-primary hover:text-white transition-all"
+              href="tel:+255745700500"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-white/30 text-white font-bold hover:bg-white/10 hover:border-white/50 transition-all"
             >
-              <Phone size={16} />
+              <Phone size={18} />
               Call Now
             </a>
           </div>

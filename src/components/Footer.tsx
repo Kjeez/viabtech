@@ -44,61 +44,67 @@ export default function Footer() {
   return (
     <footer>
       {/* Trust badges bar */}
-      <div className="bg-gradient-to-r from-[#e8f4fd] via-[#dbeafe] to-[#e8f4fd] py-6">
+      <div className="bg-gradient-to-r from-[#0057B8] via-[#003399] to-[#0057B8] py-6 shadow-inner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
             {trustBadges.map((badge) => (
-              <div key={badge.text} className="flex items-center gap-2.5 text-sm text-text-primary">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
-                  <badge.icon size={18} className="text-primary" />
+              <div key={badge.text} className="flex items-center gap-3 text-sm text-white">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                  <badge.icon size={20} className="text-cyan-300" />
                 </div>
-                <span className="font-medium">{badge.text}</span>
+                <span className="font-bold tracking-wide">{badge.text}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Main footer — light theme */}
-      <div className="bg-white border-t border-border">
+      {/* Main footer — Dark Premium Theme */}
+      <div className="bg-[#001738] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <Link href="/" className="inline-block mb-5">
+              <Link href="/" className="inline-block mb-6">
                 <Image
-                  src="/images/logo2.png"
+                  src="/images/logo1.png"
                   alt="Viabtech Limited"
-                  width={140}
-                  height={140}
-                  className="h-24 w-auto object-contain"
+                  width={160}
+                  height={160}
+                  className="h-20 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
                 />
               </Link>
-              <p className="text-text-secondary text-sm leading-relaxed max-w-sm mb-6">
+              <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
                 Tanzania&apos;s trusted authorized dealer for Canon and Epson printers.
                 Expert sales, service, and support across East Africa.
               </p>
-              <div className="space-y-3 text-sm">
-                <a href="tel:+255745700500" className="flex items-center gap-2.5 text-text-secondary hover:text-primary transition-colors">
-                  <Phone size={15} className="text-primary shrink-0" />
+              <div className="space-y-4 text-sm">
+                <a href="tel:+255745700500" className="flex items-center gap-3 text-white/80 hover:text-cyan-400 transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                     <Phone size={14} className="text-cyan-400 shrink-0" />
+                  </div>
                   +255 745 700 500 / +255 746 000 786
                 </a>
-                <a href="mailto:info@viabtech.co.tz" className="flex items-center gap-2.5 text-text-secondary hover:text-primary transition-colors">
-                  <Mail size={15} className="text-primary shrink-0" />
+                <a href="mailto:info@viabtech.co.tz" className="flex items-center gap-3 text-white/80 hover:text-cyan-400 transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                     <Mail size={14} className="text-cyan-400 shrink-0" />
+                  </div>
                   info@viabtech.co.tz
                 </a>
-                <div className="flex items-start gap-2.5 text-text-secondary">
-                  <MapPin size={15} className="text-primary mt-1 shrink-0" />
-                  <div className="flex flex-col space-y-2">
-                    <div><strong className="text-text-primary">Epson Showroom:</strong> Uhuru Heights, Bibi Titi Mohamed Rd</div>
-                    <div><strong className="text-text-primary">Canon Showroom:</strong> Next to Peacock Hotel, Bibi Titi Mohamed Rd</div>
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                     <MapPin size={14} className="text-cyan-400" />
+                  </div>
+                  <div className="flex flex-col space-y-2 mt-1.5">
+                    <div><strong className="text-white">Epson Showroom:</strong> Uhuru Heights, Bibi Titi Mohamed Rd</div>
+                    <div><strong className="text-white">Canon Showroom:</strong> Next to Peacock Hotel, Bibi Titi Mohamed Rd</div>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 mt-6">
+              <div className="flex items-center gap-3 mt-8">
                 {socialLinks.map((social) => (
                   <a key={social.name} href={social.href} aria-label={social.name}
-                    className="w-9 h-9 rounded-full bg-surface-light border border-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary/40 transition-all">
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all">
                     {social.icon}
                   </a>
                 ))}
@@ -107,11 +113,11 @@ export default function Footer() {
 
             {/* Products */}
             <div>
-              <h4 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Products</h4>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Products</h4>
               <ul className="space-y-3">
                 {footerLinks.products.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-sm text-text-secondary hover:text-primary transition-colors">{link.name}</Link>
+                    <Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -119,11 +125,11 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h4 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Services</h4>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Services</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-sm text-text-secondary hover:text-primary transition-colors">{link.name}</Link>
+                    <Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -131,22 +137,21 @@ export default function Footer() {
 
             {/* Need Help */}
             <div>
-              <h4 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Need Help</h4>
-              <div className="space-y-3 text-sm text-text-secondary">
-                <div className="flex items-start gap-2">
-                  <Clock size={14} className="text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p>Mon - Fri: 8:00 AM - 5:00 PM</p>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Need Help</h4>
+              <div className="space-y-4 text-sm text-white/70">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                     <Clock size={14} className="text-cyan-400" />
+                  </div>
+                  <div className="mt-1.5">
+                    <p className="mb-1">Mon - Fri: 8:00 AM - 5:00 PM</p>
                     <p>Sat: 9:00 AM - 1:00 PM</p>
                   </div>
                 </div>
-                <a href="mailto:info@viabtech.co.tz" className="block hover:text-primary transition-colors">
-                  info@viabtech.co.tz
-                </a>
               </div>
-              <div className="mt-6 space-y-2">
+              <div className="mt-8 space-y-3">
                 {footerLinks.company.map((link) => (
-                  <Link key={link.name} href={link.href} className="block text-sm text-text-secondary hover:text-primary transition-colors">
+                  <Link key={link.name} href={link.href} className="block text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 transition-all">
                     {link.name}
                   </Link>
                 ))}
@@ -155,13 +160,13 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-text-muted">
+          <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-white/50">
               © {new Date().getFullYear()} Viabtech. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-xs text-text-muted">
-              <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <div className="flex items-center gap-4 text-xs text-white/50">
+              <Link href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
