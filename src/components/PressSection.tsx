@@ -1,245 +1,167 @@
-'use client';
-
-import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { Newspaper, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const pressItems = [
   {
     id: 1,
     newspaper: 'The Citizen',
-    date: 'July 14, 2023',
-    headline: 'Epson opens EA\'s service centre in Dar',
-    excerpt:
-      'Dar es Salaam. A Global dealer in printing and projectors, Epson, has launched East Africa\'s state-of-the-art service centre in Dar es Salaam as it expands its footprint in the African market.',
-    highlight:
-      'Officials from Epson and the managing director for Viab Tech Ltd, Shaikh Abdul Baqi, cut a ribbon to launch Epson\'s state-of-the-art service centre.',
-    color: '#1a7a3d',
+    color: '#1c914b', // Vivid green
+    shadowColor: 'rgba(28, 145, 75, 0.4)',
     imagePath: '/images/press/1.png',
   },
   {
     id: 2,
     newspaper: 'The Guardian',
-    date: 'July 2023',
-    headline: 'Epson opens EA\'s first experience, service centre in Tanzania',
-    excerpt:
-      'Epson, a leading global leader in printing and projectors, has launched East Africa\'s first Experience and additional Service Center in Dar es Salaam, Tanzania. The new center is a significant milestone for Epson.',
-    highlight:
-      'Epson\'s new Experience and Service Center in Dar es Salaam is a game-changer in the African printing industry.',
-    color: '#0055a5',
+    color: '#1a1b6c', // Deep blue/navy
+    shadowColor: 'rgba(26, 27, 108, 0.4)',
     imagePath: '/images/press/2.png',
   },
   {
     id: 3,
-    newspaper: 'Mwananchi',
-    date: 'July 2023',
-    headline: 'Watanzania kunufaika ajira kituo kipya cha Epson',
-    excerpt:
-      'Watanzania watanufaika na ajira katika duka jipya la kampuni ya uuzaji vifaa vya kuchapisha na projectors la Epson. Kituo hiki kimeundwa ili kuwapatia wateja duka moja la huduma kwa mahitaji yao.',
-    highlight:
-      '"Kituo hiki kimeundwa ili kuwapatia wateja duka moja la huduma kwa mahitaji yao yote ya uchapishaji."',
-    color: '#c41e3a',
-    imagePath: '/images/press/6.png',
+    newspaper: 'Daily News',
+    color: '#1c3d52', // Dark teal/slate
+    shadowColor: 'rgba(28, 61, 82, 0.4)',
+    imagePath: '/images/press/5.png',
   },
   {
     id: 4,
-    newspaper: 'Daily News',
-    date: 'July 2023',
-    headline: 'Why office equipment matters in reducing carbon emission',
-    excerpt:
-      'Tanzanians have been advised to use environmentally friendly office equipment to reduce carbon emissions. EcoTank pigment ink technology delivers sharp text while cutting heat emission by over 80 per cent.',
-    highlight:
-      'The opening of the first experience and service centre is a significant milestone for Epson in Africa.',
-    color: '#1a1a6e',
-    imagePath: '/images/press/5.png',
+    newspaper: 'Mwananchi',
+    color: '#5b2f81', // Purple
+    shadowColor: 'rgba(91, 47, 129, 0.4)',
+    imagePath: '/images/press/6.png',
   },
 ];
 
 export default function PressSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const goNext = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % pressItems.length);
-  }, []);
-
-  const goPrev = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + pressItems.length) % pressItems.length);
-  }, []);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const timer = setInterval(goNext, 5000);
-    return () => clearInterval(timer);
-  }, [isAutoPlaying, goNext]);
-
-  const current = pressItems[activeIndex];
-
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      {/* Subtle background */}
-      <div className="absolute inset-0 opacity-30 dot-pattern" />
+    <section className="py-20 relative overflow-hidden bg-white">
+      {/* Background layer for the dark section (extends to the bottom, leaves space at top for title) */}
+      <div className="absolute top-[160px] bottom-0 left-0 right-0 bg-[#001738] z-0" />
+      
+      {/* Decorative glowing dots in the dark background */}
+      <div className="absolute top-[250px] right-[5%] w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_15px_6px_rgba(34,211,238,0.5)] z-0" />
+      <div className="absolute top-[320px] right-[2%] w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_4px_rgba(34,211,238,0.4)] z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <div className="section-badge mx-auto">
-            <Newspaper size={12} /> Media Coverage
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-            In The <span className="text-primary">Press</span>
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 relative z-10">
+        
+        {/* Title Area */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight">
+            <span className="text-text-primary uppercase tracking-widest font-sans">IN THE</span> PRESS
           </h2>
-          <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
-            Our Epson Experience &amp; Service Centre launch made headlines across Tanzania&apos;s leading newspapers.
-          </p>
         </div>
 
-        {/* Desktop: cards with newspaper images */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8">
-          {pressItems.map((item) => (
-            <div
-              key={item.id}
-              className="press-card group kepler-card p-0 overflow-hidden"
-              onMouseEnter={() => setIsAutoPlaying(false)}
-              onMouseLeave={() => setIsAutoPlaying(true)}
-            >
-              {/* Colored header bar */}
-              <div
-                className="h-1.5 w-full"
-                style={{ background: item.color }}
-              />
-
-              <div className="grid sm:grid-cols-[200px_1fr] gap-0">
-                {/* Newspaper image */}
-                <div className="relative h-48 sm:h-full bg-gray-50">
-                  <Image
-                    src={item.imagePath}
-                    alt={`${item.newspaper} newspaper coverage`}
-                    fill
-                    className="object-cover sm:object-contain p-2"
-                    sizes="200px"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {/* Newspaper + Date */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span
-                      className="text-sm font-bold tracking-wide"
-                      style={{ color: item.color }}
-                    >
-                      {item.newspaper}
-                    </span>
-                    <span className="text-xs text-text-muted">{item.date}</span>
-                  </div>
-
-                  {/* Headline */}
-                  <h3 className="text-base font-bold text-text-primary mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                    &ldquo;{item.headline}&rdquo;
-                  </h3>
-
-                  {/* Excerpt */}
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3 line-clamp-3">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Quote highlight */}
-                  <div className="bg-gradient-to-r from-primary/5 to-transparent rounded-lg p-3 border-l-3 border-primary/30">
-                    <Quote size={12} className="text-primary mb-1 opacity-60" />
-                    <p className="text-xs text-text-secondary italic leading-relaxed line-clamp-2">
-                      {item.highlight}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: Carousel */}
-        <div className="lg:hidden">
-          <div
-            className="press-card kepler-card p-0 overflow-hidden"
-            onTouchStart={() => setIsAutoPlaying(false)}
-            onTouchEnd={() => setIsAutoPlaying(true)}
+        {/* Newspaper Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6 mt-8">
+          
+          {/* Card 1: Citizen (Tall, spans 4 cols) */}
+          <div 
+            className="md:col-span-4 flex flex-col rounded-2xl overflow-hidden bg-white z-10 hover:scale-[1.02] transition-transform duration-300"
+            style={{ 
+              border: `2px solid ${pressItems[0].color}`, 
+              boxShadow: `0 10px 40px -10px ${pressItems[0].shadowColor}` 
+            }}
           >
-            <div
-              className="h-1.5 w-full transition-colors duration-500"
-              style={{ background: current.color }}
-            />
-
-            {/* Newspaper image */}
-            <div className="relative h-48 bg-gray-50">
-              <Image
-                src={current.imagePath}
-                alt={`${current.newspaper} newspaper coverage`}
-                fill
-                className="object-contain p-2"
-                sizes="100vw"
-              />
-            </div>
-
-            <div className="p-7">
-              <div className="flex items-center justify-between mb-4">
-                <span
-                  className="text-sm font-bold tracking-wide"
-                  style={{ color: current.color }}
-                >
-                  {current.newspaper}
-                </span>
-                <span className="text-xs text-text-muted">{current.date}</span>
-              </div>
-
-              <h3 className="text-lg font-bold text-text-primary mb-3 leading-snug">
-                &ldquo;{current.headline}&rdquo;
-              </h3>
-
-              <p className="text-sm text-text-secondary leading-relaxed mb-4">
-                {current.excerpt}
-              </p>
-
-              <div className="bg-gradient-to-r from-primary/5 to-transparent rounded-lg p-4 border-l-3 border-primary/30">
-                <Quote size={14} className="text-primary mb-1 opacity-60" />
-                <p className="text-xs text-text-secondary italic leading-relaxed">
-                  {current.highlight}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile nav */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button
-              onClick={goPrev}
-              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
-              aria-label="Previous"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <div className="flex gap-2">
-              {pressItems.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    i === activeIndex
-                      ? 'bg-primary w-8'
-                      : 'bg-primary/20 hover:bg-primary/40'
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
+             <div 
+                className="text-white font-bold px-5 py-3 text-2xl tracking-wide font-serif"
+                style={{ backgroundColor: pressItems[0].color }}
+             >
+                {pressItems[0].newspaper}
+             </div>
+             <div className="relative min-h-[450px] md:min-h-[500px] w-full flex-grow p-1">
+                <Image 
+                  src={pressItems[0].imagePath} 
+                  fill 
+                  className="object-cover object-top rounded-b-xl" 
+                  alt={`${pressItems[0].newspaper} coverage`} 
                 />
-              ))}
-            </div>
-            <button
-              onClick={goNext}
-              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
-              aria-label="Next"
-            >
-              <ChevronRight size={18} />
-            </button>
+             </div>
           </div>
+
+          {/* Card 2: Guardian (Tall, spans 4 cols) */}
+          <div 
+            className="md:col-span-4 flex flex-col rounded-2xl overflow-hidden bg-white z-10 hover:scale-[1.02] transition-transform duration-300"
+            style={{ 
+              border: `2px solid ${pressItems[1].color}`, 
+              boxShadow: `0 10px 40px -10px ${pressItems[1].shadowColor}` 
+            }}
+          >
+             <div 
+                className="text-white font-bold px-5 py-3 text-2xl tracking-wide font-serif"
+                style={{ backgroundColor: pressItems[1].color }}
+             >
+                {pressItems[1].newspaper}
+             </div>
+             <div className="relative min-h-[450px] md:min-h-[500px] w-full flex-grow p-1">
+                <Image 
+                  src={pressItems[1].imagePath} 
+                  fill 
+                  className="object-cover object-top rounded-b-xl" 
+                  alt={`${pressItems[1].newspaper} coverage`} 
+                />
+             </div>
+          </div>
+
+          {/* Card 3 & 4 Stacked (Spans 4 cols) */}
+          <div className="md:col-span-4 flex flex-col gap-5 lg:gap-6 z-10">
+             
+             {/* Card 3: Daily News (Short, top) */}
+             <div 
+                className="flex-1 flex flex-col rounded-2xl overflow-hidden bg-white hover:scale-[1.02] transition-transform duration-300"
+                style={{ 
+                  border: `2px solid ${pressItems[2].color}`, 
+                  boxShadow: `0 10px 40px -10px ${pressItems[2].shadowColor}` 
+                }}
+             >
+                <div 
+                    className="text-white font-bold px-5 py-3 text-2xl tracking-wide font-serif"
+                    style={{ backgroundColor: pressItems[2].color }}
+                >
+                    {pressItems[2].newspaper}
+                </div>
+                <div className="relative min-h-[220px] w-full flex-grow p-1">
+                    <Image 
+                      src={pressItems[2].imagePath} 
+                      fill 
+                      className="object-cover object-top rounded-b-xl" 
+                      alt={`${pressItems[2].newspaper} coverage`} 
+                    />
+                </div>
+             </div>
+
+             {/* Card 4: Mwananchi (Short, bottom) */}
+             <div 
+                className="flex-1 flex flex-col rounded-2xl overflow-hidden bg-white hover:scale-[1.02] transition-transform duration-300"
+                style={{ 
+                  border: `2px solid ${pressItems[3].color}`, 
+                  boxShadow: `0 10px 40px -10px ${pressItems[3].shadowColor}` 
+                }}
+             >
+                <div 
+                    className="text-white font-bold px-5 py-3 text-2xl tracking-wide font-serif"
+                    style={{ backgroundColor: pressItems[3].color }}
+                >
+                    {pressItems[3].newspaper}
+                </div>
+                <div className="relative min-h-[220px] w-full flex-grow p-1">
+                    <Image 
+                      src={pressItems[3].imagePath} 
+                      fill 
+                      className="object-cover object-top rounded-b-xl" 
+                      alt={`${pressItems[3].newspaper} coverage`} 
+                    />
+                </div>
+             </div>
+
+          </div>
+
         </div>
+
+        {/* Optional Carousel Indicators for decorative purposes (like in the image) */}
+        <div className="flex justify-center items-center gap-2 mt-8">
+           <div className="w-8 h-1.5 rounded-full bg-cyan-400"></div>
+           <div className="w-8 h-1.5 rounded-full bg-cyan-400/30"></div>
+        </div>
+
       </div>
     </section>
   );
