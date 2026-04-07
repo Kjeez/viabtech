@@ -250,7 +250,7 @@ export default function HomePage() {
               <Link
                 key={`marquee-${brand.id}-${i}`}
                 href={`/brands#${brand.slug}`}
-                className="flex-shrink-0 w-[140px] h-[70px] flex items-center justify-center grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-500"
+                className="flex-shrink-0 w-[140px] h-[64px] mx-2 flex items-center justify-center bg-white/95 rounded-xl border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.03)] opacity-60 hover:opacity-100 transition-all duration-500 overflow-hidden"
               >
                 <Image
                   src={brand.logo}
@@ -258,7 +258,7 @@ export default function HomePage() {
                   width={120}
                   height={50}
                   style={{ width: 'auto', height: 'auto' }}
-                  className="object-contain max-h-[50px] brightness-0 invert"
+                  className="object-contain max-h-[40px] max-w-[100px] mix-blend-multiply"
                 />
               </Link>
             ))}
@@ -272,24 +272,24 @@ export default function HomePage() {
               <Link
                 key={brand.id}
                 href={`/brands#${brand.slug}`}
-                className="group relative bg-[#111827] rounded-2xl border border-gray-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-400 overflow-hidden"
+                className="group relative bg-[#111827] rounded-3xl border border-gray-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-400 overflow-hidden"
               >
                 {/* Colored top accent line */}
                 <div
-                  className="h-1 w-full"
+                  className="h-1.5 w-full"
                   style={{ background: brand.heroColor }}
                 />
 
                 <div className="p-6 sm:p-7 flex flex-col items-center text-center">
-                  {/* Logo */}
-                  <div className="relative w-full h-14 mb-5 flex items-center justify-center">
+                  {/* Modern White Logo Badge */}
+                  <div className="relative w-[130px] h-[68px] mb-6 flex flex-col items-center justify-center bg-white rounded-2xl border-4 border-[#111827] shadow-[0_0_15px_rgba(0,0,0,0.5)] overflow-hidden inset-ring-inner">
                     <Image
                       src={brand.logo}
                       alt={`${brand.name} logo`}
-                      width={140}
-                      height={56}
+                      width={110}
+                      height={44}
                       style={{ width: 'auto', height: 'auto' }}
-                      className="object-contain max-h-[56px] group-hover:scale-110 transition-transform duration-500 brightness-0 invert"
+                      className="object-contain max-h-[44px] max-w-[100px] mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
 
