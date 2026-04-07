@@ -20,7 +20,7 @@ const slides = [
     subtext: 'From the flagship EOS R1 to the compact EOS R50 — professional mirrorless cameras, RF lenses, and accessories for every photographer.',
     cta1: { label: 'Shop Cameras', href: '/products?category=Camera' },
     cta2: { label: 'Browse Lenses', href: '/products?category=Lens' },
-    image: '/images/categories/camera.png',
+    image: '/images/products/canon-camera.png',
     imageAlt: 'Canon EOS R mirrorless camera system',
     imageWidth: 600,
     imageHeight: 500,
@@ -40,7 +40,7 @@ const slides = [
     subtext: '3LCD laser and lamp projectors for boardrooms, classrooms, and home cinema — vivid colors, zero maintenance, brilliant presentations.',
     cta1: { label: 'View Projectors', href: '/products?category=Projector' },
     cta2: { label: 'Contact Sales', href: '/contact' },
-    image: '/images/categories/projector.png',
+    image: '/images/products/epson-projector.png',
     imageAlt: 'Epson business and home cinema projectors',
     imageWidth: 600,
     imageHeight: 500,
@@ -123,7 +123,7 @@ export default function HeroCarousel() {
                 alt={slide.imageAlt}
                 width={slide.imageWidth}
                 height={slide.imageHeight}
-                className="relative z-10 w-full h-auto drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)]"
+                className="relative z-10 w-full h-auto drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)] mix-blend-multiply"
                 priority={current === 0}
               />
             </div>
