@@ -44,13 +44,13 @@ export default function Footer() {
   return (
     <footer>
       {/* Trust badges bar */}
-      <div className="bg-gradient-to-r from-[#0057B8] via-[#003399] to-[#0057B8] py-6 shadow-inner">
+      <div className="bg-white py-6 border-b border-gray-100 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
             {trustBadges.map((badge) => (
-              <div key={badge.text} className="flex items-center gap-3 text-sm text-white">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-                  <badge.icon size={20} className="text-cyan-300" />
+              <div key={badge.text} className="flex items-center gap-3 text-sm text-[#0f1c2e]">
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 shadow-sm">
+                  <badge.icon size={20} className="text-primary drop-shadow-sm" />
                 </div>
                 <span className="font-bold tracking-wide">{badge.text}</span>
               </div>
