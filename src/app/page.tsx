@@ -109,9 +109,9 @@ export default function HomePage() {
               <AnimatedSection key={cat.name} animation="scale-in" delay={idx * 80}>
                 <Link
                   href={cat.href}
-                  className="group category-card-dark"
+                  className="group category-card-dark rounded-[1.25rem] overflow-hidden shadow-lg"
                 >
-                  <div className="category-card-image relative">
+                  <div className="category-card-image relative rounded-t-[1.25rem] overflow-hidden">
                     <Image
                       src={cat.image}
                       alt={cat.name}
@@ -125,11 +125,11 @@ export default function HomePage() {
                       style={{ backgroundColor: cat.color }}
                     />
                     {/* Icon badge */}
-                    <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-[#111827]/90 backdrop-blur-sm flex items-center justify-center shadow-md border border-gray-800 group-hover:scale-110 transition-transform">
+                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#111827]/90 backdrop-blur-sm flex items-center justify-center shadow-md border border-gray-800 group-hover:scale-110 transition-transform hidden sm:flex">
                       <cat.icon size={18} style={{ color: cat.color }} />
                     </div>
                   </div>
-                  <div className="category-card-label flex items-center justify-between">
+                  <div className="category-card-label flex items-center justify-between p-5 rounded-b-[1.25rem] bg-[#111827]">
                     <h3 className="font-semibold text-white group-hover:text-primary-light transition-colors text-base">
                       {cat.name}
                     </h3>
@@ -163,8 +163,9 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Visual */}
             <AnimatedSection animation="slide-right" className="relative order-1 lg:order-2">
-              {/* Decorative blue accent shape */}
+              {/* Decorative blue accent shapes */}
               <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
                 <Image
                   src="/images/about-us.jpg"
@@ -454,14 +455,32 @@ export default function HomePage() {
               { icon: Award, title: 'Best Value', desc: 'Competitive pricing, bulk discounts, and flexible financing.', color: '#FF6600' },
             ].map((item, idx) => (
               <AnimatedSection key={item.title} animation="scale-in" delay={idx * 100}>
-                <div className="kepler-card-dark p-7 text-center group relative overflow-hidden">
-                  {/* Colorful top accent */}
-                  <div className="absolute top-0 left-0 right-0 h-1" style={{ background: item.color }} />
-                  <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: `${item.color}25` }}>
-                    <item.icon size={28} style={{ color: item.color }} />
+                <div 
+                  className="relative p-8 rounded-3xl bg-[#111827]/80 backdrop-blur-xl border border-white/5 hover:border-gray-600 transition-all duration-500 overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]"
+                  style={{ '--hover-color': item.color } as React.CSSProperties}
+                >
+                  {/* Background glowing blob */}
+                  <div 
+                    className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+                    style={{ background: item.color }}
+                  />
+                  
+                  {/* Glowing top line */}
+                  <div 
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1 rounded-b-full opacity-50 group-hover:w-full group-hover:opacity-100 transition-all duration-500"
+                    style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }}
+                  />
+
+                  {/* Icon Container */}
+                  <div 
+                    className="relative w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6 border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" 
+                    style={{ background: `linear-gradient(135deg, ${item.color}20, ${item.color}05)` }}
+                  >
+                    <item.icon size={28} style={{ color: item.color }} className="drop-shadow-lg" />
                   </div>
-                  <h3 className="font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-400">{item.desc}</p>
+                  
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[var(--hover-color)] transition-colors">{item.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
