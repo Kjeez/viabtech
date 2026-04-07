@@ -82,24 +82,24 @@ const categories = [
 export default function HomePage() {
   return (
     <>
-      {/* â• â• â• â• â• â• â•  HERO CAROUSEL â• â• â• â• â• â• â•  */}
+      {/* ══════ HERO CAROUSEL ══════ */}
       <HeroCarousel />
 
-      {/* â• â• â• â• â• â• â•  CATEGORIES â• â• â• â• â• â• â•  */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* ══════ CATEGORIES ══════ */}
+      <section className="py-20 bg-[#0b1120] relative overflow-hidden">
         {/* Decorative floating shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#CC0000]/5 to-transparent blur-2xl pointer-events-none animate-float" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-gradient-to-br from-[#003399]/5 to-transparent blur-2xl pointer-events-none animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#CC0000]/10 to-transparent blur-2xl pointer-events-none animate-float" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-gradient-to-br from-[#003399]/10 to-transparent blur-2xl pointer-events-none animate-float" style={{ animationDelay: '2s' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="mb-12 text-center">
-              <div className="section-badge mx-auto">Categories</div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-                Browse by <span className="text-primary">Category</span>
+              <div className="section-badge mx-auto bg-white/5 text-white border-white/10">Categories</div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-white">
+                Browse by <span className="text-primary-light">Category</span>
               </h2>
-              <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
-                From Canon cameras to Epson projectors â€” explore our complete product lineup.
+              <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
+                From Canon cameras to Epson projectors — explore our complete product lineup.
               </p>
             </div>
           </AnimatedSection>
@@ -109,7 +109,7 @@ export default function HomePage() {
               <AnimatedSection key={cat.name} animation="scale-in" delay={idx * 80}>
                 <Link
                   href={cat.href}
-                  className="group category-card"
+                  className="group category-card-dark"
                 >
                   <div className="category-card-image relative">
                     <Image
@@ -125,15 +125,15 @@ export default function HomePage() {
                       style={{ backgroundColor: cat.color }}
                     />
                     {/* Icon badge */}
-                    <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-[#111827]/90 backdrop-blur-sm flex items-center justify-center shadow-md border border-gray-800 group-hover:scale-110 transition-transform">
                       <cat.icon size={18} style={{ color: cat.color }} />
                     </div>
                   </div>
                   <div className="category-card-label flex items-center justify-between">
-                    <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors text-base">
+                    <h3 className="font-semibold text-white group-hover:text-primary-light transition-colors text-base">
                       {cat.name}
                     </h3>
-                    <ArrowRight size={14} className="text-text-muted group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    <ArrowRight size={14} className="text-gray-400 group-hover:text-primary-light group-hover:translate-x-1 transition-all" />
                   </div>
                 </Link>
               </AnimatedSection>
@@ -219,30 +219,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â• BRANDS â•â•â•â•â•â•â• */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#f8fbff] overflow-hidden">
+      {/* ═══ BRANDS ═══ */}
+      <section className="py-20 bg-[#0a0a0a] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-14">
-              <div className="section-badge mx-auto">
+              <div className="section-badge mx-auto bg-white/5 text-white border-white/10">
                 <ShieldCheck size={12} /> Authorized Partners
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-                World-Class <span className="text-primary">Brands</span> We Represent
+              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-white">
+                World-Class <span className="text-primary-light">Brands</span> We Represent
               </h2>
-              <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
-                Tanzania&apos;s most trusted distributor for 11 leading technology brands â€” all backed by
+              <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
+                Tanzania&apos;s most trusted distributor for 11 leading technology brands — all backed by
                 genuine warranty, expert support, and authorized service.
               </p>
             </div>
           </AnimatedSection>
         </div>
 
-        {/* â”€â”€ Infinite scrolling logo marquee â”€â”€ */}
+        {/* ── Infinite scrolling logo marquee ── */}
         <div className="relative mb-16">
           {/* Gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8fbff] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
 
           <div className="flex animate-scroll-x gap-12 py-6">
             {/* Double the items for seamless loop */}
@@ -258,21 +258,21 @@ export default function HomePage() {
                   width={120}
                   height={50}
                   style={{ width: 'auto', height: 'auto' }}
-                  className="object-contain max-h-[50px]"
+                  className="object-contain max-h-[50px] brightness-0 invert"
                 />
               </Link>
             ))}
           </div>
         </div>
 
-        {/* â”€â”€ Featured brand cards grid â”€â”€ */}
+        {/* ── Featured brand cards grid ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {brandsData.map((brand) => (
               <Link
                 key={brand.id}
                 href={`/brands#${brand.slug}`}
-                className="group relative bg-white rounded-2xl border border-border/60 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-400 overflow-hidden"
+                className="group relative bg-[#111827] rounded-2xl border border-gray-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-400 overflow-hidden"
               >
                 {/* Colored top accent line */}
                 <div
@@ -289,24 +289,24 @@ export default function HomePage() {
                       width={140}
                       height={56}
                       style={{ width: 'auto', height: 'auto' }}
-                      className="object-contain max-h-[56px] group-hover:scale-110 transition-transform duration-500"
+                      className="object-contain max-h-[56px] group-hover:scale-110 transition-transform duration-500 brightness-0 invert"
                     />
                   </div>
 
                   {/* Brand name */}
-                  <h3 className="text-base font-bold text-text-primary group-hover:text-primary transition-colors mb-1.5">
+                  <h3 className="text-base font-bold text-white group-hover:text-primary-light transition-colors mb-1.5">
                     {brand.name}
                   </h3>
 
                   {/* Category tags */}
                   <div className="flex flex-wrap justify-center gap-1 mb-3">
                     {brand.categories.slice(0, 2).map((cat: string) => (
-                      <span key={cat} className="text-[10px] bg-gray-100 text-text-muted px-2 py-0.5 rounded-full">
+                      <span key={cat} className="text-[10px] bg-gray-800 text-gray-300 px-2 py-0.5 rounded-full">
                         {cat}
                       </span>
                     ))}
                     {brand.categories.length > 2 && (
-                      <span className="text-[10px] bg-gray-100 text-text-muted px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] bg-gray-800 text-gray-300 px-2 py-0.5 rounded-full">
                         +{brand.categories.length - 2}
                       </span>
                     )}
@@ -314,15 +314,15 @@ export default function HomePage() {
 
                   {/* Authorized badge */}
                   {brand.authorized && (
-                    <div className="flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary/[0.06] px-3 py-1 rounded-full">
+                    <div className="flex items-center gap-1 text-[11px] font-semibold text-primary-light bg-primary/[0.15] px-3 py-1 rounded-full">
                       <ShieldCheck size={11} /> Authorized
                     </div>
                   )}
                 </div>
 
                 {/* Hover arrow */}
-                <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowRight size={13} className="text-primary" />
+                <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ArrowRight size={13} className="text-primary-light" />
                 </div>
               </Link>
             ))}
@@ -340,7 +340,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â• COLORFUL DIVIDER â•â•â•â•â•â•â• */}
+      {/* ══════ COLORFUL DIVIDER ══════ */}
       <div className="relative h-1.5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#FF6600] via-[#0057B8] via-[#003399] to-[#CC0000] bg-[length:200%_100%] animate-[gradientSlide_4s_linear_infinite]" />
       </div>
@@ -427,20 +427,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â•â•â•â•â• WHY VIABTECH â•â•â•â•â•â•â• */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* ═══ WHY VIABTECH ═══ */}
+      <section className="py-20 bg-[#0b1120] relative overflow-hidden">
         {/* Colorful decorative gradient corner */}
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-bl from-[#CC0000]/[0.04] via-[#003399]/[0.03] to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#0057B8]/[0.04] via-[#FF6600]/[0.03] to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-bl from-[#CC0000]/10 via-[#003399]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#0057B8]/10 via-[#FF6600]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimatedSection animation="fade-up">
             <div className="text-center mb-14">
-              <div className="section-badge mx-auto">Why Choose Us</div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-                Why Businesses <span className="text-primary">Trust</span> Viabtech
+              <div className="section-badge mx-auto bg-white/5 text-white border-white/10">Why Choose Us</div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-white">
+                Why Businesses <span className="text-primary-light">Trust</span> Viabtech
               </h2>
-              <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
+              <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
                 Tanzania&apos;s most trusted technology partner, committed to quality, value, and exceptional service.
               </p>
             </div>
@@ -454,14 +454,14 @@ export default function HomePage() {
               { icon: Award, title: 'Best Value', desc: 'Competitive pricing, bulk discounts, and flexible financing.', color: '#FF6600' },
             ].map((item, idx) => (
               <AnimatedSection key={item.title} animation="scale-in" delay={idx * 100}>
-                <div className="kepler-card p-7 text-center group relative overflow-hidden">
+                <div className="kepler-card-dark p-7 text-center group relative overflow-hidden">
                   {/* Colorful top accent */}
                   <div className="absolute top-0 left-0 right-0 h-1" style={{ background: item.color }} />
-                  <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: `${item.color}15` }}>
+                  <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: `${item.color}25` }}>
                     <item.icon size={28} style={{ color: item.color }} />
                   </div>
-                  <h3 className="font-bold text-text-primary mb-2">{item.title}</h3>
-                  <p className="text-sm text-text-secondary">{item.desc}</p>
+                  <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-400">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
