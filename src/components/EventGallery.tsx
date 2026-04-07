@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, Camera, ZoomIn, Sparkles } from 'lucide-react';
 
@@ -51,21 +51,11 @@ const galleryImages = [
 
 const filters = ['All', 'Showroom', 'Exterior', 'Milestone', 'Ceremony'];
 
-// Bento grid layout classes — asymmetric for visual interest
-const bentoClasses = [
-  'md:col-span-2 md:row-span-2', // hero image — large
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-2', // tall vertical
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-1',
-];
-
 export default function EventGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeFilter, setActiveFilter] = useState('All');
   const [isVisible, setIsVisible] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const filteredImages =
     activeFilter === 'All'
@@ -112,114 +102,141 @@ export default function EventGallery() {
     return () => { document.body.style.overflow = ''; };
   }, [lightboxIndex]);
 
+  // Carousel scrolling
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = window.innerWidth > 768 ? 450 : 300;
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-[#f0f7fa] via-white to-[#f8fbff] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/[0.03] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/[0.02] rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles size={13} /> Grand Opening Gallery
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary leading-tight">
-            Service Centre{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#0fbcb3]">
-              Launch Event
-            </span>
-          </h2>
-          <p className="text-text-secondary mt-4 max-w-xl mx-auto text-base sm:text-lg">
-            Revisit the grand inauguration of East Africa&apos;s first Epson Experience &amp; Service Centre.
-          </p>
+      <div className="w-full mx-auto relative z-10">
+        {/* Header (Centered layout wrapper) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+                <Sparkles size={13} /> Grand Opening Gallery
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary leading-tight">
+                Service Centre{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#0fbcb3]">
+                Launch Event
+                </span>
+            </h2>
+            <p className="text-text-secondary mt-4 max-w-xl mx-auto text-base sm:text-lg">
+                Revisit the grand inauguration of East Africa&apos;s first Epson Experience &amp; Service Centre.
+            </p>
+            </div>
+
+            {/* Filter pills */}
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {filters.map((filter) => (
+                <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeFilter === filter
+                    ? 'bg-primary text-white shadow-md shadow-primary/25'
+                    : 'bg-white text-text-secondary border border-border hover:border-primary/30 hover:text-primary'
+                }`}
+                >
+                {filter}
+                </button>
+            ))}
+            </div>
         </div>
 
-        {/* Filter pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeFilter === filter
-                  ? 'bg-primary text-white shadow-md shadow-primary/25'
-                  : 'bg-white text-text-secondary border border-border hover:border-primary/30 hover:text-primary'
-              }`}
+        {/* Carousel Section */}
+        <div className="relative group">
+            {/* Nav Arrows */}
+            <button 
+                onClick={() => scrollCarousel('left')}
+                className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white text-primary shadow-xl border border-border/50 flex items-center justify-center opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-primary hover:text-white transition-all disabled:opacity-0"
+                aria-label="Scroll left"
             >
-              {filter}
+                <ChevronLeft size={24} />
             </button>
-          ))}
-        </div>
+            
+            <button 
+                onClick={() => scrollCarousel('right')}
+                className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white text-primary shadow-xl border border-border/50 flex items-center justify-center opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-primary hover:text-white transition-all disabled:opacity-0"
+                aria-label="Scroll right"
+            >
+                <ChevronRight size={24} />
+            </button>
 
-        {/* Bento Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] sm:auto-rows-[220px] gap-3 sm:gap-4">
-          {filteredImages.map((img, index) => {
-            // Use bento classes only when showing all images
-            const layoutClass =
-              activeFilter === 'All' && bentoClasses[index]
-                ? bentoClasses[index]
-                : '';
+            {/* Scrollable Container */}
+            <div 
+                ref={carouselRef}
+                className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 sm:px-6 lg:px-12 pb-12 pt-4 hide-scrollbar"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {filteredImages.map((img, index) => (
+                    <button
+                        key={img.src}
+                        className="flex-none snap-center gallery-card relative overflow-hidden rounded-2xl group cursor-pointer w-[80vw] sm:w-[350px] md:w-[420px] h-[250px] sm:h-[300px]"
+                        style={{
+                            animationDelay: `${index * 80}ms`,
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                            transition: `opacity 0.5s ease ${index * 80}ms, transform 0.5s ease ${index * 80}ms`,
+                        }}
+                        onClick={() => openLightbox(index)}
+                        aria-label={`View: ${img.caption}`}
+                    >
+                        <Image
+                            src={img.src}
+                            alt={img.alt}
+                            fill
+                            sizes="(max-width: 768px) 80vw, 420px"
+                            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        />
 
-            return (
-              <button
-                key={img.src}
-                className={`gallery-card relative overflow-hidden rounded-2xl group cursor-pointer ${layoutClass}`}
-                style={{
-                  animationDelay: `${index * 80}ms`,
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                  transition: `opacity 0.5s ease ${index * 80}ms, transform 0.5s ease ${index * 80}ms`,
-                }}
-                onClick={() => openLightbox(index)}
-                aria-label={`View: ${img.caption}`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes={
-                    layoutClass.includes('col-span-2')
-                      ? '(max-width: 768px) 100vw, 50vw'
-                      : '(max-width: 768px) 50vw, 25vw'
-                  }
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
+                        {/* Permanent subtle gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/5" />
 
-                {/* Permanent subtle gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/5" />
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        {/* Tag pill */}
+                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-semibold text-text-primary uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                            {img.tag}
+                        </div>
 
-                {/* Tag pill */}
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-semibold text-text-primary uppercase tracking-wider opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  {img.tag}
-                </div>
+                        {/* Zoom icon */}
+                        <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
+                            <ZoomIn size={14} />
+                        </div>
 
-                {/* Zoom icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
-                  <ZoomIn size={14} />
-                </div>
-
-                {/* Caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-lg translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    {img.caption}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
+                        {/* Caption */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                            <p className="text-white text-sm sm:text-base font-semibold leading-snug drop-shadow-lg translate-y-2 group-hover:translate-y-0 transition-transform duration-300text-left">
+                                {img.caption}
+                            </p>
+                        </div>
+                    </button>
+                ))}
+            </div>
         </div>
 
         {/* Photo count strip */}
-        <div className="flex items-center justify-center gap-3 mt-8">
-          <div className="h-px w-12 bg-border" />
-          <span className="flex items-center gap-1.5 text-xs text-text-muted font-medium">
-            <Camera size={13} /> {galleryImages.length} Photos from the Grand Launch
-          </span>
-          <div className="h-px w-12 bg-border" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-center justify-center gap-3 mt-4">
+            <div className="h-px w-12 bg-border" />
+            <span className="flex items-center gap-1.5 text-xs text-text-muted font-medium">
+                <Camera size={13} /> {galleryImages.length} Photos from the Grand Launch
+            </span>
+            <div className="h-px w-12 bg-border" />
+            </div>
         </div>
       </div>
 
