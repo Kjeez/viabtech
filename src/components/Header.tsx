@@ -65,8 +65,8 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white shadow-lg shadow-black/5'
-          : 'bg-white'
+          ? 'bg-[#0a1628] shadow-lg shadow-black/20'
+          : 'bg-[#0a1628]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -78,7 +78,7 @@ export default function Header() {
               alt="Viabtech Limited"
               width={180}
               height={50}
-              className="h-12 w-auto object-contain"
+              className="h-12 w-auto object-contain brightness-0 invert"
               priority
             />
           </Link>
@@ -96,8 +96,8 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center gap-1 px-4 py-2.5 text-sm font-medium transition-colors rounded-lg ${
                     isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-text-primary hover:text-primary'
+                      ? 'text-primary-light bg-white/5'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.name}
@@ -110,12 +110,12 @@ export default function Header() {
                 </Link>
                 {item.children && activeDropdown === item.name && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="bg-white rounded-xl py-2 min-w-[240px] shadow-xl shadow-black/8 border border-gray-100">
+                    <div className="bg-[#111827] rounded-xl py-2 min-w-[240px] shadow-xl shadow-black/40 border border-gray-800">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-5 py-3 text-sm text-text-secondary hover:text-primary hover:bg-surface-light transition-colors"
+                          className="block px-5 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
                         >
                           {child.name}
                         </Link>
@@ -131,14 +131,14 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+255745700500"
-              className="hidden md:flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-primary transition-colors"
+              className="hidden md:flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
             >
-              <Phone size={16} className="text-primary" />
+              <Phone size={16} className="text-primary-light" />
               +255 745 700 500
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-text-primary hover:text-primary hover:bg-surface-light transition-colors"
+              className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
