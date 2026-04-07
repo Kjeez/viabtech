@@ -346,70 +346,91 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#FF6600] via-[#0057B8] via-[#003399] to-[#CC0000] bg-[length:200%_100%] animate-[gradientSlide_4s_linear_infinite]" />
       </div>
 
-      {/* â•â•â•â•â•â•â• SERVICES â•â•â•â•â•â•â• */}
-      <section className="py-20 bg-gradient-to-b from-[#f8fbff] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* ══════ SERVICES ══════ */}
+      <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative overflow-hidden">
+        {/* Subtle decorative background elements */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-cyan-500/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimatedSection animation="fade-up">
-            <div className="mb-12">
-              <div className="section-badge">Our Services</div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary">
-                Complete Technology <span className="text-primary">Solutions</span>
+            <div className="mb-14 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-primary text-xs font-semibold tracking-widest uppercase mb-4 border border-blue-100">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Our Services
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary tracking-tight">
+                Complete Technology <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-600">Solutions</span>
               </h2>
             </div>
           </AnimatedSection>
 
           {/* Two feature cards */}
-          <div className="grid lg:grid-cols-2 gap-6 mb-10">
-            {/* Blue-tinted card */}
-            <div className="relative overflow-hidden rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-[#e8f4fd] to-[#d0ecfa] border border-primary/10">
-              <div className="absolute top-[-30%] right-[-15%] w-[250px] h-[250px] rounded-full bg-primary/[0.06] pointer-events-none" />
-              <h3 className="text-2xl font-bold text-text-primary mb-3 relative z-10">Printer Sales & Supply</h3>
-              <p className="text-text-secondary leading-relaxed mb-6 relative z-10">
-                As the leading printer dealers in Tanzania, we offer competitive pricing
-                and a wide selection of genuine products.
-              </p>
-              <ul className="space-y-3 relative z-10">
-                {['Canon, Epson, Lenovo & Dell products', 'Volume discounts for bulk orders', 'Simplified procurement process', 'Coordinated delivery and installation'].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-text-secondary">
-                    <CheckCircle size={16} className="text-primary shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            {/* Blue-tinted premium card */}
+            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-gradient-to-br from-[#eaf4fe] via-[#f1f8ff] to-[#e0effe] border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.1)] hover:-translate-y-1 transition-all duration-500">
+              <div className="absolute -top-24 -right-24 w-[300px] h-[300px] rounded-full bg-gradient-to-bl from-white/60 to-transparent pointer-events-none" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4 tracking-tight">Printer Sales & Supply</h3>
+                <p className="text-text-secondary leading-relaxed mb-8 text-[15px]">
+                  As the leading printer dealers in Tanzania, we offer competitive pricing
+                  and a wide selection of genuine products spanning world-class brands.
+                </p>
+                <ul className="space-y-3.5">
+                  {['Canon, Epson, Lenovo & Dell products', 'Volume discounts for bulk orders', 'Simplified procurement process', 'Coordinated delivery and installation'].map((item) => (
+                    <li key={item} className="flex items-center gap-3.5 text-[15px] font-medium text-text-secondary">
+                      <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-blue-50">
+                        <CheckCircle size={14} className="text-primary" />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* White card */}
-            <div className="kepler-card p-8 sm:p-10 relative overflow-hidden">
-              <h3 className="text-2xl font-bold text-text-primary mb-3">Printer Repair Service</h3>
-              <p className="text-text-secondary leading-relaxed mb-6">
-                Need your printer back up and running? Our professional service team
-                delivers fast, reliable repairs:
-              </p>
-              <ul className="space-y-3">
-                {['Expert diagnosis of all printer issues', 'Genuine parts replacement for all major brands', 'Quick turnaround times to minimize downtime', 'Transparent pricing with no hidden charges'].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-text-secondary">
-                    <CheckCircle size={16} className="text-primary shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            {/* White premium card */}
+            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1 transition-all duration-500 z-10">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4 tracking-tight">Printer Repair Service</h3>
+                <p className="text-text-secondary leading-relaxed mb-8 text-[15px]">
+                  Need your equipment back up and running? Our professional service team
+                  delivers fast, reliable repairs with guaranteed genuine components.
+                </p>
+                <ul className="space-y-3.5">
+                  {['Expert diagnosis of all printer issues', 'Genuine parts replacement for all major brands', 'Quick turnaround times to minimize downtime', 'Transparent pricing with no hidden charges'].map((item) => (
+                    <li key={item} className="flex items-center gap-3.5 text-[15px] font-medium text-text-secondary">
+                      <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0 border border-blue-100/50">
+                        <CheckCircle size={14} className="text-primary" />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
-          {/* More services grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* More services grid (3 column) */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData.slice(0, 3).map((service, i) => {
               const icons = [Package, Wrench, Monitor];
               const IconComponent = icons[i] || Package;
               return (
-                <div key={service.id} className="kepler-card p-7 group">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                    <IconComponent size={26} className="text-primary" />
+                <div key={service.id} className="group relative overflow-hidden rounded-[1.75rem] bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1.5 transition-all duration-500 z-10">
+                  {/* Subtle top-right hover light */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="w-16 h-16 rounded-[1.125rem] bg-gradient-to-br from-blue-50 to-[#f1f8ff] border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
+                    <IconComponent size={28} className="text-primary drop-shadow-sm" />
                   </div>
-                  <h3 className="font-bold text-text-primary mb-2 text-lg group-hover:text-primary transition-colors">
+                  <h3 className="font-bold text-text-primary mb-3 text-xl tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
+                  <p className="text-[15px] text-text-secondary leading-relaxed">
                     {service.shortDescription}
                   </p>
                 </div>
@@ -417,12 +438,17 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="text-center mt-12">
+          {/* CTA Button */}
+          <div className="text-center mt-16">
             <Link
               href="/services"
-              className="group inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant px-8 py-3.5 inline-flex items-center gap-2 text-sm"
+              className="group relative inline-flex items-center justify-center gap-2 px-9 py-4 bg-white text-text-primary font-semibold text-[15px] rounded-full border border-gray-200 shadow-[0_4px_15px_rgb(0,0,0,0.05)] hover:border-primary/30 hover:shadow-[0_8px_25px_rgb(0,0,255,0.1)] hover:text-primary transition-all duration-300 overflow-hidden"
             >
-              View All Services <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-blue-50/50 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <span className="relative z-10 flex items-center gap-2">
+                Discover All Our Services 
+                <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+              </span>
             </Link>
           </div>
         </div>

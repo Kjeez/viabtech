@@ -129,7 +129,7 @@ export default function HeroCarousel() {
             </div>
           </div>
 
-          <div key={`text-${current}`} className="order-2 animate-[slideInLeft_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
+          <div key={`text-${current}`} className="order-2 lg:order-1 animate-[slideInLeft_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
             {/* Small badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/[0.08] text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -183,7 +183,7 @@ export default function HeroCarousel() {
 
           {/* Right — Printer image */}
           {/* Desktop — Printer image on right */}
-          <div className="relative hidden lg:flex items-center justify-center">
+          <div className="relative hidden lg:flex items-center justify-center lg:order-2">
             <div
               key={`img-${current}`}
               className="relative w-full max-w-[580px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]"
