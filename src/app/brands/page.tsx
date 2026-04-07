@@ -49,11 +49,17 @@ export default function BrandsPage() {
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                     <div className="grid grid-cols-2 gap-4">
                       {brandProducts.slice(0, 4).map((product) => (
-                        <div key={product.id} className="kepler-card p-4 group">
-                          <div className="h-24 flex items-center justify-center mb-3 bg-gradient-to-br from-white to-[#f0f7ff] rounded-xl"><Printer size={36} className="text-primary/15 group-hover:text-primary/30 transition-colors" /></div>
+                        <Link key={product.id} href={`/products/${product.id}`} className="kepler-card p-4 group">
+                          <div className="h-24 flex items-center justify-center mb-3 bg-gradient-to-br from-white to-[#f0f7ff] rounded-xl relative overflow-hidden">
+                            {product.image && product.image.startsWith('http') ? (
+                              <Image src={product.image} alt={product.name} fill className="object-contain p-2 group-hover:scale-110 transition-transform duration-500" sizes="150px" unoptimized />
+                            ) : (
+                              <Printer size={36} className="text-primary/15 group-hover:text-primary/30 transition-colors" />
+                            )}
+                          </div>
                           <h4 className="text-xs font-medium text-text-primary line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h4>
-                          <p className="text-xs text-primary font-bold mt-1">{product.currency} {product.price.toLocaleString()}</p>
-                        </div>
+                          <p className="text-xs text-primary font-medium mt-1">View Details →</p>
+                        </Link>
                       ))}
                       {brandProducts.length === 0 && <div className="col-span-2 kepler-card p-8 text-center"><Printer size={36} className="text-primary/15 mx-auto mb-3" /><p className="text-sm text-text-muted">Products coming soon</p></div>}
                     </div>

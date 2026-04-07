@@ -16,6 +16,16 @@ const slides = [
     imageHeight: 500,
   },
   {
+    headline: 'Canon Cameras, Lenses & Accessories',
+    subtext: 'From the flagship EOS R1 to the compact EOS R50 — professional mirrorless cameras, RF lenses, and accessories for every photographer.',
+    cta1: { label: 'Shop Cameras', href: '/products?category=Camera' },
+    cta2: { label: 'Browse Lenses', href: '/products?category=Lens' },
+    image: '/images/categories/camera.png',
+    imageAlt: 'Canon EOS R mirrorless camera system',
+    imageWidth: 600,
+    imageHeight: 500,
+  },
+  {
     headline: 'Authorized Canon Dealer in East Africa',
     subtext: 'From high-speed laser printers to versatile all-in-ones — genuine Canon products backed by factory warranty and expert service.',
     cta1: { label: 'Canon Products', href: '/brands#canon' },
@@ -24,6 +34,16 @@ const slides = [
     imageAlt: 'Canon imageCLASS multifunction printer',
     imageWidth: 600,
     imageHeight: 600,
+  },
+  {
+    headline: 'Epson Projectors & Business Solutions',
+    subtext: '3LCD laser and lamp projectors for boardrooms, classrooms, and home cinema — vivid colors, zero maintenance, brilliant presentations.',
+    cta1: { label: 'View Projectors', href: '/products?category=Projector' },
+    cta2: { label: 'Contact Sales', href: '/contact' },
+    image: '/images/categories/projector.png',
+    imageAlt: 'Epson business and home cinema projectors',
+    imageWidth: 600,
+    imageHeight: 500,
   },
   {
     headline: 'Official Epson Partner for Business Printing',

@@ -1,18 +1,38 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+/* eslint-disable @next/next/no-img-element */
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { Search, Filter, Printer, ChevronRight, ShieldCheck } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
+import { Search, Filter, Printer, ChevronRight, ShieldCheck, X } from 'lucide-react';
 import productsData from '@/data/products.json';
 
 const categories = ['All', ...Array.from(new Set(productsData.map((p) => p.category)))];
 const brands = ['All', ...Array.from(new Set(productsData.map((p) => p.brand)))];
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" /></div>}>
+      <ProductsContent />
+    </Suspense>
+  );
+}
+
+function ProductsContent() {
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
+
+  // Pre-select category from URL params (e.g. /products?category=Camera)
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat && categories.includes(cat)) {
+      setSelectedCategory(cat);
+      setShowFilters(true);
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     return productsData.filter((p) => {
@@ -31,7 +51,7 @@ export default function ProductsPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge">Products</div>
           <h1 className="text-4xl sm:text-5xl font-bold font-[var(--font-heading)] text-text-primary mb-4">Our Products</h1>
-          <p className="text-text-secondary text-lg max-w-2xl">Explore our comprehensive range of printers from Canon, Epson, Lenovo, and Dell.</p>
+          <p className="text-text-secondary text-lg max-w-2xl">Explore our comprehensive range of Canon cameras, lenses, Epson projectors, printers, plotters, scanners, and technology solutions.</p>
         </div>
       </section>
 
@@ -42,6 +62,11 @@ export default function ProductsPage() {
               <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted" />
               <input type="text" placeholder="Search products..." value={search} onChange={(e) => setSearch(e.target.value)}
                 className="w-full pl-11 pr-4 py-3.5 rounded-full bg-white border border-border text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all" />
+              {search && (
+                <button onClick={() => setSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted hover:text-primary">
+                  <X size={16} />
+                </button>
+              )}
             </div>
             <button onClick={() => setShowFilters(!showFilters)}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white border border-border text-text-secondary hover:text-primary hover:border-primary/30 transition-all">
@@ -88,16 +113,25 @@ export default function ProductsPage() {
           {filtered.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filtered.map((product) => (
-                <div key={product.id} className="group kepler-card overflow-hidden">
-                  <div className="h-48 flex items-center justify-center bg-gradient-to-br from-white to-[#f0f7ff]">
-                    <Printer size={56} className="text-primary/15 group-hover:text-primary/30 transition-colors" />
+                <Link key={product.id} href={`/products/${product.id}`} className="group kepler-card overflow-hidden">
+                  <div className="h-52 flex items-center justify-center bg-gradient-to-br from-white to-[#f0f7ff] relative overflow-hidden">
+                    {product.image && (product.image.startsWith('http') || product.image.startsWith('/')) ? (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <Printer size={56} className="text-primary/15 group-hover:text-primary/30 transition-colors" />
+                    )}
                   </div>
                   <div className="px-5 pb-5">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">{product.brand}</span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#f0f4fa] text-text-muted text-xs">{product.category}</span>
                       {product.inStock && <span className="px-2.5 py-0.5 rounded-full bg-success/10 text-success text-xs font-medium">In Stock</span>}
                     </div>
-                    <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors mb-1 line-clamp-1">{product.name}</h3>
+                    <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors mb-1 line-clamp-2 text-sm">{product.name}</h3>
                     <p className="text-xs text-text-secondary line-clamp-2 mb-3">{product.description}</p>
                     <ul className="space-y-1 mb-3">
                       {product.features.slice(0, 2).map((f) => (
@@ -107,13 +141,13 @@ export default function ProductsPage() {
                       ))}
                     </ul>
                     <div className="flex items-center justify-between pt-3 border-t border-border">
-                      <span className="text-lg font-bold text-primary">{product.currency} {product.price.toLocaleString()}</span>
-                      <Link href="/contact" className="text-xs text-text-muted hover:text-primary transition-colors flex items-center gap-1">
-                        Enquire <ChevronRight size={12} />
-                      </Link>
+                      <span className="text-xs text-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View Details <ChevronRight size={12} />
+                      </span>
+                      <span className="text-xs text-text-muted">{product.type}</span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
