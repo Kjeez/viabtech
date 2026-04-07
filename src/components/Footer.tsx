@@ -1,32 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Truck, Headphones, ShieldCheck } from 'lucide-react';
-
-const footerLinks = {
-  products: [
-    { name: 'Laser Printers', href: '/products?category=Laser+Printer' },
-    { name: 'Inkjet Printers', href: '/products?category=Inkjet+Printer' },
-    { name: 'Large Format', href: '/products?category=Large+Format' },
-    { name: 'All Products', href: '/products' },
-  ],
-  services: [
-    { name: 'Printer Sales', href: '/services' },
-    { name: 'Repair & Maintenance', href: '/services' },
-    { name: 'Managed Print Services', href: '/services' },
-    { name: 'Service Center', href: '/service-center' },
-  ],
-  brands: [
-    { name: 'Canon', href: '/brands#canon' },
-    { name: 'Epson', href: '/brands#epson' },
-    { name: 'Lenovo', href: '/brands#lenovo' },
-    { name: 'Dell', href: '/brands#dell' },
-  ],
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ],
-};
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const socialLinks = [
   { name: 'Facebook', href: '#', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> },
@@ -34,13 +11,38 @@ const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
 ];
 
-const trustBadges = [
-  { icon: ShieldCheck, text: 'Dedicated Customer Care' },
-  { icon: Truck, text: 'Fast & Secure Delivery' },
-  { icon: Headphones, text: 'Pro Quality Support' },
-];
-
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = {
+    products: [
+      { name: t('footer.printers'), href: '/products?category=Laser+Printer' },
+      { name: t('footer.cameras'), href: '/products?category=Camera' },
+      { name: t('footer.projectors'), href: '/products?category=Projector' },
+      { name: t('footer.scanners'), href: '/products?category=Scanner' },
+      { name: t('footer.accessories'), href: '/products?category=Accessory' },
+    ],
+    services: [
+      { name: t('footer.printerRepair'), href: '/services' },
+      { name: t('footer.managedPrint'), href: '/services' },
+      { name: t('footer.consultation'), href: '/services' },
+      { name: t('footer.maintenance'), href: '/services' },
+      { name: t('footer.serviceCenter'), href: '/service-center' },
+    ],
+    help: [
+      { name: t('footer.contactUs'), href: '/contact' },
+      { name: t('footer.faq'), href: '/contact' },
+      { name: t('footer.warranty'), href: '/services' },
+      { name: t('footer.callUs'), href: 'tel:+255745700500' },
+    ],
+  };
+
+  const trustBadges = [
+    { icon: ShieldCheck, textKey: 'footer.dedicatedCare' },
+    { icon: Truck, textKey: 'footer.fastDelivery' },
+    { icon: Headphones, textKey: 'footer.proSupport' },
+  ];
+
   return (
     <footer>
       {/* Trust badges bar */}
@@ -48,53 +50,38 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
             {trustBadges.map((badge) => (
-              <div key={badge.text} className="flex items-center gap-3 text-sm text-[#0f1c2e]">
+              <div key={badge.textKey} className="flex items-center gap-3 text-sm text-[#0f1c2e]">
                 <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 shadow-sm">
                   <badge.icon size={20} className="text-primary drop-shadow-sm" />
                 </div>
-                <span className="font-bold tracking-wide">{badge.text}</span>
+                <span className="font-bold tracking-wide">{t(badge.textKey)}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Main footer — Dark Premium Theme */}
+      {/* Main footer */}
       <div className="bg-[#001738] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             {/* Brand */}
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
-                <Image
-                  src="/images/logo1.png"
-                  alt="Viabtech Limited"
-                  width={160}
-                  height={160}
-                  className="h-20 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
-                />
+                <Image src="/images/logo1.png" alt="Viabtech Limited" width={160} height={160} className="h-20 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" />
               </Link>
-              <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
-                Tanzania&apos;s trusted authorized dealer for Canon and Epson printers.
-                Expert sales, service, and support across East Africa.
-              </p>
+              <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">{t('footer.desc')}</p>
               <div className="space-y-4 text-sm">
                 <a href="tel:+255745700500" className="flex items-center gap-3 text-white/80 hover:text-cyan-400 transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
-                     <Phone size={14} className="text-cyan-400 shrink-0" />
-                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><Phone size={14} className="text-cyan-400 shrink-0" /></div>
                   +255 745 700 500 / +255 746 000 786
                 </a>
                 <a href="mailto:info@viabtech.co.tz" className="flex items-center gap-3 text-white/80 hover:text-cyan-400 transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
-                     <Mail size={14} className="text-cyan-400 shrink-0" />
-                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"><Mail size={14} className="text-cyan-400 shrink-0" /></div>
                   info@viabtech.co.tz
                 </a>
                 <div className="flex items-start gap-3 text-white/80">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                     <MapPin size={14} className="text-cyan-400" />
-                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0"><MapPin size={14} className="text-cyan-400" /></div>
                   <div className="flex flex-col space-y-2 mt-1.5">
                     <div><strong className="text-white">Epson Showroom:</strong> Uhuru Heights, Bibi Titi Mohamed Rd</div>
                     <div><strong className="text-white">Canon Showroom:</strong> Next to Peacock Hotel, Bibi Titi Mohamed Rd</div>
@@ -103,8 +90,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 mt-8">
                 {socialLinks.map((social) => (
-                  <a key={social.name} href={social.href} aria-label={social.name}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all">
+                  <a key={social.name} href={social.href} aria-label={social.name} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all">
                     {social.icon}
                   </a>
                 ))}
@@ -113,44 +99,38 @@ export default function Footer() {
 
             {/* Products */}
             <div>
-              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Products</h4>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">{t('footer.products')}</h4>
               <ul className="space-y-3">
                 {footerLinks.products.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link>
-                  </li>
+                  <li key={link.name}><Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link></li>
                 ))}
               </ul>
             </div>
 
             {/* Services */}
             <div>
-              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Services</h4>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">{t('footer.services')}</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link>
-                  </li>
+                  <li key={link.name}><Link href={link.href} className="text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 inline-block transition-all">{link.name}</Link></li>
                 ))}
               </ul>
             </div>
 
             {/* Need Help */}
             <div>
-              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">Need Help</h4>
+              <h4 className="text-sm font-bold text-white mb-5 uppercase tracking-wider">{t('footer.needHelp')}</h4>
               <div className="space-y-4 text-sm text-white/70">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                     <Clock size={14} className="text-cyan-400" />
-                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0"><Clock size={14} className="text-cyan-400" /></div>
                   <div className="mt-1.5">
-                    <p className="mb-1">Mon - Fri: 8:00 AM - 5:00 PM</p>
-                    <p>Sat: 9:00 AM - 1:00 PM</p>
+                    <p className="mb-1">{t('contact.hoursMF')}</p>
+                    <p>{t('contact.hoursSat')}</p>
                   </div>
                 </div>
               </div>
               <div className="mt-8 space-y-3">
-                {footerLinks.company.map((link) => (
+                {footerLinks.help.map((link) => (
                   <Link key={link.name} href={link.href} className="block text-sm text-white/70 hover:text-cyan-400 hover:translate-x-1 transition-all">
                     {link.name}
                   </Link>
@@ -161,12 +141,10 @@ export default function Footer() {
 
           {/* Bottom bar */}
           <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/50">
-              © {new Date().getFullYear()} Viabtech. All rights reserved.
-            </p>
+            <p className="text-xs text-white/50">{t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}</p>
             <div className="flex items-center gap-4 text-xs text-white/50">
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
+              <Link href="#" className="hover:text-cyan-400 transition-colors">{t('footer.privacy')}</Link>
+              <Link href="#" className="hover:text-cyan-400 transition-colors">{t('footer.terms')}</Link>
             </div>
           </div>
         </div>

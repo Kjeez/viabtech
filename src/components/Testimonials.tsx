@@ -1,0 +1,226 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
+import { useLanguage } from '@/i18n/LanguageContext';
+
+const testimonials = [
+  {
+    name: 'James Mwangi',
+    role: 'IT Director',
+    company: 'National Bank of Commerce',
+    text: 'Viabtech transformed our entire print infrastructure. Their managed print service reduced our costs by 40% while improving reliability across 12 branches.',
+    textSw: 'Viabtech ilibadilisha miundombinu yetu yote ya uchapishaji. Huduma yao ya uchapishaji ilipunguza gharama zetu kwa 40% huku ikiboresha uaminika katika matawi 12.',
+    rating: 5,
+    avatar: 'JM',
+    color: '#CC0000',
+  },
+  {
+    name: 'Dr. Fatma Hassan',
+    role: 'Operations Manager',
+    company: 'Muhimbili National Hospital',
+    text: 'The Epson projectors from Viabtech have been outstanding in our training rooms. Their after-sales support is truly world-class — fast response and genuine parts.',
+    textSw: 'Projekta za Epson kutoka Viabtech zimekuwa bora katika vyumba vyetu vya mafunzo. Msaada wao baada ya mauzo ni wa kimataifa — majibu ya haraka na vipuri halisi.',
+    rating: 5,
+    avatar: 'FH',
+    color: '#003399',
+  },
+  {
+    name: 'Robert Kimaro',
+    role: 'Procurement Head',
+    company: 'Tanzania Revenue Authority',
+    text: 'We switched to Viabtech for all Canon printer supplies and repairs. Their pricing is competitive, delivery is prompt, and the service quality is unmatched in Tanzania.',
+    textSw: 'Tulibadili kwenda Viabtech kwa vifaa vyote vya printa za Canon na ukarabati. Bei zao ni shindani, usafirishaji ni wa haraka, na ubora wa huduma hauna kifani Tanzania.',
+    rating: 5,
+    avatar: 'RK',
+    color: '#0057B8',
+  },
+  {
+    name: 'Amara Ndulele',
+    role: 'Studio Director',
+    company: 'Dar Creative Studios',
+    text: 'The Canon EOS R5 kit we purchased from Viabtech has elevated our production quality. The team helped us choose the perfect setup for our commercial work.',
+    textSw: 'Seti ya Canon EOS R5 tuliyonunua kutoka Viabtech imeboresha ubora wa uzalishaji wetu. Timu ilikusaidia kuchagua usanidi bora kwa kazi yetu ya kibiashara.',
+    rating: 5,
+    avatar: 'AN',
+    color: '#FF6600',
+  },
+  {
+    name: 'Sarah Mushi',
+    role: 'Office Manager',
+    company: 'PwC Tanzania',
+    text: 'Viabtech has been our trusted printing partner for 5 years. Their managed print solutions keep our offices running smoothly without us ever worrying about supplies.',
+    textSw: 'Viabtech imekuwa mshirika wetu wa uchapishaji anayeaminika kwa miaka 5. Suluhisho zao za uchapishaji zinaweka ofisi zetu zikifanya kazi vizuri bila kujishughulisha na vifaa.',
+    rating: 5,
+    avatar: 'SM',
+    color: '#2E3A87',
+  },
+  {
+    name: 'Patrick Lyimo',
+    role: 'Head of IT',
+    company: 'CRDB Bank',
+    text: 'When we needed 50+ Epson printers deployed across our branches, Viabtech handled everything — procurement, setup, training, and ongoing maintenance. True enterprise-level service.',
+    textSw: 'Tulipohitaji printa 50+ za Epson zisambazwe katika matawi yetu, Viabtech walishughulikia kila kitu — ununuzi, usanidi, mafunzo, na matengenezo ya mara kwa mara.',
+    rating: 5,
+    avatar: 'PL',
+    color: '#007DB8',
+  },
+];
+
+export default function Testimonials() {
+  const { locale, t } = useLanguage();
+  const [active, setActive] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const navigate = useCallback(
+    (direction: 'prev' | 'next') => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setActive((prev) =>
+        direction === 'next'
+          ? (prev + 1) % testimonials.length
+          : (prev - 1 + testimonials.length) % testimonials.length,
+      );
+      setTimeout(() => setIsAnimating(false), 500);
+    },
+    [isAnimating],
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => navigate('next'), 7000);
+    return () => clearInterval(timer);
+  }, [navigate]);
+
+  const item = testimonials[active];
+  const displayText = locale === 'sw' ? item.textSw : item.text;
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative overflow-hidden">
+      {/* Decorative */}
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl -translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-cyan-500/5 to-transparent rounded-full blur-3xl translate-y-1/3 translate-x-1/3 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-16">
+            <div className="section-badge mx-auto">{t('testimonials.badge')}</div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary tracking-tight">
+              {t('testimonials.title')}{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-600">
+                {t('testimonials.titleHighlight')}
+              </span>{' '}
+              {t('testimonials.titleEnd')}
+            </h2>
+            <p className="text-text-secondary mt-3 max-w-2xl mx-auto">
+              {t('testimonials.subtitle')}
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* Main testimonial card */}
+        <div className="max-w-4xl mx-auto">
+          <div
+            key={active}
+            className="relative bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-[0_20px_60px_rgba(0,87,184,0.08)] border border-gray-100 animate-[testimonialIn_0.5s_ease-out]"
+          >
+            {/* Quote icon */}
+            <div
+              className="absolute -top-5 left-10 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg"
+              style={{ background: item.color }}
+            >
+              <Quote size={20} className="text-white" />
+            </div>
+
+            {/* Stars */}
+            <div className="flex gap-1 mb-6 pt-2">
+              {Array.from({ length: item.rating }).map((_, i) => (
+                <Star
+                  key={i}
+                  size={18}
+                  className="fill-amber-400 text-amber-400 drop-shadow-sm"
+                />
+              ))}
+            </div>
+
+            {/* Quote text */}
+            <blockquote className="text-lg sm:text-xl text-text-primary leading-relaxed mb-8 font-medium">
+              &ldquo;{displayText}&rdquo;
+            </blockquote>
+
+            {/* Author */}
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-md"
+                  style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)` }}
+                >
+                  {item.avatar}
+                </div>
+                <div>
+                  <div className="font-bold text-text-primary text-lg">{item.name}</div>
+                  <div className="text-sm text-text-secondary">
+                    {item.role}, <span className="font-semibold" style={{ color: item.color }}>{item.company}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Nav arrows */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => navigate('prev')}
+                  className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={() => navigate('next')}
+                  className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Dots */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  if (!isAnimating) {
+                    setIsAnimating(true);
+                    setActive(i);
+                    setTimeout(() => setIsAnimating(false), 500);
+                  }
+                }}
+                className={`rounded-full transition-all duration-300 ${
+                  i === active
+                    ? 'w-8 h-2.5 bg-primary shadow-md shadow-primary/30'
+                    : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'
+                }`}
+                aria-label={`Go to testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes testimonialIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      `}</style>
+    </section>
+  );
+}

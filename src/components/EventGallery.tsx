@@ -113,6 +113,28 @@ export default function EventGallery() {
     }
   };
 
+  // Auto-scroll carousel
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || lightboxIndex !== null) return;
+
+    const interval = setInterval(() => {
+      if (!carouselRef.current) return;
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+
+      // If near the end, scroll back to start
+      if (scrollLeft + clientWidth >= scrollWidth - 20) {
+        carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        const scrollAmount = window.innerWidth > 768 ? 450 : 300;
+        carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, lightboxIndex, filteredImages]);
+
   return (
     <section className="py-20 bg-gradient-to-b from-[#f0f7fa] via-white to-[#f8fbff] relative overflow-hidden">
       {/* Decorative background elements */}
@@ -179,6 +201,8 @@ export default function EventGallery() {
                 ref={carouselRef}
                 className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 sm:px-6 lg:px-12 pb-12 pt-4 hide-scrollbar"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
             >
                 {filteredImages.map((img, index) => (
                     <button

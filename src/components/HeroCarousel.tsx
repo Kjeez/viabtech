@@ -3,63 +3,60 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const slides = [
   {
-    headline: "Tanzania\u2019s Most Trusted Printer Dealer",
-    subtext: 'Authorized sales, service, and repair for Canon and Epson printers in Dar es Salaam.',
-    cta1: { label: 'Browse Products', href: '/products' },
-    cta2: { label: 'Get a Quote', href: '/contact' },
+    headlineKey: 'hero.slide1.headline',
+    subtextKey: 'hero.slide1.subtext',
+    cta1LabelKey: 'hero.slide1.cta1', cta1Href: '/products',
+    cta2LabelKey: 'hero.slide1.cta2', cta2Href: '/contact',
     image: '/images/canon&epson.png',
     imageAlt: 'Canon and Epson printers — authorized dealer in Tanzania',
-    imageWidth: 700,
-    imageHeight: 500,
+    imageWidth: 700, imageHeight: 500,
   },
   {
-    headline: 'Canon Cameras, Lenses & Accessories',
-    subtext: 'From the flagship EOS R1 to the compact EOS R50 — professional mirrorless cameras, RF lenses, and accessories for every photographer.',
-    cta1: { label: 'Shop Cameras', href: '/products?category=Camera' },
-    cta2: { label: 'Browse Lenses', href: '/products?category=Lens' },
+    headlineKey: 'hero.slide2.headline',
+    subtextKey: 'hero.slide2.subtext',
+    cta1LabelKey: 'hero.slide2.cta1', cta1Href: '/products?category=Camera',
+    cta2LabelKey: 'hero.slide2.cta2', cta2Href: '/products?category=Lens',
     image: '/images/camera.png',
     imageAlt: 'Canon EOS R mirrorless camera system',
-    imageWidth: 600,
-    imageHeight: 500,
+    imageWidth: 600, imageHeight: 500,
   },
   {
-    headline: 'Authorized Canon Dealer in East Africa',
-    subtext: 'From high-speed laser printers to versatile all-in-ones — genuine Canon products backed by factory warranty and expert service.',
-    cta1: { label: 'Canon Products', href: '/brands#canon' },
-    cta2: { label: 'Service Center', href: '/service-center' },
+    headlineKey: 'hero.slide3.headline',
+    subtextKey: 'hero.slide3.subtext',
+    cta1LabelKey: 'hero.slide3.cta1', cta1Href: '/brands#canon',
+    cta2LabelKey: 'hero.slide3.cta2', cta2Href: '/service-center',
     image: '/images/canon.png',
     imageAlt: 'Canon imageCLASS multifunction printer',
-    imageWidth: 600,
-    imageHeight: 600,
+    imageWidth: 600, imageHeight: 600,
   },
   {
-    headline: 'Epson Projectors & Business Solutions',
-    subtext: '3LCD laser and lamp projectors for boardrooms, classrooms, and home cinema — vivid colors, zero maintenance, brilliant presentations.',
-    cta1: { label: 'View Projectors', href: '/products?category=Projector' },
-    cta2: { label: 'Contact Sales', href: '/contact' },
+    headlineKey: 'hero.slide4.headline',
+    subtextKey: 'hero.slide4.subtext',
+    cta1LabelKey: 'hero.slide4.cta1', cta1Href: '/products?category=Projector',
+    cta2LabelKey: 'hero.slide4.cta2', cta2Href: '/contact',
     image: '/images/projector.png',
     imageAlt: 'Epson business and home cinema projectors',
-    imageWidth: 600,
-    imageHeight: 500,
+    imageWidth: 600, imageHeight: 500,
   },
   {
-    headline: 'Official Epson Partner for Business Printing',
-    subtext: 'EcoTank, WorkForce Pro, and large-format solutions — reliable Epson printers with industry-leading ink efficiency.',
-    cta1: { label: 'Epson Products', href: '/brands#epson' },
-    cta2: { label: 'Contact Sales', href: '/contact' },
+    headlineKey: 'hero.slide5.headline',
+    subtextKey: 'hero.slide5.subtext',
+    cta1LabelKey: 'hero.slide5.cta1', cta1Href: '/brands#epson',
+    cta2LabelKey: 'hero.slide5.cta2', cta2Href: '/contact',
     image: '/images/epson.png',
     imageAlt: 'Epson WorkForce Pro business printer',
-    imageWidth: 600,
-    imageHeight: 600,
+    imageWidth: 600, imageHeight: 600,
   },
 ];
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const { t } = useLanguage();
 
   const goTo = useCallback(
     (index: number) => {
@@ -71,7 +68,6 @@ export default function HeroCarousel() {
     [current, isTransitioning],
   );
 
-  // Auto-scroll every 6 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setIsTransitioning(true);
@@ -85,76 +81,53 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#dbeafe]">
-      {/* ── Dot-grid pattern overlay ── */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(0,159,227,0.07) 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      />
+      {/* Dot-grid pattern overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-40" style={{ backgroundImage: 'radial-gradient(circle, rgba(0,159,227,0.07) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
 
-      {/* ── Animated concentric rings ── */}
+      {/* Animated concentric rings */}
       <div className="absolute right-[-6%] top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border-[45px] border-primary/[0.08] pointer-events-none animate-[ringPulse_8s_ease-in-out_infinite]" />
       <div className="absolute right-[-2%] top-[52%] -translate-y-1/2 w-[500px] h-[500px] rounded-full border-[32px] border-primary/[0.12] pointer-events-none animate-[ringPulse_8s_ease-in-out_1s_infinite]" />
       <div className="absolute right-[4%] top-[48%] -translate-y-1/2 w-[320px] h-[320px] rounded-full border-[20px] border-primary/[0.06] pointer-events-none animate-[ringPulse_8s_ease-in-out_2s_infinite]" />
 
-      {/* ── Floating accent blobs ── */}
+      {/* Floating accent blobs */}
       <div className="absolute bottom-[6%] right-[4%] w-[100px] h-[100px] rounded-full bg-primary/10 pointer-events-none animate-[floatBlob_6s_ease-in-out_infinite]" />
       <div className="absolute top-[12%] right-[32%] w-[50px] h-[50px] rounded-full bg-primary/[0.07] pointer-events-none animate-[floatBlob_7s_ease-in-out_1.5s_infinite]" />
       <div className="absolute top-[70%] left-[5%] w-[70px] h-[70px] rounded-full bg-primary/[0.05] pointer-events-none animate-[floatBlob_9s_ease-in-out_0.5s_infinite]" />
 
-      {/* ── Gradient shimmer stripe ── */}
+      {/* Gradient shimmer stripe */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary/[0.04] via-transparent to-transparent pointer-events-none" />
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-0 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-6 items-center">
-          {/* Left — Text & CTAs */}
-          {/* Mobile — Printer image on top */}
+          {/* Mobile — image on top */}
           <div className="lg:hidden flex items-center justify-center order-1">
-            <div
-              key={`img-mob-${current}`}
-              className="relative w-full max-w-[340px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]"
-            >
+            <div key={`img-mob-${current}`} className="relative w-full max-w-[340px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
               <div className="absolute inset-0 m-auto w-[75%] h-[75%] rounded-full bg-gradient-to-tr from-primary/[0.08] via-primary/[0.04] to-transparent blur-3xl" />
-              <Image
-                src={slide.image}
-                alt={slide.imageAlt}
-                width={slide.imageWidth}
-                height={slide.imageHeight}
-                className="relative z-10 w-full h-auto drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)] mix-blend-multiply"
-                priority={current === 0}
-              />
+              <Image src={slide.image} alt={slide.imageAlt} width={slide.imageWidth} height={slide.imageHeight} className="relative z-10 w-full h-auto drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)] mix-blend-multiply" priority={current === 0} />
             </div>
           </div>
 
           <div key={`text-${current}`} className="order-2 lg:order-1 animate-[slideInLeft_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
-            {/* Small badge */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/[0.08] text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Authorized Dealer
+              {t('hero.badge')}
             </div>
 
             <h1 className="text-[2.75rem] sm:text-5xl lg:text-[3.6rem] font-extrabold font-[var(--font-heading)] leading-[1.08] mb-6 text-[#0f1c2e]">
-              {slide.headline}
+              {t(slide.headlineKey)}
             </h1>
             <p className="text-[1.08rem] text-[#4b5c72] leading-relaxed max-w-lg mb-9">
-              {slide.subtext}
+              {t(slide.subtextKey)}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href={slide.cta1.href}
-                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
-              >
-                {slide.cta1.label}
+              <Link href={slide.cta1Href} className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5">
+                {t(slide.cta1LabelKey)}
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </Link>
-              <Link
-                href={slide.cta2.href}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-transparent border-2 border-[#1a2332] text-[#1a2332] font-semibold text-sm hover:bg-[#1a2332] hover:text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                {slide.cta2.label}
+              <Link href={slide.cta2Href} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-transparent border-2 border-[#1a2332] text-[#1a2332] font-semibold text-sm hover:bg-[#1a2332] hover:text-white transition-all duration-300 hover:-translate-y-0.5">
+                {t(slide.cta2LabelKey)}
               </Link>
             </div>
 
@@ -164,62 +137,41 @@ export default function HeroCarousel() {
                 <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center">
                   <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 </div>
-                <span>Genuine Products</span>
+                <span>{t('hero.genuine')}</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-medium text-[#4b5c72]">
                 <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
                   <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
-                <span>Official Warranty</span>
+                <span>{t('hero.warranty')}</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-medium text-[#4b5c72]">
                 <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center">
                   <svg className="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 </div>
-                <span>Fast Delivery</span>
+                <span>{t('hero.delivery')}</span>
               </div>
             </div>
           </div>
 
-          {/* Right — Printer image */}
-          {/* Desktop — Printer image on right */}
+          {/* Desktop — image on right */}
           <div className="relative hidden lg:flex items-center justify-center lg:order-2">
-            <div
-              key={`img-${current}`}
-              className="relative w-full max-w-[580px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]"
-            >
-              {/* Glow behind printer */}
+            <div key={`img-${current}`} className="relative w-full max-w-[580px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
               <div className="absolute inset-0 m-auto w-[75%] h-[75%] rounded-full bg-gradient-to-tr from-primary/[0.08] via-primary/[0.04] to-transparent blur-3xl" />
-              <Image
-                src={slide.image}
-                alt={slide.imageAlt}
-                width={slide.imageWidth}
-                height={slide.imageHeight}
-                className="relative z-10 w-full h-auto drop-shadow-[0_25px_60px_rgba(0,159,227,0.15)]"
-                priority={current === 0}
-              />
+              <Image src={slide.image} alt={slide.imageAlt} width={slide.imageWidth} height={slide.imageHeight} className="relative z-10 w-full h-auto drop-shadow-[0_25px_60px_rgba(0,159,227,0.15)]" priority={current === 0} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── Carousel navigation dots ── */}
+      {/* Carousel nav dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
         {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? 'w-10 h-3 bg-primary shadow-md shadow-primary/30'
-                : 'w-3 h-3 bg-primary/20 hover:bg-primary/40'
-            }`}
-          />
+          <button key={i} onClick={() => goTo(i)} aria-label={`Go to slide ${i + 1}`} className={`rounded-full transition-all duration-300 ${i === current ? 'w-10 h-3 bg-primary shadow-md shadow-primary/30' : 'w-3 h-3 bg-primary/20 hover:bg-primary/40'}`} />
         ))}
       </div>
 
-      {/* ── Keyframe animations ── */}
+      {/* Keyframe animations */}
       <style jsx>{`
         @keyframes slideInLeft {
           from { opacity: 0; transform: translateX(-50px); }

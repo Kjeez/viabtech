@@ -5,34 +5,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  {
-    name: 'Services',
-    href: '/services',
-    children: [
-      { name: 'All Services', href: '/services' },
-      { name: 'Authorized Service Center', href: '/service-center' },
-    ],
-  },
-  { name: 'Products', href: '/products' },
-  { name: 'Brands', href: '/brands' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact Us', href: '/contact' },
-];
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Header() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
+  const navigation = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    {
+      name: t('nav.services'),
+      href: '/services',
+      children: [
+        { name: t('nav.allServices'), href: '/services' },
+        { name: t('nav.serviceCenter'), href: '/service-center' },
+      ],
+    },
+    { name: t('nav.products'), href: '/products' },
+    { name: t('nav.brands'), href: '/brands' },
+    { name: t('nav.blog'), href: '/blog' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -68,11 +71,12 @@ export default function Header() {
           ? 'bg-[#0a1628] shadow-lg shadow-black/20'
           : 'bg-[#0a1628]'
       }`}
+      role="banner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0" aria-label="Viabtech Home">
             <Image
               src="/images/logo1.png"
               alt="Viabtech Limited"
@@ -84,7 +88,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
             {navigation.map((item) => (
               <div
                 key={item.name}
@@ -94,11 +98,12 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1 px-4 py-2.5 text-sm font-medium transition-colors rounded-lg ${
+                  className={`flex items-center gap-1 px-4 py-2.5 text-sm font-medium transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light/50 ${
                     isActive(item.href)
                       ? 'text-primary-light bg-white/5'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
                 >
                   {item.name}
                   {item.children && (
@@ -115,7 +120,7 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-5 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                          className="block px-5 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-light/50"
                         >
                           {child.name}
                         </Link>
@@ -127,19 +132,24 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Phone + Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          {/* Right side: Language switcher + Phone + Mobile Toggle */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
             <a
               href="tel:+255745700500"
               className="hidden md:flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+              aria-label="Call Viabtech at +255 745 700 500"
             >
               <Phone size={16} className="text-primary-light" />
               +255 745 700 500
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="Toggle menu"
+              className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-light/50"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -155,6 +165,7 @@ export default function Header() {
         }`}
         style={{ top: 0 }}
         onClick={() => setIsOpen(false)}
+        aria-hidden="true"
       />
 
       {/* Drawer panel */}
@@ -162,6 +173,9 @@ export default function Header() {
         className={`lg:hidden fixed top-0 right-0 z-50 h-full w-[280px] sm:w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
       >
         {/* Drawer header — brand teal bar */}
         <div className="bg-primary px-5 py-4 flex items-center justify-between">
@@ -176,15 +190,20 @@ export default function Header() {
           </Link>
           <button
             onClick={() => setIsOpen(false)}
-            className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+            className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
             aria-label="Close menu"
           >
             <X size={18} />
           </button>
         </div>
 
+        {/* Language switcher in mobile */}
+        <div className="border-b border-gray-100">
+          <LanguageSwitcher variant="mobile" />
+        </div>
+
         {/* Navigation links */}
-        <nav className="overflow-y-auto h-[calc(100%-140px)]">
+        <nav className="overflow-y-auto h-[calc(100%-200px)]" aria-label="Mobile navigation">
           {navigation.map((item) => {
             const active = isActive(item.href);
             const hasChildren = !!item.children;
@@ -202,6 +221,7 @@ export default function Header() {
                           ? 'bg-primary text-white'
                           : 'text-text-primary hover:bg-surface-light'
                       }`}
+                      aria-expanded={isExpanded}
                     >
                       {item.name}
                       <ChevronDown
@@ -236,6 +256,7 @@ export default function Header() {
                         ? 'bg-primary text-white'
                         : 'text-text-primary hover:bg-surface-light'
                     }`}
+                    aria-current={active ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
@@ -249,7 +270,7 @@ export default function Header() {
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-gray-100 bg-white">
           <a
             href="tel:+255745700500"
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <Phone size={16} />
             +255 745 700 500
