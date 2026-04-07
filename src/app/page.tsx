@@ -82,15 +82,10 @@ const categories = [
 export default function HomePage() {
   return (
     <>
-      {/* â•â•â•â•â•â•â• HERO CAROUSEL â•â•â•â•â•â•â• */}
+      {/* â• â• â• â• â• â• â•  HERO CAROUSEL â• â• â• â• â• â• â•  */}
       <HeroCarousel />
 
-      {/* â•â•â•â•â•â•â• ANIMATED GRADIENT BANNER â•â•â•â•â•â•â• */}
-      <div className="relative h-2 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#CC0000] via-[#003399] via-[#0057B8] via-[#FF6600] to-[#CC0000] bg-[length:200%_100%] animate-[gradientSlide_4s_linear_infinite]" />
-      </div>
-
-      {/* â•â•â•â•â•â•â• CATEGORIES â•â•â•â•â•â•â• */}
+      {/* â• â• â• â• â• â• â•  CATEGORIES â• â• â• â• â• â• â•  */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Decorative floating shapes */}
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#CC0000]/5 to-transparent blur-2xl pointer-events-none animate-float" />

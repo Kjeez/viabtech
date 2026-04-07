@@ -84,7 +84,7 @@ export default function HeroCarousel() {
   const slide = slides[current];
 
   return (
-    <section className="relative lg:min-h-[88vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#dbeafe]">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#dbeafe]">
       {/* ── Dot-grid pattern overlay ── */}
       <div
         className="absolute inset-0 pointer-events-none opacity-40"
