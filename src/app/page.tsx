@@ -12,6 +12,7 @@ import VideoShowcase from '@/components/VideoShowcase';
 import PressSection from '@/components/PressSection';
 import EventGallery from '@/components/EventGallery';
 import AnimatedSection from '@/components/AnimatedSection';
+import Counter from '@/components/Counter';
 
 const categories = [
   {
@@ -165,7 +166,7 @@ export default function HomePage() {
             <AnimatedSection animation="slide-right" className="relative order-1 lg:order-2">
               {/* Decorative blue accent shapes */}
               <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
+              <div className="absolute -bottom-12 -right-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
                 <Image
                   src="/images/about-us.jpg"
@@ -178,15 +179,21 @@ export default function HomePage() {
               {/* Stats floating over bottom */}
               <div className="absolute -bottom-6 right-4 left-4 grid grid-cols-3 gap-3">
                 <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary">10+</div>
+                  <div className="text-xl font-bold text-primary">
+                    <Counter end={10} suffix="+" />
+                  </div>
                   <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Years</div>
                 </div>
                 <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary">11</div>
+                  <div className="text-xl font-bold text-primary">
+                    <Counter end={11} />
+                  </div>
                   <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Brands</div>
                 </div>
                 <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary">2K+</div>
+                  <div className="text-xl font-bold text-primary">
+                    <Counter end={2000} suffix="+" formatk />
+                  </div>
                   <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">Clients</div>
                 </div>
               </div>
