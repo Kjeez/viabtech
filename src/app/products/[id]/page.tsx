@@ -140,7 +140,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               {/* Trust Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { icon: ShieldCheck, label: 'Authorized Dealer' },
+                  { icon: ShieldCheck, label: 'Authorized Reseller' },
                   { icon: Truck, label: 'Fast Delivery' },
                   { icon: Headphones, label: 'Expert Support' },
                   { icon: Award, label: 'Warranty Included' },
@@ -184,7 +184,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               </h2>
               <div className="space-y-4">
                 {[
-                  { title: 'Authorized Dealer', desc: 'We are an authorized dealer, ensuring 100% genuine products with full manufacturer warranty and support.' },
+                  { title: 'Authorized Reseller', desc: 'We are an authorized reseller, ensuring 100% genuine products with full manufacturer warranty and support.' },
                   { title: 'Expert Consultation', desc: 'Our certified printing specialists help you select the perfect product for your unique business requirements.' },
                   { title: 'Professional Setup', desc: 'We provide complete installation, configuration, driver setup, and staff training — included with your purchase.' },
                   { title: 'Ongoing Support', desc: 'From routine maintenance to emergency repairs, our service team keeps your equipment running at peak performance.' },

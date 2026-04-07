@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     template: '%s | Viabtech',
   },
   description:
-    "Viabtech is Tanzania's trusted authorized dealer for Canon and Epson printers. We also supply Lenovo and Dell printing solutions with expert sales, repair, and support services across East Africa.",
+    "Viabtech is Tanzania's trusted authorized reseller for Canon and Epson printers. We also supply Lenovo and Dell printing solutions with expert sales, repair, and support services across East Africa.",
   keywords: [
     'printer dealer Tanzania',
-    'Canon authorized dealer',
-    'Epson authorized dealer',
+    'Canon authorized reseller',
+    'Epson authorized reseller',
     'printer repair Dar es Salaam',
     'buy printer Tanzania',
     'managed print services',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Viabtech – Authorized Canon & Epson Printer Dealer | Tanzania',
     description:
-      "Tanzania's leading authorized dealer for Canon and Epson printers with expert sales, repair, and managed print services.",
+      "Tanzania's leading authorized reseller for Canon and Epson printers with expert sales, repair, and managed print services.",
     url: 'https://viabtech.co.tz',
     siteName: 'Viabtech',
     locale: 'en_TZ',

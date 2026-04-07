@@ -70,30 +70,36 @@ const testimonials = [
 
 export default function Testimonials() {
   const { locale, t } = useLanguage();
-  const [active, setActive] = useState(0);
+  const [page, setPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // Show 3 cards at a time, paginate in groups of 3
+  const cardsPerPage = 3;
+  const totalPages = Math.ceil(testimonials.length / cardsPerPage);
 
   const navigate = useCallback(
     (direction: 'prev' | 'next') => {
       if (isAnimating) return;
       setIsAnimating(true);
-      setActive((prev) =>
+      setPage((prev) =>
         direction === 'next'
-          ? (prev + 1) % testimonials.length
-          : (prev - 1 + testimonials.length) % testimonials.length,
+          ? (prev + 1) % totalPages
+          : (prev - 1 + totalPages) % totalPages,
       );
       setTimeout(() => setIsAnimating(false), 500);
     },
-    [isAnimating],
+    [isAnimating, totalPages],
   );
 
   useEffect(() => {
-    const timer = setInterval(() => navigate('next'), 7000);
+    const timer = setInterval(() => navigate('next'), 8000);
     return () => clearInterval(timer);
   }, [navigate]);
 
-  const item = testimonials[active];
-  const displayText = locale === 'sw' ? item.textSw : item.text;
+  const visibleTestimonials = testimonials.slice(
+    page * cardsPerPage,
+    page * cardsPerPage + cardsPerPage,
+  );
 
   return (
     <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative overflow-hidden">
@@ -118,94 +124,103 @@ export default function Testimonials() {
           </div>
         </AnimatedSection>
 
-        {/* Main testimonial card */}
-        <div className="max-w-4xl mx-auto">
-          <div
-            key={active}
-            className="relative bg-white rounded-[2.5rem] p-8 sm:p-12 shadow-[0_20px_60px_rgba(0,87,184,0.08)] border border-gray-100 animate-[testimonialIn_0.5s_ease-out]"
-          >
-            {/* Quote icon */}
-            <div
-              className="absolute -top-5 left-10 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg"
-              style={{ background: item.color }}
-            >
-              <Quote size={20} className="text-white" />
-            </div>
-
-            {/* Stars */}
-            <div className="flex gap-1 mb-6 pt-2">
-              {Array.from({ length: item.rating }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={18}
-                  className="fill-amber-400 text-amber-400 drop-shadow-sm"
-                />
-              ))}
-            </div>
-
-            {/* Quote text */}
-            <blockquote className="text-lg sm:text-xl text-text-primary leading-relaxed mb-8 font-medium">
-              &ldquo;{displayText}&rdquo;
-            </blockquote>
-
-            {/* Author */}
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-4">
+        {/* 3-card grid */}
+        <div
+          key={page}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-[testimonialIn_0.5s_ease-out]"
+        >
+          {visibleTestimonials.map((item) => {
+            const displayText = locale === 'sw' ? item.textSw : item.text;
+            return (
+              <div
+                key={item.name}
+                className="relative bg-white rounded-[2rem] p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,87,184,0.06)] border border-gray-100 hover:shadow-[0_20px_50px_rgba(0,87,184,0.1)] hover:-translate-y-1 transition-all duration-400 flex flex-col"
+              >
+                {/* Quote icon */}
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-md"
-                  style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)` }}
+                  className="absolute -top-4 left-8 w-10 h-10 rounded-xl flex items-center justify-center shadow-lg"
+                  style={{ background: item.color }}
                 >
-                  {item.avatar}
+                  <Quote size={16} className="text-white" />
                 </div>
-                <div>
-                  <div className="font-bold text-text-primary text-lg">{item.name}</div>
-                  <div className="text-sm text-text-secondary">
-                    {item.role}, <span className="font-semibold" style={{ color: item.color }}>{item.company}</span>
+
+                {/* Stars */}
+                <div className="flex gap-1 mb-5 pt-3">
+                  {Array.from({ length: item.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={15}
+                      className="fill-amber-400 text-amber-400 drop-shadow-sm"
+                    />
+                  ))}
+                </div>
+
+                {/* Quote text */}
+                <blockquote className="text-[15px] sm:text-base text-text-primary leading-relaxed mb-6 font-medium flex-1">
+                  &ldquo;{displayText}&rdquo;
+                </blockquote>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-md shrink-0"
+                    style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)` }}
+                  >
+                    {item.avatar}
+                  </div>
+                  <div>
+                    <div className="font-bold text-text-primary text-sm">{item.name}</div>
+                    <div className="text-xs text-text-secondary">
+                      {item.role},{' '}
+                      <span className="font-semibold" style={{ color: item.color }}>
+                        {item.company}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
+            );
+          })}
+        </div>
 
-              {/* Nav arrows */}
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => navigate('prev')}
-                  className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={() => navigate('next')}
-                  className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Navigation */}
+        <div className="flex items-center justify-center gap-4 mt-10">
+          <button
+            onClick={() => navigate('prev')}
+            className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft size={18} />
+          </button>
 
-          {/* Dots */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => {
                   if (!isAnimating) {
                     setIsAnimating(true);
-                    setActive(i);
+                    setPage(i);
                     setTimeout(() => setIsAnimating(false), 500);
                   }
                 }}
                 className={`rounded-full transition-all duration-300 ${
-                  i === active
+                  i === page
                     ? 'w-8 h-2.5 bg-primary shadow-md shadow-primary/30'
                     : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'
                 }`}
-                aria-label={`Go to testimonial ${i + 1}`}
+                aria-label={`Go to testimonial page ${i + 1}`}
               />
             ))}
           </div>
+
+          <button
+            onClick={() => navigate('next')}
+            className="w-11 h-11 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
       </div>
 

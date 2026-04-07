@@ -48,7 +48,7 @@ function ProductsContent() {
 
   return (
     <>
-      <section className="page-hero py-20">
+      <section className="page-hero py-20 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('products.badge')}</div>
           <h1 className="text-4xl sm:text-5xl font-bold font-[var(--font-heading)] mb-4 text-white">{t('products.title')}</h1>

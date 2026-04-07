@@ -19,7 +19,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="page-hero pt-24 pb-16">
+      <section className="page-hero pt-24 pb-16 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('contact.badge')}</div>
           <h1 className="text-4xl sm:text-6xl font-extrabold font-[var(--font-heading)] text-white mb-6">

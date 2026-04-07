@@ -21,7 +21,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 const categories = [
   { nameKey: 'categories.canonCameras', image: '/images/categories/camera.png', href: '/products?category=Camera', icon: Camera, color: '#CC0000' },
   { nameKey: 'categories.canonLenses', image: '/images/categories/lens.png', href: '/products?category=Lens', icon: Aperture, color: '#CC0000' },
-  { nameKey: 'categories.epsonProjectors', image: '/images/categories/projector.png', href: '/products?category=Projector', icon: Tv, color: '#003399' },
+  { nameKey: 'categories.epsonProjectors', image: '/images/categories/projector-product.png', href: '/products?category=Projector', icon: Tv, color: '#003399' },
   { nameKey: 'categories.laserPrinters', image: '/images/categories/laser-printer.png', href: '/products?category=Office+Printer', icon: Monitor, color: '#0057B8' },
   { nameKey: 'categories.inkTankPrinters', image: '/images/categories/inkjet-printer.png', href: '/products?category=Inkjet+Printer', icon: Monitor, color: '#0f7d8e' },
   { nameKey: 'categories.wideFormat', image: '/images/categories/plotter.png', href: '/products?category=Plotter', icon: Monitor, color: '#003399' },
@@ -61,17 +61,17 @@ export default function HomePage() {
               const catName = t(cat.nameKey) !== cat.nameKey ? t(cat.nameKey) : cat.nameKey;
               return (
                 <AnimatedSection key={cat.nameKey} animation="scale-in" delay={idx * 80}>
-                  <Link href={cat.href} className="group category-card-dark rounded-[1.25rem] overflow-hidden shadow-lg">
+                  <Link 
+                    href={cat.href} 
+                    className="group category-card-dark rounded-[1.25rem] overflow-hidden shadow-lg border-2 border-transparent hover:border-[#0057B8] transition-all duration-300"
+                  >
                     <div className="category-card-image relative rounded-t-[1.25rem] overflow-hidden">
                       <Image src={cat.image} alt={catName} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500" style={{ backgroundColor: cat.color }} />
-                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#111827]/90 backdrop-blur-sm flex items-center justify-center shadow-md border border-gray-800 group-hover:scale-110 transition-transform hidden sm:flex">
-                        <cat.icon size={18} style={{ color: cat.color }} />
-                      </div>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-[#0057B8]" />
                     </div>
                     <div className="category-card-label flex items-center justify-between p-5 rounded-b-[1.25rem] bg-[#111827]">
-                      <h3 className="font-semibold text-white group-hover:text-primary-light transition-colors text-base">{catName}</h3>
-                      <ArrowRight size={14} className="text-gray-400 group-hover:text-primary-light group-hover:translate-x-1 transition-all" />
+                      <h3 className="font-semibold text-white group-hover:text-[#0057B8] transition-colors text-base">{catName}</h3>
+                      <ArrowRight size={14} className="text-gray-400 group-hover:text-[#0057B8] group-hover:translate-x-1 transition-all" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -299,9 +299,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ TESTIMONIALS ═══ */}
-      <Testimonials />
-
       {/* ═══ WHY VIABTECH ═══ */}
       <section className="py-20 bg-[#0b1120] relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-bl from-[#CC0000]/10 via-[#003399]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -343,6 +340,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═══ TESTIMONIALS ═══ */}
+      <Testimonials />
 
       {/* ═══ VIDEO SHOWCASE ═══ */}
       <VideoShowcase />

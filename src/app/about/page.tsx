@@ -37,7 +37,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="page-hero pt-24 pb-12">
+      <section className="page-hero pt-24 pb-12 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="max-w-3xl">
             <div className="section-badge bg-white/10 border-white/20 text-white"><Building size={14} className="mr-1" /> {t('aboutPage.badge')}</div>
