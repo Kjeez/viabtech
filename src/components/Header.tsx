@@ -82,7 +82,7 @@ export default function Header() {
               alt="Viabtech Limited"
               width={180}
               height={50}
-              className="h-12 w-auto object-contain brightness-0 invert"
+              className="h-12 w-auto object-contain bg-white/90 p-1.5 rounded-lg"
               priority
             />
           </Link>
@@ -185,7 +185,7 @@ export default function Header() {
               alt="Viabtech"
               width={140}
               height={40}
-              className="h-9 w-auto object-contain brightness-0 invert"
+              className="h-9 w-auto object-contain bg-white/90 p-1 rounded-md"
             />
           </Link>
           <button

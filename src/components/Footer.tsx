@@ -68,7 +68,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
-                <Image src="/images/logo1.png" alt="Viabtech Limited" width={160} height={160} className="h-20 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" />
+                <Image src="/images/logo1.png" alt="Viabtech Limited" width={160} height={160} className="h-20 w-auto object-contain bg-white/90 p-2 rounded-xl" />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">{t('footer.desc')}</p>
               <div className="space-y-4 text-sm">

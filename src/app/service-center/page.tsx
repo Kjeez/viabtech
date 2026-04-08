@@ -1,131 +1,232 @@
-import Link from 'next/link';
-import { ShieldCheck, Wrench, Clock, Award, Phone, ArrowRight, CheckCircle, Printer, Headphones } from 'lucide-react';
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = { 
-  title: 'Authorized Service Center', 
-  description: 'Viabtech is an authorized Canon and Epson service center in Tanzania.' 
-};
-
-const certifications = [
-  { brand: 'Canon', color: '#CC0000', services: ['Warranty repairs and claims', 'Out-of-warranty repairs', 'Genuine Canon parts only', 'Firmware updates & calibration', 'Annual maintenance contracts'] },
-  { brand: 'Epson', color: '#003399', services: ['Warranty repairs and claims', 'Out-of-warranty repairs', 'Genuine Epson parts only', 'Print head cleaning & alignment', 'EcoTank system servicing'] },
-];
-
-const process = [
-  { step: '01', title: 'Contact Us', desc: 'Call or visit with your printer issue.' },
-  { step: '02', title: 'Diagnosis', desc: 'Thorough diagnosis by certified technicians.' },
-  { step: '03', title: 'Quote', desc: 'Transparent quote with no hidden charges.' },
-  { step: '04', title: 'Repair', desc: 'Repair with genuine parts and full testing.' },
-  { step: '05', title: 'Delivery', desc: 'Pickup or delivery back to your doorstep.' },
-];
+import { useState } from 'react';
+import { Settings, CheckCircle, MapPin, Send, Cpu, ShieldCheck, PenTool, Search } from 'lucide-react';
+import FAQAccordion from '@/components/FAQAccordion';
+import { useLanguage } from '@/i18n/LanguageContext';
+import Image from 'next/image';
 
 export default function ServiceCenterPage() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+    setFormData({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
+  };
+
+  const capabilities = [
+    { textKey: 'serviceCenter.cap.diag', icon: Search },
+    { textKey: 'serviceCenter.cap.parts', icon: Cpu },
+    { textKey: 'serviceCenter.cap.warranty', icon: ShieldCheck },
+    { textKey: 'serviceCenter.cap.maintenance', icon: PenTool },
+  ];
+
   return (
     <>
-      <section className="page-hero pt-24 pb-12">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center z-10">
-          <div className="section-badge bg-white/10 border-white/20 text-white mx-auto"><ShieldCheck size={14} className="mr-1" /> Certified Service Center</div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold font-[var(--font-heading)] text-white mb-6">Authorized <span className="text-primary-light">Service Center</span></h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">Factory-certified repair and maintenance by trained technicians using genuine parts. Protect your investment.</p>
+      <section className="page-hero pt-24 pb-16 bg-[#0a1628]">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
+          <div className="section-badge bg-white/10 border-white/20 text-white">{t('serviceCenter.badge')}</div>
+          <h1 className="text-4xl sm:text-6xl font-extrabold font-[var(--font-heading)] text-white mb-6">
+            {t('serviceCenter.title')} <span className="text-primary-light">{t('serviceCenter.titleHighlight')}</span>
+          </h1>
+          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">{t('serviceCenter.subtitle')}</p>
         </div>
       </section>
 
-      {/* Navy extension for Certifications */}
-      <section className="py-20 bg-[#0a1628] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* Brand Zones */}
+      <section className="py-20 bg-[#f8fbff] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-10">
-            {certifications.map((cert) => (
-              <div key={cert.brand} className="kepler-card-dark bg-[#0b1120] border-white/5 p-8 sm:p-10 shadow-[0_15px_40px_rgba(0,159,227,0.1)] hover:border-primary/30 transition-all duration-500">
-                <div className="flex items-center gap-5 mb-8">
-                  <div className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center text-2xl font-black text-white shadow-lg" style={{ background: cert.color }}>
-                    {cert.brand.charAt(0)}
+            {/* EPSON Zone */}
+            <div className="bg-white rounded-[2rem] p-8 sm:p-10 border-2 border-[#003399]/20 shadow-[0_15px_40px_rgba(0,51,153,0.08)] hover:shadow-[0_25px_50px_rgba(0,51,153,0.15)] transition-all relative overflow-hidden group">
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#003399]/10 rounded-full blur-2xl group-hover:bg-[#003399]/20 transition-colors" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-14 flex items-center shrink-0">
+                  <Image src="/images/epson.png" alt="Epson" width={100} height={40} className="h-8 w-auto object-contain" />
+                </div>
+                <h3 className="font-bold text-[#0f1c2e] text-2xl">{t('serviceCenter.epsonTitle')}</h3>
+              </div>
+              <p className="text-gray-600 mb-8">{t('serviceCenter.epsonDesc')}</p>
+              
+              <ul className="space-y-4">
+                {capabilities.map((cap, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#003399]/10 flex items-center justify-center shrink-0">
+                      <cap.icon size={16} className="text-[#003399]" />
+                    </div>
+                    <span className="font-semibold text-[#0f1c2e]">{t(cap.textKey)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CANON Zone */}
+            <div className="bg-white rounded-[2rem] p-8 sm:p-10 border-2 border-[#CC0000]/20 shadow-[0_15px_40px_rgba(204,0,0,0.08)] hover:shadow-[0_25px_50px_rgba(204,0,0,0.15)] transition-all relative overflow-hidden group">
+              <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#CC0000]/10 rounded-full blur-2xl group-hover:bg-[#CC0000]/20 transition-colors" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-14 flex items-center shrink-0">
+                  <Image src="/images/canon.png" alt="Canon" width={100} height={40} className="h-8 w-auto object-contain" />
+                </div>
+                <h3 className="font-bold text-[#0f1c2e] text-2xl">{t('serviceCenter.canonTitle')}</h3>
+              </div>
+              <p className="text-gray-600 mb-8">{t('serviceCenter.canonDesc')}</p>
+              
+              <ul className="space-y-4">
+                {capabilities.map((cap, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#CC0000]/10 flex items-center justify-center shrink-0">
+                      <cap.icon size={16} className="text-[#CC0000]" />
+                    </div>
+                    <span className="font-semibold text-[#0f1c2e]">{t(cap.textKey)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Request & Locations Layered Section */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+            
+            {/* Form Column */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-[2rem] p-8 sm:p-12 border border-gray-100 shadow-[0_20px_50px_rgba(0,159,227,0.08)] relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
+                
+                <div className="flex items-center gap-4 mb-8 relative">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <Settings size={28} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold font-[var(--font-heading)] text-white">{cert.brand}</h3>
-                    <p className="text-sm font-medium text-primary flex items-center gap-1.5 mt-1">
-                      <ShieldCheck size={16} /> Authorized Service Partner
-                    </p>
+                    <h3 className="font-extrabold font-[var(--font-heading)] text-[#0f1c2e] text-2xl mb-1">{t('serviceCenter.form.title')}</h3>
+                    <p className="text-sm font-medium text-gray-500">{t('serviceCenter.form.subtitle')}</p>
                   </div>
                 </div>
-                <ul className="space-y-4">
-                  {cert.services.map((s) => (
-                    <li key={s} className="flex items-start gap-4 text-sm font-medium text-gray-300">
-                      <CheckCircle size={18} className="text-primary shrink-0 mt-0.5" />{s}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-[#f8fbff]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <div className="section-badge mx-auto bg-primary/10 text-primary border-primary/20">Process</div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">Our Service Process</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
-            {process.map((item, i) => (
-              <div key={item.step} className="relative text-center group">
-                <div className="w-16 h-16 mx-auto rounded-[1.25rem] bg-white shadow-md border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300 z-10 relative">
-                  <span className="text-xl font-bold text-primary group-hover:text-white transition-colors duration-300">{item.step}</span>
-                </div>
-                <h4 className="font-bold text-[#0f1c2e] mb-3 text-lg">{item.title}</h4>
-                <p className="text-sm font-medium text-gray-500 leading-relaxed px-2">{item.desc}</p>
-                {i < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-[2px] bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10" />
+                
+                {submitted && (
+                  <div className="flex items-center gap-3 p-5 mb-8 rounded-2xl bg-green-50 border border-green-200 text-green-700 text-sm font-bold animate-slide-up relative z-10">
+                    <CheckCircle size={20} />
+                    {t('contact.thankYou')}
+                  </div>
                 )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+                
+                <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('contact.name')} *</label>
+                      <input type="text" id="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all" placeholder="John Mosha" />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('contact.phoneLabel')} *</label>
+                      <input type="tel" id="phone" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all" placeholder="+255 xxx xxx xxx" />
+                    </div>
+                  </div>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Award, title: 'Certified Technicians', desc: 'Factory-trained experts.' },
-              { icon: Wrench, title: 'Genuine Parts', desc: 'Only authentic parts used.' },
-              { icon: Clock, title: 'Fast Turnaround', desc: 'Most repairs in 24-48 hours.' },
-              { icon: Headphones, title: 'Warranty Protected', desc: 'All repairs backed by warranty.' },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-[2rem] border border-gray-100 shadow-[0_10px_30px_rgba(0,159,227,0.04)] hover:shadow-[0_20px_50px_rgba(0,159,227,0.12)] p-8 text-center group hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 mx-auto rounded-2xl bg-[#f0f7ff] flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                  <item.icon size={26} className="text-primary group-hover:text-white transition-colors duration-300" />
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="brand" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('serviceCenter.form.brand')} *</label>
+                      <select id="brand" required value={formData.brand} onChange={(e) => setFormData({...formData, brand: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all appearance-none cursor-pointer">
+                        <option value="">Select Brand</option>
+                        <option value="canon">Canon</option>
+                        <option value="epson">Epson</option>
+                        <option value="other">Other / Not Sure</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="productType" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('serviceCenter.form.productType')} *</label>
+                      <select id="productType" required value={formData.productType} onChange={(e) => setFormData({...formData, productType: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all appearance-none cursor-pointer">
+                        <option value="">Select Type</option>
+                        <option value="printer">Printer / Plotter</option>
+                        <option value="camera">Camera / Lens</option>
+                        <option value="projector">Projector</option>
+                        <option value="scanner">Scanner</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="model" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('serviceCenter.form.model')}</label>
+                      <input type="text" id="model" required value={formData.model} onChange={(e) => setFormData({...formData, model: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all" placeholder="e.g., EcoTank L3250" />
+                    </div>
+                    <div>
+                      <label htmlFor="serialNumber" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('serviceCenter.form.serial')}</label>
+                      <input type="text" id="serialNumber" value={formData.serialNumber} onChange={(e) => setFormData({...formData, serialNumber: e.target.value})}
+                        className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all" placeholder="S/N" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">{t('serviceCenter.form.issue')}</label>
+                    <textarea id="message" required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all resize-none" placeholder="..." />
+                  </div>
+                  
+                  <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-5 btn-vibrant rounded-xl text-[1rem] shadow-xl mt-4">
+                    <Send size={18} /> {t('contact.sendInquiry')}
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Maps Column */}
+            <div className="lg:col-span-2 space-y-8">
+              <div className="mb-6">
+                <div className="section-badge bg-primary/10 text-primary border-primary/20">{t('serviceCenter.dropoff.title')}</div>
+                <h2 className="text-2xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">{t('serviceCenter.dropoff.title')}</h2>
+                <p className="text-gray-500 mt-2 font-medium">{t('serviceCenter.dropoff.subtitle')}</p>
+              </div>
+
+              {/* Epson Map */}
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
+                <div className="p-5 bg-white flex flex-col gap-2">
+                  <h4 className="font-bold text-[#003399] flex items-center gap-2 text-lg">
+                    <MapPin size={18} /> Epson Experience Centre
+                  </h4>
+                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                    Uhuru Heights, Ground Floor<br/>Bibi Titi Mohamed Road
+                  </p>
                 </div>
-                <h4 className="font-bold text-[#0f1c2e] mb-3 text-lg">{item.title}</h4>
-                <p className="text-sm font-medium text-gray-500">{item.desc}</p>
+                <div className="w-full h-[220px] relative bg-slate-100">
+                  <iframe src="https://maps.google.com/maps?q=-6.8105502,39.2859816&z=16&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Epson Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
+                </div>
               </div>
-            ))}
+
+              {/* Canon Map */}
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
+                <div className="p-5 bg-white flex flex-col gap-2">
+                  <h4 className="font-bold text-[#CC0000] flex items-center gap-2 text-lg">
+                    <MapPin size={18} /> Canon Zone Showroom
+                  </h4>
+                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                    Next To Peacock Hotel<br/>Bibi Titi Mohamed Road
+                  </p>
+                </div>
+                <div className="w-full h-[220px] relative bg-slate-100">
+                  <iframe src="https://maps.google.com/maps?q=Peacock+Hotel,+Bibi+Titi+Mohamed+Road,+Dar+es+salaam+Tanzania&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Canon Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
-        {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
-        
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center z-10">
-          <div className="w-20 h-20 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-8 backdrop-blur-sm">
-            <Printer size={32} className="text-primary-light" />
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] text-white mb-6">Need a Repair?</h2>
-          <p className="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">Bring your printer to our authorized service center at Uhuru Heights, or call us to arrange a pickup for corporate clients.</p>
-          <div className="flex flex-wrap justify-center gap-5">
-            <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 btn-vibrant rounded-full font-bold">
-              Book a Service <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a href="tel:+255123456789" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-transparent border border-white/20 text-white font-bold hover:bg-white/10 transition-all">
-              <Phone size={16} /> +255 123 456 789
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* FAQ Section */}
+      <FAQAccordion />
     </>
   );
 }

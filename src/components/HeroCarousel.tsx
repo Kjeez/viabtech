@@ -171,25 +171,6 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Keyframe animations */}
-      <style jsx>{`
-        @keyframes slideInLeft {
-          from { opacity: 0; transform: translateX(-50px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(50px) scale(0.95); }
-          to   { opacity: 1; transform: translateX(0) scale(1); }
-        }
-        @keyframes ringPulse {
-          0%, 100% { transform: translate(0, -50%) scale(1); opacity: 1; }
-          50%      { transform: translate(0, -50%) scale(1.04); opacity: 0.6; }
-        }
-        @keyframes floatBlob {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-16px); }
-        }
-      `}</style>
     </section>
   );
 }
