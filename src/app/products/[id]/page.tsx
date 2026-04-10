@@ -226,7 +226,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               {related.map((p) => (
                 <Link key={p.id} href={`/products/${p.id}`} className="group kepler-card overflow-hidden">
                   <div className="h-48 flex items-center justify-center bg-gradient-to-br from-white to-[#f0f7ff] relative overflow-hidden">
-                    {p.image && p.image.startsWith('http') ? (
+                    {p.image && (p.image.startsWith('http') || p.image.startsWith('/')) ? (
                       <img
                         src={p.image}
                         alt={p.name}
