@@ -184,12 +184,12 @@ export default function Header() {
                 {/* Regular Dropdown (Services etc.) */}
                 {!item.isMegaMenu && item.children && activeDropdown === item.name && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="bg-[#111827] rounded-xl py-2 min-w-[240px] shadow-xl shadow-black/40 border border-gray-800">
+                    <div className="bg-white rounded-xl py-2 min-w-[240px] shadow-2xl shadow-black/20 border border-gray-100">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-5 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-light/50"
+                          className="block px-5 py-3 text-sm text-gray-600 hover:text-primary hover:bg-primary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-light/50"
                         >
                           {child.name}
                         </Link>
