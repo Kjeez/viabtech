@@ -56,8 +56,8 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
       {/* ── Product Hero ── */}
       <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Link href="/products" className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-8 transition-colors group">
-            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back to Products
+          <Link href={`/products/category/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-8 transition-colors group">
+            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back to {product.category}
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
