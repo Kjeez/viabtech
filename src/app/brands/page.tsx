@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShieldCheck, ArrowRight, Printer, Star } from 'lucide-react';
 import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
