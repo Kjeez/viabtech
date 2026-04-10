@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { ShieldCheck, ArrowRight, Printer, Star } from 'lucide-react';
 import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
@@ -67,11 +66,16 @@ export default function BrandsPage() {
 
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                     <div className="grid grid-cols-2 gap-4">
-                      {brandProducts.slice(0, 4).map((product) => (
+                      {[...brandProducts]
+                        .filter(p => p.image && !p.isConsumable)
+                        .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+                        .slice(0, 4)
+                        .map((product) => (
                         <Link key={product.id} href={`/products/${product.id}`} className="kepler-card-dark bg-[#0b1120] border-white/5 p-4 group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_10px_30px_rgba(0,159,227,0.15)]">
                           <div className="h-28 flex items-center justify-center mb-4 bg-white rounded-xl relative overflow-hidden p-2">
-                            {product.image && product.image.startsWith('http') ? (
-                              <Image src={product.image} alt={product.name} fill className="object-contain p-2 group-hover:scale-110 transition-transform duration-500" sizes="150px" unoptimized />
+                            {product.image && (product.image.startsWith('http') || product.image.startsWith('/')) ? (
+                              /* eslint-disable-next-line @next/next/no-img-element */
+                              <img src={product.image} alt={product.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                             ) : (
                               <Printer size={36} className="text-primary/15 group-hover:text-primary/30 transition-colors" />
                             )}
