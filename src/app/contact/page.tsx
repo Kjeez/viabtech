@@ -21,11 +21,11 @@ export default function ContactPage() {
     <>
       <section className="page-hero pt-24 pb-16 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
-          <div className="section-badge bg-white/10 border-white/20 text-white">{t('contact.badge')}</div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold font-[var(--font-heading)] text-white mb-6">
+          <div className="section-badge bg-white/10 border-white/20 text-[#ffffff]">{t('contact.badge')}</div>
+          <h1 className="text-4xl sm:text-6xl font-extrabold font-[var(--font-heading)] text-[#ffffff] mb-6 shadow-none">
             {t('contact.title')} <span className="text-primary-light">{t('contact.titleHighlight')}</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">{t('contact.subtitle')}</p>
+          <p className="text-[#d1d5db] text-lg max-w-2xl leading-relaxed font-medium">{t('contact.subtitle')}</p>
         </div>
       </section>
 

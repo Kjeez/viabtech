@@ -4,9 +4,26 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, ChevronRight, Printer, ScanLine, Camera, Projector, PenTool, Palette, Droplets, Package, Wrench, ShoppingBag } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
+
+// Product categories for the dropdown — order matches KeplerTech
+const productCategories = [
+  { name: 'Office Printer', slug: 'office-printer', icon: Printer },
+  { name: 'Plotter', slug: 'plotter', icon: PenTool },
+  { name: 'Graphic Printer', slug: 'graphic-printer', icon: Palette },
+  { name: 'Photo Printer', slug: 'photo-printer', icon: Camera },
+  { name: 'Label Printer', slug: 'label-printer', icon: Printer },
+  { name: 'Projector', slug: 'projector', icon: Projector },
+  { name: 'Scanner', slug: 'scanner', icon: ScanLine },
+  { name: 'Camera', slug: 'camera', icon: Camera },
+  { name: 'Lens', slug: 'lens', icon: Camera },
+  { name: 'Inkjet Media', slug: 'inkjet-media', icon: ShoppingBag },
+  { name: 'Ink Cartridges', slug: 'ink-cartridges', icon: Droplets },
+  { name: 'Accessory', slug: 'accessory', icon: Package },
+  { name: 'Printer Maintenance Box', slug: 'printer-maintenance-box', icon: Wrench },
+];
 
 export default function Header() {
   const { t } = useLanguage();
@@ -27,7 +44,19 @@ export default function Header() {
         { name: t('nav.serviceCenter'), href: '/service-center' },
       ],
     },
-    { name: t('nav.products'), href: '/products' },
+    {
+      name: t('nav.products'),
+      href: '/products',
+      isMegaMenu: true,
+      children: [
+        { name: 'All Products', href: '/products' },
+        ...productCategories.map(cat => ({
+          name: cat.name,
+          href: `/products/category/${cat.slug}`,
+          icon: cat.icon,
+        })),
+      ],
+    },
     { name: t('nav.brands'), href: '/brands' },
     { name: t('nav.blog'), href: '/blog' },
     { name: t('nav.contact'), href: '/contact' },
@@ -113,7 +142,47 @@ export default function Header() {
                     />
                   )}
                 </Link>
-                {item.children && activeDropdown === item.name && (
+
+                {/* Mega Dropdown for Products */}
+                {item.isMegaMenu && activeDropdown === item.name && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
+                    <div className="bg-white rounded-2xl py-3 w-[320px] shadow-2xl shadow-black/20 border border-gray-100 overflow-hidden">
+                      {/* All Products link */}
+                      <Link
+                        href="/products"
+                        className="flex items-center gap-3 px-5 py-3 text-sm font-semibold text-[#0a1628] hover:bg-primary/5 hover:text-primary transition-colors border-b border-gray-100 mx-2 mb-1 rounded-lg"
+                      >
+                        <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Package size={16} className="text-primary" />
+                        </span>
+                        All Products
+                        <ChevronRight size={14} className="ml-auto text-gray-400" />
+                      </Link>
+
+                      {/* Category links */}
+                      <div className="max-h-[400px] overflow-y-auto px-2">
+                        {productCategories.map((cat) => {
+                          const Icon = cat.icon;
+                          return (
+                            <Link
+                              key={cat.slug}
+                              href={`/products/category/${cat.slug}`}
+                              className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors rounded-lg group"
+                            >
+                              <span className="w-7 h-7 rounded-md bg-gray-50 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+                                <Icon size={14} className="text-gray-400 group-hover:text-primary transition-colors" />
+                              </span>
+                              {cat.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Regular Dropdown (Services etc.) */}
+                {!item.isMegaMenu && item.children && activeDropdown === item.name && (
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="bg-[#111827] rounded-xl py-2 min-w-[240px] shadow-xl shadow-black/40 border border-gray-800">
                       {item.children.map((child) => (
@@ -232,7 +301,7 @@ export default function Header() {
                     {/* Sub-links */}
                     <div
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isExpanded ? 'max-h-[300px]' : 'max-h-0'
+                        isExpanded ? 'max-h-[600px]' : 'max-h-0'
                       }`}
                     >
                       {item.children!.map((child) => (

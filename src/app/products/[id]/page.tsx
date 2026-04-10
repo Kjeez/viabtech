@@ -46,7 +46,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
             <ChevronRight size={14} />
             <Link href="/products" className="hover:text-primary transition-colors">Products</Link>
             <ChevronRight size={14} />
-            <Link href={`/products?category=${encodeURIComponent(product.category)}`} className="hover:text-primary transition-colors">{product.category}</Link>
+            <Link href={`/products/category/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-primary transition-colors">{product.category}</Link>
             <ChevronRight size={14} />
             <span className="text-text-primary font-medium truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </nav>
@@ -64,7 +64,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
             {/* Image Area */}
             <div className="space-y-4">
               <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-white via-[#f8fbff] to-[#e8f4fd] border border-border overflow-hidden flex items-center justify-center group">
-                {product.image && product.image.startsWith('http') ? (
+                {product.image && (product.image.startsWith('http') || product.image.startsWith('/')) ? (
                   <img
                     src={product.image}
                     alt={product.name}

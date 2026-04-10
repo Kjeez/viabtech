@@ -4,12 +4,16 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Search, Filter, Printer, ChevronRight, X } from 'lucide-react';
+import { Search, Filter, Printer, ChevronRight, X, Package, Droplets, Wrench } from 'lucide-react';
 import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const categories = ['All', ...Array.from(new Set(productsData.map((p) => p.category)))];
-const brands = ['All', ...Array.from(new Set(productsData.map((p) => p.brand)))];
+// Separate main products from consumables
+const mainProducts = productsData.filter((p) => !p.isConsumable);
+const consumableProducts = productsData.filter((p) => p.isConsumable);
+
+const mainCategories = ['All', ...Array.from(new Set(mainProducts.map((p) => p.category)))];
+const brands = ['All', ...Array.from(new Set(mainProducts.map((p) => p.brand)))];
 
 export default function ProductsPage() {
   return (
@@ -25,23 +29,31 @@ function ProductsContent() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
+  const [showConsumables, setShowConsumables] = useState(false);
 
   useEffect(() => {
     const cat = searchParams.get('category');
-    if (cat && categories.includes(cat)) {
+    if (cat && mainCategories.includes(cat)) {
       setSelectedCategory(cat);
       setShowFilters(true);
     }
   }, [searchParams]);
 
   const filtered = useMemo(() => {
-    return productsData.filter((p) => {
+    return mainProducts.filter((p) => {
       const matchSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
       const matchCategory = selectedCategory === 'All' || p.category === selectedCategory;
       const matchBrand = selectedBrand === 'All' || p.brand === selectedBrand;
       return matchSearch && matchCategory && matchBrand;
     });
   }, [search, selectedCategory, selectedBrand]);
+
+  const filteredConsumables = useMemo(() => {
+    if (!search) return consumableProducts;
+    return consumableProducts.filter((p) =>
+      p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
 
   const activeFilters = [selectedCategory, selectedBrand].filter((f) => f !== 'All').length;
   const { t } = useLanguage();
@@ -53,6 +65,58 @@ function ProductsContent() {
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('products.badge')}</div>
           <h1 className="text-4xl sm:text-5xl font-bold font-[var(--font-heading)] mb-4 text-white">{t('products.title')}</h1>
           <p className="text-gray-300 text-lg max-w-2xl">{t('products.subtitle')}</p>
+          <div className="mt-4 flex items-center gap-2 text-sm text-gray-400">
+            <Package size={16} className="text-primary-light" />
+            <span>{mainProducts.length} products + {consumableProducts.length} consumables</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Browse by Category ── */}
+      <section className="py-12 sm:py-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold font-[var(--font-heading)] text-[#0f1c2e]">
+              Browse by <span className="text-primary">Category</span>
+            </h2>
+            <p className="text-gray-500 mt-2 text-sm">Select a category to explore our full range</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {[
+              { name: 'Office Printer', slug: 'office-printer', img: '/images/products/epson_africa/Epson_EcoTank_L6170_c5ff4507.webp' },
+              { name: 'Plotter', slug: 'plotter', img: '/images/products/epson_africa/Epson_SureColor_SC-T3100_-_Wireless_Printer_with_stand_d0e2f1db.webp' },
+              { name: 'Projector', slug: 'projector', img: '/images/products/epson_africa/Epson_EB-1485Fi_c232ddcc.webp' },
+              { name: 'Scanner', slug: 'scanner', img: '/images/products/canon-scanner.webp' },
+              { name: 'Camera', slug: 'camera', img: '/images/products/canon-camera.webp' },
+              { name: 'Lens', slug: 'lens', img: '/images/products/canon-lens.webp' },
+              { name: 'Label Printer', slug: 'label-printer', img: '/images/products/epson_africa/Epson_ColorWorks_C3500_Series_0c5af10d.webp' },
+              { name: 'Photo Printer', slug: 'photo-printer', img: '/images/products/keplertech/Citizen_CX-02W_8_Large_Photo_Printer_b91599f6.webp' },
+              { name: 'Graphic Printer', slug: 'graphic-printer', img: '/images/products/keplertech/C13T49N100_Epson_Dye_Sublimation_Black_Ink_b7b10976.webp' },
+              { name: 'Ink Cartridges', slug: 'ink-cartridges', img: '/images/products/keplertech/C13S090013_Epson_Printer_Cleaning_Stick_50_pcs_8ae2c8e8.webp' },
+            ].map((cat) => {
+              const count = productsData.filter(p => p.category === cat.name).length;
+              return (
+                <Link
+                  key={cat.slug}
+                  href={`/products/category/${cat.slug}`}
+                  className="group relative flex flex-col items-center text-center rounded-2xl bg-white border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="w-full h-32 sm:h-36 bg-gradient-to-br from-[#f0f6ff] to-[#e4effc] flex items-center justify-center p-4 relative overflow-hidden">
+                    <img
+                      src={cat.img}
+                      alt={cat.name}
+                      className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-3 sm:p-4">
+                    <span className="font-bold text-[#0f1c2e] text-sm leading-tight group-hover:text-primary transition-colors">{cat.name}</span>
+                    <span className="block text-[11px] text-gray-400 mt-1 font-medium">{count} products</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -86,7 +150,7 @@ function ProductsContent() {
                 <div>
                   <label className="block text-xs font-bold text-gray-400 mb-3 uppercase tracking-widest">{t('products.category')}</label>
                   <div className="flex flex-wrap gap-2">
-                    {categories.map((cat) => (
+                    {mainCategories.map((cat) => (
                       <button key={cat} onClick={() => setSelectedCategory(cat)}
                         className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${selectedCategory === cat ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-gray-50 border border-gray-100 text-gray-600 hover:bg-white hover:border-primary/30 hover:text-primary hover:shadow-md'}`}>
                         {cat}
@@ -109,7 +173,7 @@ function ProductsContent() {
             </div>
           )}
 
-          <p className="text-sm font-medium text-gray-500 mb-8 px-2">{t('products.showing')} {filtered.length} {t('products.of')} {productsData.length} {t('products.productsLabel')}</p>
+          <p className="text-sm font-medium text-gray-500 mb-8 px-2">{t('products.showing')} {filtered.length} {t('products.of')} {mainProducts.length} {t('products.productsLabel')}</p>
 
           {filtered.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -151,6 +215,87 @@ function ProductsContent() {
               <button onClick={() => { setSearch(''); setSelectedCategory('All'); setSelectedBrand('All'); }} className="mt-6 px-8 py-3 rounded-full bg-primary/10 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors">{t('products.clearFilters')}</button>
             </div>
           )}
+
+          {/* ── Consumables Section ── */}
+          <div className="mt-16 pt-12 border-t-2 border-dashed border-gray-200">
+            <button
+              onClick={() => setShowConsumables(!showConsumables)}
+              className="w-full flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  <Droplets size={22} className="text-primary" />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-lg font-bold text-[#0f1c2e] group-hover:text-primary transition-colors">
+                    Ink Cartridges & Maintenance Supplies
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    {filteredConsumables.length} consumable products — genuine Epson ink cartridges, maintenance boxes & more
+                  </p>
+                </div>
+              </div>
+              <ChevronRight
+                size={20}
+                className={`text-gray-400 group-hover:text-primary transition-all duration-300 ${showConsumables ? 'rotate-90' : ''}`}
+              />
+            </button>
+
+            {showConsumables && (
+              <div className="mt-6 animate-slide-up">
+                {/* Sub-category chips */}
+                <div className="flex gap-3 mb-6">
+                  <Link
+                    href="/products/category/ink-cartridges"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
+                  >
+                    <Droplets size={14} /> Ink Cartridges ({consumableProducts.filter(p => p.category === 'Ink Cartridges').length})
+                  </Link>
+                  <Link
+                    href="/products/category/printer-maintenance-box"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
+                  >
+                    <Wrench size={14} /> Maintenance Boxes ({consumableProducts.filter(p => p.category === 'Printer Maintenance Box').length})
+                  </Link>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                  {filteredConsumables.slice(0, 20).map((product) => (
+                    <Link key={product.id} href={`/products/${product.id}`} className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all overflow-hidden flex flex-col">
+                      <div className="h-36 flex items-center justify-center bg-gradient-to-br from-[#f8fbff] to-[#e8f4fd] relative overflow-hidden">
+                        {product.image && (product.image.startsWith('http') || product.image.startsWith('/')) ? (
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-400"
+                          />
+                        ) : (
+                          <Droplets size={32} className="text-primary/15" />
+                        )}
+                      </div>
+                      <div className="p-3 flex-1 flex flex-col">
+                        <h4 className="font-semibold text-[#0f1c2e] group-hover:text-primary transition-colors text-xs leading-snug line-clamp-2">{product.name}</h4>
+                        <span className="mt-2 text-[10px] text-primary font-bold flex items-center gap-1">
+                          View <ChevronRight size={10} />
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+
+                {filteredConsumables.length > 20 && (
+                  <div className="mt-6 text-center">
+                    <Link
+                      href="/products/category/ink-cartridges"
+                      className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary/10 text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors"
+                    >
+                      View All {filteredConsumables.length} Consumables <ChevronRight size={14} />
+                    </Link>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </>
