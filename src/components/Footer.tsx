@@ -67,8 +67,8 @@ export default function Footer() {
           <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <Link href="/" className="inline-block mb-6">
-                <Image src="/images/logo1.png" alt="Viabtech Limited" width={160} height={160} className="h-20 w-auto object-contain bg-white/90 p-2 rounded-xl" />
+              <Link href="/" className="inline-flex items-center mb-6 bg-white/95 px-4 py-3 rounded-2xl shadow-sm border border-white/10">
+                <Image src="/images/viabtechlogo.png" alt="Viabtech Logo" width={180} height={80} className="h-14 w-auto object-contain" />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">{t('footer.desc')}</p>
               <div className="space-y-4 text-sm">

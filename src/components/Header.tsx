@@ -105,13 +105,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0" aria-label="Viabtech Home">
+          <Link href="/" className="flex items-center shrink-0 bg-white/95 px-3.5 py-2 rounded-xl shadow-sm border border-gray-100" aria-label="Viabtech Home">
             <Image
-              src="/images/logo1.png"
-              alt="Viabtech Limited"
-              width={180}
-              height={50}
-              className="h-12 w-auto object-contain bg-white/90 p-1.5 rounded-lg"
+              src="/images/viabtechlogo.png"
+              alt="Viabtech Logo"
+              width={160}
+              height={70}
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>
@@ -248,13 +248,13 @@ export default function Header() {
       >
         {/* Drawer header — brand teal bar */}
         <div className="bg-primary px-5 py-4 flex items-center justify-between">
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center bg-white/95 px-3 py-1.5 rounded-lg">
             <Image
-              src="/images/logo1.png"
+              src="/images/viabtechlogo.png"
               alt="Viabtech"
               width={140}
-              height={40}
-              className="h-9 w-auto object-contain bg-white/90 p-1 rounded-md"
+              height={60}
+              className="h-9 w-auto object-contain"
             />
           </Link>
           <button

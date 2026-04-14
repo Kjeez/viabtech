@@ -35,6 +35,17 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
                 height={380}
                 className="object-cover w-full h-[220px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
               />
+              
+              {/* Logo Overlay to cover baked-in watermark */}
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-white/95 px-2.5 py-1.5 rounded-lg shadow-md z-10 flex items-center pointer-events-none">
+                <Image
+                  src="/images/viabtechlogo.png"
+                  alt="Viabtech Logo watermark"
+                  width={120}
+                  height={50}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
             </div>
 
             {/* Team image — bottom left, overlapping */}
