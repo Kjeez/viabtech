@@ -30,6 +30,7 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const [selectedSubject, setSelectedSubject] = useState(subject || '');
   const [customSubject, setCustomSubject] = useState('');
   const modalRef = useRef<HTMLDivElement>(null);
@@ -56,27 +57,54 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
     if (e.target === e.currentTarget) onClose();
   };
 
+  const computedSubject = showSubjectSelect
+    ? (selectedSubject === 'Other' ? customSubject : selectedSubject)
+    : subject;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
+    setError('');
 
-    // Simulate sending (replace with real API call)
-    await new Promise(resolve => setTimeout(resolve, 1200));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          subject: computedSubject,
+          subSubject,
+          message,
+          source: 'inquiry_modal',
+        }),
+      });
 
-    setSending(false);
-    setSubmitted(true);
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to send inquiry');
+      }
 
-    // Auto-close after 3s
-    setTimeout(() => {
-      setSubmitted(false);
-      setName('');
-      setPhone('');
-      setEmail('');
-      setMessage('');
-      setSelectedSubject('');
-      setCustomSubject('');
-      onClose();
-    }, 3000);
+      setSending(false);
+      setSubmitted(true);
+
+      // Auto-close after 3s
+      setTimeout(() => {
+        setSubmitted(false);
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+        setSelectedSubject('');
+        setCustomSubject('');
+        setError('');
+        onClose();
+      }, 3000);
+    } catch (err) {
+      setSending(false);
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
   };
 
   // Keep selectedSubject in sync when subject prop changes
@@ -84,9 +112,6 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
     if (subject) setSelectedSubject(subject);
   }, [subject]);
 
-  const finalSubject = showSubjectSelect
-    ? (selectedSubject === 'Other' ? customSubject : selectedSubject)
-    : subject;
 
   // Format Tanzania phone: +255 7XX XXX XXX
   const formatTzPhone = (value: string) => {
@@ -156,7 +181,7 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
             </div>
             <h3 className="text-xl font-bold text-text-primary mb-2">Thank You!</h3>
             <p className="text-sm text-text-secondary leading-relaxed">
-              Your inquiry for <strong>{finalSubject}</strong> has been submitted. Our team will contact you shortly.
+              Your inquiry for <strong>{computedSubject}</strong> has been submitted. Our team will contact you shortly.
             </p>
           </div>
         ) : (
@@ -276,6 +301,13 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
                 />
               </div>
             </div>
+
+            {/* Error */}
+            {error && (
+              <div className="mb-3 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-600 text-xs font-medium">
+                ⚠️ {error}
+              </div>
+            )}
 
             {/* Submit */}
             <button

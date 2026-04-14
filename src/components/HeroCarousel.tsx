@@ -154,12 +154,12 @@ export default function HeroCarousel() {
       const h = isMobile ? 'h-[300px]' : 'h-[460px]';
       return (
         <div className={`relative z-10 w-full ${h} flex items-end`}>
-          {/* Left printer — shifted left as much as possible */}
-          <div className={`absolute bottom-0 ${isMobile ? '-left-[40px] w-[70%]' : '-left-[150px] w-[75%]'} z-10`}>
+          {/* Left printer — shifted left, scaled down to ~60% of previous size */}
+          <div className={`absolute bottom-0 ${isMobile ? 'left-0 w-[42%]' : '-left-[50px] w-[45%]'} z-10`}>
             <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`w-full h-auto ${shadow}`} priority={current === 0} />
           </div>
-          {/* Right printer — shifted right as much as possible */}
-          <div className={`absolute bottom-0 ${isMobile ? '-right-[80px] w-[85%]' : '-right-[180px] w-[100%]'}`}>
+          {/* Right printer — shifted right */}
+          <div className={`absolute bottom-0 ${isMobile ? '-right-[60px] w-[70%]' : '-right-[80px] w-[80%]'}`}>
             <Image src={s.extraImages[0].src} alt={s.extraImages[0].alt} width={s.extraImages[0].w} height={s.extraImages[0].h} className={`w-full h-auto ${shadow}`} />
           </div>
         </div>

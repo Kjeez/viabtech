@@ -1,20 +1,50 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, MessageSquare, CheckCircle, Printer } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageSquare, CheckCircle, Printer, Loader2 } from 'lucide-react';
 import FAQAccordion from '@/components/FAQAccordion';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+    setSending(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          source: 'contact_page',
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -142,6 +172,12 @@ export default function ContactPage() {
                     {t('contact.thankYou')}
                   </div>
                 )}
+
+                {error && (
+                  <div className="flex items-center gap-3 p-5 mb-8 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-sm font-bold relative z-10">
+                    ⚠️ {error}
+                  </div>
+                )}
                 
                 <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                   <div className="grid sm:grid-cols-2 gap-6">
@@ -185,8 +221,12 @@ export default function ContactPage() {
                     <textarea id="message" required rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium placeholder:text-gray-400 placeholder:font-normal focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 transition-all focus:bg-white resize-none" placeholder={t('contact.messagePlaceholder')} />
                   </div>
-                  <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-5 btn-vibrant rounded-xl text-[1rem] shadow-xl mt-4">
-                    <Send size={18} /> {t('contact.sendInquiry')}
+                  <button type="submit" disabled={sending} className="w-full inline-flex items-center justify-center gap-2 px-8 py-5 btn-vibrant rounded-xl text-[1rem] shadow-xl mt-4 disabled:opacity-60 disabled:cursor-not-allowed">
+                    {sending ? (
+                      <><Loader2 size={18} className="animate-spin" /> Sending...</>
+                    ) : (
+                      <><Send size={18} /> {t('contact.sendInquiry')}</>
+                    )}
                   </button>
                 </form>
               </div>
