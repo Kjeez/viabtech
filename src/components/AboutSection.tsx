@@ -22,12 +22,12 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── Right: Image Collage ── */}
-          <div className="relative order-1 lg:order-2 min-h-[420px] sm:min-h-[480px]">
+          <div className="relative order-1 lg:order-2 h-[440px] sm:h-[500px] w-full">
             {/* Decorative accent */}
-            <div className="absolute -top-3 -right-3 w-[65%] h-[70%] bg-primary/10 rounded-3xl -z-10" />
+            <div className="absolute -top-3 right-0 sm:-right-3 w-[65%] h-[70%] bg-primary/10 rounded-3xl -z-10" />
 
             {/* Building image — top right, larger */}
-            <div className="absolute top-0 -right-4 w-[78%] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group">
+            <div className="absolute top-0 right-0 sm:-right-4 w-[85%] sm:w-[78%] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group">
               <Image
                 src="/images/about-us.jpg"
                 alt="Viab Tech office at Uhuru Heights, Dar es Salaam"
@@ -35,37 +35,35 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
                 height={380}
                 className="object-cover w-full h-[220px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
               />
-              
-              {/* Removed Logo Overlay since baked-in logo is removed */}
             </div>
 
             {/* Team image — bottom left, overlapping */}
-            <div className="absolute bottom-0 left-0 w-[62%] rounded-2xl overflow-hidden shadow-2xl shadow-black/15 border-4 border-white group z-10">
+            <div className="absolute bottom-20 sm:bottom-0 left-0 w-[70%] sm:w-[62%] rounded-2xl overflow-hidden shadow-2xl shadow-black/15 border-4 border-white group z-10">
               <Image
                 src="/images/about-us-team.jpg"
                 alt="Viab Tech team at Epson Experience Zone & Service Centre"
                 width={500}
                 height={380}
-                className="object-cover w-full h-[220px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
+                className="object-cover w-full h-[200px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Stats floating card — center right */}
-            <div className="absolute bottom-6 right-0 z-20 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-5 w-[42%] max-w-[180px]">
-              <div className="space-y-3">
+            <div className="absolute bottom-0 right-0 sm:bottom-6 sm:right-0 z-20 bg-white rounded-2xl shadow-xl border border-gray-100 p-3 sm:p-5 w-[140px] sm:w-[42%] sm:max-w-[180px]">
+              <div className="space-y-2 sm:space-y-3">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.years' : 'aboutPage.years')}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.years' : 'aboutPage.years')}</div>
                 </div>
                 <div className="h-px bg-gray-100" />
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary"><Counter end={11} /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.brands' : 'aboutPage.brands')}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary"><Counter end={11} /></div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.brands' : 'aboutPage.brands')}</div>
                 </div>
                 <div className="h-px bg-gray-100" />
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.clients' : 'aboutPage.clients')}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.clients' : 'aboutPage.clients')}</div>
                 </div>
               </div>
             </div>
