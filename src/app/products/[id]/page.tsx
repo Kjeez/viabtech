@@ -171,7 +171,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
                     <span className="text-sm text-text-muted capitalize font-medium">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </span>
-                    <span className="text-sm text-text-primary font-semibold text-right">{value}</span>
+                    <span className="text-sm text-text-primary font-semibold text-right">{String(value)}</span>
                   </div>
                 )) : (
                   <div className="py-3.5 text-sm text-text-muted">No specifications available.</div>
