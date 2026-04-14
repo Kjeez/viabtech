@@ -147,7 +147,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.q6': 'Do you offer bulk or corporate discounts?',
     'faq.a6': 'Absolutely! We offer competitive volume pricing for businesses, government agencies, and institutions. Contact our sales team for a customized quote based on your requirements.',
     'faq.q7': 'Can I visit your showroom?',
-    'faq.a7': 'Yes! We have two showrooms in Dar es Salaam: the Epson experience zone at Uhuru Heights on Bibi Titi Mohamed Road, and the Canon Authorize showroom next to Peacock Hotel on Bibi Titi Mohamed Road. Visit us Monday\u2013Friday 8AM\u20135PM, Saturday 9AM\u20131PM.',
+    'faq.a7': 'Yes! We have two showrooms in Dar es Salaam: the Epson Experience Centre at Uhuru Heights on Bibi Titi Mohamed Road, and the Canon Zone Showroom next to Peacock Hotel on Bibi Titi Mohamed Road. Visit us Monday\u2013Friday 8AM\u20135PM. For further details, contact our Support & Service Center at +255 746 000 786.',
     'faq.q8': 'How quickly can repairs be completed?',
     'faq.a8': 'Most standard repairs are completed within 1\u20133 business days. Complex repairs or those requiring special parts may take 5\u20137 business days. We provide transparent timelines and status updates throughout the process.',
 
@@ -307,7 +307,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'svc.amc.f5': 'Dedicated account manager',
     'svc.amc.f6': 'Fleet-wide coverage options',
 
-    'svc.warranty.title': 'Register for Warranty',
+    'svc.warranty.title': 'Register for Warranty and Support',
     'svc.warranty.short': 'Register your products for official manufacturer warranty and extended protection plans.',
     'svc.warranty.desc': 'As an authorized reseller for Canon, Epson, HP, Lenovo, Dell, DJI, and Godox, we help you register your products for official manufacturer warranty. We also offer extended warranty plans for additional peace of mind and protection beyond the standard coverage period.',
     'svc.warranty.f1': 'Free manufacturer warranty registration',
@@ -560,7 +560,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.q6': 'Mnatoa punguzo za wingi au mashirika?',
     'faq.a6': 'Kabisa! Tunatoa bei shindani za wingi kwa biashara, mashirika ya serikali, na taasisi. Wasiliana na timu yetu ya mauzo kwa bei maalum kulingana na mahitaji yako.',
     'faq.q7': 'Naweza kutembelea jumba lenu la onyesho?',
-    'faq.a7': 'Ndiyo! Tuna majumba mawili ya onyesho Dar es Salaam: Kituo cha Uzoefu cha Epson katika Uhuru Heights kwenye Barabara ya Bibi Titi Mohamed, na Jumba la Onyesho la Canon karibu na Hoteli ya Peacock kwenye Barabara ya Bibi Titi Mohamed. Tembelea Jumatatu-Ijumaa 8AM-5PM, Jumamosi 9AM-1PM.',
+    'faq.a7': 'Ndiyo! Tuna majumba mawili ya onyesho Dar es Salaam: Kituo cha Uzoefu cha Epson katika Uhuru Heights kwenye Barabara ya Bibi Titi Mohamed, na Jumba la Onyesho la Canon karibu na Hoteli ya Peacock kwenye Barabara ya Bibi Titi Mohamed. Tembelea Jumatatu-Ijumaa 8AM-5PM. Kwa maelezo zaidi, wasiliana na Kituo chetu cha Msaada na Huduma kwa +255 746 000 786.',
     'faq.q8': 'Ukarabati unachukua muda gani?',
     'faq.a8': 'Ukarabati wengi wa kawaida unakamilishwa ndani ya siku 1-3 za kazi. Ukarabati tata au unaohitaji vipuri maalum unaweza kuchukua siku 5-7 za kazi. Tunatoa makadirio ya uwazi na taarifa za hali katika mchakato wote.',
 
@@ -720,7 +720,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'svc.amc.f5': 'Meneja wa akaunti aliyetengwa',
     'svc.amc.f6': 'Chaguo za bima ya mfumo mzima',
 
-    'svc.warranty.title': 'Jiandikishe kwa Dhamana',
+    'svc.warranty.title': 'Jiandikishe kwa Dhamana na Msaada',
     'svc.warranty.short': 'Sajili bidhaa zako kwa dhamana rasmi ya mtengenezaji na mipango ya ulinzi wa ziada.',
     'svc.warranty.desc': 'Kama muuzaji rasmi wa Canon, Epson, HP, Lenovo, Dell, DJI, na Godox, tunakusaidia kusajili bidhaa zako kwa dhamana rasmi ya mtengenezaji. Pia tunatoa mipango ya dhamana iliyoongezwa kwa utulivu zaidi wa akili.',
     'svc.warranty.f1': 'Usajili wa bure wa dhamana ya mtengenezaji',
