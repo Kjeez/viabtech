@@ -1,7 +1,7 @@
 'use client';
 
 /* eslint-disable @next/next/no-img-element */
-import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useState, useMemo, useEffect, Suspense, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, Printer, ChevronRight, X, Package, Droplets, Wrench } from 'lucide-react';
@@ -30,6 +30,9 @@ function ProductsContent() {
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [showFilters, setShowFilters] = useState(false);
   const [showConsumables, setShowConsumables] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(24);
+  const observerTarget = useRef<HTMLDivElement>(null);
+  const BATCH_SIZE = 24;
 
   useEffect(() => {
     const cat = searchParams.get('category');
@@ -47,6 +50,37 @@ function ProductsContent() {
       return matchSearch && matchCategory && matchBrand;
     });
   }, [search, selectedCategory, selectedBrand]);
+
+  // Reset pagination when filters change
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [search, selectedCategory, selectedBrand]);
+
+  // Intersection Observer for Infinite Scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && visibleCount < filtered.length) {
+          setVisibleCount((prev) => prev + BATCH_SIZE);
+        }
+      },
+      { rootMargin: '300px' } // Load well before the user hits the absolute bottom
+    );
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
+    }
+
+    const currentTarget = observerTarget.current;
+    return () => {
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
+      }
+    };
+  }, [visibleCount, filtered.length]);
+
+  const visibleProducts = filtered.slice(0, visibleCount);
+
 
   const filteredConsumables = useMemo(() => {
     if (!search) return consumableProducts;
@@ -173,11 +207,12 @@ function ProductsContent() {
             </div>
           )}
 
-          <p className="text-sm font-medium text-gray-500 mb-8 px-2">{t('products.showing')} {filtered.length} {t('products.of')} {mainProducts.length} {t('products.productsLabel')}</p>
+          <p className="text-sm font-medium text-gray-500 mb-8 px-2">{t('products.showing')} {visibleProducts.length} {t('products.of')} {filtered.length} {t('products.productsLabel')}</p>
 
           {filtered.length > 0 ? (
+            <>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {filtered.map((product) => (
+              {visibleProducts.map((product) => (
                 <Link key={product.id} href={`/products/${product.id}`} className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_10px_30px_rgba(0,159,227,0.04)] hover:shadow-[0_20px_50px_rgba(0,159,227,0.12)] hover:-translate-y-1 transition-all duration-400 overflow-hidden flex flex-col">
                   <div className="h-56 m-2 mb-0 rounded-[1.5rem] flex items-center justify-center bg-gradient-to-br from-[#f8fbff] to-[#e8f4fd] relative overflow-hidden group-hover:from-white group-hover:to-[#dbeafe] transition-colors">
                     {product.image && (product.image.startsWith('http') || product.image.startsWith('/')) ? (
@@ -207,6 +242,12 @@ function ProductsContent() {
                 </Link>
               ))}
             </div>
+            {visibleCount < filtered.length && (
+              <div ref={observerTarget} className="mt-12 flex justify-center py-10 w-full col-span-full">
+                <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
+              </div>
+            )}
+            </>
           ) : (
             <div className="text-center py-24 bg-white rounded-[2rem] shadow-sm border border-gray-100">
               <Printer size={56} className="text-gray-300 mx-auto mb-5" />
