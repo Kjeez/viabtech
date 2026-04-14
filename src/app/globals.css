@@ -45,7 +45,8 @@
   --font-heading: 'Outfit', system-ui, sans-serif;
 
   /* Animations */
-  --animate-scroll-x: scroll-x 30s linear infinite;
+  --animate-scroll-x: scroll-x 15s linear infinite;
+  --animate-scroll-x-slow: scroll-x 30s linear infinite;
 }
 
 /* ── Keyframes ── */

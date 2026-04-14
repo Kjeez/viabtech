@@ -134,7 +134,7 @@ export default function HomePage() {
         <div className="relative mb-16">
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-          <div className="flex animate-scroll-x gap-12 py-6">
+          <div className="flex animate-scroll-x sm:animate-scroll-x-slow gap-12 py-6">
             {[...brandsData, ...brandsData].map((brand, i) => (
               <Link key={`marquee-${brand.id}-${i}`} href={`/brands#${brand.slug}`} className="flex-shrink-0 w-[140px] h-[64px] mx-2 flex items-center justify-center bg-white/95 rounded-xl border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.03)] opacity-60 hover:opacity-100 transition-all duration-500 overflow-hidden">
                 <Image src={brand.logo} alt={brand.name} width={120} height={50} style={{ width: 'auto', height: 'auto' }} className="object-contain max-h-[40px] max-w-[100px] mix-blend-multiply" />
