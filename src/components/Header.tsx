@@ -105,7 +105,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 bg-white/95 px-3.5 py-2 rounded-xl shadow-sm border border-gray-100" aria-label="Viabtech Home">
+          <Link href="/" className="flex items-center shrink-0 bg-white/95 px-[10px] py-[5px] rounded-xl shadow-sm border border-gray-100" aria-label="Viabtech Home">
             <Image
               src="/images/viabtechlogo.png"
               alt="Viabtech Logo"
@@ -248,7 +248,7 @@ export default function Header() {
       >
         {/* Drawer header — brand teal bar */}
         <div className="bg-primary px-5 py-4 flex items-center justify-between">
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center bg-white/95 px-3 py-1.5 rounded-lg">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center bg-white/95 px-[8px] py-[4px] rounded-lg">
             <Image
               src="/images/viabtechlogo.png"
               alt="Viabtech"
