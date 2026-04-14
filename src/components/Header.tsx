@@ -72,10 +72,15 @@ export default function Header() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('nav-drawer-open');
     } else {
       document.body.style.overflow = '';
+      document.body.classList.remove('nav-drawer-open');
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => { 
+      document.body.style.overflow = ''; 
+      document.body.classList.remove('nav-drawer-open');
+    };
   }, [isOpen]);
 
   // Close drawer on route change
