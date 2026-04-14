@@ -114,7 +114,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
                   <Zap size={14} className="text-primary" /> Key Features
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-2.5">
-                  {product.features.map((f, i) => (
+                  {product.features.map((f: string, i: number) => (
                     <div key={i} className="flex items-start gap-2.5 px-3 py-2.5 rounded-xl bg-[#f8fbff] border border-border/50">
                       <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
                       <span className="text-sm text-text-secondary">{f}</span>
