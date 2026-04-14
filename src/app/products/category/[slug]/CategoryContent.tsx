@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Printer, ArrowLeft, Package, Search, X } from 'lucide-react';
 import productsData from '@/data/products.json';
@@ -40,6 +40,9 @@ const categoryDescriptions: Record<string, string> = {
 
 export default function CategoryContent({ slug }: { slug: string }) {
   const [search, setSearch] = useState('');
+  const BATCH_SIZE = 24;
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const observerTarget = useRef<HTMLDivElement>(null);
 
   const categoryName = categoryMap[slug] ?? '';
   const description = categoryDescriptions[categoryName] ?? `Explore our complete ${categoryName} range.`;
@@ -59,6 +62,34 @@ export default function CategoryContent({ slug }: { slug: string }) {
         p.type.toLowerCase().includes(q)
     );
   }, [search, allProducts]);
+
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [search, allProducts]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && visibleCount < filtered.length) {
+          setVisibleCount((prev) => prev + BATCH_SIZE);
+        }
+      },
+      { rootMargin: '300px' }
+    );
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
+    }
+
+    const currentTarget = observerTarget.current;
+    return () => {
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
+      }
+    };
+  }, [visibleCount, filtered.length]);
+
+  const visibleProducts = filtered.slice(0, visibleCount);
 
   const otherCategories = Object.entries(categoryMap)
     .filter(([s]) => s !== slug)
@@ -126,13 +157,14 @@ export default function CategoryContent({ slug }: { slug: string }) {
 
           {/* Result count */}
           <p className="text-xs text-gray-400 mb-6 px-1">
-            Showing <span className="font-semibold text-gray-600">{filtered.length}</span> of {allProducts.length} products
+            Showing <span className="font-semibold text-gray-600">{visibleProducts.length}</span> of {filtered.length} products
             {search && <span> for &ldquo;<span className="text-primary">{search}</span>&rdquo;</span>}
           </p>
 
           {filtered.length > 0 ? (
+            <>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {filtered.map((product) => (
+              {visibleProducts.map((product) => (
                 <Link
                   key={product.id}
                   href={`/products/${product.id}`}
@@ -165,6 +197,12 @@ export default function CategoryContent({ slug }: { slug: string }) {
                 </Link>
               ))}
             </div>
+            {visibleCount < filtered.length && (
+              <div ref={observerTarget} className="mt-12 flex justify-center py-10 w-full col-span-full">
+                <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
+              </div>
+            )}
+            </>
           ) : (
             <div className="text-center py-24 bg-white rounded-[2rem] shadow-sm border border-gray-100">
               <Search size={48} className="text-gray-200 mx-auto mb-4" />
