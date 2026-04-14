@@ -1,29 +1,50 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, ArrowRight, CheckCircle, CalendarCheck, ShieldCheck, Cog } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import ServiceInquiryModal from '@/components/ServiceInquiryModal';
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, CalendarCheck, ShieldCheck, Cog
 };
 
 const services = [
-  { id: 'printer-sales', slug: 'printer-sales', icon: 'ShoppingCart', key: 'printerSales' },
-  { id: 'managed-print', slug: 'managed-print', icon: 'Monitor', key: 'managedPrint' },
-  { id: 'amc', slug: 'annual-maintenance-contract', icon: 'CalendarCheck', key: 'amc' },
-  { id: 'warranty-registration', slug: 'warranty-registration', icon: 'ShieldCheck', key: 'warranty' },
-  { id: 'printer-repair', slug: 'printer-repair', icon: 'Wrench', key: 'repair' },
-  { id: 'consumables', slug: 'consumables', icon: 'Package', key: 'consumables' },
-  { id: 'spares', slug: 'spares', icon: 'Cog', key: 'spares' },
-  { id: 'it-support', slug: 'it-support', icon: 'Wifi', key: 'itSupport' },
+  { id: 'printer-sales', slug: 'printer-sales', icon: 'ShoppingCart', key: 'printerSales', subject: 'Printer Sales & Consulting', subSubject: 'Expert guidance to find the perfect printer for your business needs.' },
+  { id: 'managed-print', slug: 'managed-print', icon: 'Monitor', key: 'managedPrint', subject: 'Managed Print Services & Leasing', subSubject: 'Comprehensive print management and leasing solutions.' },
+  { id: 'amc', slug: 'annual-maintenance-contract', icon: 'CalendarCheck', key: 'amc', subject: 'Annual Maintenance Contract (AMC)', subSubject: 'Protect your investment with comprehensive maintenance coverage.', linkTo: '/contact' },
+  { id: 'warranty-registration', slug: 'warranty-registration', icon: 'ShieldCheck', key: 'warranty', subject: 'Warranty Registration', subSubject: 'Register your product warranty for full support coverage.' },
+  { id: 'printer-repair', slug: 'printer-repair', icon: 'Wrench', key: 'repair', subject: 'Authorized Service Center', subSubject: 'Expert repairs with genuine parts and fast turnaround.', linkTo: '/service-center' },
+  { id: 'consumables', slug: 'consumables', icon: 'Package', key: 'consumables', subject: 'Toner & Consumables', subSubject: 'Genuine toner, ink, and consumables for all major brands.' },
+  { id: 'spares', slug: 'spares', icon: 'Cog', key: 'spares', subject: 'Spare Parts Inquiry', subSubject: 'Original spare parts for printers, scanners, and more.' },
+  { id: 'it-support', slug: 'it-support', icon: 'Wifi', key: 'itSupport', subject: 'IT Support & Networking', subSubject: 'Network setup, troubleshooting, and IT infrastructure support.' },
 ];
 
 export default function ServicesPage() {
   const { t } = useLanguage();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSubject, setModalSubject] = useState('');
+  const [modalSubSubject, setModalSubSubject] = useState('');
+  const [subjectSelect, setSubjectSelect] = useState(false);
+
+  const openInquiry = (subject: string, subSubject: string, withSelect = false) => {
+    setModalSubject(subject);
+    setModalSubSubject(subSubject);
+    setSubjectSelect(withSelect);
+    setModalOpen(true);
+  };
 
   return (
     <>
+      <ServiceInquiryModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        subject={modalSubject}
+        subSubject={modalSubSubject}
+        showSubjectSelect={subjectSelect}
+      />
+
       <section className="page-hero py-24 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('servicesPage.badge')}</div>
@@ -57,9 +78,18 @@ export default function ServicesPage() {
 
                     <p className="text-gray-600 leading-relaxed mb-8 text-[1.05rem]">{t(`svc.${service.key}.desc`)}</p>
 
-                    <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm font-semibold rounded-full">
-                      {t('servicesPage.getService')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    {service.linkTo ? (
+                      <Link href={service.linkTo} className="inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm font-semibold rounded-full">
+                        {t('servicesPage.getService')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => openInquiry(service.subject, service.subSubject)}
+                        className="inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm font-semibold rounded-full"
+                      >
+                        {t('servicesPage.getService')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    )}
                   </div>
 
                   <div className="lg:col-span-2 lg:pl-8 lg:border-l lg:border-gray-100 pt-6 lg:pt-0">
@@ -90,9 +120,12 @@ export default function ServicesPage() {
           <div className="section-badge bg-white/10 border-white/20 text-white mx-auto mb-6">{t('servicesPage.ctaBadge')}</div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] mb-6 text-white leading-tight">{t('servicesPage.ctaTitle')}<br/><span className="text-primary-light">{t('servicesPage.ctaTitleHighlight')}</span></h2>
           <p className="text-gray-300 mb-10 text-lg max-w-2xl mx-auto">{t('servicesPage.ctaDesc')}</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-4 btn-vibrant text-base font-bold rounded-full group mx-auto">
+          <button
+            onClick={() => openInquiry('', '', true)}
+            className="inline-flex items-center gap-2 px-10 py-4 btn-vibrant text-base font-bold rounded-full group mx-auto"
+          >
             {t('servicesPage.ctaButton')} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </div>
       </section>
     </>

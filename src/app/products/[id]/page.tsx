@@ -166,14 +166,16 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
                 <Settings size={20} className="text-primary" /> Technical Specifications
               </h2>
               <div className="divide-y divide-border">
-                {Object.entries(product.specs).map(([key, value]) => (
+                {product.specs ? Object.entries(product.specs).map(([key, value]) => (
                   <div key={key} className="flex items-center justify-between py-3.5 gap-4">
                     <span className="text-sm text-text-muted capitalize font-medium">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </span>
                     <span className="text-sm text-text-primary font-semibold text-right">{value}</span>
                   </div>
-                ))}
+                )) : (
+                  <div className="py-3.5 text-sm text-text-muted">No specifications available.</div>
+                )}
               </div>
             </div>
 

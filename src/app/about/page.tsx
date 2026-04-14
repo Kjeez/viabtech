@@ -2,12 +2,72 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Target, Eye, Users, ShieldCheck, Globe, ArrowRight, Heart, Zap, Building } from 'lucide-react';
+import { Target, Eye, Users, ShieldCheck, Globe, ArrowRight, Heart, Zap, Building, Award, ExternalLink } from 'lucide-react';
 import VideoShowcase from '@/components/VideoShowcase';
 import PressSection from '@/components/PressSection';
 import EventGallery from '@/components/EventGallery';
 import Counter from '@/components/Counter';
+import AboutSection from '@/components/AboutSection';
 import { useLanguage } from '@/i18n/LanguageContext';
+
+const certificates = [
+  {
+    brand: 'Canon',
+    title: 'Canon CPP Silver Partner',
+    file: '/certificates/Canon CPP Certificate 2024_Silver_EN_WIP_Viab Tech limited.pdf',
+    color: '#CC0000',
+    logo: '/images/logo/canon-seeklogo.png',
+  },
+  {
+    brand: 'Canon',
+    title: 'Canon Authorized Partner',
+    file: '/certificates/Canon Partner_Certificate_TANZANIA_Viab Tech.pdf',
+    color: '#CC0000',
+    logo: '/images/logo/canon-seeklogo.png',
+  },
+  {
+    brand: 'Canon',
+    title: 'Canon Silver B2B Certificate',
+    file: '/certificates/Silver_Certificate_VIAB TECH LIMITED_EN_WIP B2B.pdf',
+    color: '#CC0000',
+    logo: '/images/logo/canon-seeklogo.png',
+  },
+  {
+    brand: 'HP',
+    title: 'HP Business Partner Certificate',
+    file: '/certificates/HP Business Partner Certificate of Partnership - VIAB TECH LIMITED.pdf',
+    color: '#0096D6',
+    logo: '/images/logo/hp-seeklogo.png',
+  },
+  {
+    brand: 'Dell',
+    title: 'Dell Authorized Partner',
+    file: '/certificates/DELL certificate partner.pdf',
+    color: '#007DB8',
+    logo: '/images/logo/dell-seeklogo.png',
+  },
+  {
+    brand: 'Lenovo',
+    title: 'Lenovo 360 Authorization',
+    file: '/certificates/Lenovo 360 Engage_AuthorizationLetter.pdf',
+    color: '#E2231A',
+    logo: '/images/logo/lenovo-seeklogo.png',
+  },
+  {
+    brand: 'Lenovo',
+    title: 'Lenovo Infrastructure Solutions',
+    file: '/certificates/Lenovo 360_Infrastructure Solutions_BusinessCertificate.pdf',
+    color: '#E2231A',
+    logo: '/images/logo/lenovo-seeklogo.png',
+  },
+  {
+    brand: 'Lenovo',
+    title: 'Lenovo Intelligent Devices',
+    file: '/certificates/Lenovo 360_Intelligent Devices_BusinessCertificate.pdf',
+    color: '#E2231A',
+    logo: '/images/logo/lenovo-seeklogo.png',
+  },
+];
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -29,10 +89,34 @@ export default function AboutPage() {
   ];
 
   const team = [
-    { name: 'John Mosha', role: 'CEO & Founder', desc: 'Over 15 years in IT and printing solutions across East Africa.' },
-    { name: 'Amina Khalid', role: 'Head of Sales', desc: 'Canon and Epson certified specialist with deep knowledge.' },
-    { name: 'David Mkwawa', role: 'Service Manager', desc: 'Factory-trained technician certified by Canon and Epson.' },
-    { name: 'Grace Nyerere', role: 'Operations Lead', desc: 'Expert in supply chain and logistics.' },
+    {
+      name: 'Mumtaz Satchu Shaikh',
+      role: 'Director Operations / Finance',
+      photo: '/images/team/mumtaz-satchu-shaikh.jpeg',
+      expertise: '20+ years experience in ICT Sector',
+      tags: ['Operations', 'Finance', 'Strategy'],
+    },
+    {
+      name: 'Holyday Urio',
+      role: 'Technical Manager',
+      photo: '/images/team/holyday-urio.jpeg',
+      expertise: 'Senior Technical & Sales Development Manager | 12+ years in machine repair & maintenance',
+      tags: ['Canon Digital Printing', 'Epson', 'Service & Repair'],
+    },
+    {
+      name: 'Ciana Munisi',
+      role: 'Support Coordinator',
+      photo: '/images/team/ciana-munisi.jpeg',
+      expertise: 'Customer service support specialist',
+      tags: ['Epson Printers', 'Projectors', 'Plotters'],
+    },
+    {
+      name: 'Musaib Ahmed Masood',
+      role: 'Technician',
+      photo: '/images/team/musaib-ahmed-masood.jpeg',
+      expertise: 'Degree-qualified printer technician',
+      tags: ['L3250 Series', 'L15150 Series'],
+    },
   ];
 
   return (
@@ -47,38 +131,80 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══════ WHO WE ARE (Light) ═══════ */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative order-1 lg:order-2">
-              <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
-              <div className="absolute -bottom-12 -right-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/15">
-                <Image src="/images/about-us.jpg" alt="Viab Tech office at Uhuru Heights, Bibi Titi Mohamed Street, Dar es Salaam" width={600} height={450} className="object-cover w-full h-auto" />
-              </div>
-              <div className="absolute -bottom-6 right-4 left-4 grid grid-cols-3 gap-4">
-                <div className="text-center bg-white rounded-2xl py-4 px-2 shadow-xl border border-gray-100 backdrop-blur-md">
-                  <div className="text-2xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">{t('aboutPage.years')}</div>
-                </div>
-                <div className="text-center bg-white rounded-2xl py-4 px-2 shadow-xl border border-gray-100 backdrop-blur-md">
-                  <div className="text-2xl font-bold text-primary"><Counter end={11} /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">{t('aboutPage.brands')}</div>
-                </div>
-                <div className="text-center bg-white rounded-2xl py-4 px-2 shadow-xl border border-gray-100 backdrop-blur-md">
-                  <div className="text-2xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">{t('aboutPage.clients')}</div>
-                </div>
-              </div>
-            </div>
+      {/* ═══════ WHO WE ARE ═══════ */}
+      <AboutSection showCta={false} />
 
-            <div className="order-2 lg:order-1 mt-10 md:mt-0">
-              <div className="section-badge bg-primary/10 text-primary border-primary/20">{t('aboutPage.aboutBadge')}</div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e] mb-6">{t('aboutPage.whoWeAre')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-6 text-lg">{t('aboutPage.p1')}</p>
-              <p className="text-gray-600 leading-relaxed mb-8 text-lg">{t('aboutPage.p2')}</p>
+      {/* ═══════ CERTIFICATES & AUTHORIZATIONS ═══════ */}
+      <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#CC0000]/5 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-16">
+            <div className="section-badge mx-auto bg-primary/10 text-primary border-primary/20">
+              <Award size={12} /> Certifications
             </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">
+              Certificates & <span className="text-primary">Authorizations</span>
+            </h2>
+            <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              Officially certified and authorized by the world&apos;s leading technology brands to sell, service, and support their products in Tanzania and East Africa.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certificates.map((cert, idx) => (
+              <a
+                key={idx}
+                href={cert.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-white rounded-[1.75rem] border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-6 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              >
+                {/* Top accent bar */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1.5 opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: `linear-gradient(90deg, transparent, ${cert.color}, transparent)` }}
+                />
+
+                {/* Hover glow */}
+                <div
+                  className="absolute -top-16 -right-16 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"
+                  style={{ background: cert.color }}
+                />
+
+                {/* Brand logo */}
+                <div className="relative w-[100px] h-[50px] mb-5 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-100 group-hover:border-gray-200 transition-colors overflow-hidden">
+                  <Image
+                    src={cert.logo}
+                    alt={`${cert.brand} logo`}
+                    width={80}
+                    height={36}
+                    className="object-contain max-h-[36px] max-w-[72px] mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                    style={{ width: 'auto', height: 'auto' }}
+                  />
+                </div>
+
+                {/* Certificate icon */}
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500"
+                  style={{ background: `${cert.color}12` }}
+                >
+                  <Award size={22} style={{ color: cert.color }} />
+                </div>
+
+                {/* Title */}
+                <h3 className="font-bold text-[#0f1c2e] text-sm mb-2 group-hover:text-primary transition-colors leading-snug">{cert.title}</h3>
+
+                {/* View link */}
+                <span
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold mt-auto pt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ color: cert.color }}
+                >
+                  View Certificate <ExternalLink size={11} />
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -148,22 +274,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══════ TEAM (White Premium) ═══════ */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* ═══════ TEAM (Modern Premium) ═══════ */}
+      <section className="py-24 bg-gradient-to-b from-white to-[#f4f8ff] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <div className="section-badge mx-auto bg-primary/10 text-primary border-primary/20">{t('aboutPage.teamBadge')}</div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">{t('aboutPage.teamTitle')}</h2>
+            <div className="section-badge mx-auto bg-primary/10 text-primary border-primary/20">
+              <Users size={12} className="mr-1" /> {t('aboutPage.teamBadge')}
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e] mb-4">{t('aboutPage.teamTitle')}</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">The passionate professionals behind Viab Tech&apos;s commitment to excellence.</p>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((m) => (
-              <div key={m.name} className="bg-white rounded-[2rem] border border-gray-100 shadow-[0_10px_30px_rgba(0,159,227,0.04)] hover:shadow-[0_20px_50px_rgba(0,159,227,0.12)] p-8 text-center group hover:-translate-y-1 transition-all duration-400">
-                <div className="w-24 h-24 mx-auto rounded-3xl bg-[#f0f7ff] flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                  <Users size={36} className="text-primary group-hover:text-white transition-colors duration-300" />
+            {team.map((m, idx) => (
+              <div
+                key={m.name}
+                className="group relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_25px_60px_rgba(0,87,184,0.15)] overflow-hidden transition-all duration-500 hover:-translate-y-2"
+              >
+                {/* Photo */}
+                <div className="relative h-72 overflow-hidden">
+                  <Image
+                    src={m.photo}
+                    alt={m.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-transparent" />
+                  
+                  {/* Name & role overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h4 className="font-bold text-white text-lg leading-tight mb-1">{m.name}</h4>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/90 text-white text-xs font-semibold backdrop-blur-sm">
+                      {m.role}
+                    </div>
+                  </div>
                 </div>
-                <h4 className="font-bold text-[#0f1c2e] text-lg mb-1">{m.name}</h4>
-                <p className="text-sm text-primary font-bold mb-3">{m.role}</p>
-                <p className="text-sm font-medium text-gray-500 leading-relaxed">{m.desc}</p>
+
+                {/* Content */}
+                <div className="p-5 pt-4">
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-2">{m.expertise}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {m.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-full bg-[#f0f7ff] text-primary text-[11px] font-semibold border border-blue-100/60"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

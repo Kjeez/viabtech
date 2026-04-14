@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import StickyQuoteBar from '@/components/StickyQuoteBar';
+import FloatingContactButtons from '@/components/FloatingContactButtons';
 import { LanguageProvider } from '@/i18n/LanguageContext';
 
 export const metadata: Metadata = {
@@ -73,6 +74,7 @@ export default function RootLayout({
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
+          <FloatingContactButtons />
           <StickyQuoteBar />
         </LanguageProvider>
       </body>

@@ -1,11 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import {
   ArrowRight, ShieldCheck, Truck, Headphones, Award,
   Wrench, Package, ChevronRight, Star, Phone, MessageSquare,
   CheckCircle, Monitor, Camera, Tv, Aperture, ShoppingBag,
+  MapPin, PlayCircle, FileText,
 } from 'lucide-react';
 import brandsData from '@/data/brands.json';
 import servicesData from '@/data/services.json';
@@ -16,6 +19,8 @@ import EventGallery from '@/components/EventGallery';
 import AnimatedSection from '@/components/AnimatedSection';
 import Counter from '@/components/Counter';
 import Testimonials from '@/components/Testimonials';
+import ServiceInquiryModal from '@/components/ServiceInquiryModal';
+import AboutSection from '@/components/AboutSection';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const categories = [
@@ -32,9 +37,26 @@ const categories = [
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSubject, setModalSubject] = useState('');
+  const [modalSubSubject, setModalSubSubject] = useState('');
+
+  const openInquiry = (subject: string, subSubject: string) => {
+    setModalSubject(subject);
+    setModalSubSubject(subSubject);
+    setModalOpen(true);
+  };
 
   return (
     <>
+      {/* Service Inquiry Modal */}
+      <ServiceInquiryModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        subject={modalSubject}
+        subSubject={modalSubSubject}
+      />
       {/* ══════ HERO CAROUSEL ══════ */}
       <HeroCarousel />
 
@@ -90,50 +112,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════ WHO WE ARE ══════ */}
-      <section className="py-20 bg-gradient-to-br from-[#f8fbff] to-[#e8f4fd] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#CC0000]/[0.03] via-[#003399]/[0.03] to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#FF6600]/[0.04] to-transparent rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Visual */}
-            <AnimatedSection animation="slide-right" className="relative order-1 lg:order-2">
-              <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
-              <div className="absolute -bottom-12 -right-6 w-40 h-40 bg-primary rounded-3xl -z-10" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/15">
-                <Image src="/images/about-us.jpg" alt="Viab Tech office at Uhuru Heights, Bibi Titi Mohamed Street, Dar es Salaam" width={600} height={450} className="object-cover w-full h-auto" />
-              </div>
-              <div className="absolute -bottom-6 right-4 left-4 grid grid-cols-3 gap-3">
-                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
-                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">{t('about.years')}</div>
-                </div>
-                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary"><Counter end={11} /></div>
-                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">{t('about.brands')}</div>
-                </div>
-                <div className="text-center bg-white rounded-xl py-3 px-2 shadow-lg border border-border/50 backdrop-blur-sm">
-                  <div className="text-xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
-                  <div className="text-[10px] text-text-muted font-medium uppercase tracking-wider">{t('about.clients')}</div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Content */}
-            <AnimatedSection animation="slide-left" className="order-2 lg:order-1">
-              <div className="section-badge">{t('about.badge')}</div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-text-primary mb-6">
-                {t('about.title')}
-              </h2>
-              <p className="text-text-secondary leading-relaxed mb-4">{t('about.p1')}</p>
-              <p className="text-text-secondary leading-relaxed mb-8">{t('about.p2')}</p>
-              <Link href="/about" className="group inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm">
-                {t('about.readMore')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* ═══ BRANDS ═══ */}
       <section className="py-20 bg-[#0a0a0a] overflow-hidden">
@@ -229,13 +208,15 @@ export default function HomePage() {
 
           {/* Two feature cards */}
           <div className="grid lg:grid-cols-2 gap-8 mb-8">
-            {/* Printer Sales card */}
-            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-gradient-to-br from-[#eaf4fe] via-[#f1f8ff] to-[#e0effe] border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.1)] hover:-translate-y-1 transition-all duration-500">
+            {/* Product Sales & Supply card */}
+            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-gradient-to-br from-[#eaf4fe] via-[#f1f8ff] to-[#e0effe] border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.1)] hover:-translate-y-1 transition-all duration-500 cursor-pointer"
+              onClick={() => openInquiry('Product Sales & Supply', 'Get a quote for genuine Canon, Epson, HP, Dell, and Lenovo products.')}
+            >
               <div className="absolute -top-24 -right-24 w-[300px] h-[300px] rounded-full bg-gradient-to-bl from-white/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4 tracking-tight">{t('services.printerSales')}</h3>
                 <p className="text-text-secondary leading-relaxed mb-8 text-[15px]">{t('services.printerSalesDesc')}</p>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3.5 mb-8">
                   {[t('services.sales.item1'), t('services.sales.item2'), t('services.sales.item3'), t('services.sales.item4')].map((item) => (
                     <li key={item} className="flex items-center gap-3.5 text-[15px] font-medium text-text-secondary">
                       <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-blue-50">
@@ -245,16 +226,24 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
+                <button
+                  onClick={(e) => { e.stopPropagation(); openInquiry('Product Sales & Supply', 'Get a quote for genuine Canon, Epson, HP, Dell, and Lenovo products.'); }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0057B8] to-[#003399] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 transition-all"
+                >
+                  <FileText size={16} /> Get Quote
+                </button>
               </div>
             </div>
 
-            {/* Printer Repair card */}
-            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1 transition-all duration-500 z-10">
+            {/* Authorized Service Center card */}
+            <div className="group relative overflow-hidden rounded-[2rem] p-8 sm:p-10 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1 transition-all duration-500 z-10 cursor-pointer"
+              onClick={() => router.push('/service-center')}
+            >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4 tracking-tight">{t('services.printerRepair')}</h3>
                 <p className="text-text-secondary leading-relaxed mb-8 text-[15px]">{t('services.printerRepairDesc')}</p>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3.5 mb-8">
                   {[t('services.repair.item1'), t('services.repair.item2'), t('services.repair.item3'), t('services.repair.item4')].map((item) => (
                     <li key={item} className="flex items-center gap-3.5 text-[15px] font-medium text-text-secondary">
                       <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0 border border-blue-100/50">
@@ -264,26 +253,76 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href="/service-center"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-semibold text-sm border-2 border-primary/20 shadow-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 active:scale-95 transition-all"
+                >
+                  <MapPin size={16} /> Get Location
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* More services grid */}
+          {/* Three more services with CTAs */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesData.slice(0, 3).map((service, i) => {
-              const icons = [Package, Wrench, Monitor];
-              const IconComponent = icons[i] || Package;
-              return (
-                <div key={service.id} className="group relative overflow-hidden rounded-[1.75rem] bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1.5 transition-all duration-500 z-10">
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="w-16 h-16 rounded-[1.125rem] bg-gradient-to-br from-blue-50 to-[#f1f8ff] border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
-                    <IconComponent size={28} className="text-primary drop-shadow-sm" />
-                  </div>
-                  <h3 className="font-bold text-text-primary mb-3 text-xl tracking-tight">{service.title}</h3>
-                  <p className="text-[15px] text-text-secondary leading-relaxed">{service.shortDescription}</p>
-                </div>
-              );
-            })}
+            {/* Printer Sales & Consulting */}
+            <div
+              className="group relative overflow-hidden rounded-[1.75rem] bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1.5 transition-all duration-500 z-10 cursor-pointer flex flex-col"
+              onClick={() => openInquiry('Printer Sales & Consulting', 'Expert guidance to find the perfect printer for your business needs and budget.')}
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-16 h-16 rounded-[1.125rem] bg-gradient-to-br from-blue-50 to-[#f1f8ff] border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
+                <Package size={28} className="text-primary drop-shadow-sm" />
+              </div>
+              <h3 className="font-bold text-text-primary mb-3 text-xl tracking-tight">Printer Sales & Consulting</h3>
+              <p className="text-[15px] text-text-secondary leading-relaxed mb-6 flex-grow">Expert guidance to help you choose the right printer for your business needs and budget.</p>
+              <button
+                onClick={(e) => { e.stopPropagation(); openInquiry('Printer Sales & Consulting', 'Expert guidance to find the perfect printer for your business needs and budget.'); }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0057B8] to-[#003399] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 transition-all self-start"
+              >
+                <PlayCircle size={15} /> Start Now
+              </button>
+            </div>
+
+            {/* Managed Print Services & Leasing */}
+            <div
+              className="group relative overflow-hidden rounded-[1.75rem] bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1.5 transition-all duration-500 z-10 cursor-pointer flex flex-col"
+              onClick={() => openInquiry('Managed Print Services & Leasing', 'Comprehensive print management, rental, and leasing solutions to reduce costs and optimize your fleet.')}
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-16 h-16 rounded-[1.125rem] bg-gradient-to-br from-blue-50 to-[#f1f8ff] border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
+                <Wrench size={28} className="text-primary drop-shadow-sm" />
+              </div>
+              <h3 className="font-bold text-text-primary mb-3 text-xl tracking-tight">Managed Print Services & Leasing</h3>
+              <p className="text-[15px] text-text-secondary leading-relaxed mb-6 flex-grow">Comprehensive print management, rental, and leasing solutions to reduce costs and optimize your fleet.</p>
+              <button
+                onClick={(e) => { e.stopPropagation(); openInquiry('Managed Print Services & Leasing', 'Comprehensive print management, rental, and leasing solutions to reduce costs and optimize your fleet.'); }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0057B8] to-[#003399] text-white font-semibold text-sm shadow-md hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 active:scale-95 transition-all self-start"
+              >
+                <PlayCircle size={15} /> Start Now
+              </button>
+            </div>
+
+            {/* Annual Maintenance Contract (AMC) */}
+            <div
+              className="group relative overflow-hidden rounded-[1.75rem] bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,50,0.08)] hover:-translate-y-1.5 transition-all duration-500 z-10 cursor-pointer flex flex-col"
+              onClick={() => router.push('/contact')}
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-16 h-16 rounded-[1.125rem] bg-gradient-to-br from-blue-50 to-[#f1f8ff] border border-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
+                <Monitor size={28} className="text-primary drop-shadow-sm" />
+              </div>
+              <h3 className="font-bold text-text-primary mb-3 text-xl tracking-tight">Annual Maintenance Contract (AMC)</h3>
+              <p className="text-[15px] text-text-secondary leading-relaxed mb-6 flex-grow">Protect your investment with comprehensive annual maintenance contracts for all your printers.</p>
+              <Link
+                href="/contact"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary font-semibold text-sm border-2 border-primary/20 shadow-sm hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 active:scale-95 transition-all self-start"
+              >
+                <ArrowRight size={15} /> Get More Info
+              </Link>
+            </div>
           </div>
 
           {/* CTA */}
@@ -381,15 +420,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ Floating CTA buttons ═══ */}
-      <div className="floating-actions">
-        <a href="tel:+255123456789" className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:bg-primary-dark transition-colors" aria-label="Call us">
-          <Phone size={22} />
-        </a>
-        <a href="https://wa.me/255123456789" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:bg-primary-dark transition-colors" aria-label="WhatsApp">
-          <MessageSquare size={22} />
-        </a>
-      </div>
+
     </>
   );
 }

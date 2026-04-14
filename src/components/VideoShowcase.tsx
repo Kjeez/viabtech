@@ -90,7 +90,7 @@ export default function VideoShowcase() {
             </div>
             
             <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold font-[var(--font-heading)] text-white mb-6 leading-tight">
-              East Africa&apos;s 1<sup className="text-lg">st</sup> Epson Experience
+              East Africa&apos;s 1<sup className="text-lg">st</sup> Epson Experience Zone
               <span className="text-primary-light block mt-2"> &amp; Service Centre</span>
             </h2>
             

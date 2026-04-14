@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, Camera, ZoomIn, Sparkles } from 'lucide-react';
 
@@ -13,8 +14,8 @@ const galleryImages = [
   },
   {
     src: '/images/gallery/2.jpeg',
-    alt: 'Epson Experience & Service Centre exterior with signage',
-    caption: 'Epson Experience & Service Centre — Exterior',
+    alt: 'Epson Experience Zone & Service Centre exterior with signage',
+    caption: 'Epson Experience Zone & Service Centre — Exterior',
     tag: 'Exterior',
   },
   {
@@ -155,7 +156,7 @@ export default function EventGallery() {
                 </span>
             </h2>
             <p className="text-text-secondary mt-4 max-w-xl mx-auto text-base sm:text-lg">
-                Revisit the grand inauguration of East Africa&apos;s first Epson Experience &amp; Service Centre.
+                Revisit the grand inauguration of East Africa&apos;s first Epson Experience Zone &amp; Service Centre.
             </p>
             </div>
 
@@ -264,10 +265,10 @@ export default function EventGallery() {
         </div>
       </div>
 
-      {/* ─── Lightbox ─── */}
-      {lightboxIndex !== null && (
+      {/* ─── Lightbox (portal to body) ─── */}
+      {lightboxIndex !== null && createPortal(
         <div
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center"
           onClick={closeLightbox}
           style={{ animation: 'fadeIn 0.2s ease' }}
         >
@@ -303,54 +304,64 @@ export default function EventGallery() {
             <ChevronRight size={22} />
           </button>
 
-          {/* Image container */}
+          {/* Content — flex column to avoid overlap */}
           <div
-            className="relative max-w-6xl max-h-[85vh] w-full mx-4"
+            className="flex flex-col items-center w-full max-w-6xl mx-4 gap-4"
             onClick={(e) => e.stopPropagation()}
             style={{ animation: 'scaleIn 0.25s ease' }}
           >
-            <Image
-              src={filteredImages[lightboxIndex].src}
-              alt={filteredImages[lightboxIndex].alt}
-              width={1400}
-              height={900}
-              className="object-contain w-full h-full max-h-[78vh] rounded-xl"
-              priority
-            />
-            {/* Caption bar */}
-            <div className="text-center mt-5">
+            {/* Main image */}
+            <div className="relative w-full" style={{ maxHeight: '65vh' }}>
+              <Image
+                src={filteredImages[lightboxIndex].src}
+                alt={filteredImages[lightboxIndex].alt}
+                width={1400}
+                height={900}
+                className="object-contain w-full h-full max-h-[65vh] rounded-xl"
+                priority
+              />
+            </div>
+
+            {/* Caption */}
+            <div className="text-center">
               <p className="text-white text-base sm:text-lg font-semibold">
                 {filteredImages[lightboxIndex].caption}
               </p>
-              <p className="text-white/40 text-xs mt-2 flex items-center justify-center gap-1.5">
+              <p className="text-white/40 text-xs mt-1 flex items-center justify-center gap-1.5">
                 <Camera size={11} /> {filteredImages[lightboxIndex].tag} • Use arrow keys to navigate
               </p>
             </div>
+
+            {/* Thumbnail strip */}
+            <div className="flex justify-center gap-2 px-4">
+              {filteredImages.map((img, i) => (
+                <button
+                  key={img.src}
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
+                  className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden transition-all duration-300 ${
+                    i === lightboxIndex
+                      ? 'ring-2 ring-primary scale-110 opacity-100'
+                      : 'opacity-40 hover:opacity-70'
+                  }`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Thumbnail strip */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 px-4 z-20">
-            {filteredImages.map((img, i) => (
-              <button
-                key={img.src}
-                onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
-                className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden transition-all duration-300 ${
-                  i === lightboxIndex
-                    ? 'ring-2 ring-primary scale-110 opacity-100'
-                    : 'opacity-40 hover:opacity-70'
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="56px"
-                  className="object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        </div>
+          <style jsx>{`
+            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+          `}</style>
+        </div>,
+        document.body
       )}
     </section>
   );

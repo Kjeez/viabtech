@@ -194,7 +194,7 @@ export default function ServiceCenterPage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
                 <div className="p-5 bg-white flex flex-col gap-2">
                   <h4 className="font-bold text-[#003399] flex items-center gap-2 text-lg">
-                    <MapPin size={18} /> Epson Experience Centre
+                    <MapPin size={18} /> Epson experience zone
                   </h4>
                   <p className="text-sm text-gray-500 font-medium leading-relaxed">
                     Uhuru Heights, Ground Floor<br/>Bibi Titi Mohamed Road
@@ -209,7 +209,7 @@ export default function ServiceCenterPage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
                 <div className="p-5 bg-white flex flex-col gap-2">
                   <h4 className="font-bold text-[#CC0000] flex items-center gap-2 text-lg">
-                    <MapPin size={18} /> Canon Zone Showroom
+                    <MapPin size={18} /> Canon Authorize showroom
                   </h4>
                   <p className="text-sm text-gray-500 font-medium leading-relaxed">
                     Next To Peacock Hotel<br/>Bibi Titi Mohamed Road

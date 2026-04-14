@@ -5,7 +5,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const slides = [
+type SlideLayout = 'single' | 'dual-stagger' | 'dual-stagger-large' | 'camera-gear' | 'side-by-side';
+
+interface SlideData {
+  headlineKey: string;
+  subtextKey: string;
+  cta1LabelKey: string; cta1Href: string;
+  cta2LabelKey: string; cta2Href: string;
+  image: string;
+  imageAlt: string;
+  imageWidth: number; imageHeight: number;
+  layout?: SlideLayout;
+  extraImages?: { src: string; alt: string; w: number; h: number }[];
+}
+
+const slides: SlideData[] = [
   {
     headlineKey: 'hero.slide1.headline',
     subtextKey: 'hero.slide1.subtext',
@@ -21,8 +35,13 @@ const slides = [
     cta1LabelKey: 'hero.slide2.cta1', cta1Href: '/products',
     cta2LabelKey: 'hero.slide2.cta2', cta2Href: '/brands',
     image: '/images/camera.png',
-    imageAlt: 'Cameras, projectors, scanners and technology products',
+    imageAlt: 'Canon EOS R5 camera with lenses',
     imageWidth: 600, imageHeight: 500,
+    layout: 'camera-gear',
+    extraImages: [
+      { src: '/images/lens1.png', alt: 'Canon RF lens', w: 400, h: 400 },
+      { src: '/images/lens2.png', alt: 'Canon RF telephoto lens', w: 400, h: 400 },
+    ],
   },
   {
     headlineKey: 'hero.slide3.headline',
@@ -39,17 +58,38 @@ const slides = [
     cta1LabelKey: 'hero.slide4.cta1', cta1Href: '/products?category=Projector',
     cta2LabelKey: 'hero.slide4.cta2', cta2Href: '/contact',
     image: '/images/projector.png',
-    imageAlt: 'Epson business and home cinema projectors',
+    imageAlt: 'Epson business projectors',
     imageWidth: 600, imageHeight: 500,
+    layout: 'dual-stagger-large',
+    extraImages: [
+      { src: '/images/projector2.png', alt: 'Epson home cinema projector', w: 600, h: 500 },
+    ],
   },
   {
     headlineKey: 'hero.slide5.headline',
     subtextKey: 'hero.slide5.subtext',
     cta1LabelKey: 'hero.slide5.cta1', cta1Href: '/brands#epson',
     cta2LabelKey: 'hero.slide5.cta2', cta2Href: '/contact',
-    image: '/images/epson.png',
-    imageAlt: 'Epson WorkForce Pro business printer',
-    imageWidth: 600, imageHeight: 600,
+    image: '/images/epsonprinter2.png',
+    imageAlt: 'Epson WorkForce Enterprise AM-C6000',
+    imageWidth: 371, imageHeight: 800,
+    layout: 'dual-stagger',
+    extraImages: [
+      { src: '/images/epson-am-c4000.png', alt: 'Epson WorkForce Enterprise AM-C4000', w: 371, h: 800 },
+    ],
+  },
+  {
+    headlineKey: 'hero.slide6.headline',
+    subtextKey: 'hero.slide6.subtext',
+    cta1LabelKey: 'hero.slide6.cta1', cta1Href: '/products?brand=Canon',
+    cta2LabelKey: 'hero.slide6.cta2', cta2Href: '/contact',
+    image: '/images/canonprinter1.png',
+    imageAlt: 'Canon enterprise business printer',
+    imageWidth: 500, imageHeight: 500,
+    layout: 'side-by-side',
+    extraImages: [
+      { src: '/images/canonprinter2.png', alt: 'Canon high-volume multifunction printer', w: 500, h: 600 },
+    ],
   },
 ];
 
@@ -79,6 +119,93 @@ export default function HeroCarousel() {
 
   const slide = slides[current];
 
+  const renderSlideImages = (s: SlideData, isMobile: boolean) => {
+    const layout = s.layout || 'single';
+    const shadow = isMobile
+      ? 'drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)]'
+      : 'drop-shadow-[0_25px_60px_rgba(0,159,227,0.15)]';
+    const shadowLight = isMobile
+      ? 'drop-shadow-[0_10px_25px_rgba(0,0,0,0.08)]'
+      : 'drop-shadow-[0_15px_40px_rgba(0,0,0,0.08)]';
+
+    if (layout === 'camera-gear' && s.extraImages) {
+      // Camera centered with lenses floating around it
+      const h = isMobile ? 'h-[280px]' : 'h-[420px]';
+      return (
+        <div className={`relative z-10 w-full ${h}`}>
+          {/* Camera — center, hero (increased by 15%) */}
+          <div className={`absolute ${isMobile ? 'top-4 left-1/2 -translate-x-1/2 w-[80%]' : 'top-2 left-1/2 -translate-x-1/2 w-[75%]'} z-20`}>
+            <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`w-full h-auto ${shadow}`} priority={current === 0} />
+          </div>
+          {/* Lens 1 — bottom left (reduced by 25%, pulled further out) */}
+          <div className={`absolute ${isMobile ? '-bottom-4 -left-8 w-[40%]' : '-bottom-8 -left-12 w-[40%]'} z-10`}>
+            <Image src={s.extraImages[0].src} alt={s.extraImages[0].alt} width={s.extraImages[0].w} height={s.extraImages[0].h} className={`w-full h-auto ${shadowLight}`} />
+          </div>
+          {/* Lens 2 — top right, tall telephoto (moved down 25px, right 25px) */}
+          <div className={`absolute ${isMobile ? '-top-[23px] -right-[73px] w-[80%]' : '-top-[71px] -right-[121px] w-[80%]'} z-10`}>
+            <Image src={s.extraImages[1].src} alt={s.extraImages[1].alt} width={s.extraImages[1].w} height={s.extraImages[1].h} className={`w-full h-auto ${shadowLight}`} />
+          </div>
+        </div>
+      );
+    }
+
+    if (layout === 'side-by-side' && s.extraImages) {
+      // Two items side by side at the same level — separated with gap
+      const h = isMobile ? 'h-[300px]' : 'h-[460px]';
+      return (
+        <div className={`relative z-10 w-full ${h} flex items-end`}>
+          {/* Left printer — shifted left as much as possible */}
+          <div className={`absolute bottom-0 ${isMobile ? '-left-[40px] w-[70%]' : '-left-[150px] w-[75%]'} z-10`}>
+            <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`w-full h-auto ${shadow}`} priority={current === 0} />
+          </div>
+          {/* Right printer — shifted right as much as possible */}
+          <div className={`absolute bottom-0 ${isMobile ? '-right-[80px] w-[85%]' : '-right-[180px] w-[100%]'}`}>
+            <Image src={s.extraImages[0].src} alt={s.extraImages[0].alt} width={s.extraImages[0].w} height={s.extraImages[0].h} className={`w-full h-auto ${shadow}`} />
+          </div>
+        </div>
+      );
+    }
+
+    if (layout === 'dual-stagger-large' && s.extraImages) {
+      // Larger dual items (projectors) increased by 25%
+      const h = isMobile ? 'h-[280px]' : 'h-[440px]';
+      return (
+        <div className={`relative z-10 w-full ${h} flex items-center`}>
+          {/* Back — offset right, larger */}
+          <div className={`absolute top-0 ${isMobile ? 'right-0 w-[68%]' : '-right-4 w-[70%]'}`}>
+            <Image src={s.extraImages[0].src} alt={s.extraImages[0].alt} width={s.extraImages[0].w} height={s.extraImages[0].h} className={`w-full h-auto ${shadowLight}`} />
+          </div>
+          {/* Front — offset left, largest */}
+          <div className={`absolute ${isMobile ? 'top-10 -left-2 w-[75%]' : 'top-12 -left-6 w-[80%]'} z-10`}>
+            <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`w-full h-auto ${shadow}`} priority={current === 0} />
+          </div>
+        </div>
+      );
+    }
+
+    if (layout === 'dual-stagger' && s.extraImages) {
+      // Two Epson printers at same level with gap (reduced by 25% scale)
+      const h = isMobile ? 'h-[260px]' : 'h-[400px]';
+      return (
+        <div className={`relative z-10 w-full ${h} flex justify-center items-end`}>
+          {/* Back (Now right printer, same level) */}
+          <div className={`absolute bottom-0 ${isMobile ? 'right-[10%] w-[32%]' : 'right-[15%] w-[32%]'}`}>
+            <Image src={s.extraImages[0].src} alt={s.extraImages[0].alt} width={s.extraImages[0].w} height={s.extraImages[0].h} className={`w-full h-auto ${shadowLight}`} />
+          </div>
+          {/* Front (Now left printer, same level) */}
+          <div className={`absolute bottom-0 ${isMobile ? 'left-[10%] w-[34%]' : 'left-[15%] w-[34%]'} z-10`}>
+            <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`w-full h-auto ${shadow}`} priority={current === 0} />
+          </div>
+        </div>
+      );
+    }
+
+    // Single image — default
+    return (
+      <Image src={s.image} alt={s.imageAlt} width={s.imageWidth} height={s.imageHeight} className={`relative z-10 w-full h-auto ${shadow} mix-blend-multiply`} priority={current === 0} />
+    );
+  };
+
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#f8fbff] to-[#dbeafe]">
       {/* Dot-grid pattern overlay */}
@@ -100,15 +227,15 @@ export default function HeroCarousel() {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-0 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-6 items-center">
-          {/* Mobile — image on top */}
-          <div className="lg:hidden flex items-center justify-center order-1">
+          {/* Mobile — image on bottom (was top) */}
+          <div className="lg:hidden flex items-center justify-center order-2">
             <div key={`img-mob-${current}`} className="relative w-full max-w-[340px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
               <div className="absolute inset-0 m-auto w-[75%] h-[75%] rounded-full bg-gradient-to-tr from-primary/[0.08] via-primary/[0.04] to-transparent blur-3xl" />
-              <Image src={slide.image} alt={slide.imageAlt} width={slide.imageWidth} height={slide.imageHeight} className="relative z-10 w-full h-auto drop-shadow-[0_15px_40px_rgba(0,159,227,0.12)] mix-blend-multiply" priority={current === 0} />
+              {renderSlideImages(slide, true)}
             </div>
           </div>
 
-          <div key={`text-${current}`} className="order-2 lg:order-1 animate-[slideInLeft_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
+          <div key={`text-${current}`} className="order-1 lg:order-1 animate-[slideInLeft_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/[0.08] text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -158,7 +285,7 @@ export default function HeroCarousel() {
           <div className="relative hidden lg:flex items-center justify-center lg:order-2">
             <div key={`img-${current}`} className="relative w-full max-w-[580px] animate-[slideInRight_0.65s_cubic-bezier(0.16,1,0.3,1)_both]">
               <div className="absolute inset-0 m-auto w-[75%] h-[75%] rounded-full bg-gradient-to-tr from-primary/[0.08] via-primary/[0.04] to-transparent blur-3xl" />
-              <Image src={slide.image} alt={slide.imageAlt} width={slide.imageWidth} height={slide.imageHeight} className="relative z-10 w-full h-auto drop-shadow-[0_25px_60px_rgba(0,159,227,0.15)]" priority={current === 0} />
+              {renderSlideImages(slide, false)}
             </div>
           </div>
         </div>
