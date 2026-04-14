@@ -33,7 +33,7 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
                 alt="Viab Tech office at Uhuru Heights, Dar es Salaam"
                 width={500}
                 height={380}
-                className="object-cover w-full h-[220px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
+                className="object-cover object-[right_top] w-full h-[220px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
