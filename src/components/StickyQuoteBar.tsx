@@ -48,7 +48,7 @@ export default function StickyQuoteBar() {
             <p className="text-white/80 text-sm font-medium hidden sm:block">
               {t('sticky.text')}
             </p>
-            <div className="flex items-center gap-3 ml-auto">
+            <div className="flex items-center gap-3 mr-auto sm:ml-auto sm:mr-0">
               <button
                 onClick={() => setModalOpen(true)}
                 className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#0a1628] font-bold text-sm hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-white/30"
