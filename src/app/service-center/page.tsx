@@ -194,7 +194,7 @@ export default function ServiceCenterPage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
                 <div className="p-5 bg-white flex flex-col gap-2">
                   <h4 className="font-bold text-[#003399] flex items-center gap-2 text-lg">
-                    <MapPin size={18} /> Epson experience zone
+                    <MapPin size={18} /> Epson Experience Zone
                   </h4>
                   <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 font-medium leading-relaxed hover:text-[#003399] transition-colors block">
                     Uhuru Heights, Ground Floor<br/>Bibi Titi Mohamed Road
@@ -209,7 +209,7 @@ export default function ServiceCenterPage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
                 <div className="p-5 bg-white flex flex-col gap-2">
                   <h4 className="font-bold text-[#CC0000] flex items-center gap-2 text-lg">
-                    <MapPin size={18} /> Canon Authorize showroom
+                    <MapPin size={18} /> Canon Authorised Showroom
                   </h4>
                   <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 font-medium leading-relaxed hover:text-[#CC0000] transition-colors block">
                     Next To Peacock Hotel<br/>Bibi Titi Mohamed Road
