@@ -150,7 +150,7 @@ export default function EventGallery() {
                 <Sparkles size={13} /> Grand Opening Gallery
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary leading-tight">
-                Service Centre{' '}
+                Epson Experience Zone{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#0fbcb3]">
                 Launch Event
                 </span>
