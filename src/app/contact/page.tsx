@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
-                  <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#003399] transition-colors">
+                  <a href="https://www.google.com/maps/place/VIAB+Tech/@-6.8106149,39.2836107,17z" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#003399] transition-colors">
                     VIAB TECH LTD (Epson)<br />
                     P.O.Box 105047, Ground Floor, Uhuru Heights,<br />
                     Bibi Titi Mohamed Road, Dar es Salaam, Tanzania
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
-                  <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#CC0000] transition-colors">
+                  <a href="https://www.google.com/maps/place/Viabtech+canon/@-6.8180867,39.2806048,17z" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#CC0000] transition-colors">
                     PLOT NO 1357/208, Ground Floor,<br />
                     Next To Peacock Hotel,<br />
                     Bibi Titi Mohamed Road, Dar es Salaam, Tanzania
@@ -257,7 +257,7 @@ export default function ContactPage() {
                   </h4>
                   <p className="text-sm text-gray-500 font-medium mt-2 pl-11">Uhuru Heights, Bibi Titi Mohamed Road</p>
                 </div>
-                <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.google.com/maps/place/VIAB+Tech/@-6.8106149,39.2836107,17z" target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#003399]/10 text-[#003399] text-sm font-bold hover:bg-[#003399] hover:text-white transition-colors duration-300">
                   {t('contact.directions')}
                 </a>
@@ -280,7 +280,7 @@ export default function ContactPage() {
                   </h4>
                   <p className="text-sm text-gray-500 font-medium mt-2 pl-11">Next To Peacock Hotel, Bibi Titi Mohamed Road</p>
                 </div>
-                <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.google.com/maps/place/Viabtech+canon/@-6.8180867,39.2806048,17z" target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#CC0000]/10 text-[#CC0000] text-sm font-bold hover:bg-[#CC0000] hover:text-white transition-colors duration-300">
                   {t('contact.directions')}
                 </a>
