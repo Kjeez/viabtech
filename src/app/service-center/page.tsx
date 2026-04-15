@@ -196,12 +196,12 @@ export default function ServiceCenterPage() {
                   <h4 className="font-bold text-[#003399] flex items-center gap-2 text-lg">
                     <MapPin size={18} /> Epson experience zone
                   </h4>
-                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                  <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 font-medium leading-relaxed hover:text-[#003399] transition-colors block">
                     Uhuru Heights, Ground Floor<br/>Bibi Titi Mohamed Road
-                  </p>
+                  </a>
                 </div>
                 <div className="w-full h-[220px] relative bg-slate-100">
-                  <iframe src="https://maps.google.com/maps?q=-6.8105502,39.2859816&z=16&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Epson Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.664385876534!2d39.28361067483434!3d-6.810614993186932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b582f4019cd%3A0x6b040884a3b5e27c!2sVIAB%20Tech!5e0!3m2!1sen!2sin!4v1776238691897!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Epson Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
                 </div>
               </div>
 
@@ -211,12 +211,12 @@ export default function ServiceCenterPage() {
                   <h4 className="font-bold text-[#CC0000] flex items-center gap-2 text-lg">
                     <MapPin size={18} /> Canon Authorize showroom
                   </h4>
-                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                  <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 font-medium leading-relaxed hover:text-[#CC0000] transition-colors block">
                     Next To Peacock Hotel<br/>Bibi Titi Mohamed Road
-                  </p>
+                  </a>
                 </div>
                 <div className="w-full h-[220px] relative bg-slate-100">
-                  <iframe src="https://maps.google.com/maps?q=Peacock+Hotel,+Bibi+Titi+Mohamed+Road,+Dar+es+salaam+Tanzania&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Canon Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416.41218348842733!2d39.28060482480949!3d-6.818086744152009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b0051cbf787%3A0xd8fcec72d29ec48d!2sViabtech%20canon!5e0!3m2!1sen!2sin!4v1776238635983!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Canon Showroom Map" className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
                 </div>
               </div>
             </div>

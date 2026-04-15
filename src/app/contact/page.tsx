@@ -109,11 +109,11 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium text-gray-500 leading-relaxed">
+                  <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#003399] transition-colors">
                     VIAB TECH LTD (Epson)<br />
                     P.O.Box 105047, Ground Floor, Uhuru Heights,<br />
                     Bibi Titi Mohamed Road, Dar es Salaam, Tanzania
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -128,11 +128,11 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium text-gray-500 leading-relaxed">
+                  <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#CC0000] transition-colors">
                     PLOT NO 1357/208, Ground Floor,<br />
                     Next To Peacock Hotel,<br />
                     Bibi Titi Mohamed Road, Dar es Salaam, Tanzania
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -257,13 +257,13 @@ export default function ContactPage() {
                   </h4>
                   <p className="text-sm text-gray-500 font-medium mt-2 pl-11">Uhuru Heights, Bibi Titi Mohamed Road</p>
                 </div>
-                <a href="https://www.google.com/maps?q=-6.8105502,39.2859816&z=17&hl=en" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.google.com/maps?q=-6.810614993186932,39.28361067483434" target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#003399]/10 text-[#003399] text-sm font-bold hover:bg-[#003399] hover:text-white transition-colors duration-300">
                   {t('contact.directions')}
                 </a>
               </div>
               <div className="w-full h-[400px] relative bg-slate-100">
-                <iframe src="https://maps.google.com/maps?q=-6.8105502,39.2859816&z=17&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Epson Showroom Map"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.664385876534!2d39.28361067483434!3d-6.810614993186932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b582f4019cd%3A0x6b040884a3b5e27c!2sVIAB%20Tech!5e0!3m2!1sen!2sin!4v1776238691897!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Epson Showroom Map"
                   className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
               </div>
             </div>
@@ -280,13 +280,13 @@ export default function ContactPage() {
                   </h4>
                   <p className="text-sm text-gray-500 font-medium mt-2 pl-11">Next To Peacock Hotel, Bibi Titi Mohamed Road</p>
                 </div>
-                <a href="https://www.google.com/maps/search/Peacock+Hotel,+Bibi+Titi+Mohamed+Road,+Dar+es+salaam+Tanzania/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.google.com/maps?q=-6.818086744152009,39.28060482480949" target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#CC0000]/10 text-[#CC0000] text-sm font-bold hover:bg-[#CC0000] hover:text-white transition-colors duration-300">
                   {t('contact.directions')}
                 </a>
               </div>
               <div className="w-full h-[400px] relative bg-slate-100">
-                <iframe src="https://maps.google.com/maps?q=Peacock+Hotel,+Bibi+Titi+Mohamed+Road,+Dar+es+salaam+Tanzania&z=16&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Canon Showroom Map"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416.41218348842733!2d39.28060482480949!3d-6.818086744152009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b0051cbf787%3A0xd8fcec72d29ec48d!2sViabtech%20canon!5e0!3m2!1sen!2sin!4v1776238635983!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Canon Showroom Map"
                   className="absolute inset-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 w-full h-full object-cover"></iframe>
               </div>
             </div>
