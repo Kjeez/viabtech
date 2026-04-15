@@ -6,6 +6,8 @@ import { ShieldCheck, ArrowRight, Printer, Star } from 'lucide-react';
 import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
+import ImageSlider from '@/components/ImageSlider';
+import { slider4Images } from '@/data/sliderData';
 
 export default function BrandsPage() {
   const { t } = useLanguage();
@@ -19,6 +21,8 @@ export default function BrandsPage() {
           <p className="text-gray-300 text-lg max-w-2xl">{t('brandsPage.subtitle')}</p>
         </div>
       </section>
+
+      <ImageSlider images={slider4Images} autoPlayInterval={6000} rounded="rounded-none" />
 
       <section className="py-16 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-20">

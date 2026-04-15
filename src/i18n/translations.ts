@@ -118,6 +118,20 @@ export const translations: Record<Locale, Record<string, string>> = {
     'testimonials.titleEnd': 'Say',
     'testimonials.subtitle': 'Trusted by leading organizations across Tanzania and East Africa.',
 
+    // Showroom Sliders
+    'showroom.badge': 'Our Showroom',
+    'showroom.title': 'Experience Our',
+    'showroom.titleHighlight': 'Product Range',
+    'showroom.subtitle': 'Explore our curated selection of enterprise printers and imaging solutions from Canon.',
+    'showroom.slider1.title': 'Document & Imaging Solutions',
+    'showroom.slider1.subtitle': 'Canon imagePROGRAF printers and managed document services for enterprise workflows.',
+    'showroom.slider2.title': 'Large Format Printing',
+    'showroom.slider2.subtitle': 'Professional wide-format printers — PRO, TX, and TM series for stunning large-scale output.',
+    'showroom.slider3.title': 'imageFORCE Enterprise',
+    'showroom.slider3.subtitle': 'High-performance multifunction printers built for speed, security, and sustainability.',
+    'showroom.slider4.title': 'imageFORCE Pro Series',
+    'showroom.slider4.subtitle': 'Enterprise-grade printing with natural agility and end-to-end defense.',
+
     // CTA
     'cta.badge': 'Get Started',
     'cta.title': 'Ready to Upgrade Your Printing?',
@@ -530,6 +544,20 @@ export const translations: Record<Locale, Record<string, string>> = {
     'testimonials.titleHighlight': 'Wanasema',
     'testimonials.titleEnd': 'Nini',
     'testimonials.subtitle': 'Wanatuamini mashirika makubwa nchini Tanzania na Afrika Mashariki.',
+
+    // Showroom Sliders
+    'showroom.badge': 'Jumba Letu la Onyesho',
+    'showroom.title': 'Gundua Aina Yetu ya',
+    'showroom.titleHighlight': 'Bidhaa',
+    'showroom.subtitle': 'Gundua chaguo zetu za printa na suluhisho za picha za biashara kutoka Canon.',
+    'showroom.slider1.title': 'Suluhisho za Hati na Picha',
+    'showroom.slider1.subtitle': 'Printa za Canon imagePROGRAF na huduma za usimamizi wa hati kwa mtiririko wa kazi wa biashara.',
+    'showroom.slider2.title': 'Uchapishaji wa Ukubwa Mkubwa',
+    'showroom.slider2.subtitle': 'Printa za kitaalamu za ukubwa mkubwa — mfululizo wa PRO, TX, na TM kwa matokeo makubwa ya kushangaza.',
+    'showroom.slider3.title': 'imageFORCE ya Biashara',
+    'showroom.slider3.subtitle': 'Printa za kazi nyingi za utendaji wa juu zilizoundwa kwa kasi, usalama, na uendelevu.',
+    'showroom.slider4.title': 'imageFORCE Pro',
+    'showroom.slider4.subtitle': 'Uchapishaji wa kiwango cha biashara na uwezo wa asili na ulinzi wa mwanzo hadi mwisho.',
 
     // CTA
     'cta.badge': 'Anza Sasa',

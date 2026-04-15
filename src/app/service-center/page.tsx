@@ -5,6 +5,8 @@ import { Settings, CheckCircle, MapPin, Send, Cpu, ShieldCheck, PenTool, Search 
 import FAQAccordion from '@/components/FAQAccordion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Image from 'next/image';
+import ImageSlider from '@/components/ImageSlider';
+import { slider2Images } from '@/data/sliderData';
 
 export default function ServiceCenterPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
@@ -90,6 +92,8 @@ export default function ServiceCenterPage() {
           </div>
         </div>
       </section>
+
+      <ImageSlider images={slider2Images} autoPlayInterval={6000} rounded="rounded-none" />
 
       {/* Service Request & Locations Layered Section */}
       <section className="py-24 bg-white relative">

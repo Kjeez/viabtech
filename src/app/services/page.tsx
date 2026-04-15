@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, ArrowRight, CheckCircle, CalendarCheck, ShieldCheck, Cog } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ServiceInquiryModal from '@/components/ServiceInquiryModal';
+import ImageSlider from '@/components/ImageSlider';
+import { slider1Images } from '@/data/sliderData';
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   ShoppingCart, Wrench, Monitor, Clock, Package, Wifi, CalendarCheck, ShieldCheck, Cog
@@ -111,6 +113,8 @@ export default function ServicesPage() {
           })}
         </div>
       </section>
+
+      <ImageSlider images={slider1Images} autoPlayInterval={6000} rounded="rounded-none" />
 
       <section className="py-24 bg-[#0a1628] text-white relative flex items-center justify-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[100px] pointer-events-none" />

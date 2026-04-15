@@ -7,6 +7,8 @@ import { useSearchParams } from 'next/navigation';
 import { Search, Filter, Printer, ChevronRight, X, Package, Droplets, Wrench } from 'lucide-react';
 import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
+import ImageSlider from '@/components/ImageSlider';
+import { slider1Images, slider2Images, slider3Images } from '@/data/sliderData';
 
 // Separate main products from consumables
 const mainProducts = productsData.filter((p) => !p.isConsumable);
@@ -106,6 +108,8 @@ function ProductsContent() {
         </div>
       </section>
 
+      <ImageSlider images={slider1Images} autoPlayInterval={5000} rounded="rounded-none" />
+
       {/* ── Browse by Category ── */}
       <section className="py-12 sm:py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -153,6 +157,8 @@ function ProductsContent() {
           </div>
         </div>
       </section>
+
+      <ImageSlider images={slider2Images} autoPlayInterval={5500} rounded="rounded-none" />
 
       <section className="py-12 bg-[#f8fbff] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -259,6 +265,7 @@ function ProductsContent() {
 
           {/* ── Consumables Section ── */}
           <div className="mt-16 pt-12 border-t-2 border-dashed border-gray-200">
+            <ImageSlider images={slider3Images} autoPlayInterval={6000} rounded="rounded-none" className="mb-12" />
             <button
               onClick={() => setShowConsumables(!showConsumables)}
               className="w-full flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all group"

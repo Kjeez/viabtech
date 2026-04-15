@@ -156,11 +156,7 @@ export default function PressSection() {
 
         </div>
 
-        {/* Optional Carousel Indicators for decorative purposes (like in the image) */}
-        <div className="flex justify-center items-center gap-2 mt-8">
-           <div className="w-8 h-1.5 rounded-full bg-cyan-400"></div>
-           <div className="w-8 h-1.5 rounded-full bg-cyan-400/30"></div>
-        </div>
+
 
       </div>
     </section>

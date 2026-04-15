@@ -21,6 +21,8 @@ import Counter from '@/components/Counter';
 import Testimonials from '@/components/Testimonials';
 import ServiceInquiryModal from '@/components/ServiceInquiryModal';
 import AboutSection from '@/components/AboutSection';
+import ImageSlider from '@/components/ImageSlider';
+import { slider1Images, slider2Images, slider3Images, slider4Images } from '@/data/sliderData';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const categories = [
@@ -111,8 +113,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════ WHO WE ARE ══════ */}
+      {/* ══════ SLIDER 1 — Document & Imaging Solutions ══════ */}
+      <ImageSlider
+        images={slider1Images}
+        autoPlayInterval={5000}
+        rounded="rounded-none"
+      />
+
       <AboutSection />
+
+      {/* ══════ SLIDER 2 — Large Format Printing ══════ */}
+      <ImageSlider
+        images={slider2Images}
+        autoPlayInterval={5500}
+        rounded="rounded-none"
+      />
+
+      {/* ══════ COLORFUL DIVIDER ══════ */}
+      <div className="relative h-1.5 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FF6600] via-[#0057B8] via-[#003399] to-[#CC0000] bg-[length:200%_100%] animate-[gradientSlide_4s_linear_infinite]" />
+      </div>
 
       {/* ═══ BRANDS ═══ */}
       <section className="py-20 bg-[#0a0a0a] overflow-hidden">
@@ -187,6 +207,13 @@ export default function HomePage() {
       <div className="relative h-1.5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#FF6600] via-[#0057B8] via-[#003399] to-[#CC0000] bg-[length:200%_100%] animate-[gradientSlide_4s_linear_infinite]" />
       </div>
+
+      {/* ══════ SLIDER 3 — imageFORCE Enterprise ══════ */}
+      <ImageSlider
+        images={slider3Images}
+        autoPlayInterval={6000}
+        rounded="rounded-none"
+      />
 
       {/* ══════ SERVICES ══════ */}
       <section className="py-24 bg-gradient-to-b from-[#f8fbff] to-white relative overflow-hidden">
@@ -379,6 +406,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ══════ SLIDER 4 — imageFORCE Pro Series ══════ */}
+      <ImageSlider
+        images={slider4Images}
+        autoPlayInterval={6500}
+        rounded="rounded-none"
+      />
 
       {/* ═══ TESTIMONIALS ═══ */}
       <Testimonials />
