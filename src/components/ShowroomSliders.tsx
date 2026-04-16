@@ -82,7 +82,6 @@ export default function ShowroomSliders() {
                     id={slider.id}
                     images={slider.images}
                     autoPlayInterval={5000 + idx * 500}
-                    aspectRatio="aspect-[16/7]"
                     rounded="rounded-2xl"
                   />
                 </div>

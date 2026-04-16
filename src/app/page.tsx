@@ -22,7 +22,7 @@ import Testimonials from '@/components/Testimonials';
 import ServiceInquiryModal from '@/components/ServiceInquiryModal';
 import AboutSection from '@/components/AboutSection';
 import ImageSlider from '@/components/ImageSlider';
-import { slider1Images, slider2Images, slider3Images, slider4Images } from '@/data/sliderData';
+import { slider1Images, slider2Images, slider3Images } from '@/data/sliderData';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const categories = [
@@ -406,13 +406,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ══════ SLIDER 4 — imageFORCE Pro Series ══════ */}
-      <ImageSlider
-        images={slider4Images}
-        autoPlayInterval={6500}
-        rounded="rounded-none"
-      />
 
       {/* ═══ TESTIMONIALS ═══ */}
       <Testimonials />
