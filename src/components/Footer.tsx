@@ -86,7 +86,7 @@ export default function Footer() {
                     <a href="https://maps.google.com/?cid=7711297827740443260&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
                       <strong className="text-white">Epson Experience Zone:</strong> VIAB TECH LTD (Epson), P.O.Box 105047, Ground Floor, Uhuru Heights, Bibi Titi Mohamed Rd, Dar es Salaam, Tanzania
                     </a>
-                    <a href="https://maps.google.com/?cid=7711297827740443260&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                    <a href="https://maps.google.com/?cid=15635631984227566733&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
                       <strong className="text-white">Canon Authorised Showroom:</strong> PLOT NO 1357/208, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Rd, Dar es Salaam, Tanzania
                     </a>
                   </div>
