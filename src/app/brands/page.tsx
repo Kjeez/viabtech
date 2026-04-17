@@ -64,7 +64,7 @@ export default function BrandsPage() {
                       ))}
                     </div>
 
-                    <Link href={`/products?brand=${brand.name}`} className="group inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm">
+                    <Link href={`/brands/${brand.slug}`} className="group inline-flex items-center gap-2 px-8 py-3.5 btn-vibrant text-sm">
                       {t('brandsPage.viewProducts', { brand: brand.name })} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>

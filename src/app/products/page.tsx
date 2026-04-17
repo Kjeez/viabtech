@@ -37,9 +37,20 @@ function ProductsContent() {
   const BATCH_SIZE = 24;
 
   useEffect(() => {
+    let shouldShowFilters = false;
     const cat = searchParams.get('category');
     if (cat && mainCategories.includes(cat)) {
       setSelectedCategory(cat);
+      shouldShowFilters = true;
+    }
+
+    const brandParam = searchParams.get('brand');
+    if (brandParam && brands.includes(brandParam)) {
+      setSelectedBrand(brandParam);
+      shouldShowFilters = true;
+    }
+
+    if (shouldShowFilters) {
       setShowFilters(true);
     }
   }, [searchParams]);
@@ -85,11 +96,12 @@ function ProductsContent() {
 
 
   const filteredConsumables = useMemo(() => {
-    if (!search) return consumableProducts;
-    return consumableProducts.filter((p) =>
-      p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
+    return consumableProducts.filter((p) => {
+      const matchSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
+      const matchBrand = selectedBrand === 'All' || p.brand === selectedBrand;
+      return matchSearch && matchBrand;
+    });
+  }, [search, selectedBrand]);
 
   const activeFilters = [selectedCategory, selectedBrand].filter((f) => f !== 'All').length;
   const { t } = useLanguage();
@@ -279,7 +291,7 @@ function ProductsContent() {
                     Ink Cartridges & Maintenance Supplies
                   </h3>
                   <p className="text-sm text-gray-500 mt-0.5">
-                    {filteredConsumables.length} consumable products — genuine Epson ink cartridges, maintenance boxes & more
+                    {filteredConsumables.length} consumable products — genuine {selectedBrand !== 'All' ? selectedBrand : ''} ink cartridges, maintenance boxes & more
                   </p>
                 </div>
               </div>
@@ -297,13 +309,13 @@ function ProductsContent() {
                     href="/products/category/ink-cartridges"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
                   >
-                    <Droplets size={14} /> Ink Cartridges ({consumableProducts.filter(p => p.category === 'Ink Cartridges').length})
+                    <Droplets size={14} /> Ink Cartridges ({filteredConsumables.filter(p => p.category === 'Ink Cartridges').length})
                   </Link>
                   <Link
                     href="/products/category/printer-maintenance-box"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
                   >
-                    <Wrench size={14} /> Maintenance Boxes ({consumableProducts.filter(p => p.category === 'Printer Maintenance Box').length})
+                    <Wrench size={14} /> Maintenance Boxes ({filteredConsumables.filter(p => p.category === 'Printer Maintenance Box').length})
                   </Link>
                 </div>
 
