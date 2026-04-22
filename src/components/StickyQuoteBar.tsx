@@ -2,14 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowRight, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ServiceInquiryModal from '@/components/ServiceInquiryModal';
 
+const HIDDEN_PATHS = ['/canon-register', '/services', '/service-center'];
+
 export default function StickyQuoteBar() {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
+  if (HIDDEN_PATHS.includes(pathname)) return null;
 
   useEffect(() => {
     const handleScroll = () => {
