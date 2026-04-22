@@ -614,3 +614,29 @@ body.nav-drawer-open .floating-actions {
 .category-card-dark .category-card-label {
   border-top: 1px solid #1f2937;
 }
+
+/* ══════════════════════════════════════════════════════════
+   CANON REGISTRATION FORM
+   ══════════════════════════════════════════════════════════ */
+
+.form-input-canon {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  background: #f8f9fb;
+  border: 1.5px solid transparent;
+  color: #0f1c2e;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.25s ease;
+}
+.form-input-canon::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.form-input-canon:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: rgba(204, 0, 0, 0.35);
+  box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.08);
+}
