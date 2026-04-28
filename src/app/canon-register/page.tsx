@@ -248,7 +248,7 @@ export default function CanonRegisterPage() {
               <ul className="space-y-4">
                 {[
                   { icon: <Wrench size={16} />, title: '3 Months Free Service', desc: 'Complimentary labour on repairs at our authorized service center' },
-                  { icon: <Shield size={16} />, title: 'Extended Warranty Eligibility', desc: 'Extend your Canon warranty from 1 year to 2 years for free' },
+                  { icon: <Shield size={16} />, title: 'Extended Warranty Eligibility', desc: 'On new purchases from 1st May 2026 .. with * subject to T & C' },
                   { icon: <Printer size={16} />, title: 'eMaintenance Support', desc: 'Connect to Canon eMaintenance for proactive device monitoring' },
                   { icon: <FileText size={16} />, title: 'Service Records', desc: 'Maintain a complete service history for your Canon device' },
                 ].map((item, i) => (
