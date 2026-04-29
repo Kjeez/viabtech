@@ -15,8 +15,6 @@ export default function StickyQuoteBar() {
   const [dismissed, setDismissed] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  if (HIDDEN_PATHS.includes(pathname)) return null;
-
   useEffect(() => {
     const handleScroll = () => {
       // Show bar after scrolling past 600px (past hero section)
@@ -31,6 +29,7 @@ export default function StickyQuoteBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [dismissed]);
 
+  if (HIDDEN_PATHS.includes(pathname)) return null;
   if (dismissed) return null;
 
   return (
