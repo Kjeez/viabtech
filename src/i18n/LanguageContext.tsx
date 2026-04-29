@@ -13,23 +13,35 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('en');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('viabtech-lang') as Locale | null;
-    if (saved && (saved === 'en' || saved === 'sw')) {
-      setLocaleState(saved);
+    setMounted(true);
+    try {
+      const saved = localStorage.getItem('viabtech-lang') as Locale | null;
+      if (saved && (saved === 'en' || saved === 'sw')) {
+        setLocaleState(saved);
+      }
+    } catch {
+      // localStorage may not be available (e.g., private browsing in some browsers)
     }
   }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
-    localStorage.setItem('viabtech-lang', newLocale);
+    try {
+      localStorage.setItem('viabtech-lang', newLocale);
+    } catch {
+      // ignore
+    }
     document.documentElement.lang = newLocale;
   }, []);
 
   const t = useCallback(
     (key: string, replacements?: Record<string, string>) => {
-      let value = translations[locale]?.[key] || translations.en[key] || key;
+      // Use 'en' during SSR/hydration, actual locale after mount
+      const activeLocale = mounted ? locale : 'en';
+      let value = translations[activeLocale]?.[key] || translations.en[key] || key;
       if (replacements) {
         Object.entries(replacements).forEach(([k, v]) => {
           value = value.replace(`{${k}}`, v);
@@ -37,7 +49,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
       return value;
     },
-    [locale],
+    [locale, mounted],
   );
 
   return (
