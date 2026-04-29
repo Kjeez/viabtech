@@ -50,6 +50,7 @@ export async function POST(request: NextRequest) {
     const recipients = [
       process.env.MAIL_RECIPIENT_1,
       process.env.MAIL_RECIPIENT_2,
+      process.env.MAIL_RECIPIENT_3,
     ]
       .filter(Boolean)
       .join(', ');
