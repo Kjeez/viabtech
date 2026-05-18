@@ -41,7 +41,7 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
             <div className="absolute bottom-20 sm:bottom-0 left-0 w-[70%] sm:w-[62%] rounded-2xl overflow-hidden shadow-2xl shadow-black/15 border-4 border-white group z-10">
               <Image
                 src="/images/about-us-team.jpg"
-                alt="Viab Tech team at Epson Experience Zone & Service Centre"
+                alt="Viab Tech team at Canon Store launch"
                 width={500}
                 height={380}
                 className="object-cover w-full h-[200px] sm:h-[260px] lg:h-[280px] group-hover:scale-105 transition-transform duration-700"
