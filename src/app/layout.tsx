@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import StickyQuoteBar from '@/components/StickyQuoteBar';
 import FloatingContactButtons from '@/components/FloatingContactButtons';
+import CookieConsent from '@/components/CookieConsent';
 import { LanguageProvider } from '@/i18n/LanguageContext';
 
 export const metadata: Metadata = {
@@ -76,6 +77,7 @@ export default function RootLayout({
           <Footer />
           <FloatingContactButtons />
           <StickyQuoteBar />
+          <CookieConsent />
         </LanguageProvider>
       </body>
     </html>

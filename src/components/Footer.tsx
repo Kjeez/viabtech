@@ -147,8 +147,8 @@ export default function Footer() {
           <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/50">{t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}</p>
             <div className="flex items-center gap-4 text-xs text-white/50">
-              <Link href="#" className="hover:text-cyan-400 transition-colors">{t('footer.privacy')}</Link>
-              <Link href="#" className="hover:text-cyan-400 transition-colors">{t('footer.terms')}</Link>
+              <Link href="/privacy" className="hover:text-cyan-400 transition-colors">{t('footer.privacy')}</Link>
+              <Link href="/terms" className="hover:text-cyan-400 transition-colors">{t('footer.terms')}</Link>
             </div>
           </div>
         </div>

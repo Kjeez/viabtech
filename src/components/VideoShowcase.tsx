@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Play, Pause, Volume2, VolumeX, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 interface LaunchEvent {
   id: string;
   badge: string;
-  title: JSX.Element;
+  title: React.ReactNode;
   subtitle: string;
   tags: string[];
   videoSrc: string;
