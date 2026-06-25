@@ -109,6 +109,72 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Meta Pixel (noscript) */}
+        {/* JSON-LD Structured Data — LocalBusiness */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Viabtech',
+              legalName: 'VIAB TECH LIMITED',
+              url: 'https://www.viabtech.com',
+              logo: 'https://www.viabtech.com/images/logo/viabtech-logo.png',
+              image: 'https://www.viabtech.com/images/logo/viabtech-logo.png',
+              description:
+                "Tanzania's trusted authorized reseller for Canon and Epson printers with expert sales, repair, and managed print services.",
+              telephone: ['+255745700500', '+255746000786'],
+              email: 'info@viabtech.co.tz',
+              address: [
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Ground Floor, Uhuru Heights, Bibi Titi Mohamed Road',
+                  addressLocality: 'Dar es Salaam',
+                  addressCountry: 'TZ',
+                  postalCode: '105047',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Plot No 1357/208, Next To Peacock Hotel, Bibi Titi Mohamed Road',
+                  addressLocality: 'Dar es Salaam',
+                  addressCountry: 'TZ',
+                },
+              ],
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: -6.8106149,
+                longitude: 39.2836107,
+              },
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  opens: '08:30',
+                  closes: '17:30',
+                },
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: 'Saturday',
+                  opens: '09:00',
+                  closes: '14:00',
+                },
+              ],
+              sameAs: [],
+              priceRange: '$$',
+              areaServed: {
+                '@type': 'Country',
+                name: 'Tanzania',
+              },
+              brand: [
+                { '@type': 'Brand', name: 'Canon' },
+                { '@type': 'Brand', name: 'Epson' },
+                { '@type': 'Brand', name: 'Lenovo' },
+                { '@type': 'Brand', name: 'Dell' },
+                { '@type': 'Brand', name: 'HP' },
+              ],
+            }),
+          }}
+        />
         <LanguageProvider>
           <a
             href="#main-content"

@@ -14,8 +14,17 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
   const product = productsData.find((p) => p.id === id);
   if (!product) return {};
   return {
-    title: `${product.name} | Viabtech`,
-    description: product.description,
+    title: `${product.name} | Buy in Tanzania`,
+    description: `${product.description.slice(0, 155)}…`,
+    openGraph: {
+      title: `${product.name} – ${product.brand} | Viabtech Tanzania`,
+      description: product.description.slice(0, 200),
+      url: `https://www.viabtech.com/products/${product.id}`,
+      images: product.image ? [{ url: product.image.startsWith('http') ? product.image : `https://www.viabtech.com${product.image}`, alt: product.name }] : [],
+    },
+    alternates: {
+      canonical: `https://www.viabtech.com/products/${product.id}`,
+    },
   };
 }
 
@@ -38,6 +47,36 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
 
   return (
     <>
+      {/* Product JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: product.name,
+            description: product.description,
+            image: product.image
+              ? product.image.startsWith('http')
+                ? product.image
+                : `https://www.viabtech.com${product.image}`
+              : undefined,
+            brand: { '@type': 'Brand', name: product.brand },
+            category: product.category,
+            offers: {
+              '@type': 'Offer',
+              availability: product.inStock
+                ? 'https://schema.org/InStock'
+                : 'https://schema.org/OutOfStock',
+              seller: {
+                '@type': 'Organization',
+                name: 'Viabtech',
+                url: 'https://www.viabtech.com',
+              },
+            },
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <section className="bg-[#f8fbff] border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
