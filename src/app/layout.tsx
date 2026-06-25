@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -62,6 +63,19 @@ export default function RootLayout({
         <meta name="theme-color" content="#0057B8" />
         <meta name="format-detection" content="telephone=yes" />
       </head>
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-DHYHQ096KM"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DHYHQ096KM');
+        `}
+      </Script>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>
           <a
