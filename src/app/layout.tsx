@@ -85,6 +85,7 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#0057B8" />
         <meta name="format-detection" content="telephone=yes" />
+        <meta name="facebook-domain-verification" content="tdzq6ekfgx3elrbhiw2svjiagdpoaf" />
       </head>
       <body className="min-h-screen flex flex-col">
         {/* Google Tag Manager (noscript) */}
