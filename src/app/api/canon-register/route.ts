@@ -51,6 +51,8 @@ export async function POST(request: NextRequest) {
       process.env.MAIL_RECIPIENT_1,
       process.env.MAIL_RECIPIENT_2,
       process.env.MAIL_RECIPIENT_3,
+      process.env.MAIL_RECIPIENT_4,
+      process.env.MAIL_RECIPIENT_5,
     ]
       .filter(Boolean)
       .join(', ');
