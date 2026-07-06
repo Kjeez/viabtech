@@ -69,6 +69,41 @@ const certificates = [
     color: '#E2231A',
     logo: '/images/logo/lenovo-seeklogo.png',
   },
+  {
+    brand: 'Epson',
+    title: 'Epson LFP Registered Partner 2026',
+    file: '/certificates/new certificates/Certificates Partner Programme 2026_ ViabTech Tanzania_LFP Registered (1)_compressed.pdf',
+    color: '#003087',
+    logo: '/images/logo/epson-seeklogo.png',
+  },
+  {
+    brand: 'Epson',
+    title: 'Epson DS Silver Partner 2026',
+    file: '/certificates/new certificates/Certificates Partner Programme 2026_ViabTech Tanzania_DS Silver (1)_11zon.pdf',
+    color: '#003087',
+    logo: '/images/logo/epson-seeklogo.png',
+  },
+  {
+    brand: 'Epson',
+    title: 'Epson Authorization Letter',
+    file: '/certificates/new certificates/EPSON LETTER TO VIAB TECH LTD 1 (1).pdf',
+    color: '#003087',
+    logo: '/images/logo/epson-seeklogo.png',
+  },
+  {
+    brand: 'Epson',
+    title: 'Epson Authorized Service Center',
+    file: '/certificates/new certificates/VIAB MAF FOR SERVICE CENTER ONLY from EPSON (1).pdf',
+    color: '#003087',
+    logo: '/images/logo/epson-seeklogo.png',
+  },
+  {
+    brand: 'Epson',
+    title: 'Epson Plus Certificate',
+    file: '/certificates/new certificates/plus_certificate_viab_tech_limited_867 (1)_11zon.pdf',
+    color: '#003087',
+    logo: '/images/logo/epson-seeklogo.png',
+  },
 ];
 
 export default function AboutPage() {
