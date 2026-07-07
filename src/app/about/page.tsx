@@ -115,8 +115,10 @@ export default function AboutPage() {
     { year: '2019', titleKey: 'aboutPage.t3Title', descKey: 'aboutPage.t3Desc' },
     { year: '2021', titleKey: 'aboutPage.t4Title', descKey: 'aboutPage.t4Desc' },
     { year: '2023', titleKey: 'aboutPage.t5Title', descKey: 'aboutPage.t5Desc' },
-    { year: '2025', titleKey: 'aboutPage.t6Title', descKey: 'aboutPage.t6Desc' },
+    { year: '2024', titleKey: 'aboutPage.t6Title', descKey: 'aboutPage.t6Desc' },
+    { year: '2025', titleKey: 'aboutPage.t7Title', descKey: 'aboutPage.t7Desc' },
   ];
+
 
   const values = [
     { icon: ShieldCheck, titleKey: 'aboutPage.v1Title', descKey: 'aboutPage.v1Desc' },

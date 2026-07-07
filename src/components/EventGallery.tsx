@@ -173,28 +173,33 @@ export default function EventGallery() {
       <div className="w-full mx-auto relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* ── Event Tab Switcher ── */}
-          <div className="flex items-center justify-center gap-3 mb-8">
-            {(Object.keys(eventConfig) as EventTab[]).map((ev) => (
-              <button
-                key={ev}
-                onClick={() => switchEvent(ev)}
-                className={`relative px-6 py-3 rounded-full text-sm font-semibold tracking-wide uppercase transition-all duration-400 ${
-                  ev === activeEvent
-                    ? 'text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-500 border border-gray-200 hover:bg-gray-200 hover:text-gray-700'
-                }`}
-                style={
-                  ev === activeEvent
-                    ? { background: `linear-gradient(135deg, ${eventConfig[ev].accent}dd, ${eventConfig[ev].accent}88)`, boxShadow: `0 4px 24px ${eventConfig[ev].accent}30` }
-                    : undefined
-                }
-              >
-                <span className="flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-full ${ev === activeEvent ? 'bg-white animate-pulse' : 'bg-gray-400'}`} />
-                  {eventConfig[ev].label}
-                </span>
-              </button>
-            ))}
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <p className="text-xs text-gray-400 tracking-widest uppercase animate-pulse">
+              ↓ &nbsp;Tap to explore our showrooms&nbsp; ↓
+            </p>
+            <div className="flex items-center gap-4">
+              {(Object.keys(eventConfig) as EventTab[]).map((ev) => (
+                <button
+                  key={ev}
+                  onClick={() => switchEvent(ev)}
+                  className={`relative px-8 py-3.5 rounded-full text-sm font-bold tracking-wide uppercase transition-all duration-300 cursor-pointer ${
+                    ev === activeEvent
+                      ? 'text-white shadow-lg scale-105'
+                      : 'bg-gray-100 text-gray-500 border border-gray-200 hover:bg-gray-200 hover:text-gray-700 hover:scale-105 animate-[bounce_2s_ease-in-out_infinite]'
+                  }`}
+                  style={
+                    ev === activeEvent
+                      ? { background: `linear-gradient(135deg, ${eventConfig[ev].accent}dd, ${eventConfig[ev].accent}88)`, boxShadow: `0 4px 24px ${eventConfig[ev].accent}30` }
+                      : undefined
+                  }
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className={`w-2.5 h-2.5 rounded-full ${ev === activeEvent ? 'bg-white animate-pulse' : 'bg-gray-400 animate-pulse'}`} />
+                    {eventConfig[ev].label}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* ── Header ── */}
@@ -215,21 +220,26 @@ export default function EventGallery() {
           </div>
 
           {/* ── Filter pills ── */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {uniqueTags.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === filter
-                    ? 'text-white shadow-md'
-                    : 'bg-white text-text-secondary border border-border hover:border-primary/30 hover:text-primary'
-                }`}
-                style={activeFilter === filter ? { backgroundColor: config.accent, boxShadow: `0 4px 12px ${config.accent}30` } : undefined}
-              >
-                {filter}
-              </button>
-            ))}
+          <div className="flex flex-col items-center gap-3 mb-10">
+            <p className="text-xs text-gray-400 tracking-widest uppercase animate-pulse">
+              ↓ &nbsp;Filter by category&nbsp; ↓
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {uniqueTags.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                    activeFilter === filter
+                      ? 'text-white shadow-md scale-105'
+                      : 'bg-white text-text-secondary border border-border hover:border-primary/30 hover:text-primary hover:scale-105 animate-[bounce_2s_ease-in-out_infinite]'
+                  }`}
+                  style={activeFilter === filter ? { backgroundColor: config.accent, boxShadow: `0 4px 12px ${config.accent}30` } : undefined}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

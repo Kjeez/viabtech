@@ -167,17 +167,22 @@ export default function VideoShowcase() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* ── Tab Switcher ── */}
-        <div className="flex items-center justify-center gap-3 mb-12">
+        <div className="flex flex-col items-center gap-3 mb-12">
+          {/* Helper nudge text */}
+          <p className="text-xs text-gray-400 tracking-widest uppercase animate-pulse">
+            ↓ &nbsp;Tap to explore our showrooms&nbsp; ↓
+          </p>
+          <div className="flex items-center gap-4">
           {launches.map((launch, idx) => (
             <button
               key={launch.id}
               onClick={() => switchTab(idx)}
               className={`
-                relative px-6 py-3 rounded-full text-sm font-semibold tracking-wide uppercase transition-all duration-400
+                relative px-8 py-3.5 rounded-full text-sm font-bold tracking-wide uppercase transition-all duration-300 cursor-pointer
                 ${
                   idx === activeIndex
-                    ? 'text-white shadow-lg'
-                    : 'bg-white/5 text-gray-400 border border-white/10 hover:bg-white/10 hover:text-gray-200'
+                    ? 'text-white shadow-lg scale-105'
+                    : 'bg-white/5 text-gray-300 border border-white/20 hover:bg-white/15 hover:text-white hover:scale-105 hover:border-white/40 animate-[bounce_2s_ease-in-out_infinite]'
                 }
               `}
               style={
@@ -189,15 +194,17 @@ export default function VideoShowcase() {
                   : undefined
               }
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-2.5">
                 <span
-                  className={`w-2 h-2 rounded-full ${idx === activeIndex ? 'bg-white animate-pulse' : 'bg-gray-500'}`}
+                  className={`w-2.5 h-2.5 rounded-full ${idx === activeIndex ? 'bg-white animate-pulse' : 'bg-gray-400 animate-pulse'}`}
                 />
                 {launch.id === 'canon' ? 'Canon Store' : 'Epson Centre'}
               </span>
             </button>
           ))}
+          </div>
         </div>
+
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text Content & Tags */}
