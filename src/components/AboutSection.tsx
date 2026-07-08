@@ -14,56 +14,59 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-[#f8fbff] to-[#e8f4fd] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-primary/[0.03] to-transparent rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Aerial background */}
+      <div className="absolute inset-0 z-0">
+        <Image src="/images/ariel-background.jpg" alt="Aerial view of Dar es Salaam city" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f8fbff]/70 to-[#e8f4fd]/70" />
+      </div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-3xl pointer-events-none z-[1]" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-primary/[0.03] to-transparent rounded-full blur-3xl pointer-events-none z-[1]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── Right: Image Stack ── */}
-          <div className="relative order-1 lg:order-2 w-full flex flex-col gap-3 h-[480px] sm:h-[540px] lg:h-[580px]">
-            {/* Decorative accent */}
-            <div className="absolute -top-3 right-0 sm:-right-3 w-[65%] h-[50%] bg-primary/10 rounded-3xl -z-10" />
+          <div className="relative order-1 lg:order-2 w-full h-[480px] sm:h-[540px] lg:h-[580px]">
 
-            {/* Building image — top, full width */}
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group">
+            {/* Back image — upper right */}
+            <div className="absolute top-0 right-0 w-[85%] sm:w-[80%] h-[55%] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group z-[1]">
               <Image
                 src="/images/about-us-epson.jpeg"
                 alt="Viab Tech Epson Experience Zone, Dar es Salaam"
-                width={700}
-                height={320}
-                className="object-cover object-[80%_0%] w-full h-[200px] sm:h-[240px] lg:h-[260px] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-
-            {/* aboutus_img — bottom, full width, fills remaining height */}
-            <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/15 border-4 border-white group">
-              <Image
-                src="/images/aboutus_img.jpg"
-                alt="Viab Tech Canon Zone & Service Center"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
+            </div>
 
-              {/* Stats floating card — bottom right corner of this image */}
-              <div className="absolute bottom-3 right-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl border border-gray-100 p-2 sm:p-3 flex gap-3 sm:gap-5">
-                <div className="text-center">
-                  <div className="text-lg sm:text-xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
-                  <div className="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.years' : 'aboutPage.years')}</div>
-                </div>
-                <div className="w-px bg-gray-200" />
-                <div className="text-center">
-                  <div className="text-lg sm:text-xl font-bold text-primary"><Counter end={11} /></div>
-                  <div className="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.brands' : 'aboutPage.brands')}</div>
-                </div>
-                <div className="w-px bg-gray-200" />
-                <div className="text-center">
-                  <div className="text-lg sm:text-xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
-                  <div className="text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.clients' : 'aboutPage.clients')}</div>
-                </div>
+            {/* Front image — lower left, overlapping */}
+            <div className="absolute bottom-[60px] sm:bottom-[50px] left-0 w-[80%] sm:w-[75%] h-[55%] rounded-2xl overflow-hidden shadow-2xl shadow-black/20 border-4 border-white group z-[2]">
+              <Image
+                src="/images/about-us-team.jpg"
+                alt="Viab Tech team at Canon Authorized Dealer"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Stats card — bottom right, separate */}
+            <div className="absolute bottom-0 right-0 sm:right-4 z-[3] bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 px-5 py-4 sm:px-6 sm:py-5 flex flex-col gap-4 min-w-[120px]">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary"><Counter end={10} suffix="+" /></div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.years' : 'aboutPage.years')}</div>
+              </div>
+              <div className="h-px bg-gray-200" />
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary"><Counter end={11} /></div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.brands' : 'aboutPage.brands')}</div>
+              </div>
+              <div className="h-px bg-gray-200" />
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary"><Counter end={2000} suffix="+" formatk /></div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{t(showCta ? 'about.clients' : 'aboutPage.clients')}</div>
               </div>
             </div>
+
           </div>
 
 
