@@ -29,8 +29,8 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
             {/* Building image — top, full width */}
             <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group">
               <Image
-                src="/images/about-us.jpg"
-                alt="Viab Tech office at Uhuru Heights, Dar es Salaam"
+                src="/images/about-us-epson.jpeg"
+                alt="Viab Tech Epson Experience Zone, Dar es Salaam"
                 width={700}
                 height={320}
                 className="object-cover object-[80%_0%] w-full h-[200px] sm:h-[240px] lg:h-[260px] group-hover:scale-105 transition-transform duration-700"

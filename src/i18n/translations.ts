@@ -399,15 +399,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'aboutPage.v4Desc': 'We stay ahead of technology trends for the best solutions.',
     'aboutPage.journeyBadge': 'Our Journey',
     'aboutPage.journeyTitle': 'Timeline',
-    'aboutPage.timeline': [
-      { year: '2015', titleKey: 'aboutPage.t1Title', descKey: 'aboutPage.t1Desc' },
-      { year: '2017', titleKey: 'aboutPage.t2Title', descKey: 'aboutPage.t2Desc' },
-      { year: '2019', titleKey: 'aboutPage.t3Title', descKey: 'aboutPage.t3Desc' },
-      { year: '2021', titleKey: 'aboutPage.t4Title', descKey: 'aboutPage.t4Desc' },
-      { year: '2023', titleKey: 'aboutPage.t5Title', descKey: 'aboutPage.t5Desc' },
-      { year: '2024', titleKey: 'aboutPage.t6Title', descKey: 'aboutPage.t6Desc' },
-      { year: '2025', titleKey: 'aboutPage.t7Title', descKey: 'aboutPage.t7Desc' },
-    ],
+
     'aboutPage.t1Title': 'Founded',
     'aboutPage.t1Desc': 'Viabtech established in Dar es Salaam as a printer solutions provider.',
     'aboutPage.t2Title': 'Canon Partnership',
