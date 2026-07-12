@@ -10,7 +10,7 @@ import Counter from '@/components/Counter';
 import AboutSection from '@/components/AboutSection';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ImageSlider from '@/components/ImageSlider';
-import { slider2Images } from '@/data/sliderData';
+import { slider2Images, epsonSlider2Images } from '@/data/sliderData';
 
 const certificates = [
   {
@@ -373,6 +373,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ImageSlider images={epsonSlider2Images} autoPlayInterval={5000} rounded="rounded-none" />
 
       <VideoShowcase />
       <div className="bg-[#f8fbff]"><PressSection /></div>

@@ -22,7 +22,7 @@ import Testimonials from '@/components/Testimonials';
 import ServiceInquiryModal from '@/components/ServiceInquiryModal';
 import AboutSection from '@/components/AboutSection';
 import ImageSlider from '@/components/ImageSlider';
-import { slider1Images, slider2Images, slider3Images } from '@/data/sliderData';
+import { slider1Images, slider3Images, epsonSlider1Images } from '@/data/sliderData';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const categories = [
@@ -122,9 +122,9 @@ export default function HomePage() {
 
       <AboutSection />
 
-      {/* ══════ SLIDER 2 — Large Format Printing ══════ */}
+      {/* ══════ EPSON SLIDER — EcoTank, SureColor & Photo Printers ══════ */}
       <ImageSlider
-        images={slider2Images}
+        images={epsonSlider1Images}
         autoPlayInterval={5500}
         rounded="rounded-none"
       />

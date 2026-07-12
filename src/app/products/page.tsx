@@ -8,7 +8,7 @@ import { Search, Filter, Printer, ChevronRight, X, Package, Droplets, Wrench } f
 import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ImageSlider from '@/components/ImageSlider';
-import { slider1Images, slider2Images, slider3Images } from '@/data/sliderData';
+import { slider1Images, slider2Images, slider3Images, epsonSlider2Images } from '@/data/sliderData';
 
 // Separate main products from consumables
 const mainProducts = productsData.filter((p) => !p.isConsumable);
@@ -171,6 +171,8 @@ function ProductsContent() {
       </section>
 
       <ImageSlider images={slider2Images} autoPlayInterval={5500} rounded="rounded-none" />
+
+      <ImageSlider images={epsonSlider2Images} autoPlayInterval={5000} rounded="rounded-none" />
 
       <section className="py-12 bg-[#f8fbff] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

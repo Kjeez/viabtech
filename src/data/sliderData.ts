@@ -92,10 +92,63 @@ export const slider4Images: SliderImage[] = [
   },
 ];
 
+/**
+ * Epson Slider 1: EcoTank, SureColor Signage, 6-colour Photo Printers
+ * Showcases Epson ink tank, signage, and photo-printing product lines.
+ * Native: ~1456×816 (landscape marketing banners)
+ */
+export const epsonSlider1Images: SliderImage[] = [
+  {
+    src: '/images/sliders/epson slider 1/epson-slider1-slide-1.jpg',
+    alt: 'Epson EcoTank – Save Big on Printing',
+    width: 1456, height: 816,
+  },
+  {
+    src: '/images/sliders/epson slider 1/epson-slider1-slide-2.jpg',
+    alt: 'Epson SureColor Signage Printers – Fast Printing, Minimal Downtime',
+    width: 1456, height: 816,
+  },
+  {
+    src: '/images/sliders/epson slider 1/epson-slider1-slide-3.jpg',
+    alt: 'Epson 6-colour Photo Printers – L8050, L8100, L18050',
+    width: 1456, height: 816,
+  },
+  {
+    src: '/images/sliders/epson slider 1/epson-slider1-slide-4.jpg',
+    alt: 'Epson 6-colour Photo Printers – Unleash Your Creativity',
+    width: 1456, height: 816,
+  },
+];
+
+/**
+ * Epson Slider 2: EcoTank & WorkForce Pro brand campaign
+ * Bold lifestyle imagery — Precision Perfected, Precision In Motion, Built To Outlast.
+ * Native: ~1456×616 (widescreen cinematic banners)
+ */
+export const epsonSlider2Images: SliderImage[] = [
+  {
+    src: '/images/sliders/epson slider 2/epson-slider2-slide-1.jpg',
+    alt: 'Epson EcoTank – Precision Perfected – Ink that moves with you',
+    width: 1456, height: 616,
+  },
+  {
+    src: '/images/sliders/epson slider 2/epson-slider2-slide-2.jpg',
+    alt: 'Epson EcoTank – Precision In Motion – Every drop, exactly placed',
+    width: 1456, height: 616,
+  },
+  {
+    src: '/images/sliders/epson slider 2/epson-slider2-slide-3.jpg',
+    alt: 'Epson WorkForce Pro – Built To Outlast – Engineered for the long run',
+    width: 1456, height: 616,
+  },
+];
+
 /** All slider sets for easy iteration */
 export const allSliders = {
   dims: slider1Images,
   lfp: slider2Images,
   imageForcLight: slider3Images,
   imageForceDark: slider4Images,
+  epsonProducts: epsonSlider1Images,
+  epsonBrand: epsonSlider2Images,
 };
