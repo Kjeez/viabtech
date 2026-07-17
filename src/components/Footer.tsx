@@ -28,6 +28,7 @@ export default function Footer() {
       { name: t('footer.consultation'), href: '/services' },
       { name: t('footer.maintenance'), href: '/services' },
       { name: t('footer.serviceCenter'), href: '/service-center' },
+      { name: 'Printer Shop in Dar es Salaam', href: '/printer-shop-dar-es-salaam' },
     ],
     help: [
       { name: t('footer.contactUs'), href: '/contact' },

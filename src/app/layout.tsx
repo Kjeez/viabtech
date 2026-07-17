@@ -167,6 +167,7 @@ export default function RootLayout({
               ],
               sameAs: [
                 'https://www.instagram.com/viabtechcanon',
+                'https://www.facebook.com/profile.php?id=61591455479848',
               ],
               priceRange: '$$',
               areaServed: {
