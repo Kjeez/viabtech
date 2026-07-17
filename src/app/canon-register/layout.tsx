@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'Canon Product Registration | VIAB TECH Tanzania',
     description:
       'Register your Canon product and enjoy 3 months of free service. Authorized Canon dealer in Dar es Salaam, Tanzania.',
-    url: 'https://viabtech.co.tz/canon-register',
+    url: 'https://www.viabtech.com/canon-register',
     siteName: 'VIAB TECH – Canon Authorized Dealer',
     locale: 'en_TZ',
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://viabtech.co.tz/canon-register',
+    canonical: 'https://www.viabtech.com/canon-register',
   },
 };
 

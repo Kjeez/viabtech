@@ -9,14 +9,19 @@ import FloatingContactButtons from '@/components/FloatingContactButtons';
 import CookieConsent from '@/components/CookieConsent';
 import { LanguageProvider } from '@/i18n/LanguageContext';
 
+const SITE_URL = 'https://www.viabtech.com';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Viabtech – Authorized Canon & Epson Printer Dealer | Tanzania',
+    default: 'Printer Shop in Dar es Salaam | Canon & Epson Dealer – Viabtech',
     template: '%s | Viabtech',
   },
   description:
-    "Viabtech is Tanzania's trusted authorized reseller for Canon and Epson printers. We also supply Lenovo and Dell printing solutions with expert sales, repair, and support services across East Africa.",
+    "Viabtech is Dar es Salaam's authorized Canon & Epson printer shop and service centre. Buy printers, cameras, ink & toner with genuine warranty across Tanzania. Call +255 745 700 500.",
   keywords: [
+    'printer shop Dar es Salaam',
+    'printers in Dar es Salaam',
     'printer dealer Tanzania',
     'Canon authorized reseller',
     'Epson authorized reseller',
@@ -29,10 +34,10 @@ export const metadata: Metadata = {
     'Epson projectors Tanzania',
   ],
   openGraph: {
-    title: 'Viabtech – Authorized Canon & Epson Printer Dealer | Tanzania',
+    title: 'Printer Shop in Dar es Salaam | Canon & Epson Dealer – Viabtech',
     description:
-      "Tanzania's leading authorized reseller for Canon and Epson printers with expert sales, repair, and managed print services.",
-    url: 'https://viabtech.co.tz',
+      "Dar es Salaam's authorized Canon & Epson printer shop and service centre. Printers, cameras, ink & toner with genuine warranty across Tanzania.",
+    url: SITE_URL,
     siteName: 'Viabtech',
     locale: 'en_TZ',
     type: 'website',
@@ -42,7 +47,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://viabtech.co.tz',
+    canonical: '/',
   },
 };
 
@@ -160,7 +165,9 @@ export default function RootLayout({
                   closes: '14:00',
                 },
               ],
-              sameAs: [],
+              sameAs: [
+                'https://www.instagram.com/viabtechcanon',
+              ],
               priceRange: '$$',
               areaServed: {
                 '@type': 'Country',
