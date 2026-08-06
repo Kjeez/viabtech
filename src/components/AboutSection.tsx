@@ -32,8 +32,8 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
             {/* Back image — upper right */}
             <div className="absolute top-0 right-0 w-[85%] sm:w-[80%] h-[55%] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white group z-[1]">
               <Image
-                src="/images/about-us-epson.jpeg"
-                alt="Viab Tech Epson Experience Zone, Dar es Salaam"
+                src="/images/epson.jpg"
+                alt="Viab Tech Epson Experience & Service Center, Dar es Salaam"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -42,8 +42,8 @@ export default function AboutSection({ showCta = true }: AboutSectionProps) {
             {/* Front image — lower left, overlapping */}
             <div className="absolute bottom-[60px] sm:bottom-[50px] left-0 w-[80%] sm:w-[75%] h-[55%] rounded-2xl overflow-hidden shadow-2xl shadow-black/20 border-4 border-white group z-[2]">
               <Image
-                src="/images/about-us-team.jpg"
-                alt="Viab Tech team at Canon Authorized Dealer"
+                src="/images/canon.jpg"
+                alt="Viab Tech Canon Authorized Dealer showroom, Dar es Salaam"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />

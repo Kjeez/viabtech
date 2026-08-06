@@ -26944,5 +26944,699 @@
     },
     "inStock": true,
     "featured": false
+  },
+  {
+    "id": "canon-imagerunner-2425",
+    "name": "Canon imageRUNNER 2425",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2425.png",
+    "description": "Canon imageRUNNER 2425 — compact A3 monochrome laser multifunction printer with print, copy, and scan. Built for small-to-medium offices in Dar es Salaam with 25 ppm output, network connectivity, and a 7-inch colour touchscreen.",
+    "features": [
+      "25 ppm A3 monochrome printing",
+      "Print, copy, and scan",
+      "7-inch colour touchscreen",
+      "Standard 580-sheet paper capacity",
+      "Secure PIN printing",
+      "Network and USB connectivity"
+    ],
+    "specs": {
+      "printSpeed": "Up to 25 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 580 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Ethernet, USB 2.0"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imagerunner-2425i",
+    "name": "Canon imageRUNNER 2425i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2425.png",
+    "description": "Canon imageRUNNER 2425i — Wi-Fi-enabled variant of the popular iR 2425, delivering 25 ppm A3 monochrome printing with wireless connectivity, mobile printing support, and advanced scan-to-email for modern offices in Tanzania.",
+    "features": [
+      "25 ppm A3 monochrome printing",
+      "Print, copy, scan, and send",
+      "Wi-Fi and Wi-Fi Direct",
+      "Mobile printing via Canon PRINT Business",
+      "7-inch colour touchscreen",
+      "Auto duplex printing"
+    ],
+    "specs": {
+      "printSpeed": "Up to 25 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 1,180 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imagerunner-2206n",
+    "name": "Canon imageRUNNER 2206N",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2425.png",
+    "description": "Canon imageRUNNER 2206N — budget-friendly A3 monochrome multifunction printer with network-ready connectivity, secure PIN printing, and mobile print support. Ideal for small workgroups and SMEs in Dar es Salaam.",
+    "features": [
+      "22 ppm A3 monochrome printing",
+      "Print, copy, and scan",
+      "Network ready (Ethernet)",
+      "Secure PIN-based printing",
+      "Mobile printing via Canon PRINT Business",
+      "Compact space-saving design"
+    ],
+    "specs": {
+      "printSpeed": "Up to 22 ppm (A4)",
+      "printResolution": "600 x 600 dpi",
+      "paperCapacity": "Up to 330 sheets",
+      "display": "5-line LCD",
+      "connectivity": "Ethernet, USB 2.0"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-2006n",
+    "name": "Canon imageRUNNER 2006N",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2425.png",
+    "description": "Canon imageRUNNER 2006N — entry-level A3 monochrome multifunction for schools, NGOs, and small offices. Delivers 20 ppm output with network connectivity and low running costs at an affordable price point in Tanzania.",
+    "features": [
+      "20 ppm A3 monochrome printing",
+      "Print, copy, and scan",
+      "Network ready (Ethernet)",
+      "Low cost per page with C-EXV 42 toner",
+      "Compact A3 footprint",
+      "Energy efficient Sleep mode"
+    ],
+    "specs": {
+      "printSpeed": "Up to 20 ppm (A4)",
+      "printResolution": "600 x 600 dpi",
+      "paperCapacity": "Up to 330 sheets",
+      "display": "5-line LCD",
+      "connectivity": "Ethernet, USB 2.0"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-2930i",
+    "name": "Canon imageRUNNER 2930i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2930i.png",
+    "description": "Canon imageRUNNER 2930i — robust A3 monochrome multifunction printer built for professional offices in Dar es Salaam. Features 30 ppm output, advanced scanning, intuitive 7-inch touchscreen, and enterprise-grade security.",
+    "features": [
+      "30 ppm A3 monochrome printing",
+      "Print, copy, scan, and send",
+      "7-inch intuitive colour touchscreen",
+      "Wi-Fi, Ethernet, and USB connectivity",
+      "Advanced security with Secure Print",
+      "Up to 2,300-sheet paper capacity"
+    ],
+    "specs": {
+      "printSpeed": "Up to 30 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 2,300 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic",
+      "memory": "2 GB RAM / 64 GB eMMC"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imagerunner-2925i",
+    "name": "Canon imageRUNNER 2925i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2930i.png",
+    "description": "Canon imageRUNNER 2925i — 25 ppm A3 monochrome MFP from the new 2900 series with tablet-like 7-inch touchscreen, advanced security, Wi-Fi, and cloud integration. Perfect for government offices and growing businesses in Tanzania.",
+    "features": [
+      "25 ppm A3 monochrome printing",
+      "Print, copy, scan, and send",
+      "7-inch tablet-like colour touchscreen",
+      "Wi-Fi and cloud connectivity",
+      "Advanced security protocols",
+      "Up to 2,300-sheet paper capacity"
+    ],
+    "specs": {
+      "printSpeed": "Up to 25 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 2,300 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic",
+      "memory": "2 GB RAM / 64 GB eMMC"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-imagerunner-2730i",
+    "name": "Canon imageRUNNER 2730i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2930i.png",
+    "description": "Canon imageRUNNER 2730i — modern A3 monochrome MFP from the newer 2700 series, delivering 30 ppm output with cloud integration, advanced document workflows, and an intuitive touchscreen for efficient office operations.",
+    "features": [
+      "30 ppm A3 monochrome printing",
+      "Print, copy, scan, and send",
+      "7-inch colour touchscreen",
+      "Cloud and mobile printing",
+      "Advanced document workflow",
+      "Optional finishing capabilities"
+    ],
+    "specs": {
+      "printSpeed": "Up to 30 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 2,300 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-2630i",
+    "name": "Canon imageRUNNER 2630i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-2930i.png",
+    "description": "Canon imageRUNNER 2630i — proven A3 monochrome multifunction with 30 ppm output, advanced cost-control via uniFLOW, and robust scanning. A widely trusted office workhorse still in high demand across Tanzania.",
+    "features": [
+      "30 ppm A3 monochrome printing",
+      "Print, copy, scan, and send",
+      "5-inch colour touchscreen",
+      "uniFLOW Online Express integration",
+      "Advanced security features",
+      "Up to 1,200-sheet paper capacity"
+    ],
+    "specs": {
+      "printSpeed": "Up to 30 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 1,200 sheets",
+      "display": "5-inch Colour Touchscreen",
+      "connectivity": "Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-c3226i",
+    "name": "Canon imageRUNNER C3226i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-c3226i.png",
+    "description": "Canon imageRUNNER C3226i — entry-level A3 colour multifunction printer delivering 26 ppm colour and mono output with a 7-inch touchscreen, mobile printing, and flexible media handling for creative and marketing offices.",
+    "features": [
+      "26 ppm A3 colour and mono printing",
+      "Print, copy, scan, and send",
+      "7-inch colour touchscreen",
+      "Wi-Fi and mobile printing",
+      "Auto duplex printing",
+      "Versatile media handling up to SRA3"
+    ],
+    "specs": {
+      "printSpeed": "Up to 26 ppm (A4 colour/mono)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 2,300 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-c3326i",
+    "name": "Canon imageRUNNER C3326i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-c3226i.png",
+    "description": "Canon imageRUNNER C3326i — high-speed A3 colour multifunction delivering 33 ppm colour output for demanding corporate offices. Features a 7-inch touchscreen, advanced finishing options, and enterprise security.",
+    "features": [
+      "33 ppm A3 colour and mono printing",
+      "Print, copy, scan, and send",
+      "7-inch colour touchscreen",
+      "Wi-Fi and cloud connectivity",
+      "Advanced finishing options",
+      "Enterprise-grade security"
+    ],
+    "specs": {
+      "printSpeed": "Up to 33 ppm (A4 colour/mono)",
+      "printResolution": "1200 x 1200 dpi",
+      "paperCapacity": "Up to 2,300 sheets",
+      "display": "7-inch Colour Touchscreen",
+      "connectivity": "Wi-Fi, Ethernet, USB 2.0",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-advance-dx-c3926i",
+    "name": "Canon imageRUNNER ADVANCE DX C3926i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-advance-dx.png",
+    "description": "Canon imageRUNNER ADVANCE DX C3926i — advanced A3 colour MFP with 26 ppm output, 10.1-inch touchscreen, cloud-native workflows, and SIEM-compatible security logging for enterprise environments in Tanzania.",
+    "features": [
+      "26 ppm A3 colour printing",
+      "10.1-inch colour touchscreen",
+      "Cloud-native document workflows",
+      "SIEM-compatible security logging",
+      "uniFLOW Online integration",
+      "Up to 6,350-sheet paper capacity"
+    ],
+    "specs": {
+      "printSpeed": "Up to 26 ppm (A4 colour)",
+      "printResolution": "1200 x 1200 dpi",
+      "display": "10.1-inch Colour Touchscreen",
+      "paperCapacity": "Up to 6,350 sheets",
+      "connectivity": "Ethernet, USB, Wi-Fi (optional)"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-advance-dx-4935i",
+    "name": "Canon imageRUNNER ADVANCE DX 4935i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-advance-dx.png",
+    "description": "Canon imageRUNNER ADVANCE DX 4935i — high-volume A3 monochrome MFP delivering 35 ppm with a 10.1-inch touchscreen, advanced workflow automation, and robust security for banks, government, and large corporations in Tanzania.",
+    "features": [
+      "35 ppm A3 monochrome printing",
+      "10.1-inch colour touchscreen",
+      "Advanced workflow automation",
+      "Enterprise-grade security",
+      "High-capacity paper handling",
+      "Optional staple/hole-punch finisher"
+    ],
+    "specs": {
+      "printSpeed": "Up to 35 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "display": "10.1-inch Colour Touchscreen",
+      "paperCapacity": "Up to 6,350 sheets",
+      "connectivity": "Ethernet, USB, Wi-Fi (optional)"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-imagerunner-advance-dx-4925i",
+    "name": "Canon imageRUNNER ADVANCE DX 4925i",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Office Multifunction",
+    "image": "/images/products/downloaded/canon-imagerunner-advance-dx.png",
+    "description": "Canon imageRUNNER ADVANCE DX 4925i — mid-speed A3 monochrome MFP from the 4900 series with 25 ppm output, 10.1-inch touchscreen, cloud integration, and advanced security for corporate office environments.",
+    "features": [
+      "25 ppm A3 monochrome printing",
+      "10.1-inch colour touchscreen",
+      "Cloud and mobile printing",
+      "Advanced document security",
+      "uniFLOW Online Express",
+      "Flexible finishing options"
+    ],
+    "specs": {
+      "printSpeed": "Up to 25 ppm (A4)",
+      "printResolution": "1200 x 1200 dpi",
+      "display": "10.1-inch Colour Touchscreen",
+      "paperCapacity": "Up to 6,350 sheets",
+      "connectivity": "Ethernet, USB, Wi-Fi (optional)"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-pixma-g2420",
+    "name": "Canon PIXMA G2420",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Refillable Ink Tank",
+    "image": "/images/products/downloaded/canon-pixma-g2420.png",
+    "description": "Canon PIXMA G2420 — budget MegaTank all-in-one with print, scan, and copy delivering ultra-low cost per page. Up to 6,000 black pages from included ink bottles. The best-selling USB inkjet for homes and small offices in Dar es Salaam.",
+    "features": [
+      "Refillable MegaTank ink system",
+      "Print, scan, and copy",
+      "Up to 6,000 pages black yield",
+      "4800 x 1200 dpi print resolution",
+      "USB connectivity",
+      "Compact all-in-one design"
+    ],
+    "specs": {
+      "printSpeed": "Up to 9.1 ipm (mono)",
+      "printResolution": "4800 x 1200 dpi",
+      "functions": "Print, Scan, Copy",
+      "connectivity": "USB",
+      "paperSize": "A4",
+      "yield": "Up to 6,000 pages black / 7,700 pages colour"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-pixma-g3420",
+    "name": "Canon PIXMA G3420",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Refillable Ink Tank",
+    "image": "/images/products/downloaded/canon-pixma-g3420.png",
+    "description": "Canon PIXMA G3420 — Wi-Fi-enabled MegaTank all-in-one with print, scan, copy, and cloud connectivity. Ultra-low running costs with up to 6,000 black pages from included ink. The most popular wireless inkjet printer in Tanzania.",
+    "features": [
+      "Refillable MegaTank ink system",
+      "Print, scan, copy, and cloud",
+      "Wi-Fi and Wi-Fi Direct",
+      "Up to 6,000 pages black yield",
+      "Canon PRINT app for mobile printing",
+      "4800 x 1200 dpi print resolution"
+    ],
+    "specs": {
+      "printSpeed": "Up to 9.1 ipm (mono)",
+      "printResolution": "4800 x 1200 dpi",
+      "functions": "Print, Scan, Copy",
+      "connectivity": "Wi-Fi, USB",
+      "paperSize": "A4",
+      "yield": "Up to 6,000 pages black / 7,700 pages colour"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-pixma-g7020",
+    "name": "Canon PIXMA G7020",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Refillable Ink Tank",
+    "image": "/images/products/downloaded/canon-pixma-g7020.png",
+    "description": "Canon PIXMA G7020 — business-class MegaTank all-in-one with print, scan, copy, fax, ADF, and Ethernet. Built for small businesses needing low-cost, high-volume wireless printing with duplex and cloud connectivity.",
+    "features": [
+      "Refillable MegaTank ink system",
+      "Print, scan, copy, and fax",
+      "35-sheet ADF",
+      "Wi-Fi, Ethernet, and USB",
+      "Auto duplex printing",
+      "Up to 6,000 pages black yield"
+    ],
+    "specs": {
+      "printSpeed": "Up to 13 ipm (mono)",
+      "printResolution": "4800 x 1200 dpi",
+      "functions": "Print, Scan, Copy, Fax",
+      "connectivity": "Wi-Fi, Ethernet, USB",
+      "paperSize": "A4",
+      "adf": "35-sheet ADF",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-i-sensys-lbp246dw",
+    "name": "Canon i-SENSYS LBP246dw",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Monochrome Laser",
+    "image": "/images/products/downloaded/canon-i-sensys-lbp246dw.png",
+    "description": "Canon i-SENSYS LBP246dw — fast A4 monochrome laser printer with 40 ppm output, auto duplex, Wi-Fi, and compact design. The successor to the LBP236dw with improved speed and reliability for busy offices in Tanzania.",
+    "features": [
+      "40 ppm monochrome laser printing",
+      "Auto duplex printing",
+      "Wi-Fi, Ethernet, and USB",
+      "250-sheet paper cassette",
+      "Mobile and cloud printing",
+      "Low energy consumption"
+    ],
+    "specs": {
+      "printSpeed": "Up to 40 ppm",
+      "printResolution": "1200 x 1200 dpi",
+      "functions": "Print",
+      "connectivity": "Wi-Fi, Ethernet, USB",
+      "paperCapacity": "250-sheet cassette + 100-sheet MPT",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-i-sensys-mf264dw",
+    "name": "Canon i-SENSYS MF264dw",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Monochrome Laser Multifunction",
+    "image": "/images/products/downloaded/canon-i-sensys-mf264dw.png",
+    "description": "Canon i-SENSYS MF264dw — compact 3-in-1 monochrome laser MFP with print, copy, scan, auto duplex, Wi-Fi, and 28 ppm output. Ideal for small offices and home businesses in Dar es Salaam seeking affordable laser quality.",
+    "features": [
+      "28 ppm monochrome laser printing",
+      "Print, copy, and scan",
+      "Auto duplex printing",
+      "Wi-Fi and mobile printing",
+      "35-sheet ADF",
+      "Compact desktop design"
+    ],
+    "specs": {
+      "printSpeed": "Up to 28 ppm",
+      "printResolution": "1200 x 1200 dpi",
+      "functions": "Print, Copy, Scan",
+      "connectivity": "Wi-Fi, Ethernet, USB",
+      "adf": "35-sheet ADF",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-i-sensys-mf463dw",
+    "name": "Canon i-SENSYS MF463dw",
+    "brand": "Canon",
+    "category": "Office Printer",
+    "type": "Monochrome Laser Multifunction",
+    "image": "/images/products/downloaded/canon-i-sensys-mf463dw.png",
+    "description": "Canon i-SENSYS MF463dw — high-speed 4-in-1 monochrome laser MFP with 40 ppm output, 50-sheet ADF, 5-inch touchscreen, and advanced security. Designed for medium offices requiring fast, reliable document processing.",
+    "features": [
+      "40 ppm monochrome laser printing",
+      "Print, copy, scan, and fax",
+      "5-inch colour touchscreen",
+      "50-sheet ADF",
+      "Auto duplex printing",
+      "Advanced security features"
+    ],
+    "specs": {
+      "printSpeed": "Up to 40 ppm",
+      "printResolution": "1200 x 1200 dpi",
+      "functions": "Print, Copy, Scan, Fax",
+      "connectivity": "Wi-Fi, Ethernet, USB",
+      "adf": "50-sheet ADF",
+      "display": "5-inch Colour Touchscreen",
+      "duplexPrinting": "Automatic"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "epson-ecotank-l3270",
+    "name": "Epson EcoTank L3270",
+    "brand": "Epson",
+    "category": "Office Printer",
+    "type": "EcoTank",
+    "image": "/images/products/downloaded/epson-ecotank-l3270.png",
+    "description": "Epson EcoTank L3270 — next-gen Wi-Fi all-in-one EcoTank printer with print, scan, and copy. Features refillable ink tanks for ultra-low cost per page, Heat-Free Technology, and up to 7,500 black pages from included ink.",
+    "features": [
+      "EcoTank integrated ink tanks for ultra-low cost printing",
+      "Up to 3 years of ink included in the box",
+      "Heat-Free Technology — no warm-up time needed",
+      "Wi-Fi and Wi-Fi Direct connectivity",
+      "Print, scan, and copy from your smartphone",
+      "High yield — up to 7,500 pages black / 6,000 pages colour"
+    ],
+    "specs": {
+      "Technology": "Epson Micro Piezo, Heat-Free",
+      "Ink System": "Integrated Ink Tank (EcoTank)",
+      "Connectivity": "Wi-Fi, Wi-Fi Direct, USB",
+      "Functions": "Print, Scan, Copy"
+    },
+    "inStock": true,
+    "featured": true,
+    "isConsumable": false
+  },
+  {
+    "id": "epson-ecotank-l8050",
+    "name": "Epson EcoTank L8050",
+    "brand": "Epson",
+    "category": "Photo Printer",
+    "type": "EcoTank",
+    "image": "/images/products/downloaded/epson-ecotank-l8050.png",
+    "description": "Epson EcoTank L8050 — 6-colour EcoTank photo printer delivering lab-quality prints up to A4 with ultra-low ink costs. Perfect for photography studios, passport photo shops, and creative professionals in Dar es Salaam.",
+    "features": [
+      "6-colour Claria Premium ink system",
+      "EcoTank refillable ink tanks",
+      "Lab-quality borderless photo printing",
+      "Wi-Fi and Wi-Fi Direct",
+      "Print on CD/DVD/Blu-ray",
+      "Ultra-low cost per photo"
+    ],
+    "specs": {
+      "Technology": "Epson Micro Piezo, Heat-Free",
+      "Ink System": "6-colour EcoTank (C/M/Y/Bk/LM/LC)",
+      "Connectivity": "Wi-Fi, Wi-Fi Direct, USB",
+      "Functions": "Print",
+      "printResolution": "5760 x 1440 dpi"
+    },
+    "inStock": true,
+    "featured": true,
+    "isConsumable": false
+  },
+  {
+    "id": "canon-eos-4000d",
+    "name": "Canon EOS 4000D",
+    "brand": "Canon",
+    "category": "Camera",
+    "type": "DSLR",
+    "image": "/images/products/downloaded/canon-eos-4000d.png",
+    "description": "Canon EOS 4000D — The perfect entry-level DSLR for beginners. Features an 18 Megapixel APS-C sensor, Full HD video, and Wi-Fi connectivity for easy sharing. Highly affordable and popular in Tanzania.",
+    "features": [
+      "18 Megapixel APS-C sensor",
+      "Full HD 1080p video recording",
+      "Built-in Wi-Fi and Canon Connect app support",
+      "9-point autofocus system",
+      "2.7-inch LCD screen",
+      "Includes 18-55mm kit lens"
+    ],
+    "specs": {
+      "resolution": "18 MP",
+      "sensor": "APS-C CMOS",
+      "video": "Full HD (1080p)",
+      "connectivity": "Wi-Fi",
+      "screen": "2.7-inch LCD"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-eos-2000d",
+    "name": "Canon EOS 2000D",
+    "brand": "Canon",
+    "category": "Camera",
+    "type": "DSLR",
+    "image": "/images/products/downloaded/canon-eos-2000d.png",
+    "description": "Canon EOS 2000D — A step up in resolution with a 24.1 Megapixel sensor. Beautiful background blur, intuitive controls, and seamless Wi-Fi/NFC connectivity make it ideal for aspiring photographers and content creators.",
+    "features": [
+      "24.1 Megapixel APS-C sensor",
+      "Full HD video recording",
+      "Wi-Fi and NFC connectivity",
+      "9-point AF system",
+      "3.0-inch LCD screen",
+      "Built-in feature guide"
+    ],
+    "specs": {
+      "resolution": "24.1 MP",
+      "sensor": "APS-C CMOS",
+      "video": "Full HD (1080p)",
+      "connectivity": "Wi-Fi, NFC",
+      "screen": "3.0-inch LCD"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-eos-250d",
+    "name": "Canon EOS 250D",
+    "brand": "Canon",
+    "category": "Camera",
+    "type": "DSLR",
+    "image": "/images/products/downloaded/canon-eos-250d.png",
+    "description": "Canon EOS 250D — The world's lightest DSLR with a vari-angle screen. Features a 24.1MP sensor, Dual Pixel CMOS AF, and 4K video recording. The ultimate compact DSLR for vloggers and travelers.",
+    "features": [
+      "24.1 Megapixel APS-C sensor",
+      "4K video recording",
+      "Dual Pixel CMOS AF",
+      "Vari-angle touchscreen",
+      "Wi-Fi and Bluetooth",
+      "Extremely lightweight body"
+    ],
+    "specs": {
+      "resolution": "24.1 MP",
+      "sensor": "APS-C CMOS",
+      "video": "4K UHD",
+      "connectivity": "Wi-Fi, Bluetooth",
+      "screen": "3.0-inch Vari-angle Touchscreen"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "canon-eos-90d",
+    "name": "Canon EOS 90D",
+    "brand": "Canon",
+    "category": "Camera",
+    "type": "DSLR",
+    "image": "/images/products/downloaded/canon-eos-90d.png",
+    "description": "Canon EOS 90D — A fast, versatile DSLR perfect for wildlife and sports photography. Offers 32.5 Megapixels, 10fps continuous shooting, and uncropped 4K video. Built for enthusiasts who demand speed and detail.",
+    "features": [
+      "32.5 Megapixel APS-C sensor",
+      "10 frames per second continuous shooting",
+      "45-point all cross-type AF",
+      "Uncropped 4K video recording",
+      "Vari-angle touchscreen",
+      "Optical viewfinder with 100% coverage"
+    ],
+    "specs": {
+      "resolution": "32.5 MP",
+      "sensor": "APS-C CMOS",
+      "video": "4K UHD (Uncropped)",
+      "connectivity": "Wi-Fi, Bluetooth",
+      "screen": "3.0-inch Vari-angle Touchscreen"
+    },
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "canon-eos-5d-mark-iv",
+    "name": "Canon EOS 5D Mark IV",
+    "brand": "Canon",
+    "category": "Camera",
+    "type": "DSLR",
+    "image": "/images/products/downloaded/canon-eos-5d-mark-iv.png",
+    "description": "Canon EOS 5D Mark IV — The legendary professional full-frame DSLR. Delivers superb 30.4 Megapixel images, Dual Pixel CMOS AF, and 4K video. A robust workhorse for wedding, event, and portrait photographers in Tanzania.",
+    "features": [
+      "30.4 Megapixel Full-Frame sensor",
+      "Dual Pixel CMOS AF",
+      "4K video recording at 30p",
+      "61-point AF system",
+      "Built-in Wi-Fi, NFC, and GPS",
+      "Weather-sealed magnesium alloy body"
+    ],
+    "specs": {
+      "resolution": "30.4 MP",
+      "sensor": "Full-Frame CMOS",
+      "video": "DCI 4K",
+      "connectivity": "Wi-Fi, NFC, GPS",
+      "screen": "3.2-inch Touchscreen"
+    },
+    "inStock": true,
+    "featured": true
   }
 ]
