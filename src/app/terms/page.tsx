@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Viabtech terms of service — the terms governing your use of our website and services.',
+  alternates: { canonical: 'https://www.viabtech.com/terms' },
 };
 
 export default function TermsOfServicePage() {

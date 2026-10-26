@@ -9,9 +9,14 @@ interface CounterProps {
   formatk?: boolean;
 }
 
+/**
+ * Starts at the final value so the server-rendered HTML (what Google and
+ * no-JS visitors see) shows the real number, e.g. "10+ Years", not "0+".
+ * When the counter scrolls into view it animates up from 0 once.
+ */
 export default function Counter({ end, duration = 2000, suffix = "", formatk = false }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
+  const [count, setCount] = useState(end);
+  const ref = useRef<HTMLSpanElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
@@ -29,24 +34,26 @@ export default function Counter({ end, duration = 2000, suffix = "", formatk = f
 
   useEffect(() => {
     if (!hasStarted) return;
-    
+
     let startTimestamp: number | null = null;
+    let frame = 0;
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       // easeOutExpo for smooth deceleration
       const easing = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setCount(Math.floor(easing * end));
-      
+
       if (progress < 1) {
-        window.requestAnimationFrame(step);
+        frame = window.requestAnimationFrame(step);
       } else {
         setCount(end); // Ensure we end exactly at 'end'
       }
     };
-    
-    window.requestAnimationFrame(step);
+
+    frame = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(frame);
   }, [hasStarted, end, duration]);
 
   let displayValue: string | number = count;

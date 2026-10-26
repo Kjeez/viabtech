@@ -4,6 +4,10 @@ import { ArrowLeft, ChevronRight, ShieldCheck, Truck, Headphones, Package, Check
 import productsData from '@/data/products.json';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { categorySlug, pluralCategory } from '@/data/categories';
+
+// Unknown product ids return a real 404 instead of a 200 "not found" page.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return productsData.map((p) => ({ id: p.id }));
@@ -63,8 +67,11 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               : undefined,
             brand: { '@type': 'Brand', name: product.brand },
             category: product.category,
+            url: `https://www.viabtech.com/products/${product.id}`,
             offers: {
               '@type': 'Offer',
+              url: `https://www.viabtech.com/products/${product.id}`,
+              itemCondition: 'https://schema.org/NewCondition',
               availability: product.inStock
                 ? 'https://schema.org/InStock'
                 : 'https://schema.org/OutOfStock',
@@ -77,6 +84,22 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
           }),
         }}
       />
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.viabtech.com' },
+              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.viabtech.com/products' },
+              { '@type': 'ListItem', position: 3, name: pluralCategory(product.category), item: `https://www.viabtech.com/products/category/${categorySlug(product.category)}` },
+              { '@type': 'ListItem', position: 4, name: product.name, item: `https://www.viabtech.com/products/${product.id}` },
+            ],
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <section className="bg-[#f8fbff] border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
@@ -85,7 +108,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
             <ChevronRight size={14} />
             <Link href="/products" className="hover:text-primary transition-colors">Products</Link>
             <ChevronRight size={14} />
-            <Link href={`/products/category/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-primary transition-colors">{product.category}</Link>
+            <Link href={`/products/category/${categorySlug(product.category)}`} className="hover:text-primary transition-colors">{product.category}</Link>
             <ChevronRight size={14} />
             <span className="text-text-primary font-medium truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </nav>
@@ -95,7 +118,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
       {/* ── Product Hero ── */}
       <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Link href={`/products/category/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-8 transition-colors group">
+          <Link href={`/products/category/${categorySlug(product.category)}`} className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-8 transition-colors group">
             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back to {product.category}
           </Link>
 

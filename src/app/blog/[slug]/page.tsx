@@ -2,9 +2,37 @@ import Link from 'next/link';
 import { ArrowLeft, Clock, Tag, User, ArrowRight, BookOpen } from 'lucide-react';
 import blogData from '@/data/blog.json';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+
+const SITE_URL = 'https://www.viabtech.com';
+
+// Unknown post slugs return a real 404.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return blogData.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata(props: PageProps<'/blog/[slug]'>): Promise<Metadata> {
+  const { slug } = await props.params;
+  const post = blogData.find((p) => p.slug === slug);
+  if (!post) return {};
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      siteName: 'Viabtech',
+      locale: 'en_TZ',
+    },
+  };
 }
 
 export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
@@ -14,8 +42,26 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
 
   const otherPosts = blogData.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { '@type': 'Organization', name: post.author, url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Viabtech',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo/viabtech-logo.png` },
+    },
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    articleSection: post.category,
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <section className="page-hero py-16">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 z-10">
           <Link href="/blog" className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-6 transition-colors">

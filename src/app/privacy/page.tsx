@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Viabtech privacy policy — how we collect, use, and protect your personal data in compliance with the Tanzania Personal Data Protection Act (PDPA) 2022.',
+  alternates: { canonical: 'https://www.viabtech.com/privacy' },
 };
 
 export default function PrivacyPolicyPage() {

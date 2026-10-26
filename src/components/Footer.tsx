@@ -16,11 +16,11 @@ export default function Footer() {
 
   const footerLinks = {
     products: [
-      { name: t('footer.printers'), href: '/products?category=Laser+Printer' },
-      { name: t('footer.cameras'), href: '/products?category=Camera' },
-      { name: t('footer.projectors'), href: '/products?category=Projector' },
-      { name: t('footer.scanners'), href: '/products?category=Scanner' },
-      { name: t('footer.accessories'), href: '/products?category=Accessory' },
+      { name: t('footer.printers'), href: '/products/category/office-printer' },
+      { name: t('footer.cameras'), href: '/products/category/camera' },
+      { name: t('footer.projectors'), href: '/products/category/projector' },
+      { name: t('footer.scanners'), href: '/products/category/scanner' },
+      { name: t('footer.accessories'), href: '/products/category/accessory' },
     ],
     services: [
       { name: t('footer.printerRepair'), href: '/services' },

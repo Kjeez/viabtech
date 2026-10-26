@@ -1,7 +1,7 @@
 'use client';
 
 /* eslint-disable @next/next/no-img-element */
-import { useState, useMemo, useEffect, Suspense, useRef } from 'react';
+import { useState, useMemo, useEffect, Suspense, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, Printer, ChevronRight, X, Package, Droplets, Wrench } from 'lucide-react';
@@ -18,15 +18,46 @@ const mainCategories = ['All', ...Array.from(new Set(mainProducts.map((p) => p.c
 const brands = ['All', ...Array.from(new Set(mainProducts.map((p) => p.brand)))];
 
 export default function ProductsPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#f8fbff]"><div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" /></div>}>
-      <ProductsContent />
-    </Suspense>
-  );
+  // The page itself renders on the server (so Google sees the heading and product grid);
+  // only the tiny URL-filter reader below needs Suspense because it uses useSearchParams.
+  return <ProductsContent />;
+}
+
+/** Reads ?category= / ?brand= from the URL and applies them as filters. Renders nothing. */
+function UrlFilterSync({
+  onCategory,
+  onBrand,
+  onShowFilters,
+}: {
+  onCategory: (c: string) => void;
+  onBrand: (b: string) => void;
+  onShowFilters: () => void;
+}) {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    let shouldShowFilters = false;
+    const cat = searchParams.get('category');
+    if (cat && mainCategories.includes(cat)) {
+      onCategory(cat);
+      shouldShowFilters = true;
+    }
+
+    const brandParam = searchParams.get('brand');
+    if (brandParam && brands.includes(brandParam)) {
+      onBrand(brandParam);
+      shouldShowFilters = true;
+    }
+
+    if (shouldShowFilters) {
+      onShowFilters();
+    }
+  }, [searchParams, onCategory, onBrand, onShowFilters]);
+
+  return null;
 }
 
 function ProductsContent() {
-  const searchParams = useSearchParams();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedBrand, setSelectedBrand] = useState('All');
@@ -36,24 +67,7 @@ function ProductsContent() {
   const observerTarget = useRef<HTMLDivElement>(null);
   const BATCH_SIZE = 24;
 
-  useEffect(() => {
-    let shouldShowFilters = false;
-    const cat = searchParams.get('category');
-    if (cat && mainCategories.includes(cat)) {
-      setSelectedCategory(cat);
-      shouldShowFilters = true;
-    }
-
-    const brandParam = searchParams.get('brand');
-    if (brandParam && brands.includes(brandParam)) {
-      setSelectedBrand(brandParam);
-      shouldShowFilters = true;
-    }
-
-    if (shouldShowFilters) {
-      setShowFilters(true);
-    }
-  }, [searchParams]);
+  const openFilters = useCallback(() => setShowFilters(true), []);
 
   const filtered = useMemo(() => {
     return mainProducts.filter((p) => {
@@ -108,6 +122,9 @@ function ProductsContent() {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <UrlFilterSync onCategory={setSelectedCategory} onBrand={setSelectedBrand} onShowFilters={openFilters} />
+      </Suspense>
       <section className="page-hero py-20 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('products.badge')}</div>

@@ -51,14 +51,14 @@ const locations = [
 ];
 
 const categories = [
-  { label: 'Office & Laser Printers', href: '/products?category=Office+Printer', icon: Printer },
+  { label: 'Office & Laser Printers', href: '/products/category/office-printer', icon: Printer },
   { label: 'Ink Tank Printers', href: '/products?category=Inkjet+Printer', icon: Printer },
-  { label: 'Wide-Format Plotters', href: '/products?category=Plotter', icon: Printer },
-  { label: 'Photo Printers', href: '/products?category=Photo+Printer', icon: Printer },
-  { label: 'Canon Cameras & Lenses', href: '/products?category=Camera', icon: Camera },
-  { label: 'Projectors & Scanners', href: '/products?category=Projector', icon: Package },
-  { label: 'Ink, Toner & Consumables', href: '/products?category=Ink+Cartridges', icon: Droplet },
-  { label: 'Accessories', href: '/products?category=Accessory', icon: Package },
+  { label: 'Wide-Format Plotters', href: '/products/category/plotter', icon: Printer },
+  { label: 'Photo Printers', href: '/products/category/photo-printer', icon: Printer },
+  { label: 'Canon Cameras & Lenses', href: '/products/category/camera', icon: Camera },
+  { label: 'Projectors & Scanners', href: '/products/category/projector', icon: Package },
+  { label: 'Ink, Toner & Consumables', href: '/products/category/ink-cartridges', icon: Droplet },
+  { label: 'Accessories', href: '/products/category/accessory', icon: Package },
 ];
 
 const services = [

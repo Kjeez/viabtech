@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: '/',
-  },
+  // No site-wide canonical here: a canonical in the root layout is inherited by every
+  // page that doesn't set its own, which told Google those pages were copies of the homepage.
+  // Each page sets its own self-referencing canonical instead.
 };
 
 export default function RootLayout({

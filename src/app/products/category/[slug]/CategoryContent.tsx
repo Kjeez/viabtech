@@ -5,38 +5,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Printer, ArrowLeft, Package, Search, X } from 'lucide-react';
 import productsData from '@/data/products.json';
-
-const categoryMap: Record<string, string> = {
-  'office-printer': 'Office Printer',
-  'plotter': 'Plotter',
-  'graphic-printer': 'Graphic Printer',
-  'photo-printer': 'Photo Printer',
-  'label-printer': 'Label Printer',
-  'scanner': 'Scanner',
-  'inkjet-media': 'Inkjet Media',
-  'ink-cartridges': 'Ink Cartridges',
-  'printer-maintenance-box': 'Printer Maintenance Box',
-  'camera': 'Camera',
-  'lens': 'Lens',
-  'accessory': 'Accessory',
-  'projector': 'Projector',
-};
-
-const categoryDescriptions: Record<string, string> = {
-  'Office Printer': 'Discover top-quality office printers from leading brands, designed to enhance productivity and efficiency for businesses of all sizes.',
-  'Plotter': 'Professional large format plotters for CAD, engineering, architectural drawings, and technical printing needs.',
-  'Graphic Printer': 'High-performance graphic printers for professional photography, fine art reproduction, and commercial printing.',
-  'Photo Printer': 'Premium photo printers delivering stunning, gallery-quality prints with exceptional color accuracy.',
-  'Label Printer': 'Commercial and industrial label printers for on-demand color label production, barcode printing, and asset management.',
-  'Scanner': 'High-speed document and photo scanners for offices, businesses, and professional digitization workflows.',
-  'Inkjet Media': 'Premium inkjet media including fine art papers, canvas, and specialty substrates for professional printing.',
-  'Ink Cartridges': 'Genuine ink cartridges and consumables for Epson printers — original quality, reliable performance.',
-  'Printer Maintenance Box': 'Genuine maintenance boxes and accessories to keep your printers running at peak performance.',
-  'Camera': 'Professional Canon cameras for photography and videography — from DSLRs to mirrorless systems.',
-  'Lens': 'Canon RF and EF lenses for every shooting scenario — wide-angle, telephoto, macro, and prime.',
-  'Accessory': 'Essential printer and camera accessories, parts, and gear for your professional setup.',
-  'Projector': 'Epson projectors for boardrooms, classrooms, and home cinema — vivid colors, brilliant presentations.',
-};
+import { categoryMap, categoryBySlug } from '@/data/categories';
 
 export default function CategoryContent({ slug }: { slug: string }) {
   const [search, setSearch] = useState('');
@@ -45,7 +14,8 @@ export default function CategoryContent({ slug }: { slug: string }) {
   const observerTarget = useRef<HTMLDivElement>(null);
 
   const categoryName = categoryMap[slug] ?? '';
-  const description = categoryDescriptions[categoryName] ?? `Explore our complete ${categoryName} range.`;
+  const categoryPlural = categoryBySlug[slug]?.plural ?? categoryName;
+  const description = categoryBySlug[slug]?.description ?? `Explore our complete ${categoryName} range.`;
 
   const allProducts = useMemo(
     () => productsData.filter((p) => p.category === categoryName),
@@ -114,7 +84,7 @@ export default function CategoryContent({ slug }: { slug: string }) {
             <span className="text-white font-medium">{categoryName}</span>
           </nav>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-white mb-4">
-            Our <span className="text-primary-light">{categoryName}</span> Collection
+            <span className="text-primary-light">{categoryPlural}</span> in Tanzania
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">{description}</p>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-400">

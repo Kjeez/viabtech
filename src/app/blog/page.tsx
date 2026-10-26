@@ -4,7 +4,11 @@ import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
 import blogData from '@/data/blog.json';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Blog', description: 'Expert guides and news about printers from Viabtech Tanzania.' };
+export const metadata: Metadata = {
+  title: 'Printer Buying Guides & Tips for Tanzania – Blog',
+  description: 'Printer buying guides, maintenance tips and news for Tanzanian businesses from Viabtech, the authorized Canon & Epson dealer in Dar es Salaam.',
+  alternates: { canonical: 'https://www.viabtech.com/blog' },
+};
 
 export default function BlogPage() {
   return (

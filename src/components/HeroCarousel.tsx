@@ -55,7 +55,7 @@ const slides: SlideData[] = [
   {
     headlineKey: 'hero.slide4.headline',
     subtextKey: 'hero.slide4.subtext',
-    cta1LabelKey: 'hero.slide4.cta1', cta1Href: '/products?category=Projector',
+    cta1LabelKey: 'hero.slide4.cta1', cta1Href: '/products/category/projector',
     cta2LabelKey: 'hero.slide4.cta2', cta2Href: '/contact',
     image: '/images/projector.png',
     imageAlt: 'Epson business projectors',
@@ -81,7 +81,7 @@ const slides: SlideData[] = [
   {
     headlineKey: 'hero.slide6.headline',
     subtextKey: 'hero.slide6.subtext',
-    cta1LabelKey: 'hero.slide6.cta1', cta1Href: '/products?brand=Canon',
+    cta1LabelKey: 'hero.slide6.cta1', cta1Href: '/brands/canon',
     cta2LabelKey: 'hero.slide6.cta2', cta2Href: '/contact',
     image: '/images/canonprinter1.png',
     imageAlt: 'Canon enterprise business printer',
