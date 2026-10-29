@@ -68,6 +68,19 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-TDCVVC3M');`}
         </Script>
         {/* End Google Tag Manager */}
+        {/* Google Analytics 4 (gtag.js) — property "Viabtech" */}
+        <Script
+          id="ga4-src"
+          src="https://www.googletagmanager.com/gtag/js?id=G-DHYHQ096KM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DHYHQ096KM');`}
+        </Script>
+        {/* End Google Analytics 4 */}
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
