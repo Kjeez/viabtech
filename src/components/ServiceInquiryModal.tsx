@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { trackLead } from '@/lib/analytics';
 import { X, Send, CheckCircle, User, Phone, Mail, MessageSquare, Loader2, ChevronDown } from 'lucide-react';
 
 const SUBJECT_OPTIONS = [
@@ -86,6 +87,7 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
         throw new Error(data.error || 'Failed to send inquiry');
       }
 
+      trackLead('inquiry_modal', { inquiry_subject: computedSubject || undefined, inquiry_detail: subSubject || undefined });
       setSending(false);
       setSubmitted(true);
 

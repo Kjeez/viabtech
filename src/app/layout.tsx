@@ -7,6 +7,7 @@ import PageTransition from '@/components/PageTransition';
 import StickyQuoteBar from '@/components/StickyQuoteBar';
 import FloatingContactButtons from '@/components/FloatingContactButtons';
 import CookieConsent from '@/components/CookieConsent';
+import LeadTracking from '@/components/LeadTracking';
 import { LanguageProvider } from '@/i18n/LanguageContext';
 
 const SITE_URL = 'https://www.viabtech.com';
@@ -212,6 +213,7 @@ export default function RootLayout({
           <FloatingContactButtons />
           <StickyQuoteBar />
           <CookieConsent />
+          <LeadTracking />
         </LanguageProvider>
       </body>
     </html>

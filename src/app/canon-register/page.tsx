@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { trackLead } from '@/lib/analytics';
 import {
   User, Phone, Mail, MapPin, Hash, Calendar, CheckCircle,
   Loader2, Shield, Wrench, Truck, FileText, AlertTriangle,
@@ -55,6 +56,7 @@ export default function CanonRegisterPage() {
         const data = await res.json();
         throw new Error(data.error || 'Failed to submit registration');
       }
+      trackLead('canon_register');
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');

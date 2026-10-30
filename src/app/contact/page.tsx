@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare, CheckCircle, Printer, Loader2 } from 'lucide-react';
 import FAQAccordion from '@/components/FAQAccordion';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { trackLead } from '@/lib/analytics';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
@@ -37,6 +38,7 @@ export default function ContactPage() {
         throw new Error(data.error || 'Failed to send message');
       }
 
+      trackLead('contact_page', { inquiry_service: formData.service || undefined });
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
       setTimeout(() => setSubmitted(false), 5000);
