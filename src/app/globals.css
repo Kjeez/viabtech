@@ -640,3 +640,8 @@ body.nav-drawer-open .floating-actions {
   border-color: rgba(204, 0, 0, 0.35);
   box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.08);
 }
+
+/* reCAPTCHA v3 badge hidden; the required notice is shown under each form instead */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}

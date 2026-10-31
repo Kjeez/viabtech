@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { trackLead } from '@/lib/analytics';
+import { getSpamFields } from '@/lib/recaptcha';
+import FormProtection from '@/components/FormProtection';
 import {
   User, Phone, Mail, MapPin, Hash, Calendar, CheckCircle,
   Loader2, Shield, Wrench, Truck, FileText, AlertTriangle,
@@ -43,14 +45,16 @@ export default function CanonRegisterPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
     if (!agreedTerms) { setError('Please agree to the service terms before submitting.'); return; }
     setSending(true);
     setError('');
     try {
+      const spam = await getSpamFields(form, 'canon_register');
       const res = await fetch('/api/canon-register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, ...spam }),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -236,6 +240,7 @@ export default function CanonRegisterPage() {
                   style={{ background: sending || !agreedTerms ? '#999' : `linear-gradient(135deg, ${CANON_RED}, #990000)` }}>
                   {sending ? <><Loader2 size={18} className="animate-spin" /> Submitting...</> : <><Send size={18} /> Register My Canon Product</>}
                 </button>
+                <FormProtection />
               </form>
             </div>
           </div>

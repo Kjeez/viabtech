@@ -5,6 +5,8 @@ import { Phone, Mail, MapPin, Clock, Send, MessageSquare, CheckCircle, Printer, 
 import FAQAccordion from '@/components/FAQAccordion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { trackLead } from '@/lib/analytics';
+import { getSpamFields } from '@/lib/recaptcha';
+import FormProtection from '@/components/FormProtection';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
@@ -15,14 +17,17 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
     setSending(true);
     setError('');
 
     try {
+      const spam = await getSpamFields(form, 'contact');
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          ...spam,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -230,6 +235,7 @@ export default function ContactPage() {
                       <><Send size={18} /> {t('contact.sendInquiry')}</>
                     )}
                   </button>
+                  <FormProtection />
                 </form>
               </div>
             </div>

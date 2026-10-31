@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { checkSpam } from '@/lib/spamCheck';
 
 // Create reusable transporter using Gmail SMTP + App Password
 const transporter = nodemailer.createTransport({
@@ -31,6 +32,10 @@ interface ContactPayload {
 export async function POST(request: NextRequest) {
   try {
     const body: ContactPayload = await request.json();
+
+    const spam = await checkSpam(body as unknown as Record<string, unknown>, 'contact', request);
+    if (spam.blocked) return spam.response;
+
     const { name, email, phone, company, service, subject, subSubject, message, source } = body;
 
     // Basic validation

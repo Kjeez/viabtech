@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { checkSpam } from '@/lib/spamCheck';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -28,6 +29,10 @@ interface CanonRegistrationPayload {
 export async function POST(request: NextRequest) {
   try {
     const body: CanonRegistrationPayload = await request.json();
+
+    const spam = await checkSpam(body as unknown as Record<string, unknown>, 'canon_register', request);
+    if (spam.blocked) return spam.response;
+
     const {
       fullName,
       phone,

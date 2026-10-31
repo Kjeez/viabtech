@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { trackLead } from '@/lib/analytics';
+import { getSpamFields } from '@/lib/recaptcha';
+import FormProtection from '@/components/FormProtection';
 import { X, Send, CheckCircle, User, Phone, Mail, MessageSquare, Loader2, ChevronDown } from 'lucide-react';
 
 const SUBJECT_OPTIONS = [
@@ -64,14 +66,17 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
     setSending(true);
     setError('');
 
     try {
+      const spam = await getSpamFields(form, 'contact');
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          ...spam,
           name,
           email,
           phone,
@@ -327,6 +332,7 @@ export default function ServiceInquiryModal({ isOpen, onClose, subject, subSubje
                 </>
               )}
             </button>
+            <FormProtection />
           </form>
         )}
       </div>
