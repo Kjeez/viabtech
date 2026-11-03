@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { checkSpam } from '@/lib/spamCheck';
 
+// Visitor input is placed inside the HTML email, so escape it (prevents injected links/markup).
+const esc = (v?: string) =>
+  (v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
+
+
 // Create reusable transporter using Gmail SMTP + App Password
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -26,7 +31,7 @@ interface ContactPayload {
   subject?: string;
   subSubject?: string;
   message?: string;
-  source: 'contact_page' | 'inquiry_modal';
+  source: 'contact_page' | 'inquiry_modal' | 'service_request';
 }
 
 export async function POST(request: NextRequest) {
@@ -36,12 +41,21 @@ export async function POST(request: NextRequest) {
     const spam = await checkSpam(body as unknown as Record<string, unknown>, 'contact', request);
     if (spam.blocked) return spam.response;
 
-    const { name, email, phone, company, service, subject, subSubject, message, source } = body;
+    const source = body.source;
+    const name = esc(body.name);
+    const email = esc(body.email);
+    const phone = esc(body.phone);
+    const company = esc(body.company);
+    const service = esc(body.service);
+    const subject = esc(body.subject);
+    const subSubject = esc(body.subSubject);
+    const message = esc(body.message);
 
-    // Basic validation
-    if (!name || !email) {
+    // Basic validation (the repair request form asks for a phone number instead of an email)
+    const hasContact = email || (source === 'service_request' && phone);
+    if (!name || !hasContact) {
       return NextResponse.json(
-        { error: 'Name and email are required.' },
+        { error: source === 'service_request' ? 'Name and phone are required.' : 'Name and email are required.' },
         { status: 400 }
       );
     }
@@ -55,10 +69,13 @@ export async function POST(request: NextRequest) {
     ].filter(Boolean).join(', ');
 
     // Build a professional HTML email
-    const isModal = source === 'inquiry_modal';
-    const emailSubject = isModal
-      ? `🔔 New Service Inquiry: ${subject || 'General'}`
-      : `📩 New Contact Form Submission from ${name}`;
+    const isModal = source === 'inquiry_modal' || source === 'service_request';
+    const emailSubject =
+      source === 'service_request'
+        ? `🛠 New Repair Request: ${body.subSubject || body.name}`
+        : isModal
+          ? `🔔 New Service Inquiry: ${body.subject || 'General'}`
+          : `📩 New Contact Form Submission from ${body.name}`;
 
     const htmlBody = `
       <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;">
@@ -134,7 +151,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"VIAB TECH Website" <${process.env.MAIL_USER}>`,
       to: recipients,
-      replyTo: email,
+      ...(body.email ? { replyTo: body.email } : {}),
       subject: emailSubject,
       html: htmlBody,
     });

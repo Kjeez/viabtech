@@ -5,6 +5,9 @@ import { Settings, CheckCircle, MapPin, Send, Cpu, ShieldCheck, PenTool, Search 
 import FAQAccordion from '@/components/FAQAccordion';
 import { SERVICE_CENTER_FAQ } from '@/data/faqs';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { trackLead } from '@/lib/analytics';
+import { getSpamFields } from '@/lib/recaptcha';
+import FormProtection from '@/components/FormProtection';
 import Image from 'next/image';
 import ImageSlider from '@/components/ImageSlider';
 import { slider2Images } from '@/data/sliderData';
@@ -12,13 +15,46 @@ import { slider2Images } from '@/data/sliderData';
 export default function ServiceCenterPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Sends the repair request to the same mailbox as the contact form (it previously only showed "thank you").
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setFormData({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
+    const form = e.currentTarget as HTMLFormElement;
+    setSending(true);
+    setError('');
+    try {
+      const spam = await getSpamFields(form, 'contact');
+      const equipment = [formData.brand, formData.productType, formData.model].filter(Boolean).join(' – ');
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...spam,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: 'Repair request',
+          subSubject: formData.serialNumber ? `${equipment} (S/N ${formData.serialNumber})` : equipment,
+          message: formData.message,
+          source: 'service_request',
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send your request');
+      }
+      trackLead('service_request', { inquiry_subject: formData.brand || undefined, inquiry_detail: formData.productType || undefined });
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 5000);
+      setFormData({ name: '', email: '', phone: '', brand: '', productType: '', model: '', serialNumber: '', message: '' });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again or WhatsApp +255 745 700 500.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const capabilities = [
@@ -181,9 +217,13 @@ export default function ServiceCenterPage() {
                       className="w-full px-5 py-4 rounded-xl bg-[#f8fbff] border border-transparent text-[#0f1c2e] font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:bg-white transition-all resize-none" placeholder="..." />
                   </div>
                   
-                  <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-5 btn-vibrant rounded-xl text-[1rem] shadow-xl mt-4">
+                  {error && (
+                    <p className="text-sm font-semibold text-red-600" role="alert">{error}</p>
+                  )}
+                  <button type="submit" disabled={sending} className="w-full inline-flex items-center justify-center gap-2 px-8 py-5 btn-vibrant rounded-xl text-[1rem] shadow-xl mt-4 disabled:opacity-60 disabled:cursor-not-allowed">
                     <Send size={18} /> {t('contact.sendInquiry')}
                   </button>
+                  <FormProtection />
                 </form>
               </div>
             </div>

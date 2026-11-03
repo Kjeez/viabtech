@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { checkSpam } from '@/lib/spamCheck';
 
+// Visitor input is placed inside the HTML email, so escape it (prevents injected links/markup).
+const esc = (v?: string) =>
+  (v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
+
+
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
@@ -33,16 +38,14 @@ export async function POST(request: NextRequest) {
     const spam = await checkSpam(body as unknown as Record<string, unknown>, 'canon_register', request);
     if (spam.blocked) return spam.response;
 
-    const {
-      fullName,
-      phone,
-      email,
-      location,
-      modelNumber,
-      serialNumber,
-      purchaseDate,
-      machineStatus,
-    } = body;
+    const fullName = esc(body.fullName);
+    const phone = esc(body.phone);
+    const email = esc(body.email);
+    const location = esc(body.location);
+    const modelNumber = esc(body.modelNumber);
+    const serialNumber = esc(body.serialNumber);
+    const purchaseDate = esc(body.purchaseDate);
+    const machineStatus = body.machineStatus;
 
     // Basic validation
     if (!fullName || !phone || !email || !modelNumber || !serialNumber) {
@@ -130,8 +133,8 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"Canon Registration – VIAB TECH" <${process.env.MAIL_USER}>`,
       to: recipients,
-      replyTo: email,
-      subject: `🖨️ Canon Registration: ${modelNumber} — ${fullName}`,
+      replyTo: body.email,
+      subject: `🖨️ Canon Registration: ${body.modelNumber} — ${body.fullName}`,
       html: htmlBody,
     });
 

@@ -65,7 +65,7 @@ export default function CookieConsent() {
                   <strong className="text-white">Tanzania Personal Data Protection Act (PDPA) 2022</strong>,
                   we require your consent before using non-essential cookies.{' '}
                   <Link href="/privacy#cookie-policy" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">
-                    Learn more
+                    Read our cookie policy
                   </Link>
                 </p>
               </div>
