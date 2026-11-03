@@ -1,4 +1,8 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, serviceSchema, faqSchema } from '@/lib/schema';
+import servicesData from '@/data/services.json';
+import { GENERAL_FAQ, faqText } from '@/data/faqs';
 
 export const metadata: Metadata = {
   title: 'Service Center – Authorized Canon & Epson Repairs',
@@ -24,5 +28,20 @@ export const metadata: Metadata = {
 };
 
 export default function ServiceCenterLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([['Service Center', '/service-center']]),
+          ...serviceSchema(
+            servicesData
+              .filter((s) => ['printer-repair', 'warranty-registration', 'spares'].includes(s.id))
+              .map((s) => ({ id: s.slug, name: s.title, description: s.description, path: '/service-center' })),
+          ),
+          faqSchema(faqText(GENERAL_FAQ), '/service-center'),
+        ]}
+      />
+      {children}
+    </>
+  );
 }

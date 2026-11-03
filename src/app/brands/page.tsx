@@ -8,12 +8,15 @@ import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ImageSlider from '@/components/ImageSlider';
 import { slider4Images } from '@/data/sliderData';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export default function BrandsPage() {
   const { t } = useLanguage();
 
   return (
     <>
+      <JsonLd data={breadcrumbSchema([['Brands', '/brands']])} />
       <section className="page-hero py-20 bg-[#0a1628]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('brandsPage.badge')}</div>

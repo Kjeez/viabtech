@@ -3,6 +3,8 @@ import PressSection from '@/components/PressSection';
 import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
 import blogData from '@/data/blog.json';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Printer Buying Guides & Tips for Tanzania – Blog',
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([['Blog', '/blog']])} />
       <section className="page-hero py-20">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
           <div className="section-badge">Blog</div>

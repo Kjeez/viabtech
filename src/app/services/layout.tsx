@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, serviceSchema } from '@/lib/schema';
+import servicesData from '@/data/services.json';
 
 export const metadata: Metadata = {
   title: 'Services – Printer Sales, Repair & Managed Print',
@@ -24,5 +27,15 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([['Services', '/services']]),
+          ...serviceSchema(servicesData.map((s) => ({ id: s.slug, name: s.title, description: s.description, path: '/services' }))),
+        ]}
+      />
+      {children}
+    </>
+  );
 }

@@ -3,6 +3,8 @@ import { ArrowLeft, Clock, Tag, User, ArrowRight, BookOpen } from 'lucide-react'
 import blogData from '@/data/blog.json';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, ORG_ID } from '@/lib/schema';
 
 const SITE_URL = 'https://www.viabtech.com';
 
@@ -50,18 +52,14 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
     datePublished: post.date,
     dateModified: post.date,
     author: { '@type': 'Organization', name: post.author, url: SITE_URL },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Viabtech',
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo/viabtech-logo.png` },
-    },
+    publisher: { '@id': ORG_ID },
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
     articleSection: post.category,
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <JsonLd data={[articleLd, breadcrumbSchema([['Blog', '/blog'], [post.title, `/blog/${post.slug}`]])]} />
       <section className="page-hero py-16">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 z-10">
           <Link href="/blog" className="inline-flex items-center gap-2 text-text-muted hover:text-primary text-sm mb-6 transition-colors">

@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import CategoryContent from './CategoryContent';
 import { categories, categoryBySlug, brandList } from '@/data/categories';
+import productsData from '@/data/products.json';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 const SITE_URL = 'https://www.viabtech.com';
 
@@ -34,19 +37,23 @@ export default async function CategoryPage(props: { params: Promise<{ slug: stri
   const cat = categoryBySlug[slug];
   if (!cat) notFound();
 
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: `${SITE_URL}/products` },
-      { '@type': 'ListItem', position: 3, name: cat.plural, item: `${SITE_URL}/products/category/${cat.slug}` },
-    ],
-  };
+  const products = productsData.filter((p) => p.category === cat.name);
+  const ld = [
+    collectionSchema({
+      path: `/products/category/${cat.slug}`,
+      name: `${cat.plural} in Tanzania`,
+      description: cat.description,
+      items: products.map((p) => ({ id: p.id, name: p.name })),
+    }),
+    breadcrumbSchema([
+      ['Products', '/products'],
+      [cat.plural, `/products/category/${cat.slug}`],
+    ]),
+  ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <JsonLd data={ld} />
       <CategoryContent slug={slug} />
     </>
   );

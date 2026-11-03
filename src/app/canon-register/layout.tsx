@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Canon Product Registration | VIAB TECH – Authorized Canon Dealer Tanzania',
@@ -37,5 +39,10 @@ export default function CanonRegisterLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([['Canon Product Registration', '/canon-register']])} />
+      {children}
+    </>
+  );
 }

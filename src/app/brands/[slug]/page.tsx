@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import brandsData from '@/data/brands.json';
 import productsData from '@/data/products.json';
 import BrandContent from './BrandContent';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 const SITE_URL = 'https://www.viabtech.com';
 
@@ -37,19 +39,23 @@ export default async function BrandSlugPage(props: { params: Promise<{ slug: str
 
   if (!brandData) notFound();
 
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Brands', item: `${SITE_URL}/brands` },
-      { '@type': 'ListItem', position: 3, name: brandData.name, item: `${SITE_URL}/brands/${brandData.slug}` },
-    ],
-  };
+  const products = productsData.filter((p) => p.brand === brandData.name);
+  const ld = [
+    collectionSchema({
+      path: `/brands/${brandData.slug}`,
+      name: `${brandData.name} products in Tanzania`,
+      description: brandData.description,
+      items: products.map((p) => ({ id: p.id, name: p.name })),
+    }),
+    breadcrumbSchema([
+      ['Brands', '/brands'],
+      [brandData.name, `/brands/${brandData.slug}`],
+    ]),
+  ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <JsonLd data={ld} />
       <BrandContent brandData={brandData} />
     </>
   );

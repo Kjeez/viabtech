@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 export default function TermsOfServicePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#f0f7fa] via-white to-[#f8fbff]">
+      <JsonLd data={breadcrumbSchema([['Terms of Service', '/terms']])} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
         {/* Header */}
         <div className="mb-12 text-center">

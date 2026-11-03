@@ -9,6 +9,8 @@ import productsData from '@/data/products.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 import ImageSlider from '@/components/ImageSlider';
 import { slider1Images, slider2Images, slider3Images, epsonSlider2Images } from '@/data/sliderData';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 // Separate main products from consumables
 const mainProducts = productsData.filter((p) => !p.isConsumable);
@@ -122,6 +124,7 @@ function ProductsContent() {
 
   return (
     <>
+      <JsonLd data={breadcrumbSchema([['Products', '/products']])} />
       <Suspense fallback={null}>
         <UrlFilterSync onCategory={setSelectedCategory} onBrand={setSelectedBrand} onShowFilters={openFilters} />
       </Suspense>

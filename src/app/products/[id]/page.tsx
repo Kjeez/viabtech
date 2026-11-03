@@ -5,6 +5,8 @@ import productsData from '@/data/products.json';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { categorySlug, pluralCategory } from '@/data/categories';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, SITE_URL } from '@/lib/schema';
 
 // Unknown product ids return a real 404 instead of a 200 "not found" page.
 export const dynamicParams = false;
@@ -37,6 +39,9 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
   const product = productsData.find((p) => p.id === id);
   if (!product) notFound();
 
+  // Epson part numbers such as C13S042372 at the start of the name
+  const partNumber = product.name.match(/^(C1[0-9][A-Z0-9]{6,})\b/)?.[1];
+
   const related = productsData
     .filter((p) => p.id !== id && p.category === product.category)
     .slice(0, 4);
@@ -51,54 +56,33 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
 
   return (
     <>
-      {/* Product JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+      {/* Product + Breadcrumb JSON-LD.
+          No Offer: prices aren't shown on the site, and an Offer without a price is invalid for Google. */}
+      <JsonLd
+        data={[
+          {
             '@context': 'https://schema.org',
             '@type': 'Product',
+            '@id': `${SITE_URL}/products/${product.id}#product`,
             name: product.name,
             description: product.description,
+            sku: product.id,
+            ...(partNumber ? { mpn: partNumber } : {}),
             image: product.image
               ? product.image.startsWith('http')
                 ? product.image
-                : `https://www.viabtech.com${product.image}`
+                : `${SITE_URL}${product.image}`
               : undefined,
             brand: { '@type': 'Brand', name: product.brand },
             category: product.category,
-            url: `https://www.viabtech.com/products/${product.id}`,
-            offers: {
-              '@type': 'Offer',
-              url: `https://www.viabtech.com/products/${product.id}`,
-              itemCondition: 'https://schema.org/NewCondition',
-              availability: product.inStock
-                ? 'https://schema.org/InStock'
-                : 'https://schema.org/OutOfStock',
-              seller: {
-                '@type': 'Organization',
-                name: 'Viabtech',
-                url: 'https://www.viabtech.com',
-              },
-            },
-          }),
-        }}
-      />
-      {/* Breadcrumb JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.viabtech.com' },
-              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.viabtech.com/products' },
-              { '@type': 'ListItem', position: 3, name: pluralCategory(product.category), item: `https://www.viabtech.com/products/category/${categorySlug(product.category)}` },
-              { '@type': 'ListItem', position: 4, name: product.name, item: `https://www.viabtech.com/products/${product.id}` },
-            ],
-          }),
-        }}
+            url: `${SITE_URL}/products/${product.id}`,
+          },
+          breadcrumbSchema([
+            ['Products', '/products'],
+            [pluralCategory(product.category), `/products/category/${categorySlug(product.category)}`],
+            [product.name, `/products/${product.id}`],
+          ]),
+        ]}
       />
       {/* ── Breadcrumb ── */}
       <section className="bg-[#f8fbff] border-b border-border">

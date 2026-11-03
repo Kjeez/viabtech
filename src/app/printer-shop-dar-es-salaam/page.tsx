@@ -4,6 +4,8 @@ import {
   Phone, MessageCircle, MapPin, Clock, ShieldCheck, Truck,
   Wrench, Printer, Camera, Package, Droplet, ChevronRight, CheckCircle2, Star,
 } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { storesSchema, faqSchema, breadcrumbSchema } from '@/lib/schema';
 
 const SITE_URL = 'https://www.viabtech.com';
 const PATH = '/printer-shop-dar-es-salaam';
@@ -106,64 +108,16 @@ const faqs = [
   },
 ];
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': ['Store', 'LocalBusiness'],
-      '@id': `${SITE_URL}${PATH}#store`,
-      name: 'Viabtech — Printer Shop in Dar es Salaam',
-      url: `${SITE_URL}${PATH}`,
-      image: `${SITE_URL}/images/canon&epson.png`,
-      telephone: ['+255745700500', '+255746000786'],
-      email: 'info@viabtech.co.tz',
-      priceRange: '$$',
-      areaServed: { '@type': 'City', name: 'Dar es Salaam' },
-      address: locations.map((l) => ({
-        '@type': 'PostalAddress',
-        streetAddress: l.address,
-        addressLocality: 'Dar es Salaam',
-        addressCountry: 'TZ',
-      })),
-      openingHoursSpecification: [
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
-      ],
-      brand: [
-        { '@type': 'Brand', name: 'Canon' },
-        { '@type': 'Brand', name: 'Epson' },
-        { '@type': 'Brand', name: 'Lenovo' },
-        { '@type': 'Brand', name: 'Dell' },
-        { '@type': 'Brand', name: 'HP' },
-      ],
-      sameAs: [
-        'https://www.instagram.com/viabtechcanon',
-        'https://www.facebook.com/profile.php?id=61591455479848',
-      ],
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}${PATH}#faq`,
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-        { '@type': 'ListItem', position: 2, name: 'Printer Shop in Dar es Salaam', item: `${SITE_URL}${PATH}` },
-      ],
-    },
-  ],
-};
+const jsonLd = [
+  ...storesSchema(),
+  faqSchema(faqs, PATH),
+  breadcrumbSchema([['Printer Shop in Dar es Salaam', PATH]]),
+];
 
 export default function PrinterShopDarEsSalaamPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}
       <section className="bg-[#f8fbff] border-b border-border">
