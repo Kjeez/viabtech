@@ -9,7 +9,8 @@
     "date": "2025-03-15",
     "readTime": "5 min read",
     "category": "Buying Guide",
-    "image": "/blog/choosing-printer.jpg"
+    "image": "/blog/choosing-printer.jpg",
+    "draft": false
   },
   {
     "id": "epson-ecotank-revolution",
@@ -21,7 +22,8 @@
     "date": "2025-03-01",
     "readTime": "4 min read",
     "category": "Technology",
-    "image": "/blog/ecotank.jpg"
+    "image": "/blog/ecotank.jpg",
+    "draft": false
   },
   {
     "id": "printer-maintenance-tips",
@@ -33,7 +35,8 @@
     "date": "2025-02-15",
     "readTime": "6 min read",
     "category": "Maintenance",
-    "image": "/blog/maintenance.jpg"
+    "image": "/blog/maintenance.jpg",
+    "draft": false
   },
   {
     "id": "large-format-printing-guide",
@@ -45,6 +48,59 @@
     "date": "2025-01-28",
     "readTime": "7 min read",
     "category": "Guide",
-    "image": "/blog/large-format.jpg"
+    "image": "/blog/large-format.jpg",
+    "draft": false
+  },
+  {
+    "id": "canon-vs-epson-office-printers-tanzania",
+    "title": "Canon vs Epson Printers for Offices in Tanzania",
+    "slug": "canon-vs-epson-office-printers-tanzania",
+    "excerpt": "Canon or Epson for your office? A side-by-side look at the ink tank, business inkjet, laser and A3 multifunction ranges Viabtech stocks in Dar es Salaam.",
+    "content": "Both Canon and Epson make dependable office printers, and Viabtech is the authorized reseller and authorized service center for both brands in Tanzania. The right choice depends less on the logo and more on how much you print, whether you need colour or A3, and how you want to buy ink.\n\n## What does Viabtech stock from each brand?\nViabtech lists 257 office printers: 203 from Epson and 54 from Canon. The main ranges are:\n\n- Epson EcoTank: refillable ink tank printers for low-cost printing\n- Epson WorkForce Pro: A4 business printers and multifunctions for busy offices\n- Epson WorkForce Enterprise: high-speed printers for large offices\n- Canon PIXMA G and MAXIFY: refillable ink tank (MegaTank) printers for homes and small businesses\n- Canon i-SENSYS: compact laser printers and multifunctions\n- Canon imageRUNNER ADVANCE: A3 multifunction printers for large workgroups and departments\n\n## Which brand has lower running costs?\nBoth brands offer refillable ink tank printers. Epson EcoTank models such as the L3250 have integrated ink tanks, include up to 3 years of ink in the box, and yield up to 7,500 pages in black and 6,000 pages in colour. Canon PIXMA G and MAXIFY MegaTank models are also built for a low cost per page, with yields of 6,000+ pages. Compare the stated yield of the exact model you are considering.\n\n## Which suits a busy office or department?\nFor high volumes, compare the Epson WorkForce Enterprise range (for example the AM-C6000, rated at 60 ISO ppm) with Canon imageRUNNER ADVANCE DX (for example the C5860i, a 60 ppm A3 colour multifunction with up to 6,350 sheets of paper capacity and enterprise-grade security). For smaller teams, the Epson WorkForce Pro EM-C800, with its replaceable ink pack system, and Canon i-SENSYS colour laser models such as the MF655Cdw are common choices.\n\n## Laser or inkjet?\nCanon i-SENSYS and imageRUNNER are laser ranges. Epson office printers are inkjet, and models such as the EcoTank L3250 use Heat-Free Technology, so there is no warm-up time.\n\n## What about warranty and repairs?\nPrinters typically carry a 1-year manufacturer warranty. Because Viabtech is the authorized service center for both brands, repairs use genuine parts and most standard repairs are completed within 1 to 3 business days.\n\n## Quick guide\n- Home or small office, low volume: Epson EcoTank or Canon PIXMA G\n- Small business that needs duplex and two paper trays: Canon MAXIFY or Epson WorkForce Pro\n- Departments, high volume or A3: Canon imageRUNNER ADVANCE or Epson WorkForce Enterprise\n\nVisit our showrooms on Bibi Titi Mohamed Road in Dar es Salaam, or request a quote with your monthly page volume and our consultants will recommend a model.",
+    "author": "Viabtech Team",
+    "date": "2026-11-03",
+    "readTime": "5 min read",
+    "category": "Buying Guide",
+    "image": "",
+    "draft": true
+  },
+  {
+    "id": "buy-vs-lease-printer-managed-print-services",
+    "title": "Buy vs Lease a Printer: Managed Print Services Explained",
+    "slug": "buy-vs-lease-printer-managed-print-services",
+    "excerpt": "Should your business buy printers outright or lease them under a managed print contract? How buying, leasing, managed print services and AMC work at Viabtech.",
+    "content": "Businesses in Tanzania can buy printers outright, lease them, or hand the whole fleet to a managed print service. Viabtech offers all three, plus annual maintenance contracts (AMC) for printers you already own.\n\n## What do you get when you buy?\nWhen you buy from Viabtech, you get a free needs assessment and consultation, competitive pricing on all brands, bulk order discounts for enterprises, trade-in programs for old equipment, and delivery and installation. Financing and leasing options are also available if you don't want to pay the full amount upfront.\n\n## How does leasing work?\nLeasing lets you use the latest printers without the upfront investment. Viabtech offers flexible short-term and long-term leasing plans, including tax-efficient leasing plans, with maintenance and support included.\n\n## What are managed print services?\nManaged Print Services (MPS) give you end-to-end management of your printing. Viabtech monitors, maintains and optimizes your entire print fleet. MPS includes:\n\n- A complete fleet assessment and optimization\n- Automated supply replenishment, so you don't run out of ink or toner\n- Usage tracking and cost reporting\n- 24/7 remote monitoring\n\nViabtech's managed print service can reduce printing costs by up to 30%.\n\n## What if we already own our printers?\nAn Annual Maintenance Contract covers printers you already own. It includes scheduled preventive maintenance visits, priority response for breakdowns, genuine parts included in the contract, discounted consumables and a dedicated account manager. Plans are available for a single machine or a whole fleet of Canon, Epson, HP, Lenovo and Dell printers.\n\n## Which option should we choose?\n- Buy if you have a few printers, steady volumes and staff who can manage supplies\n- Lease if you want the latest models without a large upfront payment\n- Choose managed print if you run many printers across offices or branches and want one monthly arrangement with supplies, monitoring and reporting included\n- Add an AMC to printers you already own to keep maintenance costs predictable\n\nTalk to our team at +255 745 700 500 for a free needs assessment.",
+    "author": "Viabtech Team",
+    "date": "2026-11-03",
+    "readTime": "4 min read",
+    "category": "Managed Print",
+    "image": "",
+    "draft": true
+  },
+  {
+    "id": "how-to-choose-large-format-plotter",
+    "title": "How to Choose a Large-Format Plotter",
+    "slug": "how-to-choose-large-format-plotter",
+    "excerpt": "CAD drawings, photo and fine art, signage or textiles? Match the Epson SureColor series to your work, choose a print width, and plan for media and ink.",
+    "content": "Viabtech lists 134 plotters and large-format printers and accessories, all from the Epson SureColor family. The most important question is what you will print, because each SureColor series is built for a different job.\n\n## Which SureColor series fits my work?\n- SC-T series: large-format printers for CAD, GIS and technical drawings, such as engineering and architectural plans\n- SC-P series: professional photo printers with gallery-quality output, for photographers, proofing and fine art\n- SC-S series: for high-volume signage, banners and display graphics\n- SC-F series: for dye-sublimation textile and direct-to-garment printing\n- SC-R and SC-V series: other professional SureColor large-format printers for specialist production\n\n## How wide should the printer be?\nPrint widths in the range go from 24-inch models up to 64 inches. Choose the width of the largest drawings or prints you make regularly, not the largest you might ever need.\n\n## What else will I need?\nPlan for accessories, media and ink from the start. Viabtech stocks SureColor accessories such as stands, roll adapters, hard disk units and media plates; inkjet media including fine art papers, canvas and specialty films; and genuine Epson UltraChrome inks, including 350 ml and 700 ml cartridges for high-volume printing.\n\n## Who services large-format printers in Tanzania?\nViabtech is the authorized Epson service center in Dar es Salaam, so repairs and maintenance use genuine parts. An Annual Maintenance Contract can add scheduled preventive maintenance and priority response for breakdowns.\n\n## Next step\nBring sample files to the Epson Experience Zone at Uhuru Heights, Bibi Titi Mohamed Road, or request a quote with the type of work, print width and monthly volume.",
+    "author": "Viabtech Team",
+    "date": "2026-11-03",
+    "readTime": "4 min read",
+    "category": "Large Format",
+    "image": "",
+    "draft": true
+  },
+  {
+    "id": "genuine-vs-compatible-ink-cartridges",
+    "title": "Genuine vs Compatible Ink Cartridges",
+    "slug": "genuine-vs-compatible-ink-cartridges",
+    "excerpt": "What is the difference between genuine and compatible ink, what Viabtech stocks, and how offices can keep supplies simple.",
+    "content": "Genuine (original) ink is made by your printer's manufacturer. Compatible ink is made by a third party to fit the same printer. Viabtech supplies genuine Canon, Epson and HP consumables.\n\n## What does Viabtech stock?\nViabtech's ink range lists 227 genuine Epson ink products, from EcoTank ink bottles to UltraChrome cartridges for SureColor large-format printers. We also supply original Canon and Epson ink cartridges, ink bottles and toner, plus a wide range of specialty papers.\n\n## Why choose genuine consumables?\nGenuine consumables protect your printer's warranty and deliver reliable, high-quality prints. As the authorized Canon and Epson reseller, Viabtech guarantees authentic ink cartridges, toner and specialty papers.\n\n## How can an office keep ink costs down?\n- Choose a refillable ink tank printer, such as Epson EcoTank or Canon PIXMA G and MAXIFY, if you print a lot\n- Ask about competitive bulk pricing on consumables\n- Use an auto-replenishment program so supplies arrive before you run out\n- Ask about our recycling programs for used consumables\n\n## How do I find the right ink?\nCheck your printer model and the code on your current cartridge or bottle, then search for it on our ink cartridges page, or send the model number on WhatsApp to +255 745 700 500. We deliver consumables across Tanzania.",
+    "author": "Viabtech Team",
+    "date": "2026-11-03",
+    "readTime": "3 min read",
+    "category": "Consumables",
+    "image": "",
+    "draft": true
   }
 ]

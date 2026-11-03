@@ -95,3 +95,18 @@ export function brandList(brands: string[], max = 2): string {
   if (list.length <= 1) return list.join('');
   return `${list.slice(0, -1).join(', ')} & ${list[list.length - 1]}`;
 }
+
+/**
+ * A 2–3 sentence "answer first" summary for a category page:
+ * what it is, who it's for (from the description) and how to get it in Tanzania.
+ * Built only from facts already on the site.
+ */
+export function categoryAnswer(cat: CategoryInfo): string {
+  const brands = brandList(cat.brands, 3);
+  const authorized = cat.brands.some((b) => b === 'Canon' || b === 'Epson');
+  const what = `Viabtech sells ${cat.count} ${cat.count === 1 ? cat.name.toLowerCase() : cat.plural.toLowerCase()}${brands ? ` from ${brands}` : ''} at its two showrooms on Bibi Titi Mohamed Road in Dar es Salaam, with delivery across Tanzania.`;
+  const trust = authorized
+    ? 'As the authorized Canon and Epson reseller, every product is genuine and comes with manufacturer warranty.'
+    : 'Every product is genuine and comes with manufacturer warranty.';
+  return `${what} ${trust} For a price, use Request Quote on any product or WhatsApp +255 745 700 500.`;
+}

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { breadcrumbSchema, serviceSchema, faqSchema } from '@/lib/schema';
 import servicesData from '@/data/services.json';
-import { GENERAL_FAQ, faqText } from '@/data/faqs';
+import { SERVICE_CENTER_FAQ, faqText } from '@/data/faqs';
 
 export const metadata: Metadata = {
   title: 'Service Center – Authorized Canon & Epson Repairs',
@@ -38,7 +38,7 @@ export default function ServiceCenterLayout({ children }: { children: React.Reac
               .filter((s) => ['printer-repair', 'warranty-registration', 'spares'].includes(s.id))
               .map((s) => ({ id: s.slug, name: s.title, description: s.description, path: '/service-center' })),
           ),
-          faqSchema(faqText(GENERAL_FAQ), '/service-center'),
+          faqSchema(faqText(SERVICE_CENTER_FAQ), '/service-center'),
         ]}
       />
       {children}

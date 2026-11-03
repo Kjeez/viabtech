@@ -32,7 +32,7 @@ export default function Footer() {
     ],
     help: [
       { name: t('footer.contactUs'), href: '/contact' },
-      { name: t('footer.faq'), href: '/contact' },
+      { name: t('footer.faq'), href: '/faq' },
       { name: t('footer.warranty'), href: '/services' },
       { name: t('footer.callUs'), href: 'tel:+255745700500' },
     ],

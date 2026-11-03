@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Printer, ArrowLeft, Package, Search, X } from 'lucide-react';
 import productsData from '@/data/products.json';
-import { categoryMap, categoryBySlug } from '@/data/categories';
+import { categoryMap, categoryBySlug, categoryAnswer } from '@/data/categories';
 
 export default function CategoryContent({ slug }: { slug: string }) {
   const [search, setSearch] = useState('');
@@ -16,6 +16,7 @@ export default function CategoryContent({ slug }: { slug: string }) {
   const categoryName = categoryMap[slug] ?? '';
   const categoryPlural = categoryBySlug[slug]?.plural ?? categoryName;
   const description = categoryBySlug[slug]?.description ?? `Explore our complete ${categoryName} range.`;
+  const answer = categoryBySlug[slug] ? categoryAnswer(categoryBySlug[slug]) : '';
 
   const allProducts = useMemo(
     () => productsData.filter((p) => p.category === categoryName),
@@ -87,6 +88,7 @@ export default function CategoryContent({ slug }: { slug: string }) {
             <span className="text-primary-light">{categoryPlural}</span> in Tanzania
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">{description}</p>
+          {answer && <p className="text-gray-400 text-base max-w-3xl mx-auto mt-4">{answer}</p>}
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-400">
             <Package size={16} className="text-primary-light" />
             <span>{allProducts.length} products available</span>

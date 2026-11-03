@@ -51,6 +51,7 @@
 
 - [About Viabtech](https://www.viabtech.com/about): Company story, team and partner certificates
 - [Printer shop in Dar es Salaam](https://www.viabtech.com/printer-shop-dar-es-salaam): Showroom locations and what to find there
+- [FAQ](https://www.viabtech.com/faq): All frequently asked questions, grouped by buying, repairs and warranty, delivery and payment, and leasing and AMC
 - [Contact](https://www.viabtech.com/contact): Contact form, showroom addresses, phone, WhatsApp and FAQ
 - [Blog](https://www.viabtech.com/blog): Guides and news on printers, cameras and office equipment
 

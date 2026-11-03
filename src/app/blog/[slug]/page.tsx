@@ -11,6 +11,33 @@ const SITE_URL = 'https://www.viabtech.com';
 // Unknown post slugs return a real 404.
 export const dynamicParams = false;
 
+type Block = { type: 'h2' | 'p'; text: string } | { type: 'ul'; items: string[] };
+
+/**
+ * Turn post content into headings, paragraphs and lists.
+ * A "## Heading" line followed directly by text (no blank line) becomes a heading plus a paragraph,
+ * so the heading no longer swallows the text under it.
+ */
+function toBlocks(content: string): Block[] {
+  const blocks: Block[] = [];
+  for (const chunk of content.split('\n\n')) {
+    let rest = chunk.trim();
+    if (!rest) continue;
+    if (rest.startsWith('## ')) {
+      const nl = rest.indexOf('\n');
+      blocks.push({ type: 'h2', text: (nl === -1 ? rest : rest.slice(0, nl)).replace(/^## /, '').trim() });
+      rest = nl === -1 ? '' : rest.slice(nl + 1).trim();
+      if (!rest) continue;
+    }
+    if (rest.startsWith('- ')) {
+      blocks.push({ type: 'ul', items: rest.split('\n').filter(Boolean).map((l) => l.replace(/^- /, '')) });
+    } else {
+      blocks.push({ type: 'p', text: rest });
+    }
+  }
+  return blocks;
+}
+
 export function generateStaticParams() {
   return blogData.map((post) => ({ slug: post.slug }));
 }
@@ -24,6 +51,8 @@ export async function generateMetadata(props: PageProps<'/blog/[slug]'>): Promis
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: url },
+    // Drafts stay out of Google until they are reviewed and published.
+    ...(post.draft ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -42,7 +71,7 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
   const post = blogData.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const otherPosts = blogData.filter((p) => p.slug !== slug).slice(0, 3);
+  const otherPosts = blogData.filter((p) => p.slug !== slug && !p.draft).slice(0, 3);
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -69,6 +98,11 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
             <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium flex items-center gap-1"><Tag size={11} /> {post.category}</span>
             <span className="text-xs text-text-muted flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
           </div>
+          {post.draft && (
+            <p className="inline-block mb-4 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold">
+              Draft for review: not listed on the blog or in search results yet
+            </p>
+          )}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[var(--font-heading)] text-text-primary mb-4 leading-tight">{post.title}</h1>
           <div className="flex items-center gap-4 text-sm text-text-muted">
             <span className="flex items-center gap-1.5"><User size={14} /> {post.author}</span>
@@ -81,24 +115,23 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="kepler-card p-8 sm:p-12">
             <div className="prose max-w-none">
-              {post.content.split('\n\n').map((paragraph, i) => {
-                if (paragraph.startsWith('## ')) {
-                  return <h2 key={i} className="text-xl font-bold font-[var(--font-heading)] text-text-primary mt-8 mb-4">{paragraph.replace('## ', '')}</h2>;
+              {toBlocks(post.content).map((block, i) => {
+                if (block.type === 'h2') {
+                  return <h2 key={i} className="text-xl font-bold font-[var(--font-heading)] text-text-primary mt-8 mb-4">{block.text}</h2>;
                 }
-                if (paragraph.startsWith('- ')) {
-                  const items = paragraph.split('\n').filter(Boolean);
+                if (block.type === 'ul') {
                   return (
                     <ul key={i} className="space-y-2 my-4">
-                      {items.map((item, j) => (
+                      {block.items.map((item, j) => (
                         <li key={j} className="flex items-start gap-2 text-text-secondary text-sm">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                          {item.replace('- ', '')}
+                          {item}
                         </li>
                       ))}
                     </ul>
                   );
                 }
-                return <p key={i} className="text-text-secondary leading-relaxed mb-4">{paragraph}</p>;
+                return <p key={i} className="text-text-secondary leading-relaxed mb-4">{block.text}</p>;
               })}
             </div>
           </div>

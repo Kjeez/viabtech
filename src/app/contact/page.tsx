@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare, CheckCircle, Printer, Loader2 } from 'lucide-react';
 import FAQAccordion from '@/components/FAQAccordion';
+import { CONTACT_FAQ } from '@/data/faqs';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { trackLead } from '@/lib/analytics';
 import { getSpamFields } from '@/lib/recaptcha';
@@ -303,7 +304,7 @@ export default function ContactPage() {
       </section>
 
       {/* ═══ FAQ Section ═══ */}
-      <FAQAccordion />
+      <FAQAccordion items={CONTACT_FAQ} showViewAll idPrefix="contact-faq" />
     </>
   );
 }

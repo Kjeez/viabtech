@@ -1,31 +1,44 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { GENERAL_FAQ, type FaqItem } from '@/data/faqs';
 
-export default function FAQAccordion() {
+interface FAQAccordionProps {
+  /** Which questions to show (translation key pairs). Defaults to the general FAQ. */
+  items?: FaqItem[];
+  /** Hide the badge/title block, e.g. when the page supplies its own group heading. */
+  showHeader?: boolean;
+  /** Show a link to the full /faq page under the questions. */
+  showViewAll?: boolean;
+  /** Prefix for element ids, so several accordions can live on one page. */
+  idPrefix?: string;
+  /** Use a tighter section (for /faq groups). */
+  compact?: boolean;
+}
+
+export default function FAQAccordion({
+  items = GENERAL_FAQ,
+  showHeader = true,
+  showViewAll = false,
+  idPrefix = 'faq',
+  compact = false,
+}: FAQAccordionProps) {
   const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
-    { q: t('faq.q1'), a: t('faq.a1') },
-    { q: t('faq.q2'), a: t('faq.a2') },
-    { q: t('faq.q3'), a: t('faq.a3') },
-    { q: t('faq.q4'), a: t('faq.a4') },
-    { q: t('faq.q5'), a: t('faq.a5') },
-    { q: t('faq.q6'), a: t('faq.a6') },
-    { q: t('faq.q7'), a: t('faq.a7') },
-    { q: t('faq.q8'), a: t('faq.a8') },
-  ];
+  const faqs = items.map((i) => ({ q: t(i.qKey), a: t(i.aKey) }));
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className={`${compact ? 'py-6' : 'py-24'} bg-white relative overflow-hidden`}>
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-primary/[0.03] to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        {showHeader && (
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-14">
             <div className="section-badge mx-auto">
@@ -42,6 +55,7 @@ export default function FAQAccordion() {
             </p>
           </div>
         </AnimatedSection>
+        )}
 
         <div className="space-y-3">
           {faqs.map((faq, index) => {
@@ -59,7 +73,7 @@ export default function FAQAccordion() {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     className="w-full flex items-center justify-between gap-4 p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-2xl transition-colors"
                     aria-expanded={isOpen}
-                    aria-controls={`faq-panel-${index}`}
+                    aria-controls={`${idPrefix}-panel-${index}`}
                   >
                     <span
                       className={`font-semibold text-[15px] leading-snug transition-colors ${
@@ -79,7 +93,7 @@ export default function FAQAccordion() {
                     </div>
                   </button>
                   <div
-                    id={`faq-panel-${index}`}
+                    id={`${idPrefix}-panel-${index}`}
                     role="region"
                     className={`transition-all duration-400 ease-out ${
                       isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
@@ -97,6 +111,13 @@ export default function FAQAccordion() {
             );
           })}
         </div>
+        {showViewAll && (
+          <div className="text-center mt-8">
+            <Link href="/faq" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+              {t('faq.viewAll')} &rarr;
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

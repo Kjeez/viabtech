@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { storesSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
-import { GENERAL_FAQ, faqText } from '@/data/faqs';
+import { CONTACT_FAQ, faqText } from '@/data/faqs';
 
 export const metadata: Metadata = {
   title: 'Contact Us – Get a Quote or Service Request',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <JsonLd data={[...storesSchema(), breadcrumbSchema([['Contact', '/contact']]), faqSchema(faqText(GENERAL_FAQ), '/contact')]} />
+      <JsonLd data={[...storesSchema(), breadcrumbSchema([['Contact', '/contact']]), faqSchema(faqText(CONTACT_FAQ), '/contact')]} />
       {children}
     </>
   );

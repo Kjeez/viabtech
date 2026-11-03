@@ -11,6 +11,16 @@ import { breadcrumbSchema, SITE_URL } from '@/lib/schema';
 // Unknown product ids return a real 404 instead of a 200 "not found" page.
 export const dynamicParams = false;
 
+/** Unique meta description: product + Tanzania/Dar es Salaam + the start of the product copy, ~160 chars. */
+function productMetaDescription(product: { name: string; brand: string; description: string }) {
+  const authorized = product.brand === 'Canon' || product.brand === 'Epson';
+  const lead = `${product.name} in Tanzania from Viabtech, Dar es Salaam${authorized ? `, the authorized ${product.brand} dealer` : ''}.`;
+  const room = 160 - lead.length - 1;
+  if (room < 40) return lead.slice(0, 160);
+  const body = product.description.replace(/\s+/g, ' ').trim();
+  return `${lead} ${body.length > room ? `${body.slice(0, room - 1).replace(/[\s,.;:–-]+\S*$/, '')}…` : body}`;
+}
+
 export function generateStaticParams() {
   return productsData.map((p) => ({ id: p.id }));
 }
@@ -21,7 +31,7 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
   if (!product) return {};
   return {
     title: `${product.name} | Buy in Tanzania`,
-    description: `${product.description.slice(0, 155)}…`,
+    description: productMetaDescription(product),
     openGraph: {
       title: `${product.name} – ${product.brand} | Viabtech Tanzania`,
       description: product.description.slice(0, 200),

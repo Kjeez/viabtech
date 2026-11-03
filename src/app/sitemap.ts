@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/brands`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/about`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/contact`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/faq`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/blog`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE_URL}/canon-register`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE_URL}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
@@ -37,7 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogData.map((post) => ({
+  // Drafts are reviewable at their URL but kept out of the sitemap until published.
+  const blogPages: MetadataRoute.Sitemap = blogData.filter((post) => !('draft' in post && post.draft)).map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.date,
     changeFrequency: 'yearly',

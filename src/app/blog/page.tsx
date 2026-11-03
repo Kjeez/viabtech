@@ -2,6 +2,9 @@ import Link from 'next/link';
 import PressSection from '@/components/PressSection';
 import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
 import blogData from '@/data/blog.json';
+
+// Draft posts (draft: true) are reviewable at their URL but not listed until published.
+const posts = blogData.filter((p) => !p.draft);
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -26,27 +29,27 @@ export default function BlogPage() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {blogData.length > 0 && (
-            <Link href={`/blog/${blogData[0].slug}`} className="group kepler-card overflow-hidden mb-12 grid lg:grid-cols-2">
+          {posts.length > 0 && (
+            <Link href={`/blog/${posts[0].slug}`} className="group kepler-card overflow-hidden mb-12 grid lg:grid-cols-2">
               <div className="h-64 lg:h-auto bg-gradient-to-br from-[#e8f4fd] to-[#dbeafe] flex items-center justify-center">
                 <BookOpen size={64} className="text-primary/20 group-hover:text-primary/40 transition-colors" />
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{blogData[0].category}</span>
-                  <span className="text-xs text-text-muted flex items-center gap-1"><Clock size={12} /> {blogData[0].readTime}</span>
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{posts[0].category}</span>
+                  <span className="text-xs text-text-muted flex items-center gap-1"><Clock size={12} /> {posts[0].readTime}</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold font-[var(--font-heading)] text-text-primary group-hover:text-primary transition-colors mb-3">{blogData[0].title}</h2>
-                <p className="text-text-secondary leading-relaxed mb-6">{blogData[0].excerpt}</p>
+                <h2 className="text-2xl sm:text-3xl font-bold font-[var(--font-heading)] text-text-primary group-hover:text-primary transition-colors mb-3">{posts[0].title}</h2>
+                <p className="text-text-secondary leading-relaxed mb-6">{posts[0].excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-text-muted">{blogData[0].date} · {blogData[0].author}</span>
+                  <span className="text-xs text-text-muted">{posts[0].date} · {posts[0].author}</span>
                   <span className="text-primary font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Read More <ArrowRight size={14} /></span>
                 </div>
               </div>
             </Link>
           )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogData.slice(1).map((post) => (
+            {posts.slice(1).map((post) => (
               <Link key={post.id} href={`/blog/${post.slug}`} className="group kepler-card overflow-hidden">
                 <div className="h-44 bg-gradient-to-br from-[#e8f4fd] to-[#f0f7ff] flex items-center justify-center">
                   <BookOpen size={40} className="text-primary/15 group-hover:text-primary/30 transition-colors" />

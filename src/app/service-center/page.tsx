@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Settings, CheckCircle, MapPin, Send, Cpu, ShieldCheck, PenTool, Search } from 'lucide-react';
 import FAQAccordion from '@/components/FAQAccordion';
+import { SERVICE_CENTER_FAQ } from '@/data/faqs';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Image from 'next/image';
 import ImageSlider from '@/components/ImageSlider';
@@ -36,6 +37,7 @@ export default function ServiceCenterPage() {
             {t('serviceCenter.title')} <span className="text-primary-light">{t('serviceCenter.titleHighlight')}</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">{t('serviceCenter.subtitle')}</p>
+          <p className="text-gray-400 text-base max-w-3xl leading-relaxed mt-4">{t('serviceCenter.answer')}</p>
         </div>
       </section>
 
@@ -190,7 +192,7 @@ export default function ServiceCenterPage() {
             <div className="lg:col-span-2 space-y-8">
               <div className="mb-6">
                 <div className="section-badge bg-primary/10 text-primary border-primary/20">{t('serviceCenter.dropoff.title')}</div>
-                <h2 className="text-2xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">{t('serviceCenter.dropoff.title')}</h2>
+                <h2 className="text-2xl font-extrabold font-[var(--font-heading)] text-[#0f1c2e]">{t('serviceCenter.dropoff.question')}</h2>
                 <p className="text-gray-500 mt-2 font-medium">{t('serviceCenter.dropoff.subtitle')}</p>
               </div>
 
@@ -230,7 +232,7 @@ export default function ServiceCenterPage() {
       </section>
 
       {/* FAQ Section */}
-      <FAQAccordion />
+      <FAQAccordion items={SERVICE_CENTER_FAQ} showViewAll idPrefix="service-faq" />
     </>
   );
 }

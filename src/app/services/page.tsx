@@ -52,6 +52,7 @@ export default function ServicesPage() {
           <div className="section-badge bg-white/10 border-white/20 text-white">{t('servicesPage.badge')}</div>
           <h1 className="text-4xl sm:text-5xl font-bold font-[var(--font-heading)] text-white mb-6">{t('servicesPage.title')}</h1>
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">{t('servicesPage.subtitle')}</p>
+          <p className="text-gray-400 text-base max-w-3xl leading-relaxed mt-4">{t('servicesPage.answer')}</p>
         </div>
       </section>
 
