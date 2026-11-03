@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: 'Are you an authorized Canon and Epson dealer in Tanzania?',
-    a: 'Yes. Viabtech is an authorized reseller and authorized service centre for all Canon and Epson products in Tanzania. We are also authorized partners for Lenovo, Dell and HP, so every product comes with genuine warranty and support.',
+    a: 'Yes. Viabtech is an authorized reseller and authorized service centre for all Canon and Epson products in Tanzania. We are also an HP Business Partner, Dell Authorized Partner and Lenovo 360 partner, so every product comes with genuine warranty and support.',
   },
   {
     q: 'What printers can I buy at your Dar es Salaam shop?',

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Brands – Authorized Canon, Epson, Lenovo, Dell & More',
+  title: 'Our Brands – Authorized Canon & Epson Dealer, plus HP, Lenovo, Dell & More',
   description:
-    'Viabtech is an authorized partner for Canon, Epson, Lenovo, Dell, HP, DJI, Godox, APC, SanDisk, and Lexar in Tanzania. Explore genuine products with full warranty and support.',
+    'Viabtech is the authorized Canon and Epson reseller and service center in Tanzania, and also sells HP, Lenovo, Dell, DJI, Godox, Unomat, APC, SanDisk and Lexar. Genuine products with full warranty and support.',
   keywords: [
     'authorized Canon dealer Tanzania',
     'authorized Epson dealer Tanzania',
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     'DJI dealer Tanzania',
   ],
   openGraph: {
-    title: 'Authorized Brand Partners – Viabtech Tanzania',
+    title: 'Our Brands – Viabtech Tanzania',
     description:
-      'Explore our authorized partnerships with Canon, Epson, Lenovo, Dell, HP, DJI, Godox, and more. Genuine products, full warranty.',
+      'Authorized Canon and Epson reseller, plus HP, Lenovo, Dell, DJI, Godox and more. Genuine products, full warranty.',
     url: 'https://www.viabtech.com/brands',
   },
   alternates: {

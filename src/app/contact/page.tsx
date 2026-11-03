@@ -131,7 +131,7 @@ export default function ContactPage() {
                   <div className="w-10 h-10 rounded-xl bg-[#CC0000]/10 flex items-center justify-center shrink-0 group-hover:bg-[#CC0000] transition-colors duration-300">
                     <Printer size={18} className="text-[#CC0000] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h4 className="font-bold text-[#0f1c2e]">Canon Authorised Showroom</h4>
+                  <h4 className="font-bold text-[#0f1c2e]">Canon Authorized Showroom</h4>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
@@ -284,7 +284,7 @@ export default function ContactPage() {
                     <div className="w-8 h-8 rounded-lg bg-[#CC0000]/10 flex items-center justify-center">
                       <MapPin size={16} className="text-[#CC0000]" />
                     </div>
-                    Canon Authorised Showroom
+                    Canon Authorized Showroom
                   </h4>
                   <p className="text-sm text-gray-500 font-medium mt-2 pl-11">PLOT NO 1357/208, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam, Tanzania</p>
                 </div>

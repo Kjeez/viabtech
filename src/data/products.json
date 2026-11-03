@@ -428,8 +428,7 @@
     "image": "/images/products/keplertech/C13S041782_Epson_Ultra_Smooth_24_Fine_Art_Paper_d071988c.webp",
     "description": "Epson Ultrasmooth Fine Art Paper is an exceptional product for producing high-quality prints with sharp details and true-to-life colors. Its 100% cotton rag material and acid-free surface ensure longevity, while its compatibility with both dye and pigment-based inks makes it versatile. Highly recomm...",
     "features": [
-      "Highly recommended for professional use",
-      "Go to Online Store"
+      "Highly recommended for professional use"
     ],
     "specs": {
       "printWidth": "782"
@@ -447,8 +446,7 @@
     "image": "/images/products/keplertech/C13S041783_Epson_Ultra_smooth_44_Fine_Art_Paper_10559df8.webp",
     "description": "Epson Ultrasmooth Fine Art Paper is an exceptional product for producing high-quality prints with sharp details and true-to-life colors. Its 100% cotton rag material and acid-free surface ensure longevity, while its compatibility with both dye and pigment-based inks makes it versatile. Highly recomm...",
     "features": [
-      "Highly recommended for professional use",
-      "Go to Online Store"
+      "Highly recommended for professional use"
     ],
     "specs": {
       "printWidth": "783"
@@ -464,9 +462,12 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/C13S042372_Epson_ClearProof_Film_24x305M_021cc83c.webp",
-    "description": "The Epson Stylus Pro WT7900 is best used with Epson ClearProof® Film, which is a clear film made specifically for this printer. This film is ideal for proofing applications that require high-quality results and is particularly well-suited for use with Epson’s white ink.Go to Online Store",
+    "description": "Epson ClearProof® Film is a clear film made for the Epson Stylus Pro WT7900. It is ideal for proofing applications that require high-quality results and is particularly well-suited for use with Epson’s white ink.",
     "features": [
-      "Go to Online Store"
+      "Clear proofing film",
+      "Made for the Epson Stylus Pro WT7900",
+      "Suited to Epson white ink",
+      "24″ x 30.5 m roll"
     ],
     "specs": {
       "printWidth": "372"
@@ -484,11 +485,9 @@
     "image": "/images/products/keplertech/C13S042377_Epson_MetallicProof_Film_24x305M_d58ec3fb.webp",
     "description": "The C13S042377 Epson MetallicProof® Film is a professional-grade film that produces high-quality metallic film positives for screen printing applications. Measuring 24″x30.5M, this film features a microporous coating that ensures excellent ink adhesion and sharpness. It is compatible with both dye a...",
     "features": [
-      "24″x30",
-      "Measuring 24″x30",
-      "5M, this film features a microporous coating that ensures excellent ink adhesion and sharpness",
-      "It is compatible with both dye and pigment-based inkjet printers",
-      "Go to Online Store"
+      "24″ x 30.5 m roll",
+      "Microporous coating for ink adhesion and sharpness",
+      "It is compatible with both dye and pigment-based inkjet printers"
     ],
     "specs": {
       "printWidth": "377"
@@ -505,9 +504,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/C13S045065_Epson_Premium_Canvas_Satin_60X122M_0a3d7fa0.webp",
     "description": "The C13S045065 Epson Premium Canvas Satin is a high-quality canvas paper designed for professional photographers and artists who require exceptional print quality and durability. It has a weight of 350gsm, a satin finish, and a wide color gamut that produces stunning prints with excellent contrast a...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "065"
     },
@@ -524,8 +521,7 @@
     "image": "/images/products/keplertech/C13S450266_Epson_Fine_Art_Cotton_Smooth_Natural_64x15M_db473054.webp",
     "description": "This archival paper is made of cotton and has a hot press finish, resulting in a smooth and natural look. It is capable of reproducing colors, tones, and details accurately, ensuring that they remain secure for a long time. Using this paper with Epson’s pigment-based ink printers is hassle-free and...",
     "features": [
-      "Using this paper with Epson’s pigment-based ink printers is hassle-free and seamless",
-      "Go to Online Store"
+      "Using this paper with Epson’s pigment-based ink printers is hassle-free and seamless"
     ],
     "specs": {
       "printWidth": "266"
@@ -543,8 +539,7 @@
     "image": "/images/products/keplertech/C13S450284_Epson_Fine_Art_Cotton_Textured_Bright_17x15m_3e4127cc.webp",
     "description": "This textured paper is perfect for replicating fine art or giving photographic prints a fresh appearance. It has a traditional watercolour paper feel and is made from acid-free, cotton-based archival material, ensuring colours, tones, and details are accurately reproduced and preserved for years. It...",
     "features": [
-      "It is specifically designed to work well with Epson’s pigment-based ink printers",
-      "Go to Online Store"
+      "It is specifically designed to work well with Epson’s pigment-based ink printers"
     ],
     "specs": {
       "printWidth": "284"
@@ -561,9 +556,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Innova_IFA_107_Fabriano_Printmaking_Rag_310gsm_83cebb57.webp",
     "description": "Introducing the Innova Fabriano Printmaking Rag 310gsm IFA 107, a premium paper specifically designed to elevate your printmaking endeavors. Crafted by Innova, a renowned name in the world of fine art printing, this exceptional paper offers a luxurious surface and unparalleled quality that will brin...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "107"
     },
@@ -579,9 +572,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Innova_IFA_11_Photo_Cotton_Rag_315gsm_4f35b2f3.webp",
     "description": "Introducing the Innova Photo Cotton Rag 315gsm – IFA 11, a premium-quality fine art paper designed for professional photographers, artists, and print enthusiasts. This exquisite paper is carefully crafted to deliver exceptional results, ensuring that your prints stand out with remarkable clarity, de...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "11"
     },
@@ -597,9 +588,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Innova_IFA_15_Soft_White_Cotton_280gsm_272bb959.webp",
     "description": "Introducing the Innova Soft White Cotton 280gsm IFA 15, the ultimate choice for artists and photographers seeking impeccable print quality and luxurious texture. Crafted with utmost precision, this fine art paper is specifically designed to enhance your creative work and captivate your audience.Go t...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "15"
     },
@@ -615,9 +604,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Innova_IFA_26_Soft_Textured_Bright_White_Cotton_315gsm_16025bb5.webp",
     "description": "Introducing the Innova Soft Textured Bright White Cotton 315gsm IFA 26, the ultimate choice for artists and photographers seeking impeccable print quality and a luxurious feel. This premium fine art paper sets a new standard in the industry with its exceptional characteristics and exquisite finish.G...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "26"
     },
@@ -634,8 +621,7 @@
     "image": "/images/products/keplertech/Innova_IFA_45_Exhibition_Cotton_Gloss_335gsm_a03d84db.webp",
     "description": "The Innova Exhibition Cotton Gloss 335 GSM IFA 45 is a premium-quality fine art paper designed for professional photographers and artists seeking exceptional print results. This exhibition-grade paper is specifically engineered to deliver outstanding color reproduction, sharpness, and detail, making...",
     "features": [
-      "images with vibrant colors and intricate textures.Go to Online Store",
-      "Go to Online Store"
+      "images with vibrant colors and intricate textures."
     ],
     "specs": {
       "printWidth": "45"
@@ -652,9 +638,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Innova_IFA_96_Eco_Solvent_Poly_Cotton_Canvas_ea978d3d.webp",
     "description": "Introducing the Innova Eco Solvent Poly Cotton Canvas IFA 96, a revolutionary product that combines environmental consciousness with exceptional print quality. This cutting-edge canvas is designed to meet the demands of professional artists, photographers, and printmakers seeking a sustainable solut...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "96"
     },
@@ -672,8 +656,7 @@
     "description": "Introducing Korejet Archival Matte Fine Art Paper, your portal to enduring and exquisite prints. Meticulously crafted with a substantial weight of 230 gsm, this paper offers an ideal canvas for your creative visions. Its archival excellence guarantees that your prints will endure, safeguarding the c...",
     "features": [
       "Introducing Korejet Archival Matte Fine Art Paper, your portal to enduring and exquisite prints",
-      "Enhance your art and photography with the unmatched grace of Korejet Archival Matte Fine Art Paper",
-      "Go to Online Store"
+      "Enhance your art and photography with the unmatched grace of Korejet Archival Matte Fine Art Paper"
     ],
     "specs": {
       "printWidth": "230"
@@ -691,8 +674,7 @@
     "image": "/images/products/keplertech/Korejet_Artistic_Polycotton_Canvas_Matte_390_GSM_0ac1c30d.webp",
     "description": "Introducing the Korejet Artistic Polycotton Canvas Matte 390 GSM – a masterpiece in canvas printing. This premium canvas material combines the durability of polycotton with a luxurious matte finish, boasting a substantial 390 grams per square meter weight for exceptional quality. Perfect for artists...",
     "features": [
-      "Introducing the Korejet Artistic Polycotton Canvas Matte 390 GSM – a masterpiece in canvas printing",
-      "Go to Online Store"
+      "Introducing the Korejet Artistic Polycotton Canvas Matte 390 GSM – a masterpiece in canvas printing"
     ],
     "specs": {
       "printWidth": "390"
@@ -708,10 +690,9 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/Korejet_Artistic_Polycotton_Canvas_Satin_390_GSM_710fa862.webp",
-    "description": "Introducing the Korejet Artistic Polycotton Canvas Satin 390 GSM – your premium canvas for bringing your artistic visions to life. With a substantial weight of 390 GSM,  this canvas ensures both durability and a robust texture that adds depth to your artwork. It’s expertly crafted from a high-qualit...",
+    "description": "Introducing the Korejet Artistic Polycotton Canvas Satin 390 GSM – your premium canvas for bringing your artistic visions to life. With a substantial weight of 390 GSM, this canvas ensures both durability and a robust texture that adds depth to your artwork. It’s expertly crafted from a high-qualit...",
     "features": [
-      "Elevate your artistry with this exceptional canvas, and watch your creativity flourish",
-      "Go to Online Store"
+      "Elevate your artistry with this exceptional canvas, and watch your creativity flourish"
     ],
     "specs": {
       "printWidth": "390"
@@ -729,8 +710,7 @@
     "image": "/images/products/keplertech/Korejet_Eco-Solvent_Polycotton_Inkjet_Matte_Canvas_390_GSM_fe27a1ee.webp",
     "description": "Unleash your creative potential with the Korejet Polycotton Inkjet Matte Canvas! This exceptional canvas combines durability with stunning visual appeal, making it the ultimate choice for artists and photographers looking to bring their artistic visions to life. Meticulously crafted from top-quality...",
     "features": [
-      "Unleash your creative potential with the Korejet Polycotton Inkjet Matte Canvas",
-      "Go to Online Store"
+      "Unleash your creative potential with the Korejet Polycotton Inkjet Matte Canvas"
     ],
     "specs": {
       "printWidth": "390"
@@ -748,8 +728,7 @@
     "image": "/images/products/keplertech/Korejet_Metallic_Gloss_Photo_Paper_260_GSM_42748410.webp",
     "description": "Introducing Korejet Metallic Glossy Photo Paper 260 GSM – Your Gateway to Vibrant MemoriesTransform your cherished memories into vivid masterpieces with Korejet Metallic Glossy Photo Paper 260 GSM. Elevate your photo printing experience with our premium heavyweight paper, designed to infuse your ima...",
     "features": [
-      "Choose Korejet Metallic Glossy Photo Paper 260 GSM and let your memories shine with brilliance",
-      "Go to Online Store"
+      "Choose Korejet Metallic Glossy Photo Paper 260 GSM and let your memories shine with brilliance"
     ],
     "specs": {
       "printWidth": "260"
@@ -768,8 +747,7 @@
     "description": "Introducing the Korejet Premium Glossy Photo Paper 260 gsm—the ultimate choice for transforming your digital images into tangible works of art. This exceptional photo paper sets a new standard in printing, ensuring that your pictures are brought to life with stunning detail and brilliant, true-to-li...",
     "features": [
       "results and robust construction make this photo paper ideal for framing",
-      "Choose excellence; choose Korejet for a photo printing experience that truly stands out",
-      "Go to Online Store"
+      "Choose excellence; choose Korejet for a photo printing experience that truly stands out"
     ],
     "specs": {
       "printWidth": "260"
@@ -786,9 +764,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Korejet_Premium_Luster_Photo_Paper_260GSM_bec7f31a.webp",
     "description": "Introducing the Korejet Premium Luster Photo Paper 260gsm—your gateway to transforming cherished memories into stunning, professional-quality prints. Meticulously crafted with precision and passion, this high-grade photo paper is meticulously designed to elevate your photography to a whole new level...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "type": "Other"
     },
@@ -804,9 +780,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/Korejet_Pro_Luster_Large_Format_Photo_Paper_250_GSM_478339b0.webp",
     "description": "Introducing the Korejet Pro Luster Large Format Photo Paper, a premium choice for photography enthusiasts and professionals alike. This high-quality large format media, boasting a substantial 250 GSM weight, ensures your prints exhibit exceptional vibrancy and detail. The luster finish strikes a per...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "250"
     },
@@ -821,11 +795,10 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_15_Olmec_Fine_Art_Soft_White_Cotton_275gsm_092c047a.webp",
-    "description": "This fine art paper has a luxurious feel due to its high white color and 25% cotton content. Its surface is slightly textured and it is fully archival.Go to Online Store",
+    "description": "This fine art paper has a luxurious feel due to its high white color and 25% cotton content. Its surface is slightly textured and it is fully archival.",
     "features": [
       "This fine art paper has a luxurious feel due to its high white color and 25% cotton content",
-      "Its surface is slightly textured and it is fully archival",
-      "Go to Online Store"
+      "Its surface is slightly textured and it is fully archival"
     ],
     "specs": {
       "printWidth": "15"
@@ -841,10 +814,9 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_59_Olmec_Photo_Lustre_Heavyweight_260gsm_d92561df.webp",
-    "description": "The stippled luster surface of this inkjet photo paper coated with ultra white resin produces high-quality images. The coating is microporous, dries instantly upon printing, and is resistant to water.Go to Online Store",
+    "description": "The stippled luster surface of this inkjet photo paper coated with ultra white resin produces high-quality images. The coating is microporous, dries instantly upon printing, and is resistant to water.",
     "features": [
-      "The coating is microporous, dries instantly upon printing, and is resistant to water",
-      "Go to Online Store"
+      "The coating is microporous, dries instantly upon printing, and is resistant to water"
     ],
     "specs": {
       "printWidth": "59"
@@ -860,10 +832,9 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_60_Olmec_Photo_Gloss_Heavyweight_260gsm_3d239c55.webp",
-    "description": "On its smooth and highly glossy surface, this inkjet photo paper with a resin coating delivers exceptional image quality. It features a dry-to-the-touch and water-resistant microporous coating when printed.Go to Online Store",
+    "description": "On its smooth and highly glossy surface, this inkjet photo paper with a resin coating delivers exceptional image quality. It features a dry-to-the-touch and water-resistant microporous coating when printed.",
     "features": [
-      "It features a dry-to-the-touch and water-resistant microporous coating when printed",
-      "Go to Online Store"
+      "It features a dry-to-the-touch and water-resistant microporous coating when printed"
     ],
     "specs": {
       "printWidth": "60"
@@ -881,8 +852,7 @@
     "image": "/images/products/keplertech/OLM_61_Olmec_Photo_Satin_Heavyweight_260gsm_6f902472.webp",
     "description": "Our inkjet photo paper with a resin coating is ultra white and boasts a smooth satin surface that ensures high-quality images. The paper’s microporous coating dries quickly upon printing and is resistant to water. It offers a subtle finish while maintaining the same vivid colors and tonal range as o...",
     "features": [
-      "The paper’s microporous coating dries quickly upon printing and is resistant to water",
-      "downloadGo to Online Store"
+      "The paper’s microporous coating dries quickly upon printing and is resistant to water"
     ],
     "specs": {
       "printWidth": "61"
@@ -898,10 +868,8 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_68_Olmec_Photo_Lustre_Lightweight_190gsm_537debf7.webp",
-    "description": "The softly stippled lustre surface of this resin coated inkjet photo paper ensures excellent image quality with its bright white color.Go to Online Store",
-    "features": [
-      "Go to Online Store"
-    ],
+    "description": "The softly stippled lustre surface of this resin coated inkjet photo paper ensures excellent image quality with its bright white color.",
+    "features": [],
     "specs": {
       "printWidth": "68"
     },
@@ -919,8 +887,7 @@
     "description": "This inkjet photo paper is of high quality and has a resin coating that gives it a luxurious and ultra-white appearance. Its surface is slightly textured, which adds a subtle silky sheen to your image. It has a microporous coating and dries quickly upon printing, making it water-resistant.Go to Onli...",
     "features": [
       "Its surface is slightly textured, which adds a subtle silky sheen to your image",
-      "It has a microporous coating and dries quickly upon printing, making it water-resistant",
-      "Go to Online Store"
+      "It has a microporous coating and dries quickly upon printing, making it water-resistant"
     ],
     "specs": {
       "printWidth": "70"
@@ -936,10 +903,9 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_71_Olmec_Photo_Metallic_Gloss_260gsm_f481b38c.webp",
-    "description": "The inkjet photo paper is coated with bright white resin and has a smooth gloss microporous coating that provides excellent color saturation, gamut, and D-max. It also features a pearlescent metallic finish.Go to Online Store",
+    "description": "The inkjet photo paper is coated with bright white resin and has a smooth gloss microporous coating that provides excellent color saturation, gamut, and D-max. It also features a pearlescent metallic finish.",
     "features": [
-      "It also features a pearlescent metallic finish",
-      "Go to Online Store"
+      "It also features a pearlescent metallic finish"
     ],
     "specs": {
       "printWidth": "71"
@@ -955,10 +921,9 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/OLM_72_Olmec_Photo_Metallic_Luster_260gsm_61b14a0a.webp",
-    "description": "The inkjet photo paper is coated with bright white resin and has a metallic finish that shimmers. It also has a slightly stippled microporous coating with a lustre that enhances color saturation, gamut, and D-max.Go to Online Store",
+    "description": "The inkjet photo paper is coated with bright white resin and has a metallic finish that shimmers. It also has a slightly stippled microporous coating with a lustre that enhances color saturation, gamut, and D-max.",
     "features": [
-      "The inkjet photo paper is coated with bright white resin and has a metallic finish that shimmers",
-      "Go to Online Store"
+      "The inkjet photo paper is coated with bright white resin and has a metallic finish that shimmers"
     ],
     "specs": {
       "printWidth": "72"
@@ -976,8 +941,7 @@
     "image": "/images/products/keplertech/S042306_Epson_Cold_Press_Natural_Paper_60x50_88e534b7.webp",
     "description": "The Epson Cold Press Natural Paper is a premium quality printing paper that produces exceptional color and detail in fine art prints. With a natural, textured surface and better GSM, this paper is acid-free and pH-neutral, ensuring long-lasting prints. It is compatible with both dye and pigment-base...",
     "features": [
-      "It is compatible with both dye and pigment-based inkjet printers",
-      "Go to Online Store"
+      "It is compatible with both dye and pigment-based inkjet printers"
     ],
     "specs": {
       "printWidth": "306"
@@ -994,9 +958,7 @@
     "type": "Media",
     "image": "/images/products/keplertech/S042326_Epson_Hot_Press_Natural_Paper_60x50_a6f4f8e3.webp",
     "description": "The Epson Hot Press Natural Paper is a premium-quality fine art paper designed for high-quality prints. It has a natural, uncoated finish and a smooth surface perfect for printing detailed and precise images. Made from 100% cotton, this heavyweight paper is durable and long-lasting, making it ideal...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "printWidth": "326"
     },
@@ -1011,11 +973,11 @@
     "category": "Inkjet Media",
     "type": "Media",
     "image": "/images/products/keplertech/S045153_Epson_CrystalClear_Film_Roll_44_X_100_97684a42.webp",
-    "description": "Experience stunning clarity with the Epson CrystalClear Film Roll. Ideal for overlays and packaging, its polyester base ensures vibrant color reproduction with Epson UltraChrome inks.Gloss Finish4.5 mil Thickness11% OpacityPolyester BaseGo to Online Store",
+    "description": "Experience stunning clarity with the Epson CrystalClear Film Roll. Ideal for overlays and packaging, its polyester base ensures vibrant color reproduction with Epson UltraChrome inks.Gloss Finish4.5 mil Thickness11% OpacityPolyester Base",
     "features": [
       "Experience stunning clarity with the Epson CrystalClear Film Roll",
       "Gloss Finish4",
-      "5 mil Thickness11% OpacityPolyester BaseGo to Online Store"
+      "5 mil Thickness11% OpacityPolyester Base"
     ],
     "specs": {
       "printWidth": "153"
@@ -1033,8 +995,7 @@
     "image": "/images/products/keplertech/SP91204_Epson_Somerset_Velvet_44x50_7fa6d1de.webp",
     "description": "Epson Somerset Velvet paper is a premium quality fine art paper designed for professional artists and photographers. With a weight of 255GSM, a velvet surface texture, and archival quality, it is ideal for producing high-quality, long-lasting prints. It is perfect for fine art reproduction, portrait...",
     "features": [
-      "It is perfect for fine art reproduction, portraits, and exhibition prints",
-      "Go to Online Store"
+      "It is perfect for fine art reproduction, portraits, and exhibition prints"
     ],
     "specs": {
       "printWidth": "204"
@@ -1855,7 +1816,7 @@
     "category": "Office Printer",
     "type": "Home",
     "image": "/images/products/epson_africa/Epson_EcoTank_Home_L3366_e694d414.webp",
-    "description": "Epson EcoTank Home  L3366 — EcoTank inkjet printer with refillable ink tanks for ultra-low cost printing.",
+    "description": "Epson EcoTank Home L3366 — EcoTank inkjet printer with refillable ink tanks for ultra-low cost printing.",
     "features": [
       "EcoTank integrated ink tanks for ultra-low cost printing",
       "Up to 3 years of ink included in the box",
@@ -4661,11 +4622,11 @@
     "description": "Epson WorkForce AM-C400 A4 Multifunctional Printer is a smart, performance-driven A4 printer built for busy office environments that require speed, efficiency, and reliability. As a trusted Epson business printer, it works as a full-featured A4 multifunction printer, combining printing, scanning, an...",
     "features": [
       "PrecisionCore Heat-Free TechnologyUser-Friendly 10",
-      "1″ Color TouchscreenENERGY STAR® qualifiedGo to Online Store",
-      "ENERGY STAR® qualifiedGo to Online Store"
+      "1″ Color TouchscreenENERGY STAR® qualified",
+      "ENERGY STAR® qualified"
     ],
     "specs": {
-      "printSpeed": "40 ISO PPMFirst Page Out Time (FPOT) 6.4 sec.Epson DURABrite® Pro InkPrecisionCore Heat-Free TechnologyUser-Friendly 10.1″ Color TouchscreenENERGY STAR® qualifiedGo to Online Store",
+      "printSpeed": "40 ISO PPMFirst Page Out Time (FPOT) 6.4 sec.Epson DURABrite® Pro InkPrecisionCore Heat-Free TechnologyUser-Friendly 10.1″ Color TouchscreenENERGY STAR® qualified",
       "printWidth": "400"
     },
     "inStock": true,
@@ -4812,11 +4773,11 @@
     "image": "/images/products/keplertech/Epson_WorkForce_Enterprise_AM-C5000_Printer_5b69b1fc.webp",
     "description": "Epson WorkForce Enterprise AM-C5000 is a next-generation business printer that delivers high-speed performance with exceptional energy efficiency, making it a reliable office printer for modern workplaces. With its compact design and modular flexibility, this advanced photocopier machine adapts seam...",
     "features": [
-      "600 x 2400 dpiENERGY STAR® QualifiedGo to Online Store",
-      "ENERGY STAR® QualifiedGo to Online Store"
+      "600 x 2400 dpiENERGY STAR® Qualified",
+      "ENERGY STAR® Qualified"
     ],
     "specs": {
-      "printSpeed": "50 ISO ppm† (black/color)PrecisionCore Heat-Free 4-color (CMYK)Maximum Print Resolution 600 x 2400 dpiENERGY STAR® QualifiedGo to Online Store",
+      "printSpeed": "50 ISO ppm† (black/color)PrecisionCore Heat-Free 4-color (CMYK)Maximum Print Resolution 600 x 2400 dpiENERGY STAR® Qualified",
       "resolution": "600 x 2400 dpi"
     },
     "inStock": true,
@@ -4976,7 +4937,7 @@
       "PrecisionCore Heat-Free Technology"
     ],
     "specs": {
-      "printSpeed": "75 ppm4-in-1 multifunction printerHeat-Free Technology for low energy useHigh-yield cartridgesSecure printing & professional finishing optionsReliable office printer for high-volume useGo to Online Store",
+      "printSpeed": "75 ppm4-in-1 multifunction printerHeat-Free Technology for low energy useHigh-yield cartridgesSecure printing & professional finishing optionsReliable office printer for high-volume use",
       "printWidth": "750"
     },
     "inStock": true,
@@ -5462,9 +5423,7 @@
     "type": "Multifunction",
     "image": "/images/products/keplertech/Epson_WorkForce_Pro_WF-C579R_DTWF_Multifunction_Printer_79182945.webp",
     "description": "The WorkForce Pro WF-C579R network MFP is a strong and effective machine that would be suitable for companies that need fast speeds and high-quality color printing. It is a cost-effective option for businesses because of its Replaceable Ink Pack System (RIPS) with additional high-capacity packs, whi...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "type": "Other"
     },
@@ -7335,8 +7294,7 @@
     "description": "The Epson SC-P8000 is a wide-format printer designed for photo, fine art, and premium poster production. It supports a wide range of standard and specialist media in roll and sheet formats and uses a PrecisionCore Thin Film (TFP) head with variable-sized droplet technology to produce high-resolution...",
     "features": [
       "The cartridges come in sizes to suit various levels of use and cost-per-print requirements",
-      "A SpectroProofer (ILS30) is available for precision color management and ISO standard proofing work",
-      "Go to Online Store"
+      "A SpectroProofer (ILS30) is available for precision color management and ISO standard proofing work"
     ],
     "specs": {
       "printWidth": "000"
@@ -8046,7 +8004,7 @@
       "24-inch professional photo printerPrecisionCore MicroTFP print headPrinting speed up to 18m2/hr"
     ],
     "specs": {
-      "printSpeed": "18m2/hr. in photo quality6-colour UltraChrome Pro6 pigment ink setEpson Cloud Solutions PORT12 month On-site warrantyGo to Online Store"
+      "printSpeed": "18m2/hr. in photo quality6-colour UltraChrome Pro6 pigment ink setEpson Cloud Solutions PORT"
     },
     "inStock": true,
     "featured": false,
@@ -8136,7 +8094,7 @@
     "description": "Epson SureColor SC-P6500E Printer is a professional photo printer designed for unmatched photo printing performance. This high quality large format printer features advanced 6-color technology that rivals 8-color systems, making it the best printer for photographers who demand precision and vibrant...",
     "features": [
       "PrecisionCore™ Micro TFP print headNumber of colors: 6Prints up to 18 m2/hr",
-      "in photo qualityEpson Cloud Solutions PORTGo to Online Store"
+      "in photo qualityEpson Cloud Solutions PORT"
     ],
     "specs": {
       "type": "Other"
@@ -8388,8 +8346,7 @@
     "image": "/images/products/keplertech/Epson_SureColor_SC-P7500_24_Printer_Spectro_f17f6380.webp",
     "description": "12-color photo printer: This 24-inch big format printer provides great quality and versatility in a wide range of applications. Epson’s first 12-color large-format printer has a wide color gamut and 99% Pantone coverage. The SureColor SC-P7500 (24-inch) was developed for artists and photographers be...",
     "features": [
-      "Epson’s first 12-color large-format printer has a wide color gamut and 99% Pantone coverage",
-      "Go to Online Store"
+      "Epson’s first 12-color large-format printer has a wide color gamut and 99% Pantone coverage"
     ],
     "specs": {
       "printWidth": "500"
@@ -14698,7 +14655,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS_6500N_Color_Document_Scanner_bd5ba824.webp",
-    "description": "Epson WorkForce WF DS 6500N Color Document Scanner is a powerful and reliable Epson Business Scanner designed to meet the daily document processing needs of modern offices in Dubai and UAE. This high-performance business scanner functions as a fast and efficient document scanner, delivering consiste...",
+    "description": "Epson WorkForce WF DS 6500N Color Document Scanner is a powerful and reliable Epson Business Scanner designed to meet the daily document processing needs of modern offices. This high-performance business scanner functions as a fast and efficient document scanner, delivering consiste...",
     "features": [
       "25 pages per minute or 50 images per minute"
     ],
@@ -14753,7 +14710,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-30000_Large-Format_Document_Scanner_2e2da289.webp",
-    "description": "Epson WorkForce WF DS-30000 Large-Format Document Scanner is a high-performance Epson business scanner built for fast, reliable A3 scanning in busy office environments of Dubai, UAE. This advanced sheetfed scanner delivers impressive speeds of up to 70 ppm or 140 ipm at 200 or 300 dpi, ensuring smoo...",
+    "description": "Epson WorkForce WF DS-30000 Large-Format Document Scanner is a high-performance Epson business scanner built for fast, reliable A3 scanning in busy office environments. This advanced sheetfed scanner delivers impressive speeds of up to 70 ppm or 140 ipm at 200 or 300 dpi, ensuring smoo...",
     "features": [
       "(ADF): 600 DPI x 600 DPI (Horizontal x Vertical)Categor",
       "70 ppm or 140 ipm at 200 or 300 dpi"
@@ -14832,7 +14789,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-410_Document_Scanner_92c38c63.webp",
-    "description": "Epson WorkForce WF DS-410 Document Scanner is a compact and efficient Epson business scanner designed for modern Dubai offices that need a reliable, high-speed document scanner for daily workloads. This versatile Epson sheet-fed scanner combines advanced image enhancement, paper protection technolog...",
+    "description": "Epson WorkForce WF DS-410 Document Scanner is a compact and efficient Epson business scanner designed for modern offices that need a reliable, high-speed document scanner for daily workloads. This versatile Epson sheet-fed scanner combines advanced image enhancement, paper protection technolog...",
     "features": [
       "26-ppm performance"
     ],
@@ -14896,7 +14853,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-60000N_Color_Document_Scanner_d77eb606.webp",
-    "description": "Epson WorkForce WF DS-60000N Color Document Scanner is a high-performance A3 document scanner built for seamless efficiency in professional environments of Dubai businesses. With a fast scanning speed of up to 40 pages per minute, this high-speed document scanner ensures smooth, uninterrupted workfl...",
+    "description": "Epson WorkForce WF DS-60000N Color Document Scanner is a high-performance A3 document scanner built for seamless efficiency in professional business environments. With a fast scanning speed of up to 40 pages per minute, this high-speed document scanner ensures smooth, uninterrupted workfl...",
     "features": [
       "600 DPI x 600 DPI (Horizontal x Vertical)Light",
       "40 pages per minute"
@@ -14934,7 +14891,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-70_Business_Scanner_0470227f.webp",
-    "description": "Epson WorkForce WF DS-70 Business Scanner is a compact and ultra-lightweight portable document scanner built for modern business professionals in Dubai who need mobility and speed. This Epson DS-70 scanner is one of the smallest single-page scanners in its class, capable of scanning a full page in j...",
+    "description": "Epson WorkForce WF DS-70 Business Scanner is a compact and ultra-lightweight portable document scanner built for modern business professionals who need mobility and speed. This Epson DS-70 scanner is one of the smallest single-page scanners in its class, capable of scanning a full page in j...",
     "features": [
       "USB with no need for batteries",
       "5″ x 72″",
@@ -14957,7 +14914,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-70000_Color_Document_Scanner_6645815c.webp",
-    "description": "The Epson WorkForce WF DS-70000 Color Document Scanner is a dependable office document scanner designed for businesses in Dubai and the UAE that handle large volumes of paperwork daily. As a professional Epson A3 scanner, it supports fast, smooth scanning of oversized documents while maintaining con...",
+    "description": "The Epson WorkForce WF DS-70000 Color Document Scanner is a dependable office document scanner designed for businesses that handle large volumes of paperwork daily. As a professional Epson A3 scanner, it supports fast, smooth scanning of oversized documents while maintaining con...",
     "features": [
       "70 ppm",
       "ENERGY STAR QualifiedWa"
@@ -14977,7 +14934,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-70000N_Color_Document_Scanner_fb69a681.webp",
-    "description": "The Epson WorkForce WF DS-70000N Color Document Scanner is a powerful A3 document scanner built for fast, reliable, and high-volume performance. Designed for demanding business environments in Dubai and the UAE, this high-speed document scanner delivers up to 70 ppm and 140 ipm, making it a dependab...",
+    "description": "The Epson WorkForce WF DS-70000N Color Document Scanner is a powerful A3 document scanner built for fast, reliable, and high-volume performance. Designed for demanding business environments, this high-speed document scanner delivers up to 70 ppm and 140 ipm, making it a dependab...",
     "features": [
       "70 ppm and 140 ipm"
     ],
@@ -15013,7 +14970,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-7500_Color_Document_Scanner_55f715a4.webp",
-    "description": "Epson WorkForce WF DS-7500 Color Document Scanner is a powerful and dependable Epson WorkForce document scanner built for high-speed A4 scanning in busy office environments of Dubai and UAE. Designed as a robust sheetfed document scanner, the ADF scanner ensures smooth operation with its reliable Do...",
+    "description": "Epson WorkForce WF DS-7500 Color Document Scanner is a powerful and dependable Epson WorkForce document scanner built for high-speed A4 scanning in busy office environments. Designed as a robust sheetfed document scanner, the ADF scanner ensures smooth operation with its reliable Do...",
     "features": [
       "40 pages per minuteOne",
       "Scanning speeds up to 40 pages per minuteOne-pass duplex scanningDouble Feed Detection100-p"
@@ -15032,7 +14989,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-7500N_Color_Document_Scanner_6c4a2dc2.webp",
-    "description": "Epson WorkForce WF DS-7500N Color Document Scanner is a powerful, high-speed document scanner designed to meet the productivity demands of modern offices in Dubai and Middle East. As a dependable Epson Business Scanner, it delivers impressive scanning speeds of up to 40 pages per minute (80 images p...",
+    "description": "Epson WorkForce WF DS-7500N Color Document Scanner is a powerful, high-speed document scanner designed to meet the productivity demands of modern offices. As a dependable Epson Business Scanner, it delivers impressive scanning speeds of up to 40 pages per minute (80 images p...",
     "features": [
       "40 pages per minute",
       "Designed for shared office environments, the Network Interface Pane"
@@ -15089,7 +15046,7 @@
     "category": "Scanner",
     "type": "Portable",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-80W_Wireless_Portable_Scanner_34fc895a.webp",
-    "description": "Epson WorkForce WF DS-80W Wireless Portable Scanner is a powerful and reliable solution for professionals in Dubai who need fast, flexible scanning wherever they work. This Epson DS-80W scanner combines the convenience of a wireless portable scanner with the performance of a high-speed portable scan...",
+    "description": "Epson WorkForce WF DS-80W Wireless Portable Scanner is a powerful and reliable solution for professionals who need fast, flexible scanning wherever they work. This Epson DS-80W scanner combines the convenience of a wireless portable scanner with the performance of a high-speed portable scan...",
     "features": [
       "Wi-Fi and USB auto-switchingPower: USB-powered or built-",
       "USB modes allows uninterrupted operation"
@@ -15108,7 +15065,7 @@
     "category": "Scanner",
     "type": "Document Scanner",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_DS-870_Color_Duplex_Document_Scanner_6d357f13.webp",
-    "description": "Epson WorkForce WF DS-870 Color Duplex Document Scanner is a powerful, high-speed business scanner designed to handle demanding workloads with unmatched efficiency for Dubai offices. Featuring an impressive 65 ppm / 130 ipm duplex scanning speed and a 100-sheet Automatic Document Feeder (ADF), this...",
+    "description": "Epson WorkForce WF DS-870 Color Duplex Document Scanner is a powerful, high-speed business scanner designed to handle demanding workloads with unmatched efficiency offices. Featuring an impressive 65 ppm / 130 ipm duplex scanning speed and a 100-sheet Automatic Document Feeder (ADF), this...",
     "features": [
       "600 x 600 DPI fo",
       "and compatibility with TWAIN",
@@ -15149,10 +15106,10 @@
     "category": "Scanner",
     "type": "Wireless",
     "image": "/images/products/keplertech/Epson_WorkForce_WF_ES-500WII_Wireless_Duplex_Document_Scanner_963fe982.webp",
-    "description": "Epson WorkForce WF ES-500WII Wireless Duplex Document Scanner is a high-speed sheetfed document scanner designed for efficient double-sided scanning in a compact A4 format suitable for fast paced Dubai Businesses. The Epson document scanner allows seamless scanning directly to your smartphone, table...",
+    "description": "Epson WorkForce WF ES-500WII Wireless Duplex Document Scanner is a high-speed sheetfed document scanner designed for efficient double-sided scanning in a compact A4 format suitable for fast paced businesses. The Epson document scanner allows seamless scanning directly to your smartphone, table...",
     "features": [
       "35 pages per minute",
-      "A4 format suitable for fast paced Dubai Businesses"
+      "A4 format suitable for fast paced businesses"
     ],
     "specs": {
       "type": "Other"
@@ -15173,7 +15130,7 @@
       "options support network",
       "USB scanning",
       "The responsive 10",
-      "9 cm color LCD touchscreenGo to Online Store"
+      "9 cm color LCD touchscreen"
     ],
     "specs": {
       "type": "Other"
@@ -17688,7 +17645,7 @@
     "image": "/images/products/keplertech/C13T02S100_Epson_WorkForce_Enterprise_WF-C20750_Black_Ink_2ead3649.webp",
     "description": "The Epson C13T02S100 black ink cartridge is a premium ink cartridge designed for use with the WorkForce Enterprise WF-C20750 printer. This ink cartridge is perfect for individuals and businesses that need to print a lot, with a page yield of up to 50,000 pages. It has a high-capacity design for long...",
     "features": [
-      "Original Epson ConsumableColor: BlackSKU: C13T02S100Global delivery is available*Go to Online Store"
+      "Original Epson ConsumableColor: BlackSKU: C13T02S100"
     ],
     "specs": {
       "printWidth": "100"
@@ -17706,7 +17663,7 @@
     "image": "/images/products/keplertech/C13T02S200_Epson_WorkForce_Enterprise_WF-C20750_Cyan_Ink_07c8a378.webp",
     "description": "Epson C13T02S200 Cyan ink cartridge is a premium ink cartridge designed for use with the WorkForce Enterprise WF-C20750 printer. This ink cartridge is perfect for individuals and businesses that need to print a lot, with a page yield of up to 50,000 pages. It has a high-capacity design for longer us...",
     "features": [
-      "Original Epson ConsumableColor: CyanSKU: C13T02S200Global delivery is available*Go to Online Store"
+      "Original Epson ConsumableColor: CyanSKU: C13T02S200"
     ],
     "specs": {
       "printWidth": "200"
@@ -18023,7 +17980,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T08G200_Epson_WorkForce_AM-C5000_C6000_Cyan_Ink_05233b3a.webp",
-    "description": "Epson C13T08G200 Cyan Ink – Vivid Color for WorkForce Enterprise Printers.Original Epson consumable for AM-C5000/C6000 seriesDelivers vibrant, professional-quality cyan printsEnsures consistent, high-performance outputIdeal for high-volume business printingSKU: C13T08G200Global delivery available*Go...",
+    "description": "Epson C13T08G200 Cyan Ink – Vivid Color for WorkForce Enterprise Printers.Original Epson consumable for AM-C5000/C6000 seriesDelivers vibrant, professional-quality cyan printsEnsures consistent, high-performance outputIdeal for high-volume business printingSKU: C13T08G200Go...",
     "features": [
       "Epson C13T08G200 Cyan Ink – Vivid Color for WorkForce Enterprise Printers"
     ],
@@ -18077,7 +18034,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T08H100_Epson_WorkForce_Enterprise_AM-C4000_Black_Ink_e75abb1f.webp",
-    "description": "Epson C13T08H100 Black Ink – High-Performance Printing for AM-C4000.Genuine Epson black ink for WorkForce Enterprise AM-C4000Ensures superior print clarity and reliabilityOptimized for high-volume business printingEasy installation and consistent performanceSKU: C13T08H100Global delivery available*G...",
+    "description": "Epson C13T08H100 Black Ink – High-Performance Printing for AM-C4000.Genuine Epson black ink for WorkForce Enterprise AM-C4000Ensures superior print clarity and reliabilityOptimized for high-volume business printingEasy installation and consistent performanceSKU: C13T08H100G...",
     "features": [
       "Epson C13T08H100 Black Ink – High-Performance Printing for AM-C4000"
     ],
@@ -18806,9 +18763,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J140_Epson_Singlepack_Photo_Black_UltraChrome_PRO12_700ml_9b17b1d7.webp",
-    "description": "High-Performance Photo Black Ink for Large-Format Printing in Dubai.Genuine Epson UltraChrome PRO 12 ink for precision and reliabilityHigh-capacity 700ml cartridge for extended print runsPigment-based formula for fade-resistant, archival printsSuitable for professional photo, fine art, and presentat...",
+    "description": "High-Performance Photo Black Ink for Large-Format Printing.Genuine Epson UltraChrome PRO 12 ink for precision and reliabilityHigh-capacity 700ml cartridge for extended print runsPigment-based formula for fade-resistant, archival printsSuitable for professional photo, fine art, and presentat...",
     "features": [
-      "High-Performance Photo Black Ink for Large-Format Printing in Dubai"
+      "High-Performance Photo Black Ink for Large-Format Printing"
     ],
     "specs": {
       "printWidth": "140"
@@ -18824,9 +18781,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J240_Epson_Singlepack_Cyan_UltraChrome_PRO12_700ml_Ink_3b90b1db.webp",
-    "description": "Epson T44J240 Cyan Ink – Premium Large-Format Printing Solution in Dubai.Original Epson UltraChrome PRO 12 inkVivid Cyan color for precision color outputLarge 700ml cartridge ideal for commercial usePigment-based for archival-quality, fade-resistant printsCompatible with select Epson large-format pr...",
+    "description": "Epson T44J240 Cyan Ink – Premium Large-Format Printing Solution.Original Epson UltraChrome PRO 12 inkVivid Cyan color for precision color outputLarge 700ml cartridge ideal for commercial usePigment-based for archival-quality, fade-resistant printsCompatible with select Epson large-format pr...",
     "features": [
-      "Epson T44J240 Cyan Ink – Premium Large-Format Printing Solution in Dubai"
+      "Epson T44J240 Cyan Ink – Premium Large-Format Printing Solution"
     ],
     "specs": {
       "printWidth": "240"
@@ -18842,9 +18799,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J340_Epson_Singlepack_Vivid_Magenta_UltraChrome_PRO12_700ml_0abb49b1.webp",
-    "description": "Premium Vivid Magenta Ink for Professional Large-Format Printing in Dubai.Genuine Epson UltraChrome PRO 12 ink cartridgeRich Vivid Magenta for vibrant, professional-grade outputLong-lasting pigment ink—up to 400 years in black & white archival storageLarge 700ml capacity for high-volume printingIdea...",
+    "description": "Premium Vivid Magenta Ink for Professional Large-Format Printing.Genuine Epson UltraChrome PRO 12 ink cartridgeRich Vivid Magenta for vibrant, professional-grade outputLong-lasting pigment ink—up to 400 years in black & white archival storageLarge 700ml capacity for high-volume printingIdea...",
     "features": [
-      "Premium Vivid Magenta Ink for Professional Large-Format Printing in Dubai"
+      "Premium Vivid Magenta Ink for Professional Large-Format Printing"
     ],
     "specs": {
       "printWidth": "340"
@@ -18860,9 +18817,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J440_Epson_Singlepack_Yellow_UltraChrome_PRO_12_700ml_Ink_2e198fbf.webp",
-    "description": "Epson T44J440 Yellow Ink – High-Performance Ink for Precision Printing in Dubai.Genuine Epson UltraChrome PRO 12 InkColor: YellowLarge 700ml capacity for high-volume printingIdeal for professional, archival, and presentation printsCompatible with select Epson large-format printersSKU: C13T44J440Fast...",
+    "description": "Epson T44J440 Yellow Ink – High-Performance Ink for Precision Printing.Genuine Epson UltraChrome PRO 12 InkColor: YellowLarge 700ml capacity for high-volume printingIdeal for professional, archival, and presentation printsCompatible with select Epson large-format printersSKU: C13T44J440Fast...",
     "features": [
-      "Epson T44J440 Yellow Ink – High-Performance Ink for Precision Printing in Dubai"
+      "Epson T44J440 Yellow Ink – High-Performance Ink for Precision Printing"
     ],
     "specs": {
       "printWidth": "440"
@@ -18878,9 +18835,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J540_Epson_Singlepack_Light_Cyan_UltraChrome_PRO12_700ml_dff40770.webp",
-    "description": "High-Quality Light Cyan Ink for Large-Format Epson Printers Dubai.Genuine Epson UltraChrome PRO 12 InkColor: Light Cyan – Ideal for photo and fine art printingHigh-capacity 700ml for extended productivityPigment-based for fade-resistant archival quality (up to 400 years B/W longevity*)Compatible wit...",
+    "description": "High-Quality Light Cyan Ink for Large-Format Epson Printers.Genuine Epson UltraChrome PRO 12 InkColor: Light Cyan – Ideal for photo and fine art printingHigh-capacity 700ml for extended productivityPigment-based for fade-resistant archival quality (up to 400 years B/W longevity*)Compatible wit...",
     "features": [
-      "High-Quality Light Cyan Ink for Large-Format Epson Printers Dubai"
+      "High-Quality Light Cyan Ink for Large-Format Epson Printers"
     ],
     "specs": {
       "printWidth": "540"
@@ -18896,9 +18853,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J640_Epson_Singlepack_Vivid_Light_Magenta_700ml_Ink_15347e68.webp",
-    "description": "Epson T44J640 Vivid Light Magenta Ink – Premium Print Quality for Professional Use in Dubai.Genuine Epson UltraChrome PRO 12 ink for superior color accuracyVivid Light Magenta – perfect for high-resolution, color-rich printsLong-lasting pigment-based formulationHigh-capacity 700 ml cartridge for eff...",
+    "description": "Epson T44J640 Vivid Light Magenta Ink – Premium Print Quality for Professional Use.Genuine Epson UltraChrome PRO 12 ink for superior color accuracyVivid Light Magenta – perfect for high-resolution, color-rich printsLong-lasting pigment-based formulationHigh-capacity 700 ml cartridge for eff...",
     "features": [
-      "Epson T44J640 Vivid Light Magenta Ink – Premium Print Quality for Professional Use in Dubai"
+      "Epson T44J640 Vivid Light Magenta Ink – Premium Print Quality for Professional Use"
     ],
     "specs": {
       "printWidth": "640"
@@ -18914,9 +18871,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J740_Epson_Singlepack_Gray_UltraChrome_PRO12_700ml_Ink_8a485abe.webp",
-    "description": "Premium Gray Ink Cartridge for High-End Printing in Dubai.Original Epson UltraChrome PRO 12 inkVivid gray tones for superior image depthLong-lasting archival quality – up to 400 years (B/W)Large 700ml capacity for high-volume printingCompatible with select Epson large-format printersSKU: C13T44J740...",
+    "description": "Premium Gray Ink Cartridge for High-End Printing.Original Epson UltraChrome PRO 12 inkVivid gray tones for superior image depthLong-lasting archival quality – up to 400 years (B/W)Large 700ml capacity for high-volume printingCompatible with select Epson large-format printersSKU: C13T44J740...",
     "features": [
-      "Premium Gray Ink Cartridge for High-End Printing in Dubai"
+      "Premium Gray Ink Cartridge for High-End Printing"
     ],
     "specs": {
       "printWidth": "740"
@@ -18932,9 +18889,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J840_Epson_Singlepack_Matte_Black_UltraChrome_PRO12_700ml_Ink_80a30382.webp",
-    "description": "Epson T44J840 Matte Black Ink – Archival-Quality Printing in Dubai.Original Epson UltraChrome PRO 12 InkColor: Matte BlackHigh capacity: 700ml cartridgeSuitable for fine art, photo, and presentation printingPrints last up to 400 years (black and white, with suitable media)Global delivery availableSK...",
+    "description": "Epson T44J840 Matte Black Ink – Archival-Quality Printing.Original Epson UltraChrome PRO 12 InkColor: Matte BlackHigh capacity: 700ml cartridgeSuitable for fine art, photo, and presentation printingPrints last up to 400 years (black and white, with suitable media)SK...",
     "features": [
-      "Epson T44J840 Matte Black Ink – Archival-Quality Printing in Dubai"
+      "Epson T44J840 Matte Black Ink – Archival-Quality Printing"
     ],
     "specs": {
       "printWidth": "840"
@@ -18950,9 +18907,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44J940_Epson_Singlepack_Light_Gray_UltraChrome_PRO12_700ml_Ink_37ef7d57.webp",
-    "description": "Premium Light Gray Ink for Archival & Fine Art Printing in Dubai.Genuine Epson UltraChrome PRO 12 inkLight Gray color for smooth tonal gradationsHigh-capacity 700ml cartridgeIdeal for presentation and fine art printingLong-lasting prints – up to 400 years (B&W with proper mediaSKU: C13T44J940Fast de...",
+    "description": "Premium Light Gray Ink for Archival & Fine Art Printing.Genuine Epson UltraChrome PRO 12 inkLight Gray color for smooth tonal gradationsHigh-capacity 700ml cartridgeIdeal for presentation and fine art printingLong-lasting prints – up to 400 years (B&W with proper mediaSKU: C13T44J940Fast de...",
     "features": [
-      "Premium Light Gray Ink for Archival & Fine Art Printing in Dubai"
+      "Premium Light Gray Ink for Archival & Fine Art Printing"
     ],
     "specs": {
       "printWidth": "940"
@@ -18968,9 +18925,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44JA40_Epson_Singlepack_Orange_UltraChrome_PRO12_700ml_Ink_acd865dc.webp",
-    "description": "High-Quality Orange Ink for Large-Format Epson Printers in Dubai.Genuine Epson UltraChrome PRO 12 ink cartridgeVivid Orange color for enhanced color gamutHigh-capacity 700ml for heavy-duty printingPigment-based ink for archival-quality outputIdeal for presentation, photo, and gallery-grade printsCom...",
+    "description": "High-Quality Orange Ink for Large-Format Epson Printers.Genuine Epson UltraChrome PRO 12 ink cartridgeVivid Orange color for enhanced color gamutHigh-capacity 700ml for heavy-duty printingPigment-based ink for archival-quality outputIdeal for presentation, photo, and gallery-grade printsCom...",
     "features": [
-      "High-Quality Orange Ink for Large-Format Epson Printers in Dubai"
+      "High-Quality Orange Ink for Large-Format Epson Printers"
     ],
     "specs": {
       "printWidth": "40"
@@ -18986,9 +18943,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44JB40_Epson_Singlepack_Green_UltraChrome_PRO12_700ml_Ink_e58f9b21.webp",
-    "description": "Epson T44JB40 UltraChrome PRO 12 Green Ink – Vivid Color for Professional Printing in Dubai.Original Epson green ink cartridgeUltraChrome PRO 12 pigment-based formulaFade-resistant prints lasting up to 400 years (B&W)Large 700ml capacity for high-volume useCompatible with select Epson large-format p...",
+    "description": "Epson T44JB40 UltraChrome PRO 12 Green Ink – Vivid Color for Professional Printing.Original Epson green ink cartridgeUltraChrome PRO 12 pigment-based formulaFade-resistant prints lasting up to 400 years (B&W)Large 700ml capacity for high-volume useCompatible with select Epson large-format p...",
     "features": [
-      "Epson T44JB40 UltraChrome PRO 12 Green Ink – Vivid Color for Professional Printing in Dubai"
+      "Epson T44JB40 UltraChrome PRO 12 Green Ink – Vivid Color for Professional Printing"
     ],
     "specs": {
       "printWidth": "40"
@@ -19022,7 +18979,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q140_Epson_Singlepack_Photo_Black_UltraChrome_PRO12_350ml_26a53c7a.webp",
-    "description": "High-Quality Photo Black Ink for Epson Large-Format Printers – 350ml.Genuine Epson UltraChrome PRO 12 inkColor: Photo BlackHigh-capacity 350ml cartridgeLong-lasting, pigment-based formulaCompatible with large-format Epson printersSKU: C13T44Q140Fast global delivery availableGo to Online Store",
+    "description": "High-Quality Photo Black Ink for Epson Large-Format Printers – 350ml.Genuine Epson UltraChrome PRO 12 inkColor: Photo BlackHigh-capacity 350ml cartridgeLong-lasting, pigment-based formulaCompatible with large-format Epson printersSKU: C13T44Q140",
     "features": [
       "High-Quality Photo Black Ink for Epson Large-Format Printers – 350ml"
     ],
@@ -19058,7 +19015,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q340_Epson_Singlepack_Vivid_Magenta_UltraChrome_PRO12_350ml_a9f5899d.webp",
-    "description": "Epson Vivid Magenta Ink T44Q340-350ml for Professional Large-Format Printing.Original Epson UltraChrome PRO 12 inkColor: Vivid MagentaHigh-capacity 350ml cartridgeLong-lasting pigment-based formulaCompatible with large-format Epson printersSKU: C13T44Q340Global shipping availableGo to Online Store",
+    "description": "Epson Vivid Magenta Ink T44Q340-350ml for Professional Large-Format Printing.Original Epson UltraChrome PRO 12 inkColor: Vivid MagentaHigh-capacity 350ml cartridgeLong-lasting pigment-based formulaCompatible with large-format Epson printersSKU: C13T44Q340",
     "features": [
       "Epson Vivid Magenta Ink T44Q340-350ml for Professional Large-Format Printing"
     ],
@@ -19076,9 +19033,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q440_Epson_Singlepack_Yellow_UltraChrome_PRO12_350ml_Ink_62934491.webp",
-    "description": "Epson Yellow T44Q440 Ink Cartridge 350ml – High-Quality Printing in Dubai.Genuine Epson UltraChrome PRO 12 InkColor: YellowHigh capacity: 350ml for extended usePigment-based for archival-quality printsCompatible with large-format Epson printersSKU: C13T44Q440Trusted global shipping availableGo to On...",
+    "description": "Epson Yellow T44Q440 Ink Cartridge 350ml – High-Quality Printing.Genuine Epson UltraChrome PRO 12 InkColor: YellowHigh capacity: 350ml for extended usePigment-based for archival-quality printsCompatible with large-format Epson printersSKU: C13T44Q440Trusted Go to On...",
     "features": [
-      "Epson Yellow T44Q440 Ink Cartridge 350ml – High-Quality Printing in Dubai"
+      "Epson Yellow T44Q440 Ink Cartridge 350ml – High-Quality Printing"
     ],
     "specs": {
       "printWidth": "440"
@@ -19094,7 +19051,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q540_Epson_Singlepack_Light_Cyan_UltraChrome_PRO12_350ml_33aaef4a.webp",
-    "description": "Epson Light Cyan T44Q540 UltraChrome PRO 12 Ink – 350ml.Original Epson consumablePigment-based for archival qualitySuitable for presentations and professional prints350ml capacitySKU: C13T44Q540Available for global delivery, including DubaiGo to Online Store",
+    "description": "Epson Light Cyan T44Q540 UltraChrome PRO 12 Ink – 350ml.Original Epson consumablePigment-based for archival qualitySuitable for presentations and professional prints350ml capacitySKU: C13T44Q540",
     "features": [
       "Epson Light Cyan T44Q540 UltraChrome PRO 12 Ink – 350ml"
     ],
@@ -19130,7 +19087,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q740_Epson_Singlepack_Gray_UltraChrome_PRO_12_350ml_Ink_6baaafda.webp",
-    "description": "Epson UltraChrome PRO 12 Gray Ink 350ml – High-Quality Large-Format Refill.Original Epson consumablePigment-based for archival-quality prints350 ml capacity for large jobsColor: GraySKU: C13T44Q740Global delivery available in DubaiGo to Online Store",
+    "description": "Epson UltraChrome PRO 12 Gray Ink 350ml – High-Quality Large-Format Refill.Original Epson consumablePigment-based for archival-quality prints350 ml capacity for large jobsColor: GraySKU: C13T44Q740",
     "features": [
       "Epson UltraChrome PRO 12 Gray Ink 350ml – High-Quality Large-Format Refill"
     ],
@@ -19166,7 +19123,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44Q940_Epson_Singlepack_Light_Gray_UltraChrome_PRO12_350ml_8db9ab70.webp",
-    "description": "Professional Light Gray Ink for Archival-Quality Printing.Original Epson consumableColor: Light GrayCapacity: 350 mlPigment-based for archival-grade outputSuitable for professional and fine art printingSKU: C13T44Q940Global delivery availableGo to Online Store",
+    "description": "Professional Light Gray Ink for Archival-Quality Printing.Original Epson consumableColor: Light GrayCapacity: 350 mlPigment-based for archival-grade outputSuitable for professional and fine art printingSKU: C13T44Q940",
     "features": [
       "Professional Light Gray Ink for Archival-Quality Printing"
     ],
@@ -19220,9 +19177,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T44QD40_Epson_Singlepack_Violet_UltraChrome_PRO12_350ml_Ink_9deb07d6.webp",
-    "description": "Epson T44QD40 Violet Ink – Premium 350ml for Archival Printing in Dubai.Genuine Epson UltraChrome PRO 12 InkColor: VioletCapacity: 350ml cartridgeArchival-quality pigment inkIdeal for professional photo and fine art printingSKU: C13T44QD40Global & Dubai delivery availableGo to Online Store",
+    "description": "Epson T44QD40 Violet Ink – Premium 350ml for Archival Printing.Genuine Epson UltraChrome PRO 12 InkColor: VioletCapacity: 350ml cartridgeArchival-quality pigment inkIdeal for professional photo and fine art printingSKU: C13T44QD40",
     "features": [
-      "Epson T44QD40 Violet Ink – Premium 350ml for Archival Printing in Dubai"
+      "Epson T44QD40 Violet Ink – Premium 350ml for Archival Printing"
     ],
     "specs": {
       "printWidth": "40"
@@ -19436,7 +19393,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T47A200_Epson_Singlepack_Cyan_UltraChrome_Pro_10_Ink_2e41c022.webp",
-    "description": "High-Quality Cyan Ink for Archival and Presentation Prints.High-quality pigment-based UltraChrome Pro 10 inkColor: CyanIdeal for presentation and archival applicationsPrint longevity up to 400 years (B&W with compatible media)Original Epson consumableCapacity: 50 mlSKU: C13T47A200Go to Online Store",
+    "description": "High-Quality Cyan Ink for Archival and Presentation Prints.High-quality pigment-based UltraChrome Pro 10 inkColor: CyanIdeal for presentation and archival applicationsPrint longevity up to 400 years (B&W with compatible media)Original Epson consumableCapacity: 50 mlSKU: C13T47A200",
     "features": [
       "High-Quality Cyan Ink for Archival and Presentation Prints"
     ],
@@ -19562,7 +19519,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T47A900_Epson_Singlepack_Light_Gray_UltraChrome_Pro_10_Ink_50ml_a3e77270.webp",
-    "description": "Epson T47A9 Light Gray Ink Cartridge – 50ml.Genuine Epson UltraChrome Pro 10 inkColor: Light GrayPigment-based composition for long-lasting archival printsCompatible with select Epson large-format printersSKU: C13T47A900Global delivery available*Go to Online Store",
+    "description": "Epson T47A9 Light Gray Ink Cartridge – 50ml.Genuine Epson UltraChrome Pro 10 inkColor: Light GrayPigment-based composition for long-lasting archival printsCompatible with select Epson large-format printersSKU: C13T47A900",
     "features": [
       "Epson T47A9 Light Gray Ink Cartridge – 50ml"
     ],
@@ -20150,7 +20107,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54X100_Epson_Singlepack_Photo_Black_UltraChrome_HDXHD_350ml_Ink_2409869a.webp",
-    "description": "Epson Photo Black UltraChrome HDX/HD 350ml Ink.Produces rich, deep black tones for high-quality printsCompatible with Epson SureColor printers for smooth operationEco-friendly 350ml cartridge designEnsures uninterrupted printing and consistent resultsOriginal Epson consumable with global delivery av...",
+    "description": "Epson Photo Black UltraChrome HDX/HD 350ml Ink.Produces rich, deep black tones for high-quality printsCompatible with Epson SureColor printers for smooth operationEco-friendly 350ml cartridge designEnsures uninterrupted printing and consistent resultsOriginal Epson consumable",
     "features": [
       "Epson Photo Black UltraChrome HDX/HD 350ml Ink"
     ],
@@ -20168,7 +20125,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54X200_Epson_Singlepack_Cyan_UltraChrome_HDXHD_350ml_Ink_3dfe49d2.webp",
-    "description": "Epson Singlepack Cyan UltraChrome HDX/HD 350ml Ink.Produces vibrant, long-lasting cyan colorsEnsures smooth color gradations and consistent printsIdeal for extensive printing needsEasy to install and compatible with Epson printersOriginal Epson consumable with 350ml capacityGlobal delivery available...",
+    "description": "Epson Singlepack Cyan UltraChrome HDX/HD 350ml Ink.Produces vibrant, long-lasting cyan colorsEnsures smooth color gradations and consistent printsIdeal for extensive printing needsEasy to install and compatible with Epson printersOriginal Epson consumable with 350ml capacity...",
     "features": [
       "Epson Singlepack Cyan UltraChrome HDX/HD 350ml Ink"
     ],
@@ -20186,7 +20143,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54X300_Epson_Singlepack_Vivid_Magenta_UltraChrome_HDXHD_350ml_Ink_a998e079.webp",
-    "description": "Epson Vivid Magenta UltraChrome HDX/HD 350ml Ink Cartridge.Vibrant and precise magenta shadesLong-lasting 350ml capacityFade-resistant and eco-friendly UltraChrome HDX/HD formulaIdeal for photographers and artistsCompatible with Epson SureColor printersOriginal Epson consumable with global delivery...",
+    "description": "Epson Vivid Magenta UltraChrome HDX/HD 350ml Ink Cartridge.Vibrant and precise magenta shadesLong-lasting 350ml capacityFade-resistant and eco-friendly UltraChrome HDX/HD formulaIdeal for photographers and artistsCompatible with Epson SureColor printersOriginal Epson consumable",
     "features": [
       "Epson Vivid Magenta UltraChrome HDX/HD 350ml Ink Cartridge"
     ],
@@ -20204,7 +20161,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54X400_Epson_Singlepack_Yellow_UltraChrome_HDXHD_350ml_Ink_403b9f40.webp",
-    "description": "Epson Singlepack Yellow UltraChrome HDX/HD 350ml Ink.Vibrant and accurate yellow colorLong-lasting, fade-resistant printsCompatible with select Epson printersEasy installation for seamless useOriginal Epson consumable with 350ml capacityGlobal delivery availableGo to Online Store",
+    "description": "Epson Singlepack Yellow UltraChrome HDX/HD 350ml Ink.Vibrant and accurate yellow colorLong-lasting, fade-resistant printsCompatible with select Epson printersEasy installation for seamless useOriginal Epson consumable with 350ml capacity",
     "features": [
       "Epson Singlepack Yellow UltraChrome HDX/HD 350ml Ink"
     ],
@@ -20294,7 +20251,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54X900_Epson_Singlepack_Light_Light_Black_Ink_350ml_2f952a3f.webp",
-    "description": "Epson T54X900 Light Light Black Ink (350ml).Original Epson UltraChrome HDX/HD InkColor: Light Light BlackCapacity: 350 mlEnsures precise, fade-resistant printsIdeal for professional and archival useSKU: C13T54X900Global delivery availableGo to Online Store",
+    "description": "Epson T54X900 Light Light Black Ink (350ml).Original Epson UltraChrome HDX/HD InkColor: Light Light BlackCapacity: 350 mlEnsures precise, fade-resistant printsIdeal for professional and archival useSKU: C13T54X900",
     "features": [
       "Epson T54X900 Light Light Black Ink (350ml)"
     ],
@@ -20348,7 +20305,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T54XD00_Epson_Singlepack_Violet_UltraChrome_HDXHD_350ml_Ink_bf189d96.webp",
-    "description": "Epson C13T54XD00 Violet Ink – Precision and Vibrancy in 350ml.Original Epson UltraChrome HDX/HD inkVibrant and accurate violet color reproductionSuitable for various media typesEnvironmentally conscious ink formulationLarge 350ml capacity for extended printingSKU: C13T54XD00Global delivery available...",
+    "description": "Epson C13T54XD00 Violet Ink – Precision and Vibrancy in 350ml.Original Epson UltraChrome HDX/HD inkVibrant and accurate violet color reproductionSuitable for various media typesEnvironmentally conscious ink formulationLarge 350ml capacity for extended printingSKU: C13T54XD00...",
     "features": [
       "Epson C13T54XD00 Violet Ink – Precision and Vibrancy in 350ml"
     ],
@@ -20656,7 +20613,7 @@
     "image": "/images/products/keplertech/C13T55W500_Epson_Light_Cyan_Ink_Cartridge_d532600c.webp",
     "description": "Epson C13T55W500 Light Cyan Ink Cartridge – Precision Color for Professional Prints.Original Epson consumable for consistent qualityVivid light cyan ink for true-to-life color reproductionIdeal for photographers, artists, designers & photo retail stores200 ml capacity ensures long-lasting performanc...",
     "features": [
-      "image outputGo to Online Store",
+      "image output",
       "Epson C13T55W500 Light Cyan Ink Cartridge – Precision Color for Professional Prints"
     ],
     "specs": {
@@ -21052,9 +21009,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800100_Epson_Singlepack_Photo_Black_UltraChrome_PRO_700ml_Ink_f2f95635.webp",
-    "description": "Premium Photo Black Ink for Long-Lasting Professional Prints in Dubai.Genuine Epson UltraChrome PRO pigment-based inkColor: Photo Black – rich tones and deep contrastsHigh capacity: 700ml for large-format printersArchival quality: up to 400 years longevity (B&W)SKU: C13T800100Trusted by professional...",
+    "description": "Premium Photo Black Ink for Long-Lasting Professional Prints.Genuine Epson UltraChrome PRO pigment-based inkColor: Photo Black – rich tones and deep contrastsHigh capacity: 700ml for large-format printersArchival quality: up to 400 years longevity (B&W)SKU: C13T800100Trusted by professional...",
     "features": [
-      "Premium Photo Black Ink for Long-Lasting Professional Prints in Dubai"
+      "Premium Photo Black Ink for Long-Lasting Professional Prints"
     ],
     "specs": {
       "printWidth": "100"
@@ -21070,9 +21027,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800200_Epson_Singlepack_Cyan_700ml_Ink_4d32955e.webp",
-    "description": "Premium Epson Cyan Ink – High-Capacity Refill for Professional Printing in Dubai.Original Epson UltraChrome PRO inkHigh-capacity 700 ml cartridgeRich Cyan pigment for color precisionLong-lasting archival prints (up to 400 years B/W*)Compatible with Epson large-format printersSKU: C13T800200Go to Onl...",
+    "description": "Premium Epson Cyan Ink – High-Capacity Refill for Professional Printing.Original Epson UltraChrome PRO inkHigh-capacity 700 ml cartridgeRich Cyan pigment for color precisionLong-lasting archival prints (up to 400 years B/W*)Compatible with Epson large-format printersSKU: C13T800200Go to Onl...",
     "features": [
-      "Premium Epson Cyan Ink – High-Capacity Refill for Professional Printing in Dubai"
+      "Premium Epson Cyan Ink – High-Capacity Refill for Professional Printing"
     ],
     "specs": {
       "printWidth": "200"
@@ -21107,9 +21064,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800400_Epson_Singlepack_Yellow_UltraChrome_PRO_700ml_Ink_691d813e.webp",
-    "description": "High-Performance Yellow Ink Refill for Epson Large-Format Printers in Dubai.Genuine Epson consumable for professional printingVivid Yellow pigment ink for sharp, accurate color outputLong-lasting prints — up to 400 years in black and white (with compatible media)High-capacity 700ml cartridge for few...",
+    "description": "High-Performance Yellow Ink Refill for Epson Large-Format Printers.Genuine Epson consumable for professional printingVivid Yellow pigment ink for sharp, accurate color outputLong-lasting prints — up to 400 years in black and white (with compatible media)High-capacity 700ml cartridge for few...",
     "features": [
-      "High-Performance Yellow Ink Refill for Epson Large-Format Printers in Dubai"
+      "High-Performance Yellow Ink Refill for Epson Large-Format Printers"
     ],
     "specs": {
       "printWidth": "400"
@@ -21125,7 +21082,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800500_Epson_Singlepack_Light_Cyan_700ml_Ink_f9b9bba4.webp",
-    "description": "Get vibrant, lasting results with Epson T800500 UltraChrome PRO Light Cyan Ink — ideal for professional photo and fine art printing in the UAE.Genuine Epson UltraChrome PRO inkVivid Light Cyan for smooth color gradientsHigh-capacity 700ml for bulk printing needsLong-lasting archival quality (up to 4...",
+    "description": "Get vibrant, lasting results with Epson T800500 UltraChrome PRO Light Cyan Ink — ideal for professional photo and fine art printing.Genuine Epson UltraChrome PRO inkVivid Light Cyan for smooth color gradientsHigh-capacity 700ml for bulk printing needsLong-lasting archival quality (up to 4...",
     "features": [
       "High-quality performance",
       "Professional grade"
@@ -21144,9 +21101,9 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800600_Epson_Singlepack_Vivid_Light_Magenta_UltraChrome_PRO_700ml_f6b1dc7b.webp",
-    "description": "Professional-quality Vivid Light Magenta ink for long-lasting, high-accuracy prints in Dubai.Genuine Epson UltraChrome PRO inkColor: Vivid Light MagentaHigh-capacity 700ml cartridgeLong-lasting archival quality prints (up to 400 years B/W)Perfect for large-format printers and professional useSKU: C1...",
+    "description": "Professional-quality Vivid Light Magenta ink for long-lasting, high-accuracy prints.Genuine Epson UltraChrome PRO inkColor: Vivid Light MagentaHigh-capacity 700ml cartridgeLong-lasting archival quality prints (up to 400 years B/W)Perfect for large-format printers and professional useSKU: C1...",
     "features": [
-      "Professional-quality Vivid Light Magenta ink for long-lasting, high-accuracy prints in Dubai"
+      "Professional-quality Vivid Light Magenta ink for long-lasting, high-accuracy prints"
     ],
     "specs": {
       "printWidth": "600"
@@ -21162,7 +21119,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800700_Epson_Singlepack_Dark_Gray_UltraChrome_PRO_700ml_db189668.webp",
-    "description": "Epson T800700 Dark Gray Ink – High-capacity original ink for professional large-format printing in Dubai.Original Epson UltraChrome PRO inkColor: Dark GrayHigh capacity: 700 ml single packArchival quality: Up to 400 years longevity (B&W)Ideal for: Professional, presentation & archival printsSKU: C13...",
+    "description": "Epson T800700 Dark Gray Ink – High-capacity original ink for professional large-format printing.Original Epson UltraChrome PRO inkColor: Dark GrayHigh capacity: 700 ml single packArchival quality: Up to 400 years longevity (B&W)Ideal for: Professional, presentation & archival printsSKU: C13...",
     "features": [
       "High-quality performance",
       "Professional grade"
@@ -21181,7 +21138,7 @@
     "category": "Ink Cartridges",
     "type": "Consumable",
     "image": "/images/products/keplertech/C13T800800_Epson_Singlepack_Matte_Black_UltraChrome_PRO_700ml_Ink_adc79102.webp",
-    "description": "Get long-lasting, museum-quality prints with Epson T800800 Matte Black UltraChrome PRO Ink, designed for high-performance large-format printing in Dubai.Genuine Epson UltraChrome PRO InkColor: Matte BlackHigh-capacity 700 ml cartridgePigment-based for fade-resistant archival printingIdeal for photo,...",
+    "description": "Get long-lasting, museum-quality prints with Epson T800800 Matte Black UltraChrome PRO Ink, designed for high-performance large-format printing.Genuine Epson UltraChrome PRO InkColor: Matte BlackHigh-capacity 700 ml cartridgePigment-based for fade-resistant archival printingIdeal for photo,...",
     "features": [
       "High-quality performance",
       "Professional grade"
@@ -21825,7 +21782,7 @@
     "category": "Printer Maintenance Box",
     "type": "Consumable",
     "image": "/images/products/keplertech/Epson_Maintenance_Box_C13T671300_b6eadb2f.webp",
-    "description": "Epson Printer Maintenance Box – C13T671300.Original Epson consumable for reliable performanceCollects waste ink during print head cleaning cyclesHelps maintain optimal printer functionalityUser-replaceable and easy to installCompatible with select Epson inkjet printersSKU: C13T671300Global delivery...",
+    "description": "Epson Printer Maintenance Box – C13T671300.Original Epson consumable for reliable performanceCollects waste ink during print head cleaning cyclesHelps maintain optimal printer functionalityUser-replaceable and easy to installCompatible with select Epson inkjet printersSKU: C13T671300",
     "features": [
       "Epson Printer Maintenance Box – C13T671300"
     ],
@@ -21844,9 +21801,7 @@
     "type": "Consumable",
     "image": "/images/products/keplertech/Epson_Maintenance_box_C13T671400_f4f77b2a.webp",
     "description": "The Epson Maintenance box – C13T671400 is an essential accessory for Epson printers, specifically designed to collect excess ink during routine maintenance cycles. Its secure snap-in design makes it easy to install and replace, while its efficient and reliable performance helps prevent clogs and oth...",
-    "features": [
-      "Go to Online Store"
-    ],
+    "features": [],
     "specs": {
       "type": "Other"
     },
@@ -22981,7 +22936,7 @@
     "category": "Lens",
     "type": "Telephoto Zoom",
     "image": "/images/products/canon-rf-70-200mm-f2-8l-is-usm-z.webp",
-    "description": "The Canon RF 70-200mm F2.8L IS USM Z is a professional telephoto zoom lens engineered for uncompromising hybrid performance. Offering standard black or heat-reflective white finishes, it features an internal zooming mechanism and dual Nano USM motors for fast, ultra-smooth autofocus.\n\nDesigned to excel in both video and still photography, it delivers 5.5-stops of optical image stabilization and incorporates a smooth-action Iris Ring with an Auto Mode lock for seamless creative control.",
+    "description": "The Canon RF 70-200mm F2.8L IS USM Z is a professional telephoto zoom lens engineered for uncompromising hybrid performance. Offering standard black or heat-reflective white finishes, it features an internal zooming mechanism and dual Nano USM motors for fast, ultra-smooth autofocus. Designed to excel in both video and still photography, it delivers 5.5-stops of optical image stabilization and incorporates a smooth-action Iris Ring with an Auto Mode lock for seamless creative control.",
     "features": [
       "70-200mm F2.8 telephoto zoom for hybrid professional use",
       "Internal zoom design with short 70° zoom rotation",
@@ -23021,7 +22976,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Zoom",
     "image": "/images/products/canon-rf-14-35mm-f4-4l-is-usm.webp",
-    "description": "The Canon RF 14-35mm F4L IS USM is an incredibly versatile and compact ultra-wide-angle zoom lens designed for the EOS R system. With a constant f/4 maximum aperture and up to 5.5 stops of optical image stabilization, it excels in landscape, architecture, and travel photography.\n\nBuilt to professional L-series standards, it features outstanding optical performance with UD and aspherical elements to reduce aberrations. The smooth and quiet Nano USM autofocus motor ensures sharp results for both stills and video, while its lightweight design makes it a perfect everyday companion.",
+    "description": "The Canon RF 14-35mm F4L IS USM is an incredibly versatile and compact ultra-wide-angle zoom lens designed for the EOS R system. With a constant f/4 maximum aperture and up to 5.5 stops of optical image stabilization, it excels in landscape, architecture, and travel photography. Built to professional L-series standards, it features outstanding optical performance with UD and aspherical elements to reduce aberrations. The smooth and quiet Nano USM autofocus motor ensures sharp results for both stills and video, while its lightweight design makes it a perfect everyday companion.",
     "features": [
       "14-35mm ultra-wide zoom range for landscapes and architecture",
       "Constant f/4 maximum aperture across the zoom range",
@@ -23060,7 +23015,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Prime",
     "image": "/images/products/canon-rf-14mm-f1-4l-vcm.webp",
-    "description": "The Canon RF 14mm F1.4L VCM is a highly specialized ultra-wide-angle prime lens designed to meet the rigorous demands of professional video and still production. Featuring a groundbreaking f/1.4 aperture for an ultra-wide field of view, it excels in astrophotography, architectural work, and immersive cinematic videography.\n\nEquipped with a Voice Coil Motor (VCM) and Nano USM for exceptionally fast, quiet, and smooth hybrid autofocus, the lens also includes a dedicated Iris Ring for seamless manual aperture control during video capture. Built to L-series standards, it incorporates specialized optics to minimize distortion and features robust weather sealing.",
+    "description": "The Canon RF 14mm F1.4L VCM is a highly specialized ultra-wide-angle prime lens designed to meet the rigorous demands of professional video and still production. Featuring a groundbreaking f/1.4 aperture for an ultra-wide field of view, it excels in astrophotography, architectural work, and immersive cinematic videography. Equipped with a Voice Coil Motor (VCM) and Nano USM for exceptionally fast, quiet, and smooth hybrid autofocus, the lens also includes a dedicated Iris Ring for seamless manual aperture control during video capture. Built to L-series standards, it incorporates specialized optics to minimize distortion and features robust weather sealing.",
     "features": [
       "14mm ultra-wide-angle focal length for immersive perspectives",
       "Ultra-fast f/1.4 maximum aperture for low-light mastery",
@@ -23094,7 +23049,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Zoom",
     "image": "/images/products/canon-rf-15-30mm-f4-5-6-3-is-stm.webp",
-    "description": "The Canon RF 15-30mm F4.5-6.3 IS STM is an incredibly lightweight and versatile ultra-wide-angle zoom lens, perfect for vlogging, landscapes, and travel photography. Its compact design makes it an ideal everyday lens for EOS R system users looking to expand their creative perspectives.\n\nFeaturing up to 5.5 stops of Optical Image Stabilization and a smooth, quiet STM autofocus motor, it ensures sharp stills and stable video. The lens also offers impressive close-up capabilities, with a 0.52x maximum magnification when focusing manually.",
+    "description": "The Canon RF 15-30mm F4.5-6.3 IS STM is an incredibly lightweight and versatile ultra-wide-angle zoom lens, perfect for vlogging, landscapes, and travel photography. Its compact design makes it an ideal everyday lens for EOS R system users looking to expand their creative perspectives. Featuring up to 5.5 stops of Optical Image Stabilization and a smooth, quiet STM autofocus motor, it ensures sharp stills and stable video. The lens also offers impressive close-up capabilities, with a 0.52x maximum magnification when focusing manually.",
     "features": [
       "15-30mm ultra-wide focal range perfect for vlogging and landscapes",
       "5.5-stop Optical Image Stabilizer for sharp handheld shooting",
@@ -23132,7 +23087,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Zoom",
     "image": "/images/products/canon-rf-15-35mm-f2-8l-is-usm.webp",
-    "description": "The Canon RF 15-35mm F2.8L IS USM is a professional L-series ultra-wide-angle zoom lens that forms part of Canon's 'holy trinity' of essential RF lenses. Offering a fast, constant f/2.8 maximum aperture, it is perfect for landscape, architecture, and astrophotography, delivering exceptional performance even in low-light conditions.\n\nBuilt for uncompromised image quality, the lens features three aspherical and two UD elements, combined with SWC and ASC coatings to combat flare and ghosting. A 5-stop Optical Image Stabilizer and rapid Nano USM autofocus motor provide filmmakers and photographers with ultimate precision and stability.",
+    "description": "The Canon RF 15-35mm F2.8L IS USM is a professional L-series ultra-wide-angle zoom lens that forms part of Canon's 'holy trinity' of essential RF lenses. Offering a fast, constant f/2.8 maximum aperture, it is perfect for landscape, architecture, and astrophotography, delivering exceptional performance even in low-light conditions. Built for uncompromised image quality, the lens features three aspherical and two UD elements, combined with SWC and ASC coatings to combat flare and ghosting. A 5-stop Optical Image Stabilizer and rapid Nano USM autofocus motor provide filmmakers and photographers with ultimate precision and stability.",
     "features": [
       "15-35mm ultra-wide zoom with a fast f/2.8 constant aperture",
       "5-stop Optical Image Stabilizer for superior handheld shooting",
@@ -23171,7 +23126,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Prime",
     "image": "/images/products/canon-rf-20mm-f1-4l-vcm.webp",
-    "description": "The Canon RF 20mm F1.4L VCM is a highly specialized ultra-wide-angle prime lens designed to meet the rigorous demands of professional video and still production. Featuring a groundbreaking f/1.4 aperture for an ultra-wide field of view, it excels in astrophotography, architectural work, and immersive cinematic videography.\n\nEquipped with a Voice Coil Motor (VCM) and Nano USM for exceptionally fast, quiet, and smooth hybrid autofocus, the lens also includes a dedicated Iris Ring for seamless manual aperture control during video capture. Built to L-series standards, it incorporates specialized optics to minimize distortion and features robust weather sealing.",
+    "description": "The Canon RF 20mm F1.4L VCM is a highly specialized ultra-wide-angle prime lens designed to meet the rigorous demands of professional video and still production. Featuring a groundbreaking f/1.4 aperture for an ultra-wide field of view, it excels in astrophotography, architectural work, and immersive cinematic videography. Equipped with a Voice Coil Motor (VCM) and Nano USM for exceptionally fast, quiet, and smooth hybrid autofocus, the lens also includes a dedicated Iris Ring for seamless manual aperture control during video capture. Built to L-series standards, it incorporates specialized optics to minimize distortion and features robust weather sealing.",
     "features": [
       "20mm ultra-wide-angle focal length for immersive perspectives",
       "Ultra-fast f/1.4 maximum aperture for low-light mastery",
@@ -23205,7 +23160,7 @@
     "category": "Lens",
     "type": "Super Telephoto Zoom",
     "image": "/images/products/canon-rf-200-800mm-f6-3-9-is-usm.webp",
-    "description": "The Canon RF 200-800mm F6.3-9 IS USM is a versatile super-telephoto zoom lens that brings distant subjects closer than ever before. Designed for wildlife, sports, and aviation photography, it offers an unprecedented reach for a compact and relatively lightweight lens in the RF lineup.\n\nWith up to 5.5 stops of optical image stabilization, it ensures sharp handheld shots even at 800mm. The Nano USM motor delivers fast, smooth, and quiet autofocus, while the weather-resistant construction ensures durability in outdoor conditions. It is also fully compatible with Canon RF 1.4x and 2x extenders for even greater reach.",
+    "description": "The Canon RF 200-800mm F6.3-9 IS USM is a versatile super-telephoto zoom lens that brings distant subjects closer than ever before. Designed for wildlife, sports, and aviation photography, it offers an unprecedented reach for a compact and relatively lightweight lens in the RF lineup. With up to 5.5 stops of optical image stabilization, it ensures sharp handheld shots even at 800mm. The Nano USM motor delivers fast, smooth, and quiet autofocus, while the weather-resistant construction ensures durability in outdoor conditions. It is also fully compatible with Canon RF 1.4x and 2x extenders for even greater reach.",
     "features": [
       "Massive 200-800mm zoom range for wildlife, sports, and aviation",
       "5.5-stop Optical Image Stabilizer for excellent handheld stability",
@@ -23244,7 +23199,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Prime",
     "image": "/images/products/canon-rf-16mm-f2-8-stm.webp",
-    "description": "The Canon RF 16mm F2.8 STM is an exceptionally compact and affordable ultra-wide-angle prime lens designed for the EOS R system. Weighing just 165g, it is the perfect companion for vlogging, landscape photography, architecture, and astrophotography.\n\nDespite its small size, it boasts a fast f/2.8 maximum aperture, allowing for great low-light performance and shallow depth-of-field effects. The stepping motor (STM) provides smooth and quiet autofocus, making it highly capable for video recording, while the PMo aspherical lens element guarantees sharp, high-contrast images.",
+    "description": "The Canon RF 16mm F2.8 STM is an exceptionally compact and affordable ultra-wide-angle prime lens designed for the EOS R system. Weighing just 165g, it is the perfect companion for vlogging, landscape photography, architecture, and astrophotography. Despite its small size, it boasts a fast f/2.8 maximum aperture, allowing for great low-light performance and shallow depth-of-field effects. The stepping motor (STM) provides smooth and quiet autofocus, making it highly capable for video recording, while the PMo aspherical lens element guarantees sharp, high-contrast images.",
     "features": [
       "16mm ultra-wide focal length ideal for vlogging and landscapes",
       "Fast f/2.8 maximum aperture for excellent low-light performance",
@@ -23282,7 +23237,7 @@
     "category": "Lens",
     "type": "Ultra-Wide Zoom",
     "image": "/images/products/canon-rf-16-28mm-f2-8-is-stm.webp",
-    "description": "The Canon RF 16-28mm F2.8 IS STM offers a fast, constant f/2.8 aperture in a versatile ultra-wide zoom range, making it an excellent choice for hybrid shooters, vloggers, and landscape enthusiasts. Designed to be lightweight and approachable, it expands creative possibilities for the EOS R system.\n\nWith integrated Optical Image Stabilization and a smooth, quiet STM autofocus motor, it delivers steady footage and sharp stills in a variety of lighting conditions. Its compact form factor and close focusing capabilities make it highly adaptable for travel and everyday shooting.",
+    "description": "The Canon RF 16-28mm F2.8 IS STM offers a fast, constant f/2.8 aperture in a versatile ultra-wide zoom range, making it an excellent choice for hybrid shooters, vloggers, and landscape enthusiasts. Designed to be lightweight and approachable, it expands creative possibilities for the EOS R system. With integrated Optical Image Stabilization and a smooth, quiet STM autofocus motor, it delivers steady footage and sharp stills in a variety of lighting conditions. Its compact form factor and close focusing capabilities make it highly adaptable for travel and everyday shooting.",
     "features": [
       "16-28mm ultra-wide zoom range for landscapes and vlogging",
       "Constant f/2.8 maximum aperture for superb low-light capabilities",

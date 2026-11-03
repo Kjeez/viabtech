@@ -52,7 +52,7 @@ const galleryImages: GalleryImage[] = [
   { src: '/images/gallery/_O6A4343.JPG.jpeg', alt: 'Canon Store launch day highlights', caption: 'Launch Day Highlights', tag: 'Ceremony', event: 'canon' },
 
   // ── Epson Experience Zone Launch ──
-  { src: '/images/gallery/1.jpeg', alt: 'Epson Experience Centre showroom with printers and products on display', caption: 'State-of-the-Art Showroom Interior', tag: 'Showroom', event: 'epson' },
+  { src: '/images/gallery/1.jpeg', alt: 'Epson Experience Zone showroom with printers and products on display', caption: 'State-of-the-Art Showroom Interior', tag: 'Showroom', event: 'epson' },
   { src: '/images/gallery/2.jpeg', alt: 'Epson Experience Zone & Service Centre exterior with signage', caption: 'Epson Experience Zone — Exterior', tag: 'Exterior', event: 'epson' },
   { src: '/images/gallery/3.jpeg', alt: 'Showroom interior with Epson 50 Years celebration display', caption: 'Celebrating 50 Years of Epson Brand', tag: 'Milestone', event: 'epson' },
   { src: '/images/gallery/4.jpeg', alt: 'Viab Tech and Epson celebrating 50 years with product displays', caption: '50 Years of Epson — 100 Million EcoTank Sold', tag: 'Milestone', event: 'epson' },

@@ -8,6 +8,10 @@ import { breadcrumbSchema, collectionSchema } from '@/lib/schema';
 
 const SITE_URL = 'https://www.viabtech.com';
 
+// Viabtech is the authorized reseller and service center for these brands (see public/llms.txt).
+// Other brands are sold as a partner/reseller, so their titles don't claim authorization.
+const AUTHORIZED_BRANDS = ['canon', 'epson'];
+
 // Unknown brand slugs return a real 404 instead of an empty 200 page.
 export const dynamicParams = false;
 
@@ -21,10 +25,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   if (!brandData) return {};
   const url = `${SITE_URL}/brands/${brandData.slug}`;
   const count = productsData.filter((p) => p.brand === brandData.name).length;
-  const title = brandData.authorized
+  const authorized = AUTHORIZED_BRANDS.includes(brandData.slug);
+  const title = authorized
     ? `Authorized ${brandData.name} Dealer in Tanzania | Viabtech`
     : `${brandData.name} in Tanzania – Shop at Viabtech, Dar es Salaam`;
-  const description = `${brandData.authorized ? `Authorized ${brandData.name} dealer` : `${brandData.name} products`} in Dar es Salaam${count ? ` — ${count} genuine models` : ''} with warranty and delivery across Tanzania. ${brandData.description}`.slice(0, 300);
+  const description = `${authorized ? `Authorized ${brandData.name} dealer and service center` : `Genuine ${brandData.name} products`} in Dar es Salaam${count ? ` — ${count} genuine models` : ''} with warranty and delivery across Tanzania. ${brandData.description}`.slice(0, 300);
   return {
     title: { absolute: title },
     description,

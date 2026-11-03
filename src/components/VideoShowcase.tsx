@@ -34,11 +34,11 @@ export default function VideoShowcase() {
       title: (
         <>
           Canon Authorized{' '}
-          <span className="text-[#e4002b] block mt-2">Store & Showroom</span>
+          <span className="text-[#e4002b] block mt-2">Showroom</span>
         </>
       ),
       subtitle:
-        'Experience the grand opening of Viab Tech\'s official Canon Store — your destination for cameras, printers, and imaging solutions in Dar es Salaam.',
+        'Experience the grand opening of Viab Tech\'s Canon Authorized Showroom — your destination for cameras, printers, and imaging solutions in Dar es Salaam.',
       tags: ['Grand Opening', 'Canon Products', 'Showroom Tour', 'Live Demo', 'Special Offers'],
       videoSrc: '/videos/launch2.mp4',
       poster: '/images/about-us-team.jpg',
@@ -198,7 +198,7 @@ export default function VideoShowcase() {
                 <span
                   className={`w-2.5 h-2.5 rounded-full ${idx === activeIndex ? 'bg-white animate-pulse' : 'bg-gray-400 animate-pulse'}`}
                 />
-                {launch.id === 'canon' ? 'Canon Store' : 'Epson Centre'}
+                {launch.id === 'canon' ? 'Canon Showroom' : 'Epson Zone'}
               </span>
             </button>
           ))}

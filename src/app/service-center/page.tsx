@@ -213,7 +213,7 @@ export default function ServiceCenterPage() {
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md group">
                 <div className="p-5 bg-white flex flex-col gap-2">
                   <h4 className="font-bold text-[#CC0000] flex items-center gap-2 text-lg">
-                    <MapPin size={18} /> Canon Authorised Showroom
+                    <MapPin size={18} /> Canon Authorized Showroom
                   </h4>
                   <a href="https://www.google.com/maps/place/Viabtech+canon/@-6.8180867,39.2806048,17z" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 font-medium leading-relaxed hover:text-[#CC0000] transition-colors block">
                     Next To Peacock Hotel<br/>Bibi Titi Mohamed Road
