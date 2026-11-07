@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
           <section className="bg-white rounded-2xl shadow-sm border border-border/50 p-6 sm:p-10 mb-8">
             <h2 className="text-xl font-bold mt-0">1. Acceptance of Terms</h2>
             <p>
-              By accessing or using the Viab Tech Ltd (&quot;Viabtech&quot;) website at <strong>viabtech.co.tz</strong>, you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree, please do not use our website or services.
+              By accessing or using the Viab Tech Ltd (&quot;Viabtech&quot;) website at <strong>www.viabtech.com</strong>, you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree, please do not use our website or services.
             </p>
           </section>
 
@@ -139,7 +139,7 @@ export default function TermsOfServicePage() {
             <h2 className="text-xl font-bold mt-0">13. Contact Us</h2>
             <p>If you have any questions about these Terms, please contact us:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:info@viabtech.co.tz">info@viabtech.co.tz</a></li>
+              <li><strong>Email:</strong> <a href="mailto:sales@viabtech.com">sales@viabtech.com</a></li>
               <li><strong>Phone:</strong> +255 745 700 500</li>
               <li><strong>Address:</strong> P.O.Box 105047, Ground Floor, Uhuru Heights, Bibi Titi Mohamed Rd, Dar es Salaam, Tanzania</li>
             </ul>

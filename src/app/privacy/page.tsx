@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               Viab Tech Ltd (&quot;Viabtech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your personal data in accordance with the <strong>United Republic of Tanzania Personal Data Protection Act No. 11 of 2022 (PDPA)</strong>, which came into force on 1 May 2023, and the regulations issued by the <strong>Personal Data Protection Commission (PDPC)</strong>.
             </p>
             <p>
-              This Privacy Policy explains how we collect, use, store, share, and protect personal data when you visit our website (<strong>viabtech.co.tz</strong>), use our services, or interact with us in any way.
+              This Privacy Policy explains how we collect, use, store, share, and protect personal data when you visit our website (<strong>www.viabtech.com</strong>), use our services, or interact with us in any way.
             </p>
           </section>
 
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
             <ul>
               <li><strong>Company:</strong> Viab Tech Ltd</li>
               <li><strong>Address:</strong> P.O.Box 105047, Ground Floor, Uhuru Heights, Bibi Titi Mohamed Rd, Dar es Salaam, Tanzania</li>
-              <li><strong>Email:</strong> <a href="mailto:info@viabtech.co.tz">info@viabtech.co.tz</a></li>
+              <li><strong>Email:</strong> <a href="mailto:sales@viabtech.com">sales@viabtech.com</a></li>
               <li><strong>Phone:</strong> +255 745 700 500</li>
             </ul>
           </section>
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
               <li><strong>Right to withdraw consent:</strong> Withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal</li>
             </ul>
             <p>
-              To exercise any of these rights, please contact us at <a href="mailto:info@viabtech.co.tz">info@viabtech.co.tz</a>. We will respond within <strong>30 days</strong> as required by the PDPA.
+              To exercise any of these rights, please contact us at <a href="mailto:sales@viabtech.com">sales@viabtech.com</a>. We will respond within <strong>30 days</strong> as required by the PDPA.
             </p>
           </section>
 
@@ -187,7 +187,7 @@ export default function PrivacyPolicyPage() {
               If you believe your data protection rights have been violated, you have the right to lodge a complaint with:
             </p>
             <ul>
-              <li><strong>Viab Tech Ltd</strong> — <a href="mailto:info@viabtech.co.tz">info@viabtech.co.tz</a></li>
+              <li><strong>Viab Tech Ltd</strong> — <a href="mailto:sales@viabtech.com">sales@viabtech.com</a></li>
               <li><strong>Personal Data Protection Commission (PDPC)</strong> — <a href="https://www.pdpc.go.tz" target="_blank" rel="noopener noreferrer">www.pdpc.go.tz</a></li>
             </ul>
           </section>

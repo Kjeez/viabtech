@@ -85,13 +85,13 @@ export default function ContactPage() {
                       <div className="text-sm font-medium text-gray-500 group-hover:text-primary transition-colors">+255 746 000 786</div>
                     </div>
                   </a>
-                  <a href="mailto:info@viabtech.co.tz" className="flex items-start gap-4 group">
+                  <a href="mailto:sales@viabtech.com" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
                       <Mail size={20} className="text-primary group-hover:text-white transition-colors duration-300" />
                     </div>
                     <div>
                       <div className="text-sm font-bold text-[#0f1c2e] mb-1">{t('contact.email')}</div>
-                      <div className="text-sm font-medium text-gray-500 group-hover:text-primary transition-colors">info@viabtech.co.tz</div>
+                      <div className="text-sm font-medium text-gray-500 group-hover:text-primary transition-colors">sales@viabtech.com</div>
                     </div>
                   </a>
                   <div className="flex items-start gap-4 group">

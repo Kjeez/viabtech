@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
             🖨️ New Canon Product Registration
           </h1>
           <p style="color: rgba(255,255,255,0.8); margin: 6px 0 0; font-size: 13px;">
-            Received from viabtech.co.tz/canon-register — ${new Date().toLocaleString('en-GB', { timeZone: 'Africa/Dar_es_Salaam' })}
+            Received from www.viabtech.com/canon-register — ${new Date().toLocaleString('en-GB', { timeZone: 'Africa/Dar_es_Salaam' })}
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
         <!-- Footer -->
         <div style="padding: 16px 32px; background: #f9fafb; border-top: 1px solid #e5e7eb;">
           <p style="margin: 0; font-size: 11px; color: #9ca3af; text-align: center;">
-            This email was sent automatically from the Canon Product Registration page on viabtech.co.tz
+            This email was sent automatically from the Canon Product Registration page on www.viabtech.com
           </p>
         </div>
       </div>

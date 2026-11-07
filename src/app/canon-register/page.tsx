@@ -306,8 +306,8 @@ export default function CanonRegisterPage() {
                   <a href="tel:+255745700500" className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-sm font-medium">
                     <Phone size={16} /> +255 745 700 500
                   </a>
-                  <a href="mailto:info@viabtech.co.tz" className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-sm font-medium">
-                    <Mail size={16} /> info@viabtech.co.tz
+                  <a href="mailto:sales@viabtech.com" className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-sm font-medium">
+                    <Mail size={16} /> sales@viabtech.com
                   </a>
                   <div className="flex items-start gap-3 text-white/80 text-sm">
                     <MapPin size={16} className="shrink-0 mt-0.5" />

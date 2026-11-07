@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
             ${isModal ? '🔔 Service Inquiry' : '📩 Contact Form Submission'}
           </h1>
           <p style="color: rgba(255,255,255,0.8); margin: 6px 0 0; font-size: 13px;">
-            Received from viabtech.co.tz — ${new Date().toLocaleString('en-GB', { timeZone: 'Africa/Dar_es_Salaam' })}
+            Received from www.viabtech.com — ${new Date().toLocaleString('en-GB', { timeZone: 'Africa/Dar_es_Salaam' })}
           </p>
         </div>
 

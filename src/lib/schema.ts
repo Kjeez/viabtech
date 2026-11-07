@@ -10,12 +10,12 @@ export const BUSINESS = {
   name: 'Viabtech',
   legalName: 'Viab Tech Limited',
   foundingDate: '2015',
-  email: 'info@viabtech.co.tz',
+  email: 'sales@viabtech.com',
   phones: ['+255745700500', '+255746000786'],
   logo: `${SITE_URL}/images/viabtechlogo.png`,
   sameAs: [
-    'https://www.instagram.com/viabtechcanon',
-    'https://www.facebook.com/profile.php?id=61591455479848',
+    'https://www.instagram.com/viabtechltd/',
+    'https://www.instagram.com/viabtechcanon/',
   ],
   hours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
