@@ -311,7 +311,7 @@ export default function CanonRegisterPage() {
                   </a>
                   <div className="flex items-start gap-3 text-white/80 text-sm">
                     <MapPin size={16} className="shrink-0 mt-0.5" />
-                    <span>PLOT NO 1357/208, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam</span>
+                    <span>PLOT NO 1357/208A, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam</span>
                   </div>
                 </div>
               </div>

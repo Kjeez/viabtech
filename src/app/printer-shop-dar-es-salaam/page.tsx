@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const locations = [
   {
     name: 'Canon Authorized Showroom',
-    address: 'Plot No. 1357/208, Ground Floor, Next to Peacock Hotel, Bibi Titi Mohamed Road, Kisutu, Dar es Salaam',
+    address: 'Plot No. 1357/208A, Ground Floor, Next to Peacock Hotel, Bibi Titi Mohamed Road, Kisutu, Dar es Salaam',
     map: 'https://maps.google.com/?cid=15635631984227566733',
     accent: '#CC0000',
   },
@@ -80,7 +80,7 @@ const whyUs = [
 const faqs = [
   {
     q: 'Where is Viabtech’s printer shop located in Dar es Salaam?',
-    a: 'We have two showrooms on Bibi Titi Mohamed Road in Dar es Salaam: our Canon Authorized Showroom (Plot No. 1357/208, next to Peacock Hotel, Kisutu) and our Epson Experience Zone (Ground Floor, Uhuru Heights). Both are open Monday to Saturday.',
+    a: 'We have two showrooms on Bibi Titi Mohamed Road in Dar es Salaam: our Canon Authorized Showroom (Plot No. 1357/208A, next to Peacock Hotel, Kisutu) and our Epson Experience Zone (Ground Floor, Uhuru Heights). Both are open Monday to Saturday.',
   },
   {
     q: 'Are you an authorized Canon and Epson dealer in Tanzania?',

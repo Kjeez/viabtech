@@ -16,6 +16,7 @@ export const BUSINESS = {
   sameAs: [
     'https://www.instagram.com/viabtechltd/',
     'https://www.instagram.com/viabtechcanon/',
+    'https://www.facebook.com/profile.php?id=61591455479848',
   ],
   hours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
@@ -27,7 +28,7 @@ export const STORES = [
   {
     id: `${SITE_URL}/#store-canon`,
     name: 'Viabtech Canon Authorized Showroom',
-    streetAddress: 'Plot No 1357/208, Ground Floor, next to Peacock Hotel, Bibi Titi Mohamed Road',
+    streetAddress: 'Plot No 1357/208A, Ground Floor, next to Peacock Hotel, Bibi Titi Mohamed Road, Kisutu',
     postOfficeBoxNumber: undefined as string | undefined,
     lat: -6.818086744152009,
     lng: 39.28060482480949,

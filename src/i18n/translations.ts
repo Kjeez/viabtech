@@ -70,11 +70,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.clients': 'Clients',
 
     // Brands
-    'brands.badge': 'Authorized Partners',
+    'brands.badge': 'Our Brands',
     'brands.title': 'World-Class',
     'brands.titleHighlight': 'Brands',
     'brands.titleEnd': 'We Represent',
-    'brands.subtitle': "Tanzania's most trusted distributor for 11 leading technology brands — all backed by genuine warranty, expert support, and authorized service.",
+    'brands.subtitle': "Genuine products from 11 leading technology brands, from the authorized Canon and Epson dealer and service center in Dar es Salaam.",
     'brands.authorized': 'Authorized',
     'brands.exploreAll': 'Explore All Brands',
 
@@ -161,7 +161,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.q6': 'Do you offer bulk or corporate discounts?',
     'faq.a6': 'Absolutely! We offer competitive volume pricing for businesses, government agencies, and institutions. Contact our sales team for a customized quote based on your requirements.',
     'faq.q7': 'Can I visit your showroom?',
-    'faq.a7': 'Yes! We have two showrooms on Bibi Titi Mohamed Road in Dar es Salaam: the Epson Experience Zone at Uhuru Heights, and the Canon Authorized Showroom at Plot No 1357/208, next to Peacock Hotel. Visit us Monday\u2013Friday 8:00 AM\u20135:00 PM and Saturday 9:00 AM\u20131:00 PM. For further details, contact our Support & Service Center at +255 746 000 786.',
+    'faq.a7': 'Yes! We have two showrooms on Bibi Titi Mohamed Road in Dar es Salaam: the Epson Experience Zone at Uhuru Heights, and the Canon Authorized Showroom at Plot No 1357/208A, next to Peacock Hotel. Visit us Monday\u2013Friday 8:00 AM\u20135:00 PM and Saturday 9:00 AM\u20131:00 PM. For further details, contact our Support & Service Center at +255 746 000 786.',
     'faq.q8': 'How quickly can repairs be completed?',
     'faq.a8': 'Most standard repairs are completed within 1\u20133 business days. Complex repairs or those requiring special parts may take 5\u20137 business days. We provide transparent timelines and status updates throughout the process.',
     // FAQ (extended, used by /faq and the page-specific FAQ blocks)
@@ -176,7 +176,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.repairWhat.q': 'Which products can your service center repair?',
     'faq.repairWhat.a': 'As the authorized service center for Canon and Epson, we repair Canon and Epson printers, cameras, lenses, projectors and scanners using genuine parts.',
     'faq.dropoff.q': 'Where can I drop off equipment for repair?',
-    'faq.dropoff.a': 'Bring your equipment to either showroom on Bibi Titi Mohamed Road in Dar es Salaam: the Epson Experience Zone at Uhuru Heights or the Canon Authorized Showroom at Plot No 1357/208, next to Peacock Hotel. You can also request a repair online on our service center page.',
+    'faq.dropoff.a': 'Bring your equipment to either showroom on Bibi Titi Mohamed Road in Dar es Salaam: the Epson Experience Zone at Uhuru Heights or the Canon Authorized Showroom at Plot No 1357/208A, next to Peacock Hotel. You can also request a repair online on our service center page.',
     'faq.canonRegister.q': 'How do I register my Canon product for warranty?',
     'faq.canonRegister.a': 'Register it on our Canon Product Registration page at viabtech.com/canon-register. Registered Canon devices get 3 months of free service when they are brought to our authorized service center.',
     'faq.leasing.q': 'Do you offer printer leasing or managed print services?',
@@ -444,7 +444,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'aboutPage.t5Title': "EA's 1st Epson Service Centre",
     'aboutPage.t5Desc': "Launched East Africa's first Epson Experience Zone & Service Centre — featured in The Citizen, Mwananchi, and Daily News.",
     'aboutPage.t6Title': 'Canon Authorized Showroom & Service Centre',
-    'aboutPage.t6Desc': 'Opened our Canon Authorized Showroom & Service Centre at Plot No. 1357/208, Ground Floor, Next to Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam — a dedicated space for Canon cameras, printers, and imaging solutions.',
+    'aboutPage.t6Desc': 'Opened our Canon Authorized Showroom & Service Centre at Plot No. 1357/208A, Ground Floor, Next to Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam — a dedicated space for Canon cameras, printers, and imaging solutions.',
     'aboutPage.t7Title': 'Regional Growth',
     'aboutPage.t7Desc': 'Serving 2,000+ clients across Tanzania, with bulk orders delivered across East Africa.',
     'aboutPage.teamBadge': 'Leadership',
@@ -533,11 +533,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.clients': 'Wateja',
 
     // Brands
-    'brands.badge': 'Washirika Rasmi',
+    'brands.badge': 'Bidhaa Zetu',
     'brands.title': 'Nembo',
     'brands.titleHighlight': 'Bora',
     'brands.titleEnd': 'Tunazowakilisha',
-    'brands.subtitle': 'Msambazaji anayeaminika zaidi Tanzania kwa nembo 11 za teknolojia \u2014 zote zinazodhaminiwa na dhamana halisi, msaada wa kitaalamu, na huduma iliyoidhinishwa.',
+    'brands.subtitle': 'Bidhaa halisi kutoka nembo 11 za teknolojia, kutoka kwa wakala aliyeidhinishwa wa Canon na Epson na kituo cha huduma Dar es Salaam.',
     'brands.authorized': 'Imeidhinishwa',
     'brands.exploreAll': 'Gundua Nembo Zote',
 
@@ -624,7 +624,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.q6': 'Mnatoa punguzo za wingi au mashirika?',
     'faq.a6': 'Kabisa! Tunatoa bei shindani za wingi kwa biashara, mashirika ya serikali, na taasisi. Wasiliana na timu yetu ya mauzo kwa bei maalum kulingana na mahitaji yako.',
     'faq.q7': 'Naweza kutembelea jumba lenu la onyesho?',
-    'faq.a7': 'Ndiyo! Tuna majumba mawili ya onyesho kwenye Barabara ya Bibi Titi Mohamed, Dar es Salaam: Epson Experience Zone katika Uhuru Heights, na Canon Authorized Showroom katika Plot No 1357/208, karibu na Hoteli ya Peacock. Tembelea Jumatatu\u2013Ijumaa 8:00 AM\u20135:00 PM na Jumamosi 9:00 AM\u20131:00 PM. Kwa maelezo zaidi, wasiliana na Kituo chetu cha Msaada na Huduma kwa +255 746 000 786.',
+    'faq.a7': 'Ndiyo! Tuna majumba mawili ya onyesho kwenye Barabara ya Bibi Titi Mohamed, Dar es Salaam: Epson Experience Zone katika Uhuru Heights, na Canon Authorized Showroom katika Plot No 1357/208A, karibu na Hoteli ya Peacock. Tembelea Jumatatu\u2013Ijumaa 8:00 AM\u20135:00 PM na Jumamosi 9:00 AM\u20131:00 PM. Kwa maelezo zaidi, wasiliana na Kituo chetu cha Msaada na Huduma kwa +255 746 000 786.',
     'faq.q8': 'Ukarabati unachukua muda gani?',
     'faq.a8': 'Ukarabati wengi wa kawaida unakamilishwa ndani ya siku 1-3 za kazi. Ukarabati tata au unaohitaji vipuri maalum unaweza kuchukua siku 5-7 za kazi. Tunatoa makadirio ya uwazi na taarifa za hali katika mchakato wote.',
     // FAQ (iliyopanuliwa)
@@ -639,7 +639,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'faq.repairWhat.q': 'Kituo chenu cha huduma kinakarabati bidhaa gani?',
     'faq.repairWhat.a': 'Kama kituo rasmi cha huduma cha Canon na Epson, tunakarabati printa, kamera, lenzi, projekta na skana za Canon na Epson kwa kutumia vipuri halisi.',
     'faq.dropoff.q': 'Naweza kupeleka wapi kifaa changu kwa ukarabati?',
-    'faq.dropoff.a': 'Leta kifaa chako kwenye jumba lolote la onyesho kwenye Barabara ya Bibi Titi Mohamed, Dar es Salaam: Epson Experience Zone katika Uhuru Heights au Canon Authorized Showroom katika Plot No 1357/208, karibu na Hoteli ya Peacock. Unaweza pia kuomba ukarabati mtandaoni kupitia ukurasa wetu wa kituo cha huduma.',
+    'faq.dropoff.a': 'Leta kifaa chako kwenye jumba lolote la onyesho kwenye Barabara ya Bibi Titi Mohamed, Dar es Salaam: Epson Experience Zone katika Uhuru Heights au Canon Authorized Showroom katika Plot No 1357/208A, karibu na Hoteli ya Peacock. Unaweza pia kuomba ukarabati mtandaoni kupitia ukurasa wetu wa kituo cha huduma.',
     'faq.canonRegister.q': 'Ninasajili vipi bidhaa yangu ya Canon kwa dhamana?',
     'faq.canonRegister.a': 'Isajili kwenye ukurasa wetu wa Usajili wa Bidhaa za Canon, viabtech.com/canon-register. Vifaa vya Canon vilivyosajiliwa vinapata miezi 3 ya huduma bure vinapoletwa kwenye kituo chetu rasmi cha huduma.',
     'faq.leasing.q': 'Mnatoa ukodishaji wa printa au huduma za usimamizi wa uchapishaji?',
@@ -906,7 +906,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'aboutPage.t5Title': 'Kituo cha Kwanza cha Epson EA',
     'aboutPage.t5Desc': 'Tulizindua Kituo cha kwanza cha Uzoefu na Huduma cha Epson Afrika Mashariki — kilichoangaziwa katika The Citizen, Mwananchi, na Daily News.',
     'aboutPage.t6Title': 'Canon Authorized Showroom & Kituo cha Huduma',
-    'aboutPage.t6Desc': 'Tulifungua Canon Authorized Showroom & Kituo cha Huduma katika Plot No. 1357/208, Ghorofa ya Chini, Karibu na Hoteli ya Peacock, Barabara ya Bibi Titi Mohamed, Dar es Salaam.',
+    'aboutPage.t6Desc': 'Tulifungua Canon Authorized Showroom & Kituo cha Huduma katika Plot No. 1357/208A, Ghorofa ya Chini, Karibu na Hoteli ya Peacock, Barabara ya Bibi Titi Mohamed, Dar es Salaam.',
     'aboutPage.t7Title': 'Ukuaji wa Kikanda',
     'aboutPage.t7Desc': 'Tunahudumia wateja 2,000+ kote Tanzania, na oda za wingi Afrika Mashariki.',
     'aboutPage.teamBadge': 'Uongozi',

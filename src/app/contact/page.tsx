@@ -137,7 +137,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-gray-400 shrink-0 mt-0.5" />
                   <a href="https://maps.google.com/?cid=15635631984227566733&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 leading-relaxed hover:text-[#CC0000] transition-colors">
-                    PLOT NO 1357/208, Ground Floor,<br />
+                    PLOT NO 1357/208A, Ground Floor,<br />
                     Next To Peacock Hotel,<br />
                     Bibi Titi Mohamed Road, Dar es Salaam, Tanzania
                   </a>
@@ -287,7 +287,7 @@ export default function ContactPage() {
                     </div>
                     Canon Authorized Showroom
                   </h4>
-                  <p className="text-sm text-gray-500 font-medium mt-2 pl-11">PLOT NO 1357/208, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam, Tanzania</p>
+                  <p className="text-sm text-gray-500 font-medium mt-2 pl-11">PLOT NO 1357/208A, Ground Floor, Next To Peacock Hotel, Bibi Titi Mohamed Road, Dar es Salaam, Tanzania</p>
                 </div>
                 <a href="https://maps.google.com/?cid=15635631984227566733&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en&gl=IN&source=embed" target="_blank" rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-full bg-[#CC0000]/10 text-[#CC0000] text-sm font-bold hover:bg-[#CC0000] hover:text-white transition-colors duration-300">

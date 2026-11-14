@@ -181,13 +181,14 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 mb-8">
+                <p className="w-full text-sm text-text-secondary">Price on request: message us on WhatsApp for today&apos;s price and availability.</p>
+                <a href={`https://wa.me/255745700500?text=${encodeURIComponent(`Hello Viabtech, please share the price of the ${product.name}.`)}`} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#20b858] shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-0.5">
+                  <MessageCircle size={16} /> Get Price on WhatsApp
+                </a>
                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">
                   <Phone size={16} /> Request Quote
                 </Link>
-                <a href="https://wa.me/255123456789" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#20b858] shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-0.5">
-                  <MessageCircle size={16} /> WhatsApp
-                </a>
                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white border-2 border-border text-text-secondary font-semibold hover:text-primary hover:border-primary/30 transition-all">
                   <Mail size={16} /> Email Us
                 </Link>
@@ -196,7 +197,7 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               {/* Trust Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { icon: ShieldCheck, label: 'Authorized Reseller' },
+                  { icon: ShieldCheck, label: product.brand === 'Canon' || product.brand === 'Epson' ? 'Authorized Reseller' : 'Genuine Products' },
                   { icon: Truck, label: 'Fast Delivery' },
                   { icon: Headphones, label: 'Expert Support' },
                   { icon: Award, label: 'Warranty Included' },
@@ -242,11 +243,13 @@ export default async function ProductDetailPage(props: { params: Promise<{ id: s
               </h2>
               <div className="space-y-4">
                 {[
-                  { title: 'Authorized Reseller', desc: 'We are an authorized reseller, ensuring 100% genuine products with full manufacturer warranty and support.' },
+                  product.brand === 'Canon' || product.brand === 'Epson'
+                    ? { title: 'Authorized Reseller', desc: `We are an authorized ${product.brand} reseller and service center, ensuring 100% genuine products with full manufacturer warranty and support.` }
+                    : { title: 'Genuine Products', desc: 'We supply genuine products with manufacturer warranty, plus local support from our Dar es Salaam team.' },
                   { title: 'Expert Consultation', desc: 'Our certified printing specialists help you select the perfect product for your unique business requirements.' },
                   { title: 'Professional Setup', desc: 'We provide complete installation, configuration, driver setup, and staff training — included with your purchase.' },
                   { title: 'Ongoing Support', desc: 'From routine maintenance to emergency repairs, our service team keeps your equipment running at peak performance.' },
-                  { title: 'Competitive Pricing', desc: 'We offer transparent, competitive pricing with flexible purchasing options to match any budget.' },
+                  { title: 'Quick Price on WhatsApp', desc: 'Message us on WhatsApp at +255 745 700 500 for current prices, availability and flexible purchasing options.' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#f0f7ff] transition-colors">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
