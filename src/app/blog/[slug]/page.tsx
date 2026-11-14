@@ -71,7 +71,7 @@ export default async function BlogPostPage(props: PageProps<'/blog/[slug]'>) {
   const post = blogData.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const otherPosts = blogData.filter((p) => p.slug !== slug && !p.draft).slice(0, 3);
+  const otherPosts = blogData.filter((p) => p.slug !== slug && !p.draft).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
 
   const articleLd = {
     '@context': 'https://schema.org',

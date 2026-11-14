@@ -4,7 +4,8 @@ import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
 import blogData from '@/data/blog.json';
 
 // Draft posts (draft: true) are reviewable at their URL but not listed until published.
-const posts = blogData.filter((p) => !p.draft);
+// Newest first.
+const posts = blogData.filter((p) => !p.draft).sort((a, b) => b.date.localeCompare(a.date));
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
